@@ -8,7 +8,32 @@
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="powerline"
+
+#powerline
+#ZSH_THEME="powerline"
+
+#POWERLINE_RIGHT_A="exit-status-on-fail"
+#POWERLINE_RIGHT_B="none"
+#
+#POWERLINE_PATH="short"
+#POWERLINE_DETECT_SSH="true"
+
+function powerline_precmd() {
+    PS1="$(powerline-shell --shell zsh $?)"
+}
+
+function install_powerline_precmd() {
+    for s in "${precmd_functions[@]}"; do
+	if [ "$s" = "powerline_precmd" ]; then
+	    return
+	fi
+    done
+    precmd_functions+=(powerline_precmd)
+}
+
+if [ "$TERM" != "linux" ]; then
+    install_powerline_precmd
+fi
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -21,7 +46,7 @@ ZSH_THEME="powerline"
 
 # Uncomment the following line to use hyphen-insensitive completion.
 # Case-sensitive completion must be off. _ and - will be interchangeable.
-# HYPHEN_INSENSITIVE="true"
+HYPHEN_INSENSITIVE="true"
 
 # Uncomment the following line to disable bi-weekly auto-update checks.
 # DISABLE_AUTO_UPDATE="true"
@@ -36,7 +61,7 @@ ZSH_THEME="powerline"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # COMPLETION_WAITING_DOTS="true"
@@ -44,7 +69,7 @@ ZSH_THEME="powerline"
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
 # much, much faster.
-# DISABLE_UNTRACKED_FILES_DIRTY="true"
+DISABLE_UNTRACKED_FILES_DIRTY="true"
 
 # Uncomment the following line if you want to change the command execution time
 # stamp shown in the history command output.
@@ -63,8 +88,10 @@ ZSH_THEME="powerline"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  git
+    git
+    zsh-autosuggestions
 )
+bindkey '^ ' autosuggest-accept
 
 source $ZSH/oh-my-zsh.sh
 
@@ -93,8 +120,22 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
+alias ec="emacsclient -c . &"
+alias spi="ssh root@10.9.8.2"
+alias stm="/usr/local/STMicroelectronics/STM32Cube/STM32CubeMX/STM32CubeMX"
+alias tspar="tizonia --spotify-artist"
+alias tspal="tizonia --spotify-album"
+alias tsppl="tizonia --spotify-playlist"
+alias vpn="nmcli connection up VPN\ 1"
+alias br="sudo brightnessctl s"
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+case "$EMACS" in
+    t)
+	PROMPT_COMMAND=
+	PS1="[\u@\h:\w]$ "
+esac
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+

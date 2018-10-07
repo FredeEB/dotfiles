@@ -131,3 +131,5 @@ case "$EMACS" in
 	PROMPT_COMMAND=
 	PS1="[\u@\h:\w]$ "
 esac
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
