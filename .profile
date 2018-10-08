@@ -31,4 +31,6 @@ setxkbmap -option caps:escape
 export PATH="$PATH:$HOME/esp/xtensa-esp32-elf/bin"
 export IDF_PATH=~/esp/esp-idf
 export PATH=~/bin:$PATH
+export VISUAL="/usr/bin/emacs25"
+export EDITOR="$VISUAL"
 source ~/bin/addarmcompiler
