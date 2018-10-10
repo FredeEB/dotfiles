@@ -12,7 +12,9 @@ alias tsppl="tizonia --daemon --spotify-playlist"
 #uni vpn
 alias vpn="nmcli connection up VPN\ 1"
 
-#unsorted
+#navigation
+alias cd="cd && ls"
 alias la="ls -la"
 alias lc="ls -la | lolcat"
+#unsorted
 alias chat="ssh bun@chat.shazow.net"

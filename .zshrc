@@ -1,13 +1,7 @@
-# # Set up the prompt
-
-#autoload -Uz promptinit
-#promptinit
-#prompt adam1
-
 setopt histignorealldups sharehistory
 
 # # Use emacs keybindings even if our EDITOR is set to vi
-bindkey -e
+bindkey -v
 
 # # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=1000
@@ -94,7 +88,7 @@ esac
 export PATH="$PATH:$HOME/esp/xtensa-esp32-elf/bin"
 export IDF_PATH=~/esp/esp-idf
 export PATH=~/bin:$PATH
-export VISUAL="/usr/bin/emacs25"
+export VISUAL="/usr/bin/nvim"
 export EDITOR="$VISUAL"
 source ~/bin/addarmcompiler
 
