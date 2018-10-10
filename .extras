@@ -1,0 +1,10 @@
+backup(){
+    DATE=$(eval "date +%a%H%M")
+    cp "$1" "$1.${DATE}.bak"
+    echo "Created backup: $1.${DATE}.bak"
+}
+
+cleanbackup(){
+    rm -rf *.bak
+    echo "Removed all .bak files"
+}
