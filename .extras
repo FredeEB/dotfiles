@@ -8,3 +8,8 @@ cleanbackup(){
     rm -rf *.bak
     echo "Removed all .bak files"
 }
+
+agitign(){
+    GIT_ROOT=$(eval "git rev-parse --show-toplevel")
+    echo "$1" >> $GIT_ROOT/.gitignore
+}
