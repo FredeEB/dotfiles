@@ -20,3 +20,5 @@
 .wine
 .zcomp*
 .zsh_history
+.zplug
+.authinfo
