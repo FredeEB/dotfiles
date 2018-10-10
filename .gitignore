@@ -6,11 +6,9 @@
 .ICEauthority
 .bash_*
 .ecb*
-.fzf
 .gitconfig
 .java
 .lesshst
-.oh-my-zsh
 .pulse-cookie
 .recently-used
 .rpmdb
