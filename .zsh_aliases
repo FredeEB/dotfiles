@@ -16,5 +16,6 @@ alias vpn="nmcli connection up VPN\ 1"
 alias cd="cd && ls"
 alias la="ls -la"
 alias lc="ls -la | lolcat"
+
 #unsorted
 alias chat="ssh bun@chat.shazow.net"
