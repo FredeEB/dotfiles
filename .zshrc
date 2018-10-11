@@ -114,22 +114,22 @@ fi
 
 
 #Keybinds 
-if [ -f ~/.zsh_keybinds ]; then
-    source ~/.zsh_keybinds
+if [ -f ~/.zsh/zsh_keybinds.zsh ]; then
+    source ~/.zsh/zsh_keybinds.zsh
 fi
 
 bindkey "^ " autosuggest-execute
 
 #Aliases
 adda() {
-    echo "alias $1=\"$2\"" >> ~/.zsh_aliases
-    source ~/.zsh_aliases
+    echo "alias $1=\"$2\"" >> ~/.zsh/zsh_aliases.zsh 
+    source ~/.zsh/zsh_aliases.zsh 
 }
-if [ -f ~/.zsh_aliases ]; then
-    source ~/.zsh_aliases
+if [ -f ~/.zsh/zsh_aliases.zsh ]; then
+    source ~/.zsh/zsh_aliases.zsh 
 fi
 
 #Extras
-if [ -f ~/.extras ]; then
-    source ~/.extras
+if [ -f ~/.zsh/extras.zsh ]; then
+    source ~/.zsh/extras.zsh 
 fi
