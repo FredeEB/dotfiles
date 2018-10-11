@@ -121,10 +121,6 @@ fi
 bindkey "^ " autosuggest-execute
 
 #Aliases
-adda() {
-    echo "alias $1=\"$2\"" >> ~/.zsh/zsh_aliases.zsh 
-    source ~/.zsh/zsh_aliases.zsh 
-}
 if [ -f ~/.zsh/zsh_aliases.zsh ]; then
     source ~/.zsh/zsh_aliases.zsh 
 fi
