@@ -102,7 +102,6 @@ zplug "junegunn/fzf-bin", from:gh-r, rename-to:fzf, as:plugin
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
 zplug "peco/peco", from:gh-r, as:command
-zplug "oknowton/zsh-dwim", as:plugin
 
 #handle pugins
 zplug load
