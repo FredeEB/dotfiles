@@ -90,7 +90,6 @@ export IDF_PATH=~/esp/esp-idf
 export PATH=~/bin:$PATH
 export VISUAL="/usr/bin/nvim"
 export EDITOR="/usr/bin/emacs25"
-source ~/bin/addarmcompiler
 
 export ZPLUG_HOME=~/.zplug
 source $ZPLUG_HOME/init.zsh
