@@ -128,3 +128,8 @@ fi
 if [ -f ~/.zsh/extras.zsh ]; then
     source ~/.zsh/extras.zsh 
 fi
+
+#HAL
+if [ -f ~/bin/addarmcompiler ]; then
+    source ~/bin/addarmcompiler 
+fi
