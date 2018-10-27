@@ -133,3 +133,6 @@ fi
 if [ -f ~/bin/addarmcompiler ]; then
     source ~/bin/addarmcompiler 
 fi
+
+#Rtags
+PATH=$PATH:~/.emacs.d/elpa/rtags-20180925.641/rtags-2.20/bin/

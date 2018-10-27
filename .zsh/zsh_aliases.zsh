@@ -19,3 +19,4 @@ alias lc="ls -la | lolcat"
 #unsorted
 alias chat="ssh bun@chat.shazow.net"
 alias mouse="sudo modprobe -r psmouse && sudo modprobe psmouse"
+alias z="zathura"
