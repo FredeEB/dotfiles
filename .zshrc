@@ -136,3 +136,9 @@ fi
 
 #Rtags
 PATH=$PATH:~/.emacs.d/elpa/rtags-20180925.641/rtags-2.20/bin/
+
+#ssh keys
+if [ -n "$DESKTOP_SESSION" ];then
+    eval $(gnome-keyring-daemon --start)
+    export SSH_AUTH_SOCK
+fi
