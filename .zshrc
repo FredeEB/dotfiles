@@ -88,8 +88,8 @@ esac
 export PATH="$PATH:$HOME/esp/xtensa-esp32-elf/bin"
 export IDF_PATH=~/esp/esp-idf
 export PATH=~/bin:$PATH
-export VISUAL="/usr/bin/nvim"
-export EDITOR="/usr/bin/emacs25"
+export VISUAL="/usr/bin/emacsclient -c"
+export EDITOR="/usr/bin/emacsclient -c"
 
 export ZPLUG_HOME=~/.zplug
 source $ZPLUG_HOME/init.zsh
