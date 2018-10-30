@@ -90,6 +90,7 @@ export IDF_PATH=~/esp/esp-idf
 export PATH=~/bin:$PATH
 export VISUAL="/usr/bin/emacsclient -c"
 export EDITOR="/usr/bin/emacsclient -c"
+export BROWSER="/usr/bin/firefox"
 
 export ZPLUG_HOME=~/.zplug
 source $ZPLUG_HOME/init.zsh
