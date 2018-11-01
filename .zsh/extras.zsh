@@ -1,3 +1,4 @@
+#create .bak files of input files
 backup(){
     DATE=$(eval "date +%a%H%M")
     for var in "$@"
@@ -7,11 +8,13 @@ backup(){
     done
 }
 
+#removes .bak files
 cleanbackup(){
     rm -rf *.bak
     echo "Removed all .bak files"
 }
 
+#add to gitignore in git root
 agitign(){
     GIT_ROOT=$(eval "git rev-parse --show-toplevel")
     for var in "$@"
@@ -20,9 +23,16 @@ agitign(){
     done
 }
 
+#add alias
 adda() {
-    echo "alias $1=\"$2\"" >> ~/.zsh/zsh_aliases.zsh 
-    source ~/.zsh/zsh_aliases.zsh 
+    echo "alias $1=\"$2\"" >> ~/.zsh/aliases.zsh 
+    source ~/.zsh/aliases.zsh 
+}
+
+#add keybinding
+adda() {
+    echo "alias $1=\"$2\"" >> ~/.zsh/aliases.zsh 
+    source ~/.zsh/aliases.zsh 
 }
 
 # requires mpv, dmenu and ack... ONLY SUPPORTS WORD CHARACTERS AND WHITESPACE

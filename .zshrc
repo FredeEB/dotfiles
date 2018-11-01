@@ -6,7 +6,7 @@ bindkey -v
 # # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=1000
 SAVEHIST=1000
-HISTFILE=~/.zsh_history
+HISTFILE=~/.zsh/history
 
 # Use modern completion system
 autoload -Uz compinit
@@ -87,7 +87,6 @@ esac
 
 export PATH="$PATH:$HOME/esp/xtensa-esp32-elf/bin"
 export IDF_PATH=~/esp/esp-idf
-export PATH=~/bin:$PATH
 export VISUAL="/usr/bin/emacsclient -c"
 export EDITOR="/usr/bin/emacsclient -c"
 export BROWSER="/usr/bin/firefox"
@@ -114,15 +113,13 @@ fi
 
 
 #Keybinds 
-if [ -f ~/.zsh/zsh_keybinds.zsh ]; then
-    source ~/.zsh/zsh_keybinds.zsh
+if [ -f ~/.zsh/keybinds.zsh ]; then
+    source ~/.zsh/keybinds.zsh
 fi
 
-bindkey "^ " autosuggest-execute
-
 #Aliases
-if [ -f ~/.zsh/zsh_aliases.zsh ]; then
-    source ~/.zsh/zsh_aliases.zsh 
+if [ -f ~/.zsh/aliases.zsh ]; then
+    source ~/.zsh/aliases.zsh 
 fi
 
 #Extras
@@ -133,6 +130,7 @@ fi
 #HAL
 if [ -f ~/bin/addarmcompiler ]; then
     source ~/bin/addarmcompiler 
+    export PATH=~/bin:$PATH
 fi
 
 #Rtags
