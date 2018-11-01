@@ -1,3 +1,4 @@
+#git push
 function git_prepare() {
     if [ -n "$BUFFER" ];
     then
@@ -103,5 +104,4 @@ fi
 
 
 #others
-
 bindkey "^ " autosuggest-execute

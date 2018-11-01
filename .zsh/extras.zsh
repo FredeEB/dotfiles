@@ -15,7 +15,7 @@ cleanbackup(){
 }
 
 #add to gitignore in git root
-agitign(){
+gign(){
     GIT_ROOT=$(eval "git rev-parse --show-toplevel")
     for var in "$@"
     do
@@ -29,11 +29,6 @@ adda() {
     source ~/.zsh/aliases.zsh 
 }
 
-#add keybinding
-adda() {
-    echo "alias $1=\"$2\"" >> ~/.zsh/aliases.zsh 
-    source ~/.zsh/aliases.zsh 
-}
 
 # requires mpv, dmenu and ack... ONLY SUPPORTS WORD CHARACTERS AND WHITESPACE
 function yt(){
