@@ -9,9 +9,6 @@ alias tspar="tizonia --daemon --spotify-artist"
 alias tspal="tizonia --daemon --spotify-album"
 alias tsppl="tizonia --daemon --spotify-playlist"
 
-#uni vpn
-alias vpn="nmcli connection up VPN\ 1"
-
 #navigation
 alias la="ls -la"
 alias lc="ls -la | lolcat"

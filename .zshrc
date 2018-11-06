@@ -1,3 +1,5 @@
+! [[ -d $HOME/.zplug ]] && curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh| zsh
+
 setopt histignorealldups sharehistory
 
 # # Use emacs keybindings even if our EDITOR is set to vi
@@ -91,19 +93,19 @@ export VISUAL="/usr/bin/emacsclient -c"
 export EDITOR="/usr/bin/emacsclient -c"
 export BROWSER="/usr/bin/firefox"
 
+
 export ZPLUG_HOME=~/.zplug
 source $ZPLUG_HOME/init.zsh
 
 #plugins
 zplug "zplug/zplug", hook-build:'zplug --self-manage'
 zplug "zsh-users/zsh-autosuggestions"
-zplug "junegunn/fzf-bin", from:gh-r, rename-to:fzf, as:plugin
+zplug "junegunn/fzf", as:command, hook-build:"./install --bin", use:"bin/{fzf-tmux,fzf}"
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
 zplug "peco/peco", from:gh-r, as:command
 
 #handle pugins
-zplug load
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
     if read -q; then
@@ -111,6 +113,7 @@ if ! zplug check --verbose; then
     fi
 fi
 
+zplug load
 
 #Keybinds 
 if [ -f ~/.zsh/keybinds.zsh ]; then
