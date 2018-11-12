@@ -88,11 +88,9 @@ case "$EMACS" in
 esac
 
 export PATH="$PATH:$HOME/esp/xtensa-esp32-elf/bin"
-export IDF_PATH=~/esp/esp-idf
 export VISUAL="/usr/bin/emacsclient -c"
 export EDITOR="/usr/bin/emacsclient -c"
-export BROWSER="/usr/bin/firefox"
-
+export BROWSER="/usr/bin/qutebrowser"
 
 export ZPLUG_HOME=~/.zplug
 source $ZPLUG_HOME/init.zsh
@@ -136,11 +134,13 @@ if [ -f ~/bin/addarmcompiler ]; then
     export PATH=~/bin:$PATH
 fi
 
-#Rtags
-PATH=$PATH:~/.emacs.d/elpa/rtags-20180925.641/rtags-2.20/bin/
+if [ -f ~/esp ]; then
+   export IDF_PATH=~/esp/esp-idf
+fi
 
 #ssh keys
 if [ -n "$DESKTOP_SESSION" ];then
     eval $(gnome-keyring-daemon --start)
     export SSH_AUTH_SOCK
 fi
+
