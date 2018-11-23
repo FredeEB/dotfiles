@@ -1,3 +1,4 @@
 [profiles]
 	[[default]]
-		background_color = "#272822"
+		background_color = "#212121"
+ 		show_titlebar = false

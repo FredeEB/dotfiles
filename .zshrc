@@ -102,6 +102,7 @@ zplug "junegunn/fzf", as:command, hook-build:"./install --bin", use:"bin/{fzf-tm
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
 zplug "peco/peco", from:gh-r, as:command
+zplug "tobi-wan-kenobi/bumblebee-status", from:github
 
 #handle pugins
 if ! zplug check --verbose; then

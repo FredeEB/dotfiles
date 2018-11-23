@@ -5,13 +5,12 @@ alias stm="/usr/local/STMicroelectronics/STM32Cube/STM32CubeMX/STM32CubeMX"
 alias gs="git status"
 
 #spotify
-alias tspar="tizonia --daemon --spotify-artist"
-alias tspal="tizonia --daemon --spotify-album"
-alias tsppl="tizonia --daemon --spotify-playlist"
+alias tspar="tizonia --spotify-artist"
+alias tspal="tizonia --spotify-album"
+alias tsppl="tizonia --spotify-playlist"
 
 #navigation
-alias la="ls -la"
-alias lc="ls -la | lolcat"
+alias la="ls -lah"
 
 #unsorted
 alias chat="ssh bun@chat.shazow.net"
