@@ -103,6 +103,7 @@ zplug "zsh-users/zsh-syntax-highlighting"
 zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
 zplug "peco/peco", from:gh-r, as:command
 zplug "tobi-wan-kenobi/bumblebee-status", from:github
+zplug "hlissner/zsh-autopair", defer:2
 
 #handle pugins
 if ! zplug check --verbose; then
