@@ -1,4 +1,21 @@
+[global_config]
+  inactive_color_offset = 0.795144356955
+  title_font = Noto Sans Mono CJK SC 11
+  title_use_system_font = False
+[keybindings]
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
 [profiles]
-	[[default]]
-		background_color = "#1c1e1f"
- 		show_titlebar = false
+  [[default]]
+    background_color = "#1c1e1f"
+    cursor_color = "#aaaaaa"
+    scrollback_infinite = True
+    scrollbar_position = hidden
+    show_titlebar = False
