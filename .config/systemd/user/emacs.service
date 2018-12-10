@@ -1,13 +1,15 @@
 [Unit]
-Description=Emacs text editor
-Documentation=info:emacs man:emacs(1) https://gnu.org/software/emacs/
+Description=Emacs: the extensible, self-documenting text editor
 
 [Service]
-Type=simple
-ExecStart=/usr/bin/emacs --daemon --eval 
-ExecStop=/usr/bin/emacsclient --eval "(kill-emacs)"
-Environment=SSH_AUTH_SOCK=%t/keyring/ssh
-Restart=on-failure
+Type=forking
+ExecStart=/usr/bin/emacs25 --daemon
+ExecStop=/usr/bin/emacsclient --eval "(progn (setq kill-emacs-hook 'nil) (kill-emacs))"
+Restart=always
+
+# Remove the limit in startup timeout, since emacs
+# cloning and building all packages can take time
+TimeoutStartSec=0
 
 [Install]
 WantedBy=default.target
