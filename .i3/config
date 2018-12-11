@@ -147,4 +147,4 @@ client.unfocused	#1c1e1f #1c1e1f #aaaaaa #338f5f #1c1e1f
 new_window 1pixel
 
 #startprograms
-exec i3-sensible-terminal
+exec --no-startup-id emacs
