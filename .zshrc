@@ -88,7 +88,7 @@ case "$EMACS" in
 esac
 
 export PATH="$PATH:$HOME/esp/xtensa-esp32-elf/bin"
-export VISUAL="/usr/bin/emacsclient -c"
+export VISUAL="/usr/bin/emacsclient -t"
 export EDITOR="/usr/bin/emacsclient -c"
 export BROWSER="/usr/bin/qutebrowser"
 
@@ -115,24 +115,24 @@ fi
 
 zplug load
 
-#Keybinds 
+#Keybinds
 if [ -f ~/.zsh/keybinds.zsh ]; then
     source ~/.zsh/keybinds.zsh
 fi
 
 #Aliases
 if [ -f ~/.zsh/aliases.zsh ]; then
-    source ~/.zsh/aliases.zsh 
+    source ~/.zsh/aliases.zsh
 fi
 
 #Extras
 if [ -f ~/.zsh/extras.zsh ]; then
-    source ~/.zsh/extras.zsh 
+    source ~/.zsh/extras.zsh
 fi
 
 #HAL
 if [ -f ~/bin/addarmcompiler ]; then
-    source ~/bin/addarmcompiler 
+    source ~/bin/addarmcompiler
     export PATH=~/bin:$PATH
 fi
 
