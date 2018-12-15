@@ -148,3 +148,4 @@ new_window 1pixel
 
 #startprograms
 exec --no-startup-id emacs
+exec --no-startup-id compton --backend glx
