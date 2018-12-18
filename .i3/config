@@ -9,7 +9,7 @@ set $down j
 set $left h
 set $right l
 set $mod Mod4
-set $browser "/usr/bin/qutebrowser"
+set $browser "/usr/bin/firefox"
 set $editor "emacsclient -c"
 
 # use Mouse+$mod to drag floating windows to their wanted position
@@ -19,7 +19,7 @@ floating_modifier $mod
 exec --no-startup-id redshift -l 56:10
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec cool-retro-term
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -30,7 +30,7 @@ bindsym $mod+p exec i3lock-fancy
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
 bindsym $mod+q exec $editor
-bindsum $mod+b exec $browser
+bindsym $mod+b exec $browser
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -57,12 +57,7 @@ bindsym $mod+Shift+$down move down
 bindsym $mod+Shift+$up move up
 bindsym $mod+Shift+$right move right
 
-# split in horizontal orientation
-bindsym $mod+c split h
-
-# split in vertical orientation
-bindsym $mod+v split v
-
+bindsym $mod+c split toggle
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
 
