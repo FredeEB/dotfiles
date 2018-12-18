@@ -40,7 +40,6 @@ bindsym $mod+b exec $browser
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5% #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -5% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
-
 # Sreen brightness controls
 bindsym XF86MonBrightnessUp exec xbacklight -inc 4 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 4 # decrease screen brightness
@@ -137,7 +136,7 @@ bar {
 }
 
 #colors			border	bg	text	ind	child_bdr
-client.focused		#555500 #1c1e1f #fafafa	#338f5f	#555500
+client.focused		#555500 #1c1e1f #fafafa	#338f5f	#2a2e2f
 client.unfocused	#1c1e1f #1c1e1f #aaaaaa #338f5f #1c1e1f
 new_window 1pixel
 
