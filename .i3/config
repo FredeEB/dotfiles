@@ -19,7 +19,7 @@ floating_modifier $mod
 exec --no-startup-id redshift -l 56:10
 
 # start a terminal
-bindsym $mod+Return exec cool-retro-term
+bindsym $mod+Return exec terminator
 
 # kill focused window
 bindsym $mod+Shift+q kill
