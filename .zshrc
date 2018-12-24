@@ -136,12 +136,7 @@ if [ -f ~/bin/addarmcompiler ]; then
     export PATH=~/bin:$PATH
 fi
 
+#esp compiler
 if [ -f ~/esp ]; then
    export IDF_PATH=~/esp/esp-idf
 fi
-
-# #ssh keys
-# if [ -n "$DESKTOP_SESSION" ];then
-#     eval $(gnome-keyring-daemon --start)
-#     export SSH_AUTH_SOCK
-# fi
