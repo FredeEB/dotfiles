@@ -28,3 +28,4 @@ fi
 
 setxkbmap -option caps:escape
 
+if [ -e /home/bun/.nix-profile/etc/profile.d/nix.sh ]; then . /home/bun/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
