@@ -87,9 +87,8 @@ case "$EMACS" in
 	PS1="[\u@\h:\w]$ "
 esac
 
-export PATH="$PATH:$HOME/esp/xtensa-esp32-elf/bin"
-export VISUAL="emacsclient -t"
-export EDITOR="emacsclient -c"
+export VISUAL="/usr/bin/emacsclient -t"
+export EDITOR="/usr/bin/emacsclient -c"
 
 export ZPLUG_HOME=~/.zplug
 source $ZPLUG_HOME/init.zsh
