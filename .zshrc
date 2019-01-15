@@ -87,7 +87,6 @@ case "$EMACS" in
 	PS1="[\u@\h:\w]$ "
 esac
 
-export PATH="$PATH:$HOME/esp/xtensa-esp32-elf/bin"
 export VISUAL="/usr/bin/emacsclient -t"
 export EDITOR="/usr/bin/emacsclient -c"
 export BROWSER="/usr/bin/qutebrowser"
@@ -128,15 +127,4 @@ fi
 #Extras
 if [ -f ~/.zsh/extras.zsh ]; then
     source ~/.zsh/extras.zsh
-fi
-
-#HAL
-if [ -f ~/bin/addarmcompiler ]; then
-    source ~/bin/addarmcompiler
-    export PATH=~/bin:$PATH
-fi
-
-#esp compiler
-if [ -f ~/esp ]; then
-   export IDF_PATH=~/esp/esp-idf
 fi
