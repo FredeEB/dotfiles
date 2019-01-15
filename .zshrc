@@ -89,6 +89,7 @@ esac
 
 export VISUAL="/usr/bin/emacsclient -t"
 export EDITOR="/usr/bin/emacsclient -c"
+export BROWSER="chromium-browser"
 
 export ZPLUG_HOME=~/.zplug
 source $ZPLUG_HOME/init.zsh
