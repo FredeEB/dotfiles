@@ -88,9 +88,8 @@ case "$EMACS" in
 esac
 
 export PATH="$PATH:$HOME/esp/xtensa-esp32-elf/bin"
-export VISUAL="/usr/bin/emacsclient -t"
-export EDITOR="/usr/bin/emacsclient -c"
-export BROWSER="/usr/bin/qutebrowser"
+export VISUAL="emacsclient -t"
+export EDITOR="emacsclient -c"
 
 export ZPLUG_HOME=~/.zplug
 source $ZPLUG_HOME/init.zsh
@@ -102,7 +101,6 @@ zplug "junegunn/fzf-bin", as:command, from:gh-r, rename-to:fzf
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
 zplug "peco/peco", from:gh-r, as:command
-zplug "tobi-wan-kenobi/bumblebee-status", from:github
 zplug "hlissner/zsh-autopair", defer:2
 
 #handle pugins
@@ -128,15 +126,4 @@ fi
 #Extras
 if [ -f ~/.zsh/extras.zsh ]; then
     source ~/.zsh/extras.zsh
-fi
-
-#HAL
-if [ -f ~/bin/addarmcompiler ]; then
-    source ~/bin/addarmcompiler
-    export PATH=~/bin:$PATH
-fi
-
-#esp compiler
-if [ -f ~/esp ]; then
-   export IDF_PATH=~/esp/esp-idf
 fi

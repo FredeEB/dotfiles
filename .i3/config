@@ -9,7 +9,7 @@ set $down j
 set $left h
 set $right l
 set $mod Mod4
-set $browser "/usr/bin/vivaldi"
+set $browser "chromium"
 set $editor "emacsclient -c"
 
 # use Mouse+$mod to drag floating windows to their wanted position
@@ -40,9 +40,10 @@ bindsym $mod+b exec $browser
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5% #increase sound volume
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -5% #decrease sound volume
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec xbacklight -inc 4 # increase screen brightness
-bindsym XF86MonBrightnessDown exec xbacklight -dec 4 # decrease screen brightness
+bindsym XF86MonBrightnessUp exec light -A 5 # increase screen brightness with light
+bindsym XF86MonBrightnessDown exec light -U 4 # decrease screen brightness with light
 
 # change focus
 bindsym $mod+$left focus left
@@ -121,18 +122,19 @@ bindsym $mod+u     resize grow height 10 px or 10 ppt
 bindsym $mod+i     resize shrink height 10 px or 10 ppt
 bindsym $mod+o     resize grow width 10 px or 10 ppt
 
-exec_always feh --bg-tile ~/Desktop/desktop.*
+exec_always feh --bg-tile ~/desktop.*
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command ~/.zplug/repos/tobi-wan-kenobi/bumblebee-status/bumblebee-status -m publicip disk weather battery datetime -t gruvbox
+    font pango:Fira Code, FontAwesome 13
+    status_command /run/current-system/sw/bin/i3status-rs ~/.i3/barconfig.toml
+    position top
 
-	position top
+    colors {
+       background #1c1e1f
+       focused_workspace #373832 #389695 #fafafa
 
-	colors {
-	       background #1c1e1f
-	       focused_workspace #373832 #389695 #fafafa
-	}
+    }
 }
 
 #colors			border	bg	text	ind	child_bdr
