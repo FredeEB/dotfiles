@@ -87,8 +87,8 @@ case "$EMACS" in
 	PS1="[\u@\h:\w]$ "
 esac
 
-export VISUAL="/usr/bin/emacsclient -t"
-export EDITOR="/usr/bin/emacsclient -c"
+export VISUAL="emacsclient -t"
+export EDITOR="emacsclient -c"
 export BROWSER="chromium-browser"
 
 export ZPLUG_HOME=~/.zplug
@@ -102,6 +102,8 @@ zplug "zsh-users/zsh-syntax-highlighting"
 zplug "denysdovhan/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
 zplug "peco/peco", from:gh-r, as:command
 zplug "hlissner/zsh-autopair", defer:2
+zplug "spwhitt/nix-zsh-completions"
+zplug "chisui/zsh-nix-shell"
 
 #handle pugins
 if ! zplug check --verbose; then
