@@ -52,10 +52,9 @@ case "$EMACS" in
 	PS1="[\u@\h:\w]$ "
 esac
 
-export PATH="$PATH:$HOME/esp/xtensa-esp32-elf/bin"
 export VISUAL="/usr/bin/emacsclient -t"
 export EDITOR="/usr/bin/emacsclient -c"
-export BROWSER="/usr/bin/qutebrowser"
+export BROWSER="chromium-browser"
 
 export ZPLUG_HOME=~/.zplug
 source $ZPLUG_HOME/init.zsh
@@ -67,7 +66,6 @@ zplug "junegunn/fzf-bin", as:command, from:gh-r, rename-to:fzf
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "fredeeb/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
 zplug "peco/peco", from:gh-r, as:command
-zplug "tobi-wan-kenobi/bumblebee-status", from:github
 zplug "hlissner/zsh-autopair", defer:2
 
 #handle pugins

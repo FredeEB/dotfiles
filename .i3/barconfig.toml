@@ -1,0 +1,34 @@
+icons = "awesome"
+
+[theme]
+name = "slick"
+[theme.overrides]
+idle_bg = "#2a2b2e"
+idle_fg = "#aaaaaa"
+
+[[block]]
+block = "music"
+player = "spotify"
+buttons = ["prev", "play", "next"]
+
+[[block]]
+block = "disk_space"
+info_type = "available"
+unit = "GB"
+interval = 1
+
+[[block]]
+block = "net"
+device = "wlp4s0"
+speed_up = false
+speed_down = false
+
+[[block]]
+block = "sound"
+step_width = 1
+
+[[block]]
+block = "battery"
+
+[[block]]
+block = "time"
