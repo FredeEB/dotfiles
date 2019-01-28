@@ -102,6 +102,5 @@ if [[ $- == *i* ]]; then
 
 fi
 
-
 #others
 bindkey "^ " autosuggest-execute
