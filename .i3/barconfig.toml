@@ -19,16 +19,13 @@ interval = 1
 
 [[block]]
 block = "net"
-device = "wlp4s0"
+device = "wlp6s6"
 speed_up = false
 speed_down = false
 
 [[block]]
 block = "sound"
 step_width = 1
-
-[[block]]
-block = "battery"
 
 [[block]]
 block = "time"
