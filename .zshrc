@@ -65,6 +65,7 @@ zplug "zplug/zplug", hook-build:'zplug --self-manage'
 zplug "zsh-users/zsh-autosuggestions"
 zplug "junegunn/fzf-bin", as:command, from:gh-r, rename-to:fzf
 zplug "zsh-users/zsh-syntax-highlighting"
+zplug "fredeeb/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
 zplug "peco/peco", from:gh-r, as:command
 zplug "hlissner/zsh-autopair", defer:2
 zplug "spwhitt/nix-zsh-completions"
