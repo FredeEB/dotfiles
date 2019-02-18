@@ -27,5 +27,7 @@ if [ -d "$HOME/.local/bin" ] ; then
 fi
 
 setxkbmap -option caps:escape
+gsettings set org.gnome.desktop.peripherals.keyboard repeat-interval 25
+gsettings set org.gnome.desktop.peripherals.keyboard delay 200
 
 if [ -e /home/bun/.nix-profile/etc/profile.d/nix.sh ]; then . /home/bun/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer

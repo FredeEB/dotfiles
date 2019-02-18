@@ -67,6 +67,8 @@ zplug "zsh-users/zsh-syntax-highlighting"
 zplug "fredeeb/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
 zplug "peco/peco", from:gh-r, as:command
 zplug "hlissner/zsh-autopair", defer:2
+zplug "chisui/zsh-nix-shell"
+zplug "todb-r7/git-completion.bash"
 
 #handle pugins
 if ! zplug check --verbose; then
