@@ -33,6 +33,7 @@ alias upgr="sudo apt update && sudo apt upgrade -y"
 #misc
 alias c="clear"
 alias chat="ssh bun@chat.shazow.net"
+alias s="shutdown +60"
 alias sisu=". /opt/poky/2.6/environment-setup-arm1176jzfshf-vfp-poky-linux-gnueabi"
 alias z="zathura"
 
