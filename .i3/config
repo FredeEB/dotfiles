@@ -15,9 +15,6 @@ set $editor "emacsclient -c"
 # use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# redshift change 56:10 for your coordinates
-exec --no-startup-id redshift -l 56:10
-
 # start a terminal
 bindsym $mod+Return exec terminator
 

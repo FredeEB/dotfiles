@@ -104,3 +104,4 @@ fi
 
 #others
 bindkey "^ " autosuggest-execute
+bindkey '^H' backward-kill-word

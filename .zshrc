@@ -28,7 +28,6 @@ zstyle ':completion:*' menu select=long
 zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
 zstyle ':completion:*' use-compctl false
 zstyle ':completion:*' verbose true
-
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
@@ -52,23 +51,27 @@ case "$EMACS" in
 	PS1="[\u@\h:\w]$ "
 esac
 
-export VISUAL="/usr/bin/emacsclient -t"
-export EDITOR="/usr/bin/emacsclient -c"
+export VISUAL="emacsclient -t"
+export EDITOR="emacsclient -c"
 export BROWSER="chromium-browser"
 
 export ZPLUG_HOME=~/.zplug
 source $ZPLUG_HOME/init.zsh
 
+PROMT=prompt-nix-shell
+
 #plugins
+zplug "chisui/zsh-nix-shell"
+zplug "fredeeb/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
+zplug "hlissner/zsh-autopair", defer:2
+zplug "junegunn/fzf-bin", as:command, from:gh-r, rename-to:fzf
+zplug "peco/peco", from:gh-r, as:command
+zplug "spwhitt/nix-zsh-completions"
+zplug "todb-r7/git-completion.bash"
 zplug "zplug/zplug", hook-build:'zplug --self-manage'
 zplug "zsh-users/zsh-autosuggestions"
-zplug "junegunn/fzf-bin", as:command, from:gh-r, rename-to:fzf
 zplug "zsh-users/zsh-syntax-highlighting"
-zplug "fredeeb/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
-zplug "peco/peco", from:gh-r, as:command
-zplug "hlissner/zsh-autopair", defer:2
-zplug "chisui/zsh-nix-shell"
-zplug "todb-r7/git-completion.bash"
+
 
 #handle pugins
 if ! zplug check --verbose; then

@@ -25,8 +25,8 @@ gign(){
 
 #add alias
 adda() {
-    echo "alias $1=\"$2\"" >> ~/.zsh/aliases.zsh 
-    source ~/.zsh/aliases.zsh 
+    echo "alias $1=\"$2\"" >> ~/.zsh/aliases.zsh
+    source ~/.zsh/aliases.zsh
 }
 
 
