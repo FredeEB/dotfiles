@@ -11,12 +11,11 @@ set $right l
 set $mod Mod4
 set $browser "firefox"
 set $editor "emacsclient -c"
+set $term "terminator"
 
 # use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
-bindsym $mod+Return exec terminator
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -24,7 +23,7 @@ bindsym $mod+Shift+q kill
 # lock
 bindsym $mod+p exec i3lock-fancy
 
-# start dmenu (a program launcher)
+bindsym $mod+Return exec $term
 bindsym $mod+d exec dmenu_run
 bindsym $mod+q exec $editor
 bindsym $mod+b exec $browser
@@ -132,3 +131,4 @@ new_window 1pixel
 exec --no-startup-id polybar main
 exec --no-startup-id emacs --daemon
 exec --no-startup-id compton --backend glx
+exec --no-startup-id nm-applet
