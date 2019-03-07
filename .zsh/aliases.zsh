@@ -8,11 +8,15 @@ alias remacs="pkill emacs && emacs --daemon"
 alias spi="ssh root@10.9.8.2"
 
 #files
-alias lr="ls -lahR | sed -e '/^total.*$/d' -e '/.*\\.$/d'"
 alias al="ls -lah"
 alias cd..="cd .."
 alias cp="cp -i"
+alias egrep='egrep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias grep='grep --color=auto'
 alias la="ls -lah"
+alias lr="ls -lahR | sed -e '/^total.*$/d' -e '/.*\\.$/d'"
+alias ls='ls --color=auto'
 alias mv="mv -i"
 alias r="ranger ."
 alias rf="rm -rf"
