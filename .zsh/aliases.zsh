@@ -8,6 +8,7 @@ alias remacs="pkill emacs && emacs --daemon"
 alias spi="ssh root@10.9.8.2"
 
 #files
+alias lr="ls -lahR | sed -e '/^total.*$/d' -e '/.*\\.$/d'"
 alias al="ls -lah"
 alias cd..="cd .."
 alias cp="cp -i"
@@ -38,3 +39,7 @@ alias sisu=". /opt/poky/2.6/environment-setup-arm1176jzfshf-vfp-poky-linux-gnuea
 alias z="zathura"
 
 #unsorted
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
