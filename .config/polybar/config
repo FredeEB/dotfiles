@@ -1,0 +1,118 @@
+[colors]
+background = #222
+background-alt = #444
+foreground = #dfdfdf
+foreground-alt = #888
+primary = #ffb52a
+secondary = #e60053
+alert = #bd2c40
+
+[module/i3]
+type = internal/i3
+enable-click = false
+enable-scroll = false
+wrapping-scroll = false
+
+[bar/main]
+width = 100%
+height = 2.5%
+fixed-center = false
+top = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+border-size = 0
+line-size = 2
+padding = 1
+module-margin = 1
+
+font-0 = "Fira Code:size=12;1"
+font-1 = "Fira Code:size=12;1"
+font-2 = "Fira Code:size=12;1"
+font-3 = "Fira Code:size=12;1"
+
+modules-left = ewmh xwindow
+modules-center =
+modules-right = wlan cpu date
+
+tray-position = right
+tray-padding = 2
+tray-maxsize = 24
+
+[global/wm]
+margin-top = 0
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:30:...%
+
+[module/ewmh]
+type = internal/xworkspaces
+pin-workspaces = false
+enable-click = false
+enable-scroll = false
+
+label-active = " %name% "
+label-active-underline = #fba922
+
+label-occupied = " %name% "
+label-occupied-foreground = #ffaa00
+
+label-urgent = " %name% "
+label-urgent-underline = #9b0a20
+
+label-empty = " %name% "
+label-empty-foreground = #555555
+
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = "💻 "
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #f90000
+label = %percentage:2%%
+
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix = "🗍 "
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #4bffdc
+label = %percentage_used:2%%
+
+[module/wlan]
+type = internal/network
+interface = wlp6s6
+interval = 5.0
+
+format-connected = <ramp-signal> <label-connected>
+format-connected-underline = #9f78e1
+label-connected = %essid%
+
+label-disconnected =
+
+ramp-signal-0 = 🌧
+ramp-signal-1 = 🌦
+ramp-signal-2 = 🌥
+ramp-signal-3 = 🌤
+ramp-signal-4 = 🌣
+
+[module/date]
+type = internal/date
+interval = 5
+
+date = "%a %d"
+date-alt = %a %b %d
+
+time = %H:%M
+time-alt = %I:%M%p
+
+format-prefix =
+format-prefix-foreground = ${colors.foreground-alt}
+format-underline = #0a6cf5
+
+label = %date% %time%
+
+[settings]
+screenchange-reload = true

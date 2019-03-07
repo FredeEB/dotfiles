@@ -71,6 +71,7 @@ zplug "todb-r7/git-completion.bash"
 zplug "zplug/zplug", hook-build:'zplug --self-manage'
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-syntax-highlighting"
+zplug 'ryutok/rust-zsh-completions'
 
 
 #handle pugins
