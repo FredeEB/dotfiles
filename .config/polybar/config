@@ -16,8 +16,8 @@ wrapping-scroll = false
 [bar/main]
 width = 100%
 height = 2.5%
-fixed-center = false
-top = true
+fixed-center = true
+bottom = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
@@ -33,8 +33,8 @@ font-2 = "Fira Code:size=12;1"
 font-3 = "Fira Code:size=12;1"
 
 modules-left = ewmh xwindow
-modules-center =
-modules-right = wlan cpu date
+modules-center = date
+modules-right = wlan cpu battery
 
 tray-position = right
 tray-padding = 2
@@ -73,17 +73,10 @@ format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #f90000
 label = %percentage:2%%
 
-[module/memory]
-type = internal/memory
-interval = 2
-format-prefix = "🗍 "
-format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #4bffdc
-label = %percentage_used:2%%
 
 [module/wlan]
 type = internal/network
-interface = wlp6s6
+interface = wlp3s0
 interval = 5.0
 
 format-connected = <ramp-signal> <label-connected>
@@ -97,6 +90,15 @@ ramp-signal-1 = 🌦
 ramp-signal-2 = 🌥
 ramp-signal-3 = 🌤
 ramp-signal-4 = 🌣
+
+[module/battery]
+type = internal/battery
+
+full-at = 99
+battery = BAT0
+adapter = AC
+
+poll-interval = 5
 
 [module/date]
 type = internal/date
