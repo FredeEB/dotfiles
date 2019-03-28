@@ -1,8 +1,6 @@
 [colors]
-background = #222
-background-alt = #444
-foreground = #dfdfdf
-foreground-alt = #888
+background = #050016
+foreground = #aaaaaa
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
@@ -34,11 +32,12 @@ font-3 = "Fira Code:size=12;1"
 
 modules-left = ewmh xwindow
 modules-center = date
-modules-right = wlan cpu battery
+modules-right = wlan backlight cpu battery
 
 tray-position = right
 tray-padding = 2
 tray-maxsize = 24
+
 
 [global/wm]
 margin-top = 0
@@ -69,7 +68,7 @@ label-empty-foreground = #555555
 type = internal/cpu
 interval = 2
 format-prefix = "💻 "
-format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-foreground = ${colors.foreground}
 format-underline = #f90000
 label = %percentage:2%%
 
@@ -111,7 +110,7 @@ time = %H:%M
 time-alt = %I:%M%p
 
 format-prefix =
-format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-foreground = ${colors.foreground}
 format-underline = #0a6cf5
 
 label = %date% %time%

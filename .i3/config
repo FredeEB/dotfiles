@@ -16,6 +16,8 @@ set $term "terminator"
 # use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
+#gaps
+gaps inner 10
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -131,4 +133,4 @@ new_window 1pixel
 exec --no-startup-id polybar main
 # exec --no-startup-id compton --backend glx
 exec --no-startup-id nm-applet
-# exec --no-startup-id emacs --daemon
+exec --no-startup-id emacs --daemon

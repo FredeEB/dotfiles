@@ -20,6 +20,10 @@ alias ls='ls --color=auto'
 alias mv="mv -i"
 alias r="ranger ."
 alias rf="rm -rf"
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias .....="cd ../../../.."
 
 #git
 alias gd="git diff"
@@ -27,8 +31,8 @@ alias gl="git log --graph"
 alias gp="git pull"
 
 #nix
-alias n="nix-shell"
-alias ne="nix-shell --command 'emacs . &'"
+alias ns="nix-shell"
+alias nse="nix-shell --command 'emacs . &'"
 
 #apt
 alias inst="sudo apt install -y"
@@ -41,9 +45,7 @@ alias chat="ssh bun@chat.shazow.net"
 alias s="shutdown +60"
 alias sisu=". /opt/poky/2.6/environment-setup-arm1176jzfshf-vfp-poky-linux-gnueabi"
 alias z="zathura"
+alias rec="ffmpeg -f x11grab -s `xdpyinfo | grep dimensions | sed -r "s/.*([0-9]{4}x[0-9]{4}).*/\1/g"
+` -i :0.0 -f alsa -i default"
 
 #unsorted
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-alias .....="cd ../../../.."

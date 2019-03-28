@@ -1,6 +1,6 @@
 [global_config]
   inactive_color_offset = 0.795144356955
-  title_font = Noto Sans Mono CJK SC 11
+  title_font = Fira Code Light 12
   title_use_system_font = False
 [keybindings]
 [layouts]
@@ -14,8 +14,11 @@
 [plugins]
 [profiles]
   [[default]]
-    background_color = "#1c1e1f"
-    cursor_color = "#aaaaaa"
+    background_color = "#1b182c"
+    cursor_color = "#aa00aa"
+    cursor_color_fg = False
+    font = Fira Code Light 12
     scrollback_infinite = True
     scrollbar_position = hidden
     show_titlebar = False
+    use_system_font = False
