@@ -47,6 +47,33 @@ function yt(){
     mpv $URL --really-quiet &
 }
 
+function aur(){
+    QUERY=$@
+    PWD=$(pwd)
+    cd /tmp
+    rm -rf $QUERY
+    git clone "https://aur.archlinux.org/$QUERY"
+    cd $QUERY
+    less PKGBUILD
+    if read -q "REPLY?build?: [yN]"; then
+	echo "\n\n"
+	if makepkg -si; then
+	    cd ..
+	    rm -rf $QUERY
+	    echo "installed $QUERY and cleaned up\n"
+	    cd $PWD
+	    return
+	fi
+    else
+	if read -q "REPLY?remove?: [yN]\n"; then
+	    cd ..
+	    rm -rf $QUERY
+	    echo "Removed $QUERY folder\n"
+	    cd $PWD
+	fi
+    fi
+}
+
 # Use modern completion system
 autoload -Uz compinit
 compinit
