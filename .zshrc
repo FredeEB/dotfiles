@@ -21,16 +21,17 @@ source $ZPLUG_HOME/init.zsh
 
 #plugins
 zplug "chisui/zsh-nix-shell"
-zplug "fredeeb/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
+zplug "sindresorhus/pure", use:"*.zsh", from:github, as:theme
+#zplug "fredeeb/spaceship-prompt", use:spaceship.zsh, from:github, as:theme
 zplug "hlissner/zsh-autopair", defer:2
+zplug "isacikgoz/gitbatch", from:gh-r, as:command
 zplug "junegunn/fzf-bin", as:command, from:gh-r, rename-to:fzf
-zplug "peco/peco", from:gh-r, as:command
+zplug "ryutok/rust-zsh-completions"
 zplug "spwhitt/nix-zsh-completions"
 zplug "todb-r7/git-completion.bash"
 zplug "zplug/zplug", hook-build:'zplug --self-manage'
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-syntax-highlighting"
-zplug 'ryutok/rust-zsh-completions'
 
 #handle pugins
 if ! zplug check --verbose; then

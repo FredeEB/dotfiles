@@ -1,9 +1,9 @@
 [colors]
-background = #050016
-foreground = #aaaaaa
-primary = #ffb52a
-secondary = #e60053
-alert = #bd2c40
+primary = ${xrdb:color}
+background = ${xrdb:background}
+foreground = ${xrdb:foreground}
+highlight  = ${xrdb:color1}
+grey       = ${xrdb:color4}
 
 [module/i3]
 type = internal/i3

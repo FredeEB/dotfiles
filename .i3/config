@@ -2,7 +2,7 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-font pango:Fira Code Regular 12
+font pango:Fira Code Light 12
 
 set $up k
 set $down j
@@ -11,22 +11,23 @@ set $right l
 set $mod Mod4
 set $browser "firefox"
 set $editor "emacsclient -c"
-set $term "urxvt"
+set $term "xst"
 
 # use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-#gaps
-gaps inner 10
-
 # kill focused window
 bindsym $mod+Shift+q kill
+
+# gaps
+gaps inner 20
+smart_gaps on
 
 # lock
 bindsym $mod+p exec i3lock-fancy
 
 bindsym $mod+Return exec $term
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec rofi -show run
 bindsym $mod+q exec $editor
 bindsym $mod+b exec $browser
 # There also is the (new) i3-dmenu-desktop which only displays applications
@@ -131,6 +132,6 @@ new_window 1pixel
 
 #startprograms
 exec --no-startup-id polybar main
-# exec --no-startup-id compton --backend glx
+exec --no-startup-id compton --backend glx
 exec --no-startup-id nm-applet
-exec --no-startup-id emacs --daemon
+# exec --no-startup-id emacs --daemon
