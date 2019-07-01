@@ -2,7 +2,7 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-font pango:Fira Code Light 12
+font Iosevka SS04 12
 
 set $up k
 set $down j
@@ -41,8 +41,8 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 # Sreen brightness controls
-bindsym XF86MonBrightnessUp exec brightnessctl s +10% # increase screen brightness
-bindsym XF86MonBrightnessDown exec brightnessctl s 10%- # decrease screen brightness
+bindsym XF86MonBrightnessUp exec xbacklight -set +10% # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -set 10%- # decrease screen brightness
 
 # change focus
 bindsym $mod+$left focus left
@@ -113,7 +113,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'logout?' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window from normal mode
 bindsym $mod+y     resize shrink width 10 px or 10 ppt

@@ -22,4 +22,8 @@ setxkbmap -option caps:escape
 
 TZ='Europe/London'; export TZ
 
+if [ -d "$HOME/go/bin" ] ; then
+    PATH="$PATH:$HOME/go/bin"
+fi
+
 if [ -e /home/bun/.nix-profile/etc/profile.d/nix.sh ]; then . /home/bun/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
