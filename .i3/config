@@ -24,7 +24,7 @@ gaps inner 20
 smart_gaps on
 
 # lock
-bindsym $mod+p exec i3lock-fancy
+bindsym $mod+p exec i3lock
 
 bindsym $mod+Return exec $term
 bindsym $mod+d exec rofi -show run
