@@ -2,14 +2,14 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-font Iosevka SS04 12
+font Iosevka 12
 
 set $up k
 set $down j
 set $left h
 set $right l
 set $mod Mod4
-set $browser "firefox"
+set $browser "qutebrowser"
 set $editor "emacsclient -c"
 set $term "emacsclient -ce '(vterm)'"
 
