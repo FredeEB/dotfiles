@@ -18,7 +18,7 @@
 *.color7:     #BFBFBF
 *.color15: #E6E6E6
 
-st.font: Iosevka SS04:pixelsize=16
+st.font: Iosevka:pixelsize=16
 
 ! ROFI Color theme
 rofi.color-enabled: true
@@ -31,5 +31,7 @@ rofi.eh: 1
 rofi.width: 60
 rofi.padding: 10
 rofi.bw: 2
-rofi.font: Iosevka SS04 16
+rofi.font: Iosevka 16
 rofi.theme: vapor.rasi
+
+rofi.terminal: xst

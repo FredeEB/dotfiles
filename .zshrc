@@ -31,6 +31,7 @@ zplug "todb-r7/git-completion.bash"
 zplug "zplug/zplug", hook-build:'zplug --self-manage'
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-syntax-highlighting"
+zplug "carnager/rofi-pass"
 
 #handle pugins
 if ! zplug check --verbose; then

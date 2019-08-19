@@ -11,7 +11,7 @@ set $right l
 set $mod Mod4
 set $browser "firefox"
 set $editor "emacsclient -c"
-set $term "xst"
+set $term "emacsclient -ce '(vterm)'"
 
 # use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -28,6 +28,8 @@ bindsym $mod+p exec i3lock
 
 bindsym $mod+Return exec $term
 bindsym $mod+d exec rofi -show run
+bindsym $mod+g exec rofi -show ssh
+bindsym $mod exec rofi -show pass
 bindsym $mod+q exec $editor
 bindsym $mod+b exec $browser
 # There also is the (new) i3-dmenu-desktop which only displays applications
@@ -134,4 +136,4 @@ new_window 1pixel
 exec --no-startup-id polybar main
 exec --no-startup-id compton --backend glx
 exec --no-startup-id nm-applet
-# exec --no-startup-id emacs --daemon
+exec --no-startup-id xset r rate 200 50
