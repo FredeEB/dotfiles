@@ -16,7 +16,7 @@
 *.color6:     #8BE9FD
 *.color14:    #9AEDFE
 *.color7:     #BFBFBF
-*.color15: #E6E6E6
+*.color15:    #E6E6E6
 
 st.font: Iosevka:pixelsize=16
 
