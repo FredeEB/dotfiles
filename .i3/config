@@ -11,7 +11,7 @@ set $right l
 set $mod Mod4
 set $browser "firefox"
 set $editor "emacsclient -c"
-set $term "emacsclient -ce '(vterm)'"
+set $term "emacsclient -ce '(eshell t)'"
 
 # use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -73,11 +73,9 @@ bindsym $mod+Shift+space floating toggle
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
 
-# focus the parent container
+# focus containers
 bindsym $mod+a focus parent
-
-# focus the child container
-#bindsym $mod+d focus child
+bindsym $mod+z focus child
 
 # move the currently focused window to the scratchpad
 bindsym $mod+Shift+minus move scratchpad
@@ -116,6 +114,10 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'logout?' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# change keyboard layout
+bindsym $mod+n exec setxkbmap us -option caps:escape && xset r rate 200 50
+bindsym $mod+m exec setxkbmap dk -option caps:escape && xset r rate 200 50
 
 # resize window from normal mode
 bindsym $mod+y     resize shrink width 10 px or 10 ppt

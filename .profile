@@ -18,7 +18,7 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
-setxkbmap -option caps:escape
+setxkbmap us -option caps:escape
 TZ='Europe/Copenhagen'; export TZ
 
 if [ -d "$HOME/go/bin" ] ; then
