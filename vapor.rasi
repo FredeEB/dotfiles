@@ -35,7 +35,7 @@
     active-background:           rgba ( 255, 255, 255, 100 % );
     selected-active-background:  rgba ( 82, 148, 226, 100 % );
 
-    font: "Iosevka SS04 15";
+    font: "Iosevka 15";
 }
 #window {
     background-color: @background;
