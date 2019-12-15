@@ -9,7 +9,7 @@ set $down j
 set $left h
 set $right l
 set $mod Mod4
-set $browser "firefox"
+set $browser "qutebrowser"
 set $editor "emacsclient -c"
 set $term "alacritty"
 
