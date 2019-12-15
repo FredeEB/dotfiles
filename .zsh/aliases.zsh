@@ -1,11 +1,10 @@
 #devtools
 alias e="emacs . &"
-alias ec="emacsclient -c . &"
+alias ec="emacsclient -c . & disown"
 alias et="emacsclient -t ."
 alias gs="git status"
 alias ne="nix-shell --command 'emacs . &'"
-alias remacs="pkill emacs && emacs --daemon"
-alias spi="ssh root@10.9.8.2"
+alias remacs="systemctl restart --user emacs"
 
 #files
 alias al="ls -lah"
