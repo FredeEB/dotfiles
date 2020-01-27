@@ -34,4 +34,4 @@ rofi.bw: 2
 rofi.font: Iosevka 16
 rofi.theme: vapor.rasi
 
-rofi.terminal: xst
+rofi.terminal: alacritty
