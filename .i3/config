@@ -132,5 +132,4 @@ new_window 1pixel
 #startprograms
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id compton --backend glx
-exec --no-startup-id nm-applet
 exec --no-startup-id xset r rate 200 50
