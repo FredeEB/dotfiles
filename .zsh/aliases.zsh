@@ -33,6 +33,13 @@ alias gp="git pull"
 alias ns="nix-shell"
 alias nse="nix-shell --command 'emacs . &'"
 
+#docker
+alias dps="docker ps -a"
+alias dcb="docker-compose build --parallel"
+alias dcu="docker-compose up"
+alias dcd="docker-compose up -d"
+alias dck="docker-compose down"
+
 #apt
 alias inst="sudo apt install -y"
 alias remo="sudo apt autoremove -y"
