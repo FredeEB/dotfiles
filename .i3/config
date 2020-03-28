@@ -28,8 +28,8 @@ bindsym $mod+p exec i3lock
 
 bindsym $mod+Return exec $term
 bindsym $mod+d exec rofi -show run
+bindsym $mod+Shift+d exec networkmanager_dmenu
 bindsym $mod+g exec rofi -show ssh
-bindsym $mod exec rofi -show pass
 bindsym $mod+q exec $editor
 bindsym $mod+b exec $browser
 # There also is the (new) i3-dmenu-desktop which only displays applications
