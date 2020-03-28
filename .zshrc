@@ -1,9 +1,14 @@
 # install zplug if not already installed
-! [[ -d $HOME/.zplug ]] && curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh| zsh
+export ZPLUG_HOME=$HOME/.zplug
+
+[[ ! -f $ZPLUG_HOME/init.zsh ]] && git clone https://github.com/zplug/zplug $ZPLUG_HOME
+source $ZPLUG_HOME/init.zsh
+
+zplug "zplug/zplug", hook-build:'zplug --self-manage'
 
 setopt histignorealldups sharehistory
 
-# Use vim keybinds
+# Use emacs keybinds
 bindkey -e
 
 # # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
@@ -28,7 +33,6 @@ zplug "junegunn/fzf-bin", as:command, from:gh-r, rename-to:fzf
 zplug "ryutok/rust-zsh-completions"
 zplug "spwhitt/nix-zsh-completions"
 zplug "todb-r7/git-completion.bash"
-zplug "zplug/zplug", hook-build:'zplug --self-manage'
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-syntax-highlighting"
 zplug "carnager/rofi-pass"
