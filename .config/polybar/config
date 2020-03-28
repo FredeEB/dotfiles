@@ -17,6 +17,8 @@ height = 2.5%
 fixed-center = true
 bottom = true
 
+monitor = ${env:MONITOR:}
+
 background = ${colors.background}
 foreground = ${colors.foreground}
 

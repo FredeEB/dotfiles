@@ -135,7 +135,7 @@ client.unfocused	#1c1e1f #1c1e1f #aaaaaa #338f5f #1c1e1f
 new_window 1pixel
 
 #startprograms
-exec --no-startup-id polybar main
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id compton --backend glx
 exec --no-startup-id nm-applet
 exec --no-startup-id xset r rate 200 50
