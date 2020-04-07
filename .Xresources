@@ -22,6 +22,6 @@ st.font: Iosevka:pixelsize=16
 
 ! ROFI Color theme
 rofi.font: Iosevka 16
-rofi.theme: .config/rofi/rasi
+rofi.theme: ~/.config/rofi/rasi
 
 rofi.terminal: alacritty
