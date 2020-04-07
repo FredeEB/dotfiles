@@ -28,17 +28,12 @@ export ZPLUG_HOME=~/.zplug
 source $ZPLUG_HOME/init.zsh
 
 #plugins
-zplug "chisui/zsh-nix-shell"
 zplug "sindresorhus/pure", use:"*.zsh", from:github, as:theme
 zplug "hlissner/zsh-autopair", defer:2
-zplug "isacikgoz/gitbatch", from:gh-r, as:command
 zplug "junegunn/fzf-bin", as:command, from:gh-r, rename-to:fzf
 zplug "ryutok/rust-zsh-completions"
-zplug "spwhitt/nix-zsh-completions"
-zplug "todb-r7/git-completion.bash"
 zplug "zsh-users/zsh-autosuggestions"
 zplug "zsh-users/zsh-syntax-highlighting"
-zplug "carnager/rofi-pass"
 
 #handle pugins
 if ! zplug check --verbose; then
