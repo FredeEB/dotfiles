@@ -1,3 +1,6 @@
+# Check if terminal is dumb (e.g tramp)
+[[ $TERM == "dumb" ]] && unsetopt zle && PS1='$ ' && return
+
 # install zplug if not already installed
 export ZPLUG_HOME=$HOME/.zplug
 
