@@ -20,8 +20,8 @@ floating_modifier $mod
 bindsym $mod+Shift+q kill
 
 # gaps
-gaps inner 20
-smart_gaps on
+gaps inner 10
+gaps outer 20
 
 # lock
 bindsym $mod+Shift+p exec betterlockscreen -l
