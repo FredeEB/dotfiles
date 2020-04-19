@@ -131,5 +131,5 @@ new_window 1pixel
 
 #startprograms
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec_always --no-startup-id picom --backend glx --corner-radius 10 -c -e 0.97 --blur-background --inactive-dim 0.15 --fade-delta 1 -f -I 0.025 -O 1 --vsync
+exec_always --no-startup-id picom
 exec_always --no-startup-id xset r rate 200 50
