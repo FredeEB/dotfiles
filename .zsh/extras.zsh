@@ -47,6 +47,11 @@ function yt(){
     mpv $URL --really-quiet &
 }
 
+function twitch(){
+	NAME=$1
+    mpv https://twitch.tv/$NAME --really-quiet & disown
+}
+
 function aur(){
     QUERY=$@
     PWD=$(pwd)
