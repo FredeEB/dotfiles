@@ -14,7 +14,7 @@
     yellow: 	rgba ( 241, 250, 140, 100 % );
 }
 * {
-    selected-normal-background:     @cyan;
+    selected-normal-background:     @orange;
     normal-background:              @background;
     normal-foreground:              @foreground;
     alternate-normal-background:    @normal-background;
@@ -29,14 +29,14 @@
     alternate-active-background:    @normal-background;
     alternate-active-foreground:    @selected-active-foreground;
     alternate-active-background:    @selected-active-background;
-    border-color:                   @selected-normal-background;
-    separatorcolor:                 @border-color;
+    border-color:                   @background-background;
+    separatorcolor:                 @purple;
     spacing: 2;
     background-color: @normal-background;
 }
 #window {
-    border:           3;
-    padding:          9;
+    border:           0;
+    padding:          20;
 }
 #mainbox {
     background-color: inherit;
@@ -48,7 +48,7 @@
 }
 #element {
     border:  0;
-    padding: 1px ;
+    padding: 10px;
 }
 #element.normal.normal {
     background-color: @normal-background;
@@ -106,6 +106,8 @@
 }
 #entry {
     spacing:    0;
+	font: "Iosevka 30";
+	padding: 10px;
     text-color: @normal-foreground;
 }
 #prompt {
