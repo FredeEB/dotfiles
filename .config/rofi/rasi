@@ -98,6 +98,7 @@
     text-color: @normal-foreground;
     background-color: inherit;
     padding:    1px ;
+    children:   [ entry ];
 }
 #case-indicator {
     spacing:    0;
