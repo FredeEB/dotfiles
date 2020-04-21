@@ -21,7 +21,6 @@ bindsym $mod+Shift+q kill
 
 # gaps
 gaps inner 10
-gaps outer 20
 
 # lock
 bindsym $mod+Shift+p exec betterlockscreen -l
@@ -128,6 +127,7 @@ exec_always feh --bg-center ~/desktop.*
 client.focused		#555500 #1c1e1f #fafafa	#338f5f	#2a2e2f
 client.unfocused	#1c1e1f #1c1e1f #aaaaaa #338f5f #1c1e1f
 new_window 1pixel
+new_float 1pixel
 
 #startprograms
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
