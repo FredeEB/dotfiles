@@ -74,12 +74,12 @@ scrolling:
 
 font:
   normal:
-    family: Iosevka
+    family: Victor Mono Nerd Font
   bold:
-    family: Iosevka
+    family: Victor Mono Nerd Font
     style: Heavy
   italic:
-    family: Iosevka
+    family: Victor Mono Nerd Font
     style: Italic
   size: 11.0
   offset:
