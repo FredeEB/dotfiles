@@ -31,6 +31,7 @@ bindsym $mod+Shift+d exec networkmanager_dmenu
 bindsym $mod+g exec rofi -show ssh
 bindsym $mod+q exec $editor
 bindsym $mod+b exec $browser
+bindsym $mod+z exec zeal
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -66,10 +67,6 @@ bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
-
-# focus containers
-bindsym $mod+a focus parent
-bindsym $mod+z focus child
 
 # move the currently focused window to the scratchpad
 bindsym $mod+Shift+minus move scratchpad
