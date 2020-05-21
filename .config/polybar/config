@@ -10,12 +10,12 @@ type = internal/i3
 enable-click = false
 enable-scroll = false
 wrapping-scroll = false
+index-sort = true
 
 [bar/main]
 width = 100%
-height = 2.5%
+height = 2%
 fixed-center = true
-bottom = true
 
 monitor = ${env:MONITOR:}
 
@@ -34,7 +34,7 @@ font-3 = "Victor Mono Nerd Font:size=14;1"
 
 modules-left = ewmh xwindow
 modules-center = date
-modules-right = wlan backlight cpu battery
+modules-right = wlan memory cpu battery
 
 tray-position = right
 tray-padding = 2
@@ -55,7 +55,7 @@ enable-click = false
 enable-scroll = false
 
 label-active = " %name% "
-label-active-underline = #fba922
+label-active-underline = #ffb86c
 
 label-occupied = " %name% "
 label-occupied-foreground = #ffaa00
@@ -71,9 +71,14 @@ type = internal/cpu
 interval = 2
 format-prefix = "💻 "
 format-prefix-foreground = ${colors.foreground}
-format-underline = #f90000
+format-underline = #0189cc
 label = %percentage:2%%
 
+[module/memory]
+type = internal/memory
+interval = 2
+label = %gb_used%
+format-underline = #50fa7b
 
 [module/wlan]
 type = internal/network
@@ -116,7 +121,7 @@ time-alt = %I:%M%p
 
 format-prefix =
 format-prefix-foreground = ${colors.foreground}
-format-underline = #0a6cf5
+format-underline = #ff79c6
 
 label = %date% %time%
 
