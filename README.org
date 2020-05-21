@@ -4,8 +4,10 @@ These are the files I download and run everytime I reinstall any linux based sys
 It's based on:
 
 - zsh
+- alacritty
 - i3wm
-- neovim (optional, as I mostly use [[https://github.com/fredeeb/.emacs.d][emacs]]
+- polybar
+- picom
 
 The abovementioned packages need to be installed from wherever you install your packages, and then [[https://github.com/zplug/zplug][zplug]] will take care of all the plugins used in the terminal, and everything will be lovely.
 
