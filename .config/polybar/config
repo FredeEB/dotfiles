@@ -54,6 +54,7 @@ type = custom/script
 exec = $HOME/.config/polybar/scripts/pomodoro.sh
 tail = true
 
+click-left = kill %pid%
 format-underline = #ff5555
 
 [module/ewmh]
