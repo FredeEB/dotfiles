@@ -40,10 +40,6 @@ tray-position = right
 tray-padding = 2
 tray-maxsize = 24
 
-
-[global/wm]
-margin-top = 0
-
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:30:...%
