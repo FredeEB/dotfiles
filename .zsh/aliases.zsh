@@ -31,10 +31,11 @@ alias gp="git pull"
 
 #docker
 alias dps="docker ps -a"
-alias dcb="docker-compose build --parallel"
+alias dcb="COMPOSE_DOCKER_CLI_BUILD=1 DOCKER_BUILDKIT=1 docker-compose build --parallel"
 alias dcu="docker-compose up"
 alias dcd="docker-compose up -d"
 alias dck="docker-compose down"
+alias dr="docker restart"
 
 #misc
 alias c="clear"
