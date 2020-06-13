@@ -130,3 +130,4 @@ new_float 1pixel
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id picom
 exec_always --no-startup-id xset r rate 200 50
+exec_always --no-startup-id setxkbmap us -option caps:escape
