@@ -24,3 +24,4 @@ st.font: Iosevka:pixelsize=16
 rofi.theme: ~/.config/rofi/rofi.conf
 
 rofi.terminal: alacritty
+rofi.run-command: zsh -c "{cmd}"
