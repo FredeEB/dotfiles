@@ -64,7 +64,7 @@ font-3 = "Victor Mono Nerd Font:size=14;1"
 
 modules-left = dwm
 modules-center = date
-modules-right = wlan memory cpu battery
+modules-right = github wlan memory cpu battery
 
 tray-position = right
 tray-padding = 2
@@ -127,6 +127,12 @@ format-prefix-foreground = ${colors.foreground}
 format-underline = #ff79c6
 
 label = %date% %time%
+
+[module/github]
+type = internal/github
+
+token = ${file:$HOME/.local/share/github/access.token}
+user = fredeeb
 
 [settings]
 screenchange-reload = true
