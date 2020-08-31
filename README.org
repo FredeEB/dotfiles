@@ -5,9 +5,10 @@ It's based on:
 
 - zsh
 - alacritty
-- i3wm
 - polybar
 - picom
+
+and my fork of [[https://github.com/fredeeb/dwm][dwm]]
 
 The abovementioned packages need to be installed from wherever you install your packages, and then [[https://github.com/zplug/zplug][zplug]] will take care of all the plugins used in the terminal, and everything will be lovely.
 
