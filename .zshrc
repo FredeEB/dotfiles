@@ -2,12 +2,10 @@
 [[ $TERM == "dumb" ]] && unsetopt zle && PS1='$ ' && return
 
 # install zplug if not already installed
-export ZPLUG_HOME=$HOME/.zplug
+export ZPLUG_HOME=$HOME/.config/zplug
 
-[[ ! -f $ZPLUG_HOME/init.zsh ]] && git clone https://github.com/zplug/zplug $ZPLUG_HOME
+[[ ! -d $ZPLUG_HOME ]] && git clone https://github.com/zplug/zplug $ZPLUG_HOME
 source $ZPLUG_HOME/init.zsh
-
-zplug "zplug/zplug", hook-build:'zplug --self-manage'
 
 setopt histignorealldups sharehistory
 
@@ -19,13 +17,9 @@ HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=~/.zsh/history
 
-
 export VISUAL="emacsclient -t"
 export EDITOR="emacsclient -c"
 export BROWSER="firefox"
-
-export ZPLUG_HOME=~/.zplug
-source $ZPLUG_HOME/init.zsh
 
 #plugins
 zplug "sindresorhus/pure", use:"*.zsh", from:github, as:theme
@@ -45,17 +39,6 @@ fi
 
 zplug load
 
-#Keybinds
-if [ -f ~/.zsh/keybinds.zsh ]; then
-    source ~/.zsh/keybinds.zsh
-fi
-
-#Aliases
-if [ -f ~/.zsh/aliases.zsh ]; then
-    source ~/.zsh/aliases.zsh
-fi
-
-#Extras
-if [ -f ~/.zsh/extras.zsh ]; then
-    source ~/.zsh/extras.zsh
-fi
+source ~/.zsh/keybinds.zsh
+source ~/.zsh/aliases.zsh
+source ~/.zsh/extras.zsh
