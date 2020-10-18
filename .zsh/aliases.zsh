@@ -44,3 +44,5 @@ alias s="shutdown +60"
 alias z="zathura"
 alias rec="ffmpeg -f x11grab -s `xdpyinfo | grep dimensions | sed -r "s/.*([0-9]{4}x[0-9]{4}).*/\1/g"` -i :0.0 -f alsa -i default"
 #unsorted
+alias dk="setxkbmap dk"
+alias us="setxkbmap us"
