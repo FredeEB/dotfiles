@@ -46,3 +46,4 @@ alias rec="ffmpeg -f x11grab -s `xdpyinfo | grep dimensions | sed -r "s/.*([0-9]
 #unsorted
 alias dk="setxkbmap dk"
 alias us="setxkbmap us"
+alias ls="exa"
