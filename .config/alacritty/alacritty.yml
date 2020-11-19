@@ -3,8 +3,8 @@
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
 # set by alacritty itself.
-# env:
-#   TERM: rxvt-unicode-256color
+env:
+  TERM: xterm-256color
 
 window:
   # Window dimensions (changes require restart)
