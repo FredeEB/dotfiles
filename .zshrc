@@ -22,7 +22,7 @@ export EDITOR="emacsclient -c"
 export BROWSER="firefox"
 
 #plugins
-zplug "sindresorhus/pure", use:"*.zsh", from:github, as:theme
+# Theme is starship : https://github.com/starship/starship
 zplug "hlissner/zsh-autopair", defer:2
 zplug "junegunn/fzf-bin", as:command, from:gh-r, rename-to:fzf
 zplug "ryutok/rust-zsh-completions"
@@ -42,3 +42,5 @@ zplug load
 source ~/.zsh/keybinds.zsh
 source ~/.zsh/aliases.zsh
 source ~/.zsh/extras.zsh
+
+eval $(starship init zsh)
