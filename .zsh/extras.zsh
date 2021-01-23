@@ -79,6 +79,13 @@ function aur(){
     fi
 }
 
+function newcpprepo(){
+	NAME=$@
+	mkdir $NAME
+	cd $NAME
+	gh repo create --template cpptemplate $NAME
+}
+
 # Use modern completion system
 autoload -Uz compinit
 compinit
