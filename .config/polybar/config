@@ -62,13 +62,31 @@ font-1 = "Iosevka Nerd Font:size=14;1"
 font-2 = "Iosevka Nerd Font:size=14;1"
 font-3 = "Iosevka Nerd Font:size=14;1"
 
-modules-left = dwm
+modules-left = ewmh
 modules-center = date
 modules-right = github wlan memory cpu battery
 
 tray-position = right
 tray-padding = 2
 tray-maxsize = 24
+
+[module/ewmh]
+type = internal/xworkspaces
+pin-workspaces = false
+enable-click = true
+enable-scroll = true
+
+label-active = " %name% "
+label-active-underline = ${xrdb:color2}
+
+label-occupied = " %name% "
+label-occupied-underline = ${xrdb:color1}
+
+label-urgent = " %name% "
+label-urgent-background = ${xrdb:color3}
+
+label-empty = ""
+label-empty-foreground = #555555
 
 [module/cpu]
 type = internal/cpu
