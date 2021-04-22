@@ -39,6 +39,7 @@ fi
 
 zplug load
 
+source ~/.zsh/vterm.zsh 
 source ~/.zsh/keybinds.zsh
 source ~/.zsh/aliases.zsh
 source ~/.zsh/extras.zsh
