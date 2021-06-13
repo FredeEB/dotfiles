@@ -18,7 +18,6 @@ alias lr="ls -lahR | sed -e '/^total.*$/d' -e '/.*\\.$/d'"
 alias ls='ls --color=auto'
 alias mv="mv -i"
 alias rf="rm -rf"
-alias r='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
@@ -42,7 +41,6 @@ alias c="clear"
 alias chat="ssh bun@chat.shazow.net"
 alias s="shutdown +60"
 alias z="zathura"
-alias rec="ffmpeg -f x11grab -s `xdpyinfo | grep dimensions | sed -r "s/.*([0-9]{4}x[0-9]{4}).*/\1/g"` -i :0.0 -f alsa -i default"
 #unsorted
 alias dk="setxkbmap dk"
 alias us="setxkbmap us"
