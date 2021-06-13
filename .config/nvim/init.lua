@@ -11,14 +11,15 @@ end
 
 -- general settings
 vim.o.autochdir = true
-vim.o.hidden = true
-vim.o.number = true
-vim.o.expandtab = true
-vim.o.smartcase = true
-vim.o.ignorecase = true
 vim.o.completeopt = 'menuone,noinsert,noselect'
+vim.o.expandtab = true
+vim.o.hidden = true
+vim.o.ignorecase = true
+vim.o.number = true
 vim.o.shiftwidth = 4
+vim.o.smartcase = true
 vim.o.tabstop = 4
+vim.o.wildmode = 'longest,list'
 
 local map = vim.api.nvim_set_keymap
 
