@@ -21,16 +21,7 @@ vim.o.smartcase = true
 vim.o.tabstop = 4
 vim.o.wildmode = 'longest,list'
 
-local map = vim.api.nvim_set_keymap
-
-map('n', '<Space>', '', {})
-vim.g.mapleader = ' '
-
-options = { noremap = true }
-map('n', '<leader>gs', ':G<CR>', options)
-map('n', '<C-x><C-f>', ':Lf<CR>', options)
-map('n', '<C-s>', ':w<CR>', options)
-
+require 'keybinds'
 require 'plugins'
 vim.cmd('colo dracula')
 
