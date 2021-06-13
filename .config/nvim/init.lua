@@ -23,44 +23,5 @@ vim.o.wildmode = 'longest,list'
 
 require 'keybinds'
 require 'plugins'
-vim.cmd('colo dracula')
-
 require 'lsps'
-
--- keybinds
---nmap <Space>gs :G<CR>
-
---set nocompatible
---set ignorecase
---set hlsearch
---set tabstop=4
---
---set cot=menuone,noinsert,noselect shm+=c
---
---set softtabstop=4
---set expandtab
---set shiftwidth=4
---set number
---set wildmode=longest,list
---set cc=100
---set completeopt-=preview
---filetype plugin indent on
---syntax on
---
---
---
---command! Format execute 'lua vim.lsp.buf.formatting()'
---
---:lua << EOF
---    local nvim_lsp = require('lspconfig')
---    local on_attach = function(_, bufnr)
---       require('completion').on_attach()
---    end
---    local servers = {'clangd', 'gopls', 'tsserver', 'rls'}
---    for _, lsp in ipairs(servers) do 
---        nvim_lsp[lsp].setup {
---           on_attach = on_attach,
---        }
---    end
---EOF
-
+vim.cmd('colo dracula')
