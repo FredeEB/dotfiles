@@ -17,8 +17,8 @@ HISTSIZE=1000
 SAVEHIST=1000
 HISTFILE=~/.zsh/history
 
-export VISUAL="emacsclient -t"
-export EDITOR="emacsclient -c"
+export VISUAL="nvim"
+export EDITOR=$VISUAL
 export BROWSER="firefox"
 
 #plugins
