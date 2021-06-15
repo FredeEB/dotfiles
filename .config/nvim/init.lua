@@ -16,6 +16,7 @@ vim.o.expandtab = true
 vim.o.hidden = true
 vim.o.ignorecase = true
 vim.o.number = true
+vim.o.scrolloff = 15
 vim.o.shiftwidth = 4
 vim.o.smartcase = true
 vim.o.tabstop = 4
