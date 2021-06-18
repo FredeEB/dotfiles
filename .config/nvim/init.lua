@@ -22,7 +22,7 @@ vim.o.smartcase = true
 vim.o.tabstop = 4
 vim.o.wildmode = 'longest,list'
 
-require 'keybinds'
 require 'plugins'
+require 'keybinds'
 require 'lsps'
 vim.cmd('colo dracula')
