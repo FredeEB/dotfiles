@@ -22,4 +22,5 @@ return require('packer').startup(function()
     use 'glacambre/firenvim'
     use {'nvim-telescope/telescope.nvim', requires = {{'nvim-lua/popup.nvim'}, {'nvim-lua/plenary.nvim'}}}
     use {'lewis6991/gitsigns.nvim', requires = {{'nvim-lua/plenary.nvim'}}, config = function() require('gitsigns').setup() end}
+    use 'glepnir/lspsaga.nvim'
 end)
