@@ -3,6 +3,7 @@
 
 # install zplug if not already installed
 export ZPLUG_HOME=$HOME/.config/zplug
+export PATH=$HOME/.local/bin:$PATH
 
 [[ ! -d $ZPLUG_HOME ]] && git clone https://github.com/zplug/zplug $ZPLUG_HOME
 source $ZPLUG_HOME/init.zsh
