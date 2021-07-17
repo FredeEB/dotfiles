@@ -4,6 +4,8 @@ set ifs '\n'
 
 set scrolloff 10
 
+map <esc> quit
+
 map x $$f
 map X !$f
 
