@@ -44,7 +44,3 @@ source ~/.zsh/vterm.zsh
 source ~/.zsh/keybinds.zsh
 source ~/.zsh/aliases.zsh
 source ~/.zsh/extras.zsh
-
-if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
-    tmux attach -t default || tmux new -s default
-fi
