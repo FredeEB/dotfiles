@@ -13,6 +13,9 @@ setopt histignorealldups sharehistory
 # Use emacs keybinds
 bindkey -e
 
+# update PATH
+export PATH=$HOME/.local/bin:$PATH
+
 # # Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=1000
 SAVEHIST=1000
