@@ -5,6 +5,8 @@ export PATH=$HOME/.local/bin:$PATH
 [[ ! -d $ZPLUG_HOME ]] && git clone https://github.com/zplug/zplug $ZPLUG_HOME
 source $ZPLUG_HOME/init.zsh
 
+[[ -f /usr/bin/keychain ]] && eval $(keychain --eval --quiet id_rsa)
+
 setopt histignorealldups sharehistory
 
 # Use emacs keybinds
