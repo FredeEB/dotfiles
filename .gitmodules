@@ -1,6 +1,6 @@
-[submodule ".config/tmux/tpm"]
-	path = .config/tmux/tpm
-	url = https://github.com/tmux-plugins/tpm
-[submodule ".config/nvim"]
-	path = .config/nvim
-	url = https://github.com/fredeeb/nvim
+[submodule "tmux/.config/tmux/tpm"]
+	path = tmux/.config/tmux/tpm
+	url = git@github.com:tmux-plugins/tpm
+[submodule "nvim/.config/nvim"]
+	path = nvim/.config/nvim
+	url = git@github.com:fredeeb/nvim
