@@ -1,6 +1,9 @@
 export XDG_CONFIG=$HOME/.config
 source $XDG_CONFIG/bash/aliases.bash
 
+if [[ -x "$(command -v keychain)" ]]; then
+    eval "$(keychain --eval --quiet id_rsa)"
+fi
 
 if [[ -x "$(command -v nvim)" ]]; then
     export EDITOR=nvim
