@@ -14,6 +14,10 @@ if [[ -x "$(command -v firefox)" ]]; then
     export BROWSER=firefox
 fi
 
+if [[ -x "$(command -v git)" ]]; then
+    source /usr/share/git/completion/git-completion.bash
+fi  
+
 #requires fzf
 if [[ -x "$(command -v fzf)" ]]; then
     source /usr/share/fzf/key-bindings.bash
