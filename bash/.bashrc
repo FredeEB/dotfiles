@@ -20,5 +20,9 @@ if [[ -x "$(command -v fzf)" ]]; then
     source /usr/share/fzf/completion.bash
 fi 
 
+#history file
+shopt -s histappend
+PROMT_COMMAND="history -a; history -n; $PROMT_COMMAND"
+
 #requires starship
 eval "$(starship init bash)"
