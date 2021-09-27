@@ -1,5 +1,6 @@
 export XDG_CONFIG=$HOME/.config
 source $XDG_CONFIG/bash/aliases.bash
+source $XDG_CONFIG/bash/functions.bash
 
 if [[ -x "$(command -v keychain)" ]]; then
     eval "$(keychain --eval --quiet id_rsa)"
