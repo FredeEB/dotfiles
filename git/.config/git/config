@@ -1,0 +1,6 @@
+[diff]
+    tool = nvim
+[difftool]
+    prompt = false
+[difftool "nvim"]
+    cmd = nvim -d "$LOCAL" "$REMOTE"
