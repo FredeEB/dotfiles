@@ -1,0 +1,129 @@
+configuration {
+	terminal: "alacritty";
+	run-command: "bash -c "{cmd}"";
+}
+
+* {
+    normal-foreground:           var(foreground);
+    orange:                      rgba ( 255, 184, 108, 100 % );
+    red:                         rgba ( 255, 85, 85, 100 % );
+    selected-active-foreground:  var(foreground);
+    pink:                        rgba ( 255, 121, 198, 100 % );
+    separatorcolor:              var(orange);
+    urgent-foreground:           var(red);
+    alternate-urgent-background: var(urgent-background);
+    normal-background:           var(background);
+    green:                       rgba ( 80, 250, 123, 100 % );
+    selection:                   rgba ( 68, 71, 90, 100 % );
+    spacing:                     2;
+    background-color:            var(normal-background);
+    alternate-active-foreground: var(selected-active-foreground);
+    alternate-active-background: var(selected-active-background);
+    selected-normal-foreground:  var(normal-background);
+    selected-urgent-background:  var(normal-background);
+    urgent-background:           var(normal-background);
+    alternate-normal-foreground: var(foreground);
+    background:                  rgba ( 40, 42, 54, 100 % );
+    alternate-normal-background: var(normal-background);
+    alternate-urgent-foreground: var(urgent-foreground);
+    cyan:                        rgba ( 139, 233, 253, 100 % );
+    border-color:                var(background-background);
+    comment:                     rgba ( 98, 114, 164, 100 % );
+    foreground:                  rgba ( 248, 248, 242, 100 % );
+    purple:                      rgba ( 189, 147, 249, 100 % );
+    yellow:                      rgba ( 241, 250, 140, 100 % );
+    current-line:                rgba ( 68, 71, 90, 100 % );
+    selected-normal-background:  var(orange);
+}
+element {
+    padding: 10px ;
+    spacing: 5px ;
+    border:  0;
+}
+element normal.normal {
+    background-color: var(normal-background);
+    text-color:       var(normal-foreground);
+}
+element normal.urgent {
+    background-color: var(urgent-background);
+    text-color:       var(urgent-foreground);
+}
+element normal.active {
+    background-color: var(active-background);
+    text-color:       var(active-foreground);
+}
+element selected.normal {
+    background-color: var(selected-normal-background);
+    text-color:       var(selected-normal-foreground);
+    border-radius:    5px ;
+}
+element selected.urgent {
+    background-color: var(selected-urgent-background);
+    text-color:       var(selected-urgent-foreground);
+}
+element selected.active {
+    background-color: var(selected-active-background);
+    text-color:       var(selected-active-foreground);
+}
+element alternate.normal {
+    background-color: var(alternate-normal-background);
+    text-color:       var(alternate-normal-foreground);
+}
+element alternate.urgent {
+    background-color: var(alternate-urgent-background);
+    text-color:       var(alternate-urgent-foreground);
+}
+element alternate.active {
+    background-color: var(alternate-active-background);
+    text-color:       var(alternate-active-foreground);
+}
+element-text {
+    background-color: rgba ( 0, 0, 0, 0 % );
+    text-color:       inherit;
+}
+element-icon {
+    background-color: rgba ( 0, 0, 0, 0 % );
+    size:             1.2000ch ;
+    text-color:       inherit;
+}
+window {
+    font: "Iosevka Nerd Font 20";
+    padding: 10px;
+    border: 0px;
+}
+mainbox {
+    padding:          10px;
+    background-color: inherit;
+    border:           0;
+}
+textbox {
+    text-color: var(foreground);
+}
+scrollbar {
+    border: 0;
+}
+button selected {
+    background-color: var(selected-normal-background);
+    text-color:       var(selected-normal-foreground);
+}
+inputbar {
+    padding:          1px ;
+    background-color: inherit;
+    spacing:          0;
+    text-color:       var(normal-foreground);
+    children:         [ entry ];
+}
+case-indicator {
+    spacing:    0;
+    text-color: var(normal-background);
+}
+entry {
+    padding:    10px ;
+    font:       "Iosevka Nerd Font 30";
+    spacing:    0;
+    text-color: var(normal-foreground);
+}
+prompt {
+    spacing:    0;
+    text-color: var(normal-foreground);
+}
