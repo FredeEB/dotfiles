@@ -24,8 +24,11 @@ if [[ -x "$(command -v fzf)" ]]; then
 fi 
 
 #history file
+export HISTSIZE=10000
+export HISTCONTROL=ignoreboth:erasedups
+export HISTIGNORE="ls:history"
 shopt -s histappend
-PROMT_COMMAND="history -a; history -n; $PROMT_COMMAND"
+PROMT_COMMAND="$PROMT_COMMAND; history -a"
 
 #requires starship
 eval "$(starship init bash)"
