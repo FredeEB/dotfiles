@@ -3,7 +3,7 @@ Description=Polybar
 
 [Service]
 Type=forking
-ExecStart=/home/bun/.config/polybar/launch.sh
+ExecStart=%h/.config/polybar/launch.sh
 Restart=always
 
 # Remove the limit in startup timeout, since emacs
