@@ -30,6 +30,10 @@ alias dcd="docker-compose up -d"
 alias dck="docker-compose down"
 alias dr="docker restart"
 
+#perf
+alias perf-rep="perf report -g 'graph,0.5,caller'"
+alias perf-rec="perf record -g"
+
 #misc
 alias c="clear"
 alias chat="ssh bun@chat.shazow.net"
