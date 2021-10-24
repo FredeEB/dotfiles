@@ -5,43 +5,6 @@ foreground = ${xrdb:foreground}
 highlight  = ${xrdb:color1}
 grey       = ${xrdb:color4}
 
-[module/dwm]
-type = internal/dwm
-override-redirect = true
-
-label-title = %title%
-label-title-padding = 1
-label-title-foreground = $highlight
-label-title-maxlen = 30
-
-label-layout = %symbol%
-label-layout-padding = 1
-label-layout-background = $highlight
-
-; focused = Selected tag on focused monitor
-label-focused-background = ${xrdb:background}
-label-focused-underline= ${xrdb:color9}
-label-focused-padding = 1
-
-label-unfocused = %name%
-label-unfocused-underline= ${xrdb:color9}
-label-unfocused-padding = 1
-
-; visible = Unselected tag, but occupied tag on any monitor
-label-visible-underline = ${xrdb:color2}
-label-visible-padding = 1
-
-; urgent = Unselected tag with window that has urgency hint set
-label-urgent = %name%
-label-urgent-background = ${xrdb:color5}
-label-urgent-padding = 1
-
-; empty = Unselected and unoccupied tag
-; This can be set to an empty string to hide empty tags
-label-empty = %name%
-label-empty-background = ${xrdb:background}
-label-empty-padding = 1
-
 [bar/main]
 width = 100%
 height = 2%
@@ -62,44 +25,12 @@ font-1 = "Iosevka Nerd Font:size=14;1"
 font-2 = "Iosevka Nerd Font:size=14;1"
 font-3 = "Iosevka Nerd Font:size=14;1"
 
-modules-left = ewmh
 modules-center = date
-modules-right = github wlan memory cpu battery
+modules-right = wlan memory cpu battery
 
 tray-position = right
 tray-padding = 2
 tray-maxsize = 24
-
-[module/xwindow]
-type = internal/xwindow
-label = %title:0:30:...%
-
-[module/pomodoro]
-type = custom/script
-
-exec = $HOME/.config/polybar/scripts/pomodoro.sh
-tail = true
-
-click-left = pkill pomodoro.sh
-format-underline = #ff5555
-
-[module/ewmh]
-type = internal/xworkspaces
-pin-workspaces = false
-enable-click = true
-enable-scroll = true
-
-label-active = " %name% "
-label-active-underline = ${xrdb:color2}
-
-label-occupied = " %name% "
-label-occupied-underline = ${xrdb:color1}
-
-label-urgent = " %name% "
-label-urgent-background = ${xrdb:color3}
-
-label-empty = ""
-label-empty-foreground = #555555
 
 [module/cpu]
 type = internal/cpu
@@ -124,12 +55,6 @@ format-connected-underline = #9f78e1
 label-connected = %essid%
 
 label-disconnected =
-
-ramp-signal-0 = 🌧
-ramp-signal-1 = 🌦
-ramp-signal-2 = 🌥
-ramp-signal-3 = 🌤
-ramp-signal-4 = 🌣
 
 [module/battery]
 type = internal/battery
@@ -158,12 +83,6 @@ format-prefix-foreground = ${colors.foreground}
 format-underline = #ff79c6
 
 label = %date% %time%
-
-[module/github]
-type = internal/github
-
-token = ${file:$HOME/.local/share/github/access.token}
-user = fredeeb
 
 [settings]
 screenchange-reload = true
