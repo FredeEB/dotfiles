@@ -60,15 +60,15 @@ scrolling:
 
 font:
   normal:
-    family: Iosevka Nerd Font Mono
-    style: Light
-  bold:
-    family: Iosevka Nerd Font Mono
+    family: Iosevka
     style: regular
+  bold:
+    family: Iosevka
+    style: bold
   italic:
-    family: Iosevka Nerd Font Mono
+    family: Iosevka
     style: Light Italic
-  size: 7.0
+  size: 9.5
   offset:
     x: 0
     y: -2
