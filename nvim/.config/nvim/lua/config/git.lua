@@ -14,7 +14,6 @@ require('diffview').setup({
 m.keys_for_filetype{
     {'DiffviewFiles', 'n', 'q', '<cmd>DiffviewClose<cr>'},
     {'DiffviewFileHistory', 'n', 'q', '<cmd>DiffviewClose<cr>'},
-
     {'git', 'n', 'q', '<cmd>q<cr>'}
 }
 
