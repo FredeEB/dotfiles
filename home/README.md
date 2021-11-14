@@ -9,7 +9,7 @@ It's based on:
 - polybar
 - others...
 
-and my fork of [dwm](https://github.com/fredeeb/dwm).
+and my very basic (ripoff of wiki) [penrose client](https://github.com/fredeeb/penrose)
 
 The abovementioned packages need to be installed from wherever you install your packages, as they of course rely on some executables.
 
