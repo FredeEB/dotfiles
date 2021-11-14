@@ -42,7 +42,6 @@ return require('packer').startup(function()
     use {'hrsh7th/cmp-path'}
     use {'ray-x/cmp-treesitter'}
     use {'hrsh7th/nvim-cmp'}
-    use {'glepnir/lspsaga.nvim'}
     use {'theprimeagen/refactoring.nvim'}
     use {'neovim/nvim-lsp'}
 
