@@ -54,7 +54,7 @@ return require('packer').startup(function()
     use {'ggandor/lightspeed.nvim'}
     use {'folke/which-key.nvim'}
     use {'rcarriga/nvim-notify'}
-    use {'windwp/nvim-autopairs'}
+    use {'steelsojka/pears.nvim'}
     use {'prabirshrestha/async.vim'}
     use {'tpope/vim-surround'}
     use {'tpope/vim-abolish'}

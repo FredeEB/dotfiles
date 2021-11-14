@@ -22,11 +22,8 @@ vim.g.vimwiki_list = {{
     ext = '.md'
 }}
 
--- autopairs
-require('nvim-autopairs').setup {
-    check_ts = true,
-    disable_filetype = { 'TelescopePrompt' },
-}
+-- pears
+require('pears').setup()
 
 -- vim commentary
 m.keys {
