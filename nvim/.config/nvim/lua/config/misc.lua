@@ -15,12 +15,6 @@ m.keys {
     {'n', '<C-l>', [[<cmd>TmuxNavigateRight<cr>]]}
 }
 
--- wiki
-vim.g.vimwiki_list = {{
-    path = '~/wiki',
-    syntax = 'markdown',
-    ext = '.md'
-}}
 -- harpoon
 require('harpoon').setup()
 m.keys {

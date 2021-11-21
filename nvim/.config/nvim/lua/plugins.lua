@@ -65,7 +65,6 @@ return require('packer').startup(function()
     use {'christoomey/vim-tmux-navigator'}
     use {'andersevenrud/compe-tmux', branch = 'cmp'}
     use {'lukas-reineke/format.nvim'}
-    use {'vimwiki/vimwiki'}
     use {'kabbamine/zeavim.vim'}
     use {'theprimeagen/harpoon'}
 
