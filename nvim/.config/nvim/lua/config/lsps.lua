@@ -74,9 +74,6 @@ nvim_lsp.sumneko_lua.setup {
     capabilities = client_capabilities
 }
 
--- refactoring
-require('refactoring').setup()
-
 --keybinds
 local m = require('functions.keymap')
 m.keys{
