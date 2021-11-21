@@ -67,6 +67,7 @@ return require('packer').startup(function()
     use {'lukas-reineke/format.nvim'}
     use {'vimwiki/vimwiki'}
     use {'kabbamine/zeavim.vim'}
+    use {'theprimeagen/harpoon'}
 
     -- theme
     use {'nvim-lualine/lualine.nvim', requires = {{'kyazdani42/nvim-web-devicons'}}}
