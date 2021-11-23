@@ -78,4 +78,5 @@ return require('packer').startup(function()
     use {'sindrets/diffview.nvim'}
     use {'rhysd/git-messenger.vim'}
     use {'kdheepak/lazygit.nvim'}
+    use {'tpope/vim-fugitive'}
 end)
