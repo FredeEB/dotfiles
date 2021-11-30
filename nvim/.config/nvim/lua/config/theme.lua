@@ -9,6 +9,10 @@ local function lualine_or_tmux_git()
     end
 end
 
+local function relative_file_name()
+    return vim.fn.expand('%')
+end
+
 -- lualine setup
 require('lualine').setup({
     options = { 
@@ -18,7 +22,7 @@ require('lualine').setup({
     sections = {
         lualine_a = {'mode'},
         lualine_b = {lualine_or_tmux_git},
-        lualine_c = {'filename'},
+        lualine_c = {relative_file_name},
         lualine_x = {'filetype'},
         lualine_y = {'progress'},
         lualine_z = {'location'}
