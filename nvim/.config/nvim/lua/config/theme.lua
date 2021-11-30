@@ -1,4 +1,4 @@
-local lualine_or_tmux_git = function()
+local function lualine_or_tmux_git()
     if (os.getenv("TMUX") == nil) then
         local file = io.popen('git branch --show', 'r')
         local res = file:read()

@@ -1,6 +1,6 @@
 -- telescope extensions
 local ts = require('telescope')
-ts.setup({
+ts.setup {
     extensions = {
         fzf = {
             fuzzy = true,
@@ -9,7 +9,7 @@ ts.setup({
             case_mode = "smart_case",
         }
     }
-})
+}
 ts.load_extension('git_worktree')
 ts.load_extension('notify')
 ts.load_extension('project')

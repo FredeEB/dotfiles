@@ -13,7 +13,7 @@ vim.cmd('packadd packer.nvim')
 -- autoload file when it changes
 vim.cmd('autocmd BufWritePost plugins.lua source <afile> | PackerCompile')
 
-return require('packer').startup(function()
+return require('packer').startup(function(use)
     -- packagemanager, kept optional as it's bootstrapped in init.lua
     use {'wbthomason/packer.nvim', opt = true}
 
@@ -28,7 +28,7 @@ return require('packer').startup(function()
     -- telescope
     use {'nvim-telescope/telescope-project.nvim'}
     use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
-    use {'nvim-telescope/telescope.nvim'} 
+    use {'nvim-telescope/telescope.nvim'}
 
     -- snippets
     use {'honza/vim-snippets'}
@@ -71,7 +71,7 @@ return require('packer').startup(function()
     -- theme
     use {'nvim-lualine/lualine.nvim', requires = {{'kyazdani42/nvim-web-devicons'}}}
     use {'fredeeb/dracula.nvim'}
-    
+
     -- git
     use {'lewis6991/gitsigns.nvim'}
     use {'theprimeagen/git-worktree.nvim'}
