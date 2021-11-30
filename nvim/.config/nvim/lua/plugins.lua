@@ -75,7 +75,6 @@ return require('packer').startup(function(use)
     -- git
     use {'lewis6991/gitsigns.nvim'}
     use {'theprimeagen/git-worktree.nvim'}
-    use {'sindrets/diffview.nvim'}
     use {'rhysd/git-messenger.vim'}
     use {'kdheepak/lazygit.nvim'}
     use {'tpope/vim-fugitive'}
