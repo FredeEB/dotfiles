@@ -1,7 +1,4 @@
 local m = require('functions.keymap')
--- which key
-require('which-key').setup()
-vim.o.timeoutlen = 400
 
 -- notify
 vim.notify = require('notify')

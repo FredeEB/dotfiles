@@ -51,7 +51,6 @@ return require('packer').startup(function(use)
     use {'andymass/vim-matchup'}
     use {'kevinhwang91/nvim-bqf'}
     use {'ggandor/lightspeed.nvim'}
-    use {'folke/which-key.nvim'}
     use {'folke/trouble.nvim'}
     use {'rcarriga/nvim-notify'}
     use {'steelsojka/pears.nvim'}
