@@ -4,7 +4,6 @@ vim.o.completeopt = 'menuone,noinsert,noselect'
 vim.o.expandtab = true
 vim.o.hidden = true
 vim.o.ignorecase = true
-vim.o.rnu = true
 vim.o.nu = true
 vim.o.scrolloff = 15
 vim.o.shiftwidth = 4
