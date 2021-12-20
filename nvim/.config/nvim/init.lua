@@ -91,7 +91,6 @@ require('packer').startup(function(use)
     use {'nvim-treesitter/nvim-treesitter'}
 
     -- telescope
-    use {'nvim-telescope/telescope-project.nvim'}
     use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
     use {'nvim-telescope/telescope.nvim'}
 
@@ -116,31 +115,24 @@ require('packer').startup(function(use)
     use {'andymass/vim-matchup'}
     use {'kevinhwang91/nvim-bqf'}
     use {'ggandor/lightspeed.nvim'}
-    use {'folke/trouble.nvim'}
     use {'rcarriga/nvim-notify'}
     use {'steelsojka/pears.nvim'}
-    use {'prabirshrestha/async.vim'}
     use {'tpope/vim-surround'}
-    use {'tpope/vim-abolish'}
     use {'tpope/vim-commentary'}
-    use {'kkoomen/vim-doge'}
     use {'mbbill/undotree'}
-    use {'neomake/neomake'}
     use {'christoomey/vim-tmux-navigator'}
     use {'andersevenrud/cmp-tmux'}
-    use {'lukas-reineke/format.nvim'}
     use {'kabbamine/zeavim.vim'}
     use {'theprimeagen/harpoon'}
 
     -- theme
     use {'nvim-lualine/lualine.nvim', requires = {{'kyazdani42/nvim-web-devicons'}}}
-    use {'fredeeb/dracula.nvim'}
+    use {'mofiqul/dracula.nvim'}
 
     -- git
     use {'lewis6991/gitsigns.nvim'}
     use {'theprimeagen/git-worktree.nvim'}
     use {'rhysd/git-messenger.vim'}
-    use {'kdheepak/lazygit.nvim'}
     use {'tpope/vim-fugitive'}
 end)
 m.keys_for_filetype{
@@ -288,7 +280,6 @@ ts.setup {
 }
 ts.load_extension('git_worktree')
 ts.load_extension('notify')
-ts.load_extension('project')
 ts.load_extension('fzf')
 
 m.keys{ -- regular keybinds
@@ -303,7 +294,6 @@ m.keys{ -- regular keybinds
 }
 
 m.keys{ -- extensions
-    {'n', '<leader>j', [[<cmd>lua require('telescope').extensions.project.project{}<cr>]]},
     {'n', '<leader>gw', [[<cmd>lua require('telescope').extensions.git_worktree.git_worktrees()<cr>]]},
     {'n', '<leader>gtc', [[<cmd>lua require('telescope').extensions.git_worktree.create_git_worktree()<cr>]]},
 }
