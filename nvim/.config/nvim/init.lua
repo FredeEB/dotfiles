@@ -257,15 +257,6 @@ m.keys{
     {'n', '<leader>rq', [[<cmd>lua vim.lsp.diagnostic.show_line_diagnostics(); vim.lsp.util.show_line_diagnostics()<CR> ]]}
 }
 
--- tmux
-vim.g.tmux_navigator_no_mappings = 1
-m.keys {
-    {'n', '<C-h>', [[<cmd>TmuxNavigateLeft<cr>]]},
-    {'n', '<C-j>', [[<cmd>TmuxNavigateDown<cr>]]},
-    {'n', '<C-k>', [[<cmd>TmuxNavigateUp<cr>]]},
-    {'n', '<C-l>', [[<cmd>TmuxNavigateRight<cr>]]}
-}
-
 -- harpoon
 require('harpoon').setup()
 m.keys {
