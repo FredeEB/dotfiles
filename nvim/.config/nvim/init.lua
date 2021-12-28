@@ -128,6 +128,7 @@ require('packer').startup(function(use)
     use {'christoomey/vim-tmux-navigator'}
     use {'kabbamine/zeavim.vim'}
     use {'theprimeagen/harpoon'}
+    use {'mickael-menu/zk-nvim'}
 
     -- theme
     use {'nvim-lualine/lualine.nvim', requires = {{'kyazdani42/nvim-web-devicons'}}}
@@ -275,6 +276,10 @@ ts.load_extension('git_worktree')
 ts.load_extension('notify')
 ts.load_extension('fzf')
 
+-- zk
+require('zk').setup()
+ts.load_extension('zk')
+
 m.keys{ -- regular keybinds
     {'n', '<leader>fd', [[<cmd>Telescope file_browser<cr>]]},
     {'n', '<leader>ff', [[<cmd>Telescope find_files<cr>]]},
@@ -291,13 +296,22 @@ m.keys{ -- extensions
     {'n', '<leader>gtc', [[<cmd>lua require('telescope').extensions.git_worktree.create_git_worktree()<cr>]]},
 }
 
+local notes_path = vim.fn.expand('$HOME') .. '/git/notes'
+
+m.keys{
+    {'n', '<leader>zi', [[<cmd>lua require('zk').index(nil, { dir = notes_path })<cr>]]},
+    {'n', '<leader>zn', [[<cmd>lua require('zk').new(nil, { dir = notes_path })<cr>]]},
+    {'v', '<leader>zn', [[<cmd>lua require('zk').new_link(nil, { dir = notes_path })<cr>]]},
+    {'n', '<leader>zl', [[<cmd>lua require('zk').list(nil, { dir = notes_path })<cr>]]},
+
+}
+
 -- treesitter
 require('nvim-treesitter.configs').setup({
     -- Don't do the following without internet
     ensure_installed = 'maintained',
     -- enable all the treesitter features
     highlight = { enable = true },
-    indent = { enable = true },
     incremental_selection = { enable = true },
     matchup = { enable = true },
 })
