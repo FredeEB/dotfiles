@@ -106,6 +106,7 @@ require('packer').startup(function(use)
     use {'hrsh7th/cmp-buffer'}
     use {'hrsh7th/cmp-path'}
     use {'ray-x/cmp-treesitter'}
+    use {'andersevenrud/cmp-tmux'}
     use {'hrsh7th/nvim-cmp'}
 
     -- lsp
@@ -125,7 +126,6 @@ require('packer').startup(function(use)
     use {'tpope/vim-commentary'}
     use {'mbbill/undotree'}
     use {'christoomey/vim-tmux-navigator'}
-    use {'andersevenrud/cmp-tmux'}
     use {'kabbamine/zeavim.vim'}
     use {'theprimeagen/harpoon'}
 
@@ -139,10 +139,11 @@ require('packer').startup(function(use)
     use {'rhysd/git-messenger.vim'}
     use {'tpope/vim-fugitive'}
 end)
+
+-- git
 m.keys_for_filetype{
     {'fugitive', 'n', 'q', 'gq'},
     {'fugitiveblame', 'n', 'q', 'gq'},
-
     {'git', 'n', 'q', '<cmd>q<cr>'}
 }
 
@@ -154,10 +155,8 @@ m.keys{
     {'n', '<leader>gm', [[<cmd>GitMessenger<cr>]]},
 }
 
--- lsp
+-- cmp
 local cmp = require('cmp')
-local client_capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
-
 cmp.setup {
     snippet = {
         expand = function(args)
@@ -182,15 +181,8 @@ cmp.setup {
 }
 
 
+-- lsp
 local nvim_lsp = require('lspconfig')
--- clangd and lua are handled externally
-local lsps = {
-    'cmake',
-    'gopls',
-    'pylsp',
-    'rust_analyzer',
-    'tsserver',
-}
 require('lsp_signature').setup()
 
 -- disable virtual text
@@ -208,8 +200,10 @@ local function on_init(client)
     client.config.flags.debounce_text_change = 150
 end
 
+local client_capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-for _, lsp in ipairs(lsps) do
+-- clangd and lua are handled externally
+for _, lsp in ipairs {'cmake', 'gopls', 'pylsp', 'rust_analyzer', 'tsserver', 'zls'} do
     nvim_lsp[lsp].setup {
         capabilities = client_capabilities,
         on_init = on_init
@@ -223,9 +217,6 @@ nvim_lsp.clangd.setup {
         "--all-scopes-completion",
         "--background-index",
         "--clang-tidy",
-        "--cross-file-rename",
-        "--suggest-missing-includes",
-        "--log=verbose"
     },
     capabilities = client_capabilities,
     on_init = on_init
