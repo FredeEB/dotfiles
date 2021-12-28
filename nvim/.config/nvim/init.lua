@@ -101,13 +101,16 @@ require('packer').startup(function(use)
     use {'dawikur/algorithm-mnemonics.vim'}
     use {'sirver/ultisnips'}
 
-    -- lsp
+    -- cmp
     use {'hrsh7th/cmp-nvim-lsp'}
     use {'hrsh7th/cmp-buffer'}
     use {'hrsh7th/cmp-path'}
     use {'ray-x/cmp-treesitter'}
     use {'hrsh7th/nvim-cmp'}
+
+    -- lsp
     use {'neovim/nvim-lsp'}
+    use {'ray-x/lsp_signature.nvim'}
 
     -- debugging
     use {'sakhnik/nvim-gdb', run = './install.sh' }
@@ -178,6 +181,7 @@ cmp.setup {
     }
 }
 
+
 local nvim_lsp = require('lspconfig')
 -- clangd and lua are handled externally
 local lsps = {
@@ -187,6 +191,7 @@ local lsps = {
     'rust_analyzer',
     'tsserver',
 }
+require('lsp_signature').setup()
 
 -- disable virtual text
 vim.lsp.handlers["textDocument/publishDiagnostics"] =
