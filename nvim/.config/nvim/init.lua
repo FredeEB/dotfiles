@@ -187,8 +187,16 @@ local lsps = {
     'tsserver',
 }
 
+-- disable virtual text
 vim.lsp.handlers["textDocument/publishDiagnostics"] =
-    vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics, { update_in_insert = true })
+    vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics,
+    {
+        update_in_insert = true,
+        virtual_text = false
+    })
+-- show diagnostics in floating window
+vim.o.updatetime = 250
+vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false, scope="cursor"})]]
 
 local function on_init(client)
     client.config.flags.debounce_text_change = 150
