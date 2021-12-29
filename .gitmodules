@@ -4,6 +4,3 @@
 [submodule "nvim/.config/nvim"]
 	path = nvim/.config/nvim
 	url = git@github.com:fredeeb/nvim
-[submodule "bash/fzf-tab-completion"]
-	path = bash/.local/fzf-tab-completion
-	url = http://github.com/lincheney/fzf-tab-completion
