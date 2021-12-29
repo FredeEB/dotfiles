@@ -96,10 +96,10 @@ require('packer').startup(function(use)
     use {'nvim-telescope/telescope.nvim'}
 
     -- snippets
-    use {'honza/vim-snippets'}
-    use {'quangnguyen30192/cmp-nvim-ultisnips'}
     use {'dawikur/algorithm-mnemonics.vim'}
-    use {'sirver/ultisnips'}
+    use {'dcampos/nvim-snippy'}
+    use {'dcampos/cmp-snippy'}
+    use {'honza/vim-snippets'}
 
     -- cmp
     use {'hrsh7th/cmp-nvim-lsp'}
@@ -160,9 +160,7 @@ m.keys{
 local cmp = require('cmp')
 cmp.setup {
     snippet = {
-        expand = function(args)
-            vim.fn['UltiSnips#Anon'](args.body)
-        end
+        expand = function(args) require('snippy').expand_snippet(args.body) end
     },
     mapping = {
         ['<C-d>'] = cmp.mapping.scroll_docs(-4),
@@ -173,7 +171,7 @@ cmp.setup {
     },
     sources = {
         { name = 'nvim_lsp' },
-        { name = 'ultisnips' },
+        { name = 'snippy' },
         { name = 'buffer'},
         { name = 'path'},
         { name = 'treesitter'},
@@ -181,6 +179,18 @@ cmp.setup {
     }
 }
 
+-- snippets
+require('snippy').setup {
+    mappings = {
+        is = {
+            ["<Tab>"] = "expand_or_advance",
+            ["<S-Tab>"] = "previous",
+        },
+        nx = {
+            ["<leader>"] = "cut_text",
+        },
+    },
+}
 
 -- lsp
 local nvim_lsp = require('lspconfig')
