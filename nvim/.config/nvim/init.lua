@@ -129,6 +129,7 @@ require('packer').startup(function(use)
     use {'kabbamine/zeavim.vim'}
     use {'theprimeagen/harpoon'}
     use {'mickael-menu/zk-nvim'}
+    use {'neomake/neomake'}
 
     -- theme
     use {'nvim-lualine/lualine.nvim', requires = {{'kyazdani42/nvim-web-devicons'}}}
