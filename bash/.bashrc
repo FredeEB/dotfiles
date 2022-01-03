@@ -23,6 +23,8 @@ if [[ -x "$(command -v fzf)" ]]; then
     source /usr/share/fzf/completion.bash
 fi 
 
+bind Space:magic-space
+
 #history file
 export HISTSIZE=10000
 export HISTCONTROL=ignoreboth:erasedups
