@@ -275,9 +275,6 @@ m.keys {
     {'n', '<M-k>', [[<cmd>lua require('harpoon.ui').nav_file(2)<cr>]]},
     {'n', '<M-l>', [[<cmd>lua require('harpoon.ui').nav_file(3)<cr>]]},
     {'n', '<M-;>', [[<cmd>lua require('harpoon.ui').nav_file(4)<cr>]]},
-
-    {'n', '<M-c>', [[<cmd>lua require('harpoon.cmd-ui').toggle_quick_menu()<cr>]]},
-    {'n', '<M-b>', [[<cmd>lua require('harpoon.tmux').sendCommand(1, 1)<cr>]]},
 }
 
 -- telescope extensions
