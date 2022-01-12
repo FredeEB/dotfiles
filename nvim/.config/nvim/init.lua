@@ -40,7 +40,7 @@ m.keys{ -- clipboard
     {'v', '<leader>y', '"+y'},
     {'n', '<leader>y', '"+y'},
     {'n', '<leader>Y', '"+Y'},
-    {'v', '<leader>y', '"+p'},
+    {'v', '<leader>p', '"+p'},
     {'n', '<leader>p', '"+p'},
     {'n', '<leader>P', '"+P'},
 }
