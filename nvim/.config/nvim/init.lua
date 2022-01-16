@@ -101,6 +101,7 @@ require('packer').startup(function(use)
     -- telescope
     use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
     use {'nvim-telescope/telescope.nvim'}
+    use {"nvim-telescope/telescope-file-browser.nvim"}
 
     -- snippets
     use {'dawikur/algorithm-mnemonics.vim'}
@@ -291,6 +292,7 @@ ts.setup {
 }
 ts.load_extension('git_worktree')
 ts.load_extension('fzf')
+ts.load_extension('file_browser')
 
 -- zk
 require('zk').setup()
