@@ -127,7 +127,6 @@ require('packer').startup(function(use)
     use {'andymass/vim-matchup'}
     use {'kevinhwang91/nvim-bqf'}
     use {'ggandor/lightspeed.nvim'}
-    use {'rcarriga/nvim-notify'}
     use {'steelsojka/pears.nvim'}
     use {'tpope/vim-surround'}
     use {'tpope/vim-commentary'}
@@ -291,7 +290,6 @@ ts.setup {
     }
 }
 ts.load_extension('git_worktree')
-ts.load_extension('notify')
 ts.load_extension('fzf')
 
 -- zk
@@ -387,9 +385,6 @@ vim.g.dracula_transparent_bg = true
 vim.g.dracula_lualine_bg_color = "#44475a"
 vim.g.dracula_show_end_of_buffer = true
 vim.cmd('colorscheme dracula')
-
--- notify
-vim.notify = require('notify')
 
 -- pears
 require('pears').setup()
