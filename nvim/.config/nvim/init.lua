@@ -341,18 +341,6 @@ m.keys {
     {'o', 'au', [[:<c-u>lua require('treesitter-unit').select(true)<cr>]]},
 }
 
--- theme
-local function lualine_or_tmux_git()
-    if (os.getenv("TMUX") == nil) then
-        local file = io.popen('git branch --show', 'r')
-        local res = file:read()
-        file:close()
-        return res
-    else
-        return ''
-    end
-end
-
 local function relative_file_name()
     return vim.fn.expand('%')
 end
@@ -365,7 +353,7 @@ require('lualine').setup({
     },
     sections = {
         lualine_a = {'mode'},
-        lualine_b = {lualine_or_tmux_git},
+        lualine_b = {},
         lualine_c = {relative_file_name},
         lualine_x = {'filetype'},
         lualine_y = {'progress'},
