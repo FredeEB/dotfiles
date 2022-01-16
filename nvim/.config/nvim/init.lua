@@ -18,6 +18,13 @@ local m = require('functions.keymap')
 m.key('n', '<Space>', '', {})
 vim.g.mapleader = ' '
 
+m.keys{ -- escape keychords
+    {'i', 'kl', '<esc>'},
+    {'i', 'lk', '<esc>'},
+    {'v', 'kl', '<esc>'},
+    {'v', 'lk', '<esc>'},
+}
+
 m.keys{ -- undo tags
     {'i', ',', [[<C-g>u,]]},
     {'i', '.', [[<C-g>u.]]},
