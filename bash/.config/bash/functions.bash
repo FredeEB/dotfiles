@@ -14,7 +14,8 @@ function gl() {
             --bind "ctrl-u:preview-page-up" \
             --bind "ctrl-s:execute(git show {1})" \
             --bind "ctrl-o:execute(git checkout {1})+accept" \
-            --bind "ctrl-r:execute(git rebase -i {1})+accept"
+            --bind "ctrl-r:execute(git rebase -i {1})+accept" \
+            --bind "ctrl-m:execute(git show {1})+accept"
 }; export -f gl
 
 function gbr() {
