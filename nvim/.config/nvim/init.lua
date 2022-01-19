@@ -183,8 +183,8 @@ cmp.setup {
 require('snippy').setup {
     mappings = {
         is = {
-            ["<Tab>"] = "expand_or_advance",
-            ["<S-Tab>"] = "previous",
+            ["<C-j>"] = "expand_or_advance",
+            ["<C-k>"] = "previous",
         },
         nx = {
             ["<leader>"] = "cut_text",
