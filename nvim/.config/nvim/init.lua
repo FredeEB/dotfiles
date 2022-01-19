@@ -146,21 +146,15 @@ require('packer').startup(function(use)
     use {'lewis6991/gitsigns.nvim'}
     use {'theprimeagen/git-worktree.nvim'}
     use {'rhysd/git-messenger.vim'}
-    use {'tpope/vim-fugitive'}
+    use {'timuntersberger/neogit'}
 end)
 
--- git
-m.keys_for_filetype{
-    {'fugitive', 'n', 'q', 'gq'},
-    {'fugitiveblame', 'n', 'q', 'gq'},
-    {'git', 'n', 'q', '<cmd>q<cr>'}
+require('neogit').setup{
+    disable_commit_confirmation = true
 }
 
 m.keys{
-    {'n', '<leader>gs', [[<cmd>G<cr>]]},
-    {'n', '<leader>gb', [[<cmd>G blame<cr>]]},
-    {'n', '<leader>gll', [[<cmd>Gclog<cr>]]},
-    {'n', '<leader>glf', [[<cmd>Gclog %<cr>]]},
+    {'n', '<leader>gs', [[<cmd>Neogit<cr>]]},
     {'n', '<leader>gm', [[<cmd>GitMessenger<cr>]]},
 }
 
