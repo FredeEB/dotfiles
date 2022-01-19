@@ -292,7 +292,7 @@ ts.load_extension('zk')
 
 m.keys{ -- regular keybinds
     {'n', '<leader>fd', [[<cmd>Telescope file_browser<cr>]]},
-    {'n', '<leader>ff', [[<cmd>Telescope find_files<cr>]]},
+    {'n', '<leader>ff', [[<cmd>lua require('telescope.builtin').find_files()<cr>]]},
     {'n', '<leader>fg', [[<cmd>Telescope live_grep<cr>]]},
     {'n', '<leader>fr', [[<cmd>Telescope grep_string<cr>]]},
     {'n', '<leader>fe', [[<cmd>e ~/.config/nvim/init.lua<cr>]]},
