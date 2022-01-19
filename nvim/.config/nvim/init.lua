@@ -130,7 +130,7 @@ require('packer').startup(function(use)
     use {'ggandor/lightspeed.nvim'}
     use {'steelsojka/pears.nvim'}
     use {'tpope/vim-surround'}
-    use {'tpope/vim-commentary'}
+    use {'numtostr/comment.nvim'}
     use {'mbbill/undotree'}
     use {'christoomey/vim-tmux-navigator'}
     use {'kabbamine/zeavim.vim'}
@@ -379,11 +379,8 @@ vim.cmd('colorscheme dracula')
 -- pears
 require('pears').setup()
 
--- vim commentary
-m.keys {
-    {'v', '<leader>a', [[:'<,'>Commentary<cr>]]},
-    {'n', '<leader>a', [[:Commentary<cr>]]},
-}
+-- comments
+require("Comment").setup{}
 
 -- undotree
 vim.g.undotree_WindowLayout = 2
