@@ -21,8 +21,6 @@ vim.g.mapleader = ' '
 m.keys{ -- escape keychords
     {'i', 'kl', '<esc>'},
     {'i', 'lk', '<esc>'},
-    {'v', 'kl', '<esc>'},
-    {'v', 'lk', '<esc>'},
 }
 
 m.keys{ -- undo tags
