@@ -280,6 +280,26 @@ ts.setup {
             override_file_sorter = true,
             case_mode = "smart_case",
         }
+    },
+    pickers = {
+        find_files = {
+            hidden = true,
+            file_ignore_patterns = {".git"}
+        }
+    },
+    defaults = {
+        vimgrep_arguments = {
+            'rg',
+            '--hidden',
+            '--ignore',
+            '--color=never',
+            '--no-heading',
+            '--with-filename',
+            '--line-number',
+            '--column',
+            '--trim',
+            '--smart-case'
+        },
     }
 }
 ts.load_extension('git_worktree')
