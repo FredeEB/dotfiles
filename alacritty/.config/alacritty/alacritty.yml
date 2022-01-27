@@ -23,6 +23,8 @@ window:
   #  x: 0
   #  y: 0
 
+  opacity: 0.9
+
   # Spread additional padding evenly around the terminal content.
   dynamic_padding: false
 
@@ -106,8 +108,6 @@ colors:
     magenta: '0xff92df'
     cyan:    '0xa4ffff'
     white:   '0xffffff'
-
-background_opacity: 0.9
 
 # Mouse bindings
 #
