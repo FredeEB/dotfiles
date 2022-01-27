@@ -124,7 +124,6 @@ require('packer').startup(function(use)
 
     -- misc utilities
     use {'andymass/vim-matchup'}
-    use {'kevinhwang91/nvim-bqf'}
     use {'ggandor/lightspeed.nvim'}
     use {'steelsojka/pears.nvim'}
     use {'tpope/vim-surround'}
