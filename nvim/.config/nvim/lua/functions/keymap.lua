@@ -3,7 +3,7 @@ local map = {}
 -- keybind convenience function
 function map.key(mode, mapping, cmd, options)
     options = options or { noremap = true }
-    vim.api.nvim_set_keymap(mode, mapping, cmd, options)
+    vim.keymap.set(mode, mapping, cmd, options)
 end
 -- map many keys at once
 function map.keys(maps, options)

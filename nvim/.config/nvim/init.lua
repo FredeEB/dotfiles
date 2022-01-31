@@ -142,18 +142,7 @@ require('packer').startup(function(use)
     -- git
     use {'lewis6991/gitsigns.nvim'}
     use {'theprimeagen/git-worktree.nvim'}
-    use {'rhysd/git-messenger.vim'}
-    use {'timuntersberger/neogit'}
 end)
-
-require('neogit').setup{
-    disable_commit_confirmation = true
-}
-
-m.keys{
-    {'n', '<leader>gs', [[<cmd>Neogit<cr>]]},
-    {'n', '<leader>gm', [[<cmd>GitMessenger<cr>]]},
-}
 
 -- cmp
 local cmp = require('cmp')
@@ -222,7 +211,8 @@ end
 
 -- clangd
 nvim_lsp.clangd.setup {
-    cmd = {"clangd",
+    cmd = {
+        "clangd",
         "--header-insertion=never",
         "--all-scopes-completion",
         "--background-index",
@@ -405,3 +395,11 @@ require('gitsigns').setup({
     }
 })
 
+m.keys{
+    {'n', '<leader>gq', [[<cmd>Gitsigns setqflist<cr>]]},
+    {{'n','v'}, '<leader>ga', [[<cmd>Gitsigns stage_hunk<cr>]]},
+    {{'n','v'}, '<leader>gr', [[<cmd>Gitsigns reset_hunk<cr>]]},
+    {{'n','v'}, '<leader>gu', [[<cmd>Gitsigns undo_stage_hunk<cr>]]},
+    {'n', '<leader>gp', [[<cmd>Gitsigns preview_hunk<cr>]]},
+    {'n', '<leader>gm', [[<cmd>Gitsigns blame_line<cr>]]},
+}
