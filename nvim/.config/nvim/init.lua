@@ -64,6 +64,7 @@ m.keys{ -- qfl
 }
 
 m.keys{ -- misc
+    {'n', '<leader>fe', [[<cmd>e ~/.config/nvim/init.lua<cr>]] },
     {'n', 'n', [[nzzzv]]},
     {'n', 'N', [[Nzzzv]]},
     {'n', 'J', [[mzJ`z]]},
@@ -237,26 +238,25 @@ nvim_lsp.sumneko_lua.setup {
 }
 
 m.keys{
-    {'n', 'gd', [[<cmd>lua vim.lsp.buf.definition()<CR>]]},
-    {'n', '<leader>ri', [[<cmd>lua vim.lsp.buf.implementation()<CR>]]},
-    {'n', '<leader>rs', [[<cmd>lua vim.lsp.buf.signature_help()<CR>]]},
-    {'n', '<leader>rr', [[<cmd>lua vim.lsp.buf.references()<CR>]]},
-    {'n', '<leader>ro', [[<cmd>lua vim.lsp.buf.rename()<CR>]]},
-    {'n', '<leader>rh', [[<cmd>lua vim.lsp.buf.hover()<CR>]]},
-    {'n', '<leader>re', [[<cmd>lua vim.lsp.buf.code_action()<CR>]]},
-    {'n', '<leader>rn', [[<cmd>lua vim.lsp.diagnostic.goto_next()<CR>]]},
-    {'n', '<leader>rq', [[<cmd>lua vim.lsp.diagnostic.show_line_diagnostics(); vim.lsp.util.show_line_diagnostics()<CR> ]]}
+    {'n', 'gd', vim.lsp.buf.definition },
+    {'n', '<leader>ri', vim.lsp.buf.implementation },
+    {'n', '<leader>rs', vim.lsp.buf.signature_help },
+    {'n', '<leader>rr', vim.lsp.buf.references },
+    {'n', '<leader>ro', vim.lsp.buf.rename },
+    {'n', '<leader>rh', vim.lsp.buf.hover },
+    {'n', '<leader>re', vim.lsp.buf.code_action },
+    {'n', '<leader>rn', vim.lsp.diagnostic.goto_next },
 }
 
 -- harpoon
 require('harpoon').setup()
 m.keys {
-    {'n', '<M-a>', [[<cmd>lua require('harpoon.mark').add_file()<cr>]]},
-    {'n', '<M-s>', [[<cmd>lua require('harpoon.ui').toggle_quick_menu()<cr>]]},
-    {'n', '<M-j>', [[<cmd>lua require('harpoon.ui').nav_file(1)<cr>]]},
-    {'n', '<M-k>', [[<cmd>lua require('harpoon.ui').nav_file(2)<cr>]]},
-    {'n', '<M-l>', [[<cmd>lua require('harpoon.ui').nav_file(3)<cr>]]},
-    {'n', '<M-;>', [[<cmd>lua require('harpoon.ui').nav_file(4)<cr>]]},
+    {'n', '<M-a>', function() require('harpoon.mark').add_file() end },
+    {'n', '<M-s>', function() require('harpoon.ui').toggle_quick_menu() end },
+    {'n', '<M-j>', function() require('harpoon.ui').nav_file(1) end },
+    {'n', '<M-k>', function() require('harpoon.ui').nav_file(2) end },
+    {'n', '<M-l>', function() require('harpoon.ui').nav_file(3) end },
+    {'n', '<M-;>', function() require('harpoon.ui').nav_file(4) end },
 }
 
 -- telescope extensions
@@ -299,30 +299,28 @@ ts.load_extension('file_browser')
 require('zk').setup()
 ts.load_extension('zk')
 
-m.keys{ -- regular keybinds
-    {'n', '<leader>fd', [[<cmd>Telescope file_browser<cr>]]},
-    {'n', '<leader>ff', [[<cmd>lua require('telescope.builtin').find_files()<cr>]]},
-    {'n', '<leader>fg', [[<cmd>Telescope live_grep<cr>]]},
-    {'n', '<leader>fr', [[<cmd>Telescope grep_string<cr>]]},
-    {'n', '<leader>fe', [[<cmd>e ~/.config/nvim/init.lua<cr>]]},
-    {'n', '<leader>b', [[<cmd>Telescope buffers<cr>]]},
-    {'n', '<leader>gb', [[<cmd>Telescope git_branches<cr>]]},
-    {'n', '<leader>h', [[<cmd>Telescope help_tags<cr>]]}
+m.keys{ -- telescope
+    {'n', '<leader>fd', function() require('telescope.builtin').file_browser() end },
+    {'n', '<leader>ff', function() require('telescope.builtin').find_files() end },
+    {'n', '<leader>fg', function() require('telescope.builtin').live_grep() end },
+    {'n', '<leader>fr', function() require('telescope.builtin').grep_string() end },
+    {'n', '<leader>b', function() require('telescope.builtin').buffers() end },
+    {'n', '<leader>gb', function() require('telescope.builtin').git_branches() end },
+    {'n', '<leader>h', function() require('telescope.builtin').help_tags() end }
 }
 
 m.keys{ -- extensions
-    {'n', '<leader>gw', [[<cmd>lua require('telescope').extensions.git_worktree.git_worktrees()<cr>]]},
-    {'n', '<leader>gtc', [[<cmd>lua require('telescope').extensions.git_worktree.create_git_worktree()<cr>]]},
+    {'n', '<leader>gw', function() require('telescope').extensions.git_worktree.git_worktrees() end },
+    {'n', '<leader>gtc', function() require('telescope').extensions.git_worktree.create_git_worktree() end },
 }
 
 local notes_path = vim.fn.expand('$HOME') .. '/git/notes'
 
 m.keys{
-    {'n', '<leader>zi', [[<cmd>lua require('zk').index(nil, { dir = notes_path })<cr>]]},
-    {'n', '<leader>zn', [[<cmd>lua require('zk').new(nil, { dir = notes_path })<cr>]]},
-    {'v', '<leader>zn', [[<cmd>lua require('zk').new_link(nil, { dir = notes_path })<cr>]]},
-    {'n', '<leader>zl', [[<cmd>lua require('zk').list(nil, { dir = notes_path })<cr>]]},
-
+    {'n', '<leader>zi', function() require('zk').index(nil, { dir = notes_path }) end },
+    {'n', '<leader>zn', function() require('zk').new(nil, { dir = notes_path }) end },
+    {'v', '<leader>zn', function() require('zk').new_link(nil, { dir = notes_path }) end },
+    {'n', '<leader>zl', function() require('zk').list(nil, { dir = notes_path }) end },
 }
 
 -- treesitter
@@ -336,10 +334,10 @@ require('nvim-treesitter.configs').setup({
 })
 
 m.keys {
-    {'x', 'iu', [[:lua require('treesitter-unit').select()<cr>]]},
-    {'x', 'au', [[:lua require('treesitter-unit').select(true)<cr>]]},
-    {'o', 'iu', [[:<c-u>lua require('treesitter-unit').select()<cr>]]},
-    {'o', 'au', [[:<c-u>lua require('treesitter-unit').select(true)<cr>]]},
+    {'x', 'iu', function() require('treesitter-unit').select() end },
+    {'x', 'au', function() require('treesitter-unit').select(true) end },
+    {'o', 'iu', function() require('treesitter-unit').select() end },
+    {'o', 'au', function() require('treesitter-unit').select(true) end },
 }
 
 local function relative_file_name()
@@ -396,10 +394,10 @@ require('gitsigns').setup({
 })
 
 m.keys{
-    {'n', '<leader>gq', [[<cmd>Gitsigns setqflist<cr>]]},
-    {{'n','v'}, '<leader>ga', [[<cmd>Gitsigns stage_hunk<cr>]]},
-    {{'n','v'}, '<leader>gr', [[<cmd>Gitsigns reset_hunk<cr>]]},
-    {{'n','v'}, '<leader>gu', [[<cmd>Gitsigns undo_stage_hunk<cr>]]},
-    {'n', '<leader>gp', [[<cmd>Gitsigns preview_hunk<cr>]]},
-    {'n', '<leader>gm', [[<cmd>Gitsigns blame_line<cr>]]},
+    {'n', '<leader>gq', require('gitsigns').setqflist },
+    {{'n','v'}, '<leader>ga', require('gitsigns').stage_hunk },
+    {{'n','v'}, '<leader>gr', require('gitsigns').reset_hunk },
+    {{'n','v'}, '<leader>gu', require('gitsigns').undo_stage_hunk },
+    {'n', '<leader>gp', require('gitsigns').preview_hunk },
+    {'n', '<leader>gm', require('gitsigns').blame_line },
 }
