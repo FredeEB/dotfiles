@@ -310,7 +310,6 @@ require('zk').setup()
 ts.load_extension('zk')
 
 m.keys{ -- telescope
-    {'n', '<leader>fd', function() require('telescope.builtin').file_browser() end },
     {'n', '<leader>ff', function() require('telescope.builtin').find_files() end },
     {'n', '<leader>fg', function() require('telescope.builtin').live_grep() end },
     {'n', '<leader>fr', function() require('telescope.builtin').grep_string() end },
@@ -320,6 +319,7 @@ m.keys{ -- telescope
 }
 
 m.keys{ -- extensions
+    {'n', '<leader>fd', function() require('telescope').extensions.file_browser.file_browser() end },
     {'n', '<leader>gw', function() require('telescope').extensions.git_worktree.git_worktrees() end },
     {'n', '<leader>gtc', function() require('telescope').extensions.git_worktree.create_git_worktree() end },
 }
