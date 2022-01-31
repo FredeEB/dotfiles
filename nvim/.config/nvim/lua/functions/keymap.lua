@@ -2,7 +2,7 @@ local map = {}
 -- these are some global functions for creating keybinds that make my config look neat
 -- keybind convenience function
 function map.key(mode, mapping, cmd, options)
-    options = options or { noremap = true }
+    options = options or { noremap = true, buffer = 0 }
     vim.keymap.set(mode, mapping, cmd, options)
 end
 -- map many keys at once
