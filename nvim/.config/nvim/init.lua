@@ -130,7 +130,7 @@ require('packer').startup(function(use)
     use {'tpope/vim-surround'}
     use {'numtostr/comment.nvim'}
     use {'mbbill/undotree'}
-    use {'christoomey/vim-tmux-navigator'}
+    use {'aserowy/tmux.nvim'}
     use {'kabbamine/zeavim.vim'}
     use {'theprimeagen/harpoon'}
     use {'mickael-menu/zk-nvim'}
@@ -144,6 +144,16 @@ require('packer').startup(function(use)
     use {'lewis6991/gitsigns.nvim'}
     use {'theprimeagen/git-worktree.nvim'}
 end)
+
+
+require('tmux').setup {
+    copy_sync = {
+        enable = true,
+    },
+    navigation = {
+        enable_default_keybindings = true,
+    },
+}
 
 -- cmp
 local cmp = require('cmp')
