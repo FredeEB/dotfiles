@@ -126,7 +126,7 @@ require('packer').startup(function(use)
     -- misc utilities
     use {'andymass/vim-matchup'}
     use {'ggandor/lightspeed.nvim'}
-    use {'steelsojka/pears.nvim'}
+    use {'windwp/nvim-autopairs'}
     use {'tpope/vim-surround'}
     use {'numtostr/comment.nvim'}
     use {'mbbill/undotree'}
@@ -374,8 +374,10 @@ vim.g.dracula_lualine_bg_color = "#44475a"
 vim.g.dracula_show_end_of_buffer = true
 vim.cmd('colorscheme dracula')
 
--- pears
-require('pears').setup()
+-- autopairs
+require('nvim-autopairs').setup {
+    check_ts = true,
+}
 
 -- comments
 require("Comment").setup{}
