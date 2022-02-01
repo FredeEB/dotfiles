@@ -120,7 +120,6 @@ require('packer').startup(function(use)
     use {'sakhnik/nvim-gdb', run = './install.sh' }
 
     -- misc utilities
-    use {'andymass/vim-matchup'}
     use {'ggandor/lightspeed.nvim'}
     use {'windwp/nvim-autopairs'}
     use {'tpope/vim-surround'}
@@ -130,7 +129,6 @@ require('packer').startup(function(use)
     use {'kabbamine/zeavim.vim'}
     use {'theprimeagen/harpoon'}
     use {'mickael-menu/zk-nvim'}
-    use {'neomake/neomake'}
 
     -- theme
     use {'nvim-lualine/lualine.nvim', requires = {{'kyazdani42/nvim-web-devicons'}}}
