@@ -401,9 +401,13 @@ require('gitsigns').setup({
 
 m.keys{
     {'n', '<leader>gq', require('gitsigns').setqflist },
+    {'n', '<leader>gA', require('gitsigns').stage_buffer },
+    {'n', '<leader>gR', require('gitsigns').reset_buffer },
     {{'n','v'}, '<leader>ga', require('gitsigns').stage_hunk },
     {{'n','v'}, '<leader>gr', require('gitsigns').reset_hunk },
-    {{'n','v'}, '<leader>gu', require('gitsigns').undo_stage_hunk },
+    {'n', '<leader>gu', require('gitsigns').undo_stage_hunk },
     {'n', '<leader>gp', require('gitsigns').preview_hunk },
+    {'n', '<leader>gd', require('gitsigns').diffthis },
     {'n', '<leader>gm', require('gitsigns').blame_line },
+    {'n', '<leader>gs', require('telescope.builtin').git_status }
 }
