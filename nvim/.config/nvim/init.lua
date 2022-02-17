@@ -91,7 +91,7 @@ require('packer').startup(function(use)
     -- telescope
     use {'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
     use {'nvim-telescope/telescope.nvim'}
-    use {"nvim-telescope/telescope-file-browser.nvim"}
+    use {'nvim-telescope/telescope-file-browser.nvim'}
 
     -- snippets
     use {'dawikur/algorithm-mnemonics.vim'}
@@ -170,11 +170,11 @@ cmp.setup {
 require('snippy').setup {
     mappings = {
         is = {
-            ["<C-j>"] = "expand_or_advance",
-            ["<C-k>"] = "previous",
+            ['<C-j>'] = 'expand_or_advance',
+            ['<C-k>'] = 'previous',
         },
         nx = {
-            ["<leader>"] = "cut_text",
+            ['<leader>'] = 'cut_text',
         },
     },
 }
@@ -184,7 +184,7 @@ local nvim_lsp = require('lspconfig')
 require('lsp_signature').setup()
 
 -- disable virtual text
-vim.lsp.handlers["textDocument/publishDiagnostics"] =
+vim.lsp.handlers['textDocument/publishDiagnostics'] =
     vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics,
     {
         update_in_insert = true,
@@ -192,7 +192,7 @@ vim.lsp.handlers["textDocument/publishDiagnostics"] =
     })
 -- show diagnostics in floating window
 vim.o.updatetime = 250
-vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false, scope="line"})]]
+vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false, scope='line'})]]
 
 local function on_init(client)
     client.config.flags.debounce_text_change = 150
@@ -211,11 +211,11 @@ end
 -- clangd
 nvim_lsp.clangd.setup {
     cmd = {
-        "clangd",
-        "--header-insertion=never",
-        "--all-scopes-completion",
-        "--background-index",
-        "--clang-tidy",
+        'clangd',
+        '--header-insertion=never',
+        '--all-scopes-completion',
+        '--background-index',
+        '--clang-tidy',
     },
     capabilities = client_capabilities,
     on_init = on_init
@@ -223,7 +223,7 @@ nvim_lsp.clangd.setup {
 
 -- lua lsp, because it's its own special snowflake
 nvim_lsp.sumneko_lua.setup {
-    cmd = {"lua-language-server"},
+    cmd = {'lua-language-server'},
     settings = {
         Lua = {
             diagnostics = {
@@ -268,13 +268,13 @@ ts.setup {
             fuzzy = true,
             override_generic_sorter = false,
             override_file_sorter = true,
-            case_mode = "smart_case",
+            case_mode = 'smart_case',
         }
     },
     pickers = {
         find_files = {
             hidden = true,
-            file_ignore_patterns = {".git"}
+            file_ignore_patterns = {'.git'}
         }
     },
     defaults = {
@@ -347,7 +347,7 @@ end
 
 -- lualine setup
 require('lualine').setup({
-    options = { 
+    options = {
         theme = 'dracula-nvim',
         icons_enabled = true,
     },
@@ -371,7 +371,7 @@ require('lualine').setup({
     extensions = {}
 })
 
-vim.g.dracula_lualine_bg_color = "#44475a"
+vim.g.dracula_lualine_bg_color = '#44475a'
 vim.g.dracula_show_end_of_buffer = true
 vim.cmd('colorscheme dracula')
 
@@ -381,7 +381,7 @@ require('nvim-autopairs').setup {
 }
 
 -- comments
-require("Comment").setup{}
+require('Comment').setup{}
 
 -- undotree
 vim.g.undotree_WindowLayout = 2
