@@ -244,6 +244,9 @@ m.keys{
     {'n', '<leader>rh', vim.lsp.buf.hover },
     {'n', '<leader>re', vim.lsp.buf.code_action },
     {'n', '<leader>rn', vim.lsp.diagnostic.goto_next },
+    {'n', '<leader>rp', vim.lsp.diagnostic.goto_prev },
+    {'n', '<leader>rf', vim.lsp.buf.formatting },
+    {'v', '<leader>rf', vim.lsp.buf.range_formatting },
 }
 
 -- harpoon
