@@ -115,7 +115,6 @@ require('packer').startup(function(use)
     use {'sakhnik/nvim-gdb', run = './install.sh' }
 
     -- misc utilities
-    use {'ggandor/lightspeed.nvim'}
     use {'windwp/nvim-autopairs'}
     use {'tpope/vim-surround'}
     use {'numtostr/comment.nvim'}
