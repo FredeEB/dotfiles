@@ -36,15 +36,6 @@ m.keys{ -- closing files
     {'n', '<leader>Q', [[<cmd>q!<cr>]]},
 }
 
-m.keys{ -- clipboard
-    {'v', '<leader>y', '"+y'},
-    {'n', '<leader>y', '"+y'},
-    {'n', '<leader>Y', '"+Y'},
-    {'v', '<leader>p', '"+p'},
-    {'n', '<leader>p', '"+p'},
-    {'n', '<leader>P', '"+P'},
-}
-
 m.keys{ -- tmux
     {'n', '<leader>t', [[<cmd>!tmux split-window -h -c %:p:h<cr><cmd>redraw!<cr>]]},
     {'n', '<leader>gr', [[<cmd>!tmux split-window -h -c `git rev-parse --show-toplevel`<cr><cmd>redraw!<cr>]]}
@@ -137,6 +128,7 @@ end)
 require('tmux').setup {
     copy_sync = {
         enable = true,
+        redirect_to_clipboard = true,
     },
     navigation = {
         enable_default_keybindings = true,
