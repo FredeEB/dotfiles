@@ -113,7 +113,6 @@ require('packer').startup(function(use)
     use {'aserowy/tmux.nvim'}
     use {'kabbamine/zeavim.vim'}
     use {'theprimeagen/harpoon'}
-    use {'mickael-menu/zk-nvim'}
 
     -- theme
     use {'nvim-lualine/lualine.nvim', requires = {{'kyazdani42/nvim-web-devicons'}}}
@@ -288,9 +287,6 @@ ts.load_extension('git_worktree')
 ts.load_extension('fzf')
 ts.load_extension('file_browser')
 
--- zk
-require('zk').setup()
-ts.load_extension('zk')
 
 m.keys{ -- telescope
     {'n', '<leader>ff', function() require('telescope.builtin').find_files() end },
@@ -305,15 +301,6 @@ m.keys{ -- extensions
     {'n', '<leader>fd', function() require('telescope').extensions.file_browser.file_browser() end },
     {'n', '<leader>gw', function() require('telescope').extensions.git_worktree.git_worktrees() end },
     {'n', '<leader>gtc', function() require('telescope').extensions.git_worktree.create_git_worktree() end },
-}
-
-local notes_path = vim.fn.expand('$HOME') .. '/git/notes'
-
-m.keys{
-    {'n', '<leader>zi', function() require('zk').index(nil, { dir = notes_path }) end },
-    {'n', '<leader>zn', function() require('zk').new(nil, { dir = notes_path }) end },
-    {'v', '<leader>zn', function() require('zk').new_link(nil, { dir = notes_path }) end },
-    {'n', '<leader>zl', function() require('zk').list(nil, { dir = notes_path }) end },
 }
 
 -- treesitter
