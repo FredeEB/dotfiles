@@ -94,7 +94,6 @@ require('packer').startup(function(use)
     use {'hrsh7th/cmp-nvim-lsp'}
     use {'hrsh7th/cmp-buffer'}
     use {'hrsh7th/cmp-path'}
-    use {'ray-x/cmp-treesitter'}
     use {'andersevenrud/cmp-tmux'}
     use {'hrsh7th/nvim-cmp'}
 
@@ -152,7 +151,6 @@ cmp.setup {
         { name = 'snippy', max_item_count = 5 },
         { name = 'buffer', max_item_count = 5 },
         { name = 'path', max_item_count = 5 },
-        { name = 'treesitter', max_item_count = 5 },
         { name = 'tmux', max_item_count = 5 }
     }
 }
@@ -307,9 +305,8 @@ m.keys{ -- extensions
 require('nvim-treesitter.configs').setup({
     -- Don't do the following without internet
     ensure_installed = 'maintained',
-    -- enable all the treesitter features
     highlight = { enable = true },
-    incremental_selection = { enable = true },
+    indent = { enable = true },
     matchup = { enable = true },
 })
 
