@@ -119,6 +119,7 @@ require('packer').startup(function(use)
 
     -- git
     use {'lewis6991/gitsigns.nvim'}
+    use {'sindrets/diffview.nvim'}
     use {'theprimeagen/git-worktree.nvim'}
 end)
 
@@ -380,7 +381,12 @@ m.keys{
     {{'n','v'}, '<leader>gr', require('gitsigns').reset_hunk },
     {'n', '<leader>gu', require('gitsigns').undo_stage_hunk },
     {'n', '<leader>gp', require('gitsigns').preview_hunk },
-    {'n', '<leader>gd', require('gitsigns').diffthis },
+    {'n', '<leader>gd', require('diffview').open },
     {'n', '<leader>gm', require('gitsigns').blame_line },
     {'n', '<leader>gs', require('telescope.builtin').git_status }
+}
+
+m.keys_for_filetype{
+    {'DiffviewFiles', 'n', 'q', '<cmd>DiffviewClose<cr>'},
+    {'DiffviewFileHistory', 'n', 'q', '<cmd>DiffviewClose<cr>'},
 }
