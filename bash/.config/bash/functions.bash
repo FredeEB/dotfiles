@@ -9,7 +9,7 @@ alias gd="git diff"
 function gl() {
     COMMITISH=($@); shift
     git --no-pager log --oneline ${COMMITISH[@]} \
-        | fzf --reverse --preview "git --no-pager show --color=always {1}" \
+        | fzf --no-sort --reverse --preview "git --no-pager show --color=always {1}" \
             --bind "ctrl-d:preview-page-down" \
             --bind "ctrl-u:preview-page-up" \
             --bind "ctrl-s:execute(git show {1})" \
@@ -29,7 +29,7 @@ function gbr() {
 
 function gba() {
     git --no-pager reflog\
-        | fzf --reverse --preview="git --no-pager show --color=always {1}" \
+        | fzf --no-sort --reverse --preview="git --no-pager show --color=always {1}" \
             --bind "enter:execute(git checkout {1})+accept" \
             --bind "ctrl-s:execute(gl {1})+accept" 
 }
