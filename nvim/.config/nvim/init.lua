@@ -66,6 +66,12 @@ end
 vim.cmd('packadd packer.nvim')
 -- autoload file when it changes
 vim.cmd('autocmd BufWritePost ~/.config/nvim/init.lua source <afile> | PackerCompile')
+vim.cmd([[
+aug QFClose
+    au!
+    au WinEnter * if winnr('$') == 1 && &buftype == "quickfix" | q | endif
+aug END
+]])
 
 require('packer').startup(function(use)
     -- packagemanager, kept optional as it's bootstrapped in init.lua
