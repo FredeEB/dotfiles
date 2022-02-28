@@ -118,6 +118,7 @@ require('packer').startup(function(use)
     use {'aserowy/tmux.nvim'}
     use {'kabbamine/zeavim.vim'}
     use {'theprimeagen/harpoon'}
+    use {'tversteeg/registers.nvim'}
 
     -- theme
     use {'nvim-lualine/lualine.nvim', requires = {{'kyazdani42/nvim-web-devicons'}}}
