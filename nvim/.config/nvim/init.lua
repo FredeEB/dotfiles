@@ -119,6 +119,7 @@ require('packer').startup(function(use)
     use {'kabbamine/zeavim.vim'}
     use {'theprimeagen/harpoon'}
     use {'tversteeg/registers.nvim'}
+    use {'folke/persistence.nvim'}
 
     -- theme
     use {'nvim-lualine/lualine.nvim', requires = {{'kyazdani42/nvim-web-devicons'}}}
@@ -325,6 +326,18 @@ m.keys {
     {'o', 'au', function() require('treesitter-unit').select(true) end },
 }
 
+require('persistence').setup {
+    dir = vim.fn.expand(vim.fn.stdpath("data") .. "/sessions/"),
+    options = { "buffers", "curdir", "tabpages", "winsize" },
+}
+
+m.keys {
+    {'n', '<leader>as', function() require('persistence').load() end },
+    {'n', '<leader>al', function() require('persistence').load({ last = true }) end },
+    {'n', '<leader>ad', function() require('persistence').stop() end },
+}
+
+-- lualine setup
 local function relative_file_name()
     return vim.fn.expand('%')
 end
