@@ -70,7 +70,7 @@ font:
   italic:
     family: Iosevka
     style: Light Italic
-  size: 9.5
+  size: 9
   offset:
     x: 0
     y: -2
