@@ -65,13 +65,14 @@ end
 
 vim.cmd('packadd packer.nvim')
 -- autoload file when it changes
-vim.cmd('autocmd BufWritePost ~/.config/nvim/init.lua source <afile> | PackerCompile')
-vim.cmd([[
-aug QFClose
-    au!
-    au WinEnter * if winnr('$') == 1 && &buftype == "quickfix" | q | endif
-aug END
-]])
+vim.api.nvim_create_autocmd('BufWritePost', {
+    command = 'PackerCompile',
+    pattern = vim.fn.stdpath('config') .. 'init.lua'
+})
+-- close vim if only the qfl is open
+vim.api.nvim_create_autocmd('WinEnter', {
+    command = [[ if winnr('$') == 1 && &buftype == 'quickfix' | q | endif ]]
+})
 
 require('packer').startup(function(use)
     -- packagemanager, kept optional as it's bootstrapped in init.lua
