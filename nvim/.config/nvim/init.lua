@@ -45,8 +45,11 @@ m.keys{ -- qfl
     {'n', '<C-p>', [[<cmd>cprev<cr>]]},
     {'n', '<C-n>', [[<cmd>cnext<cr>]]},
     {'n', '<C-q>', [[<cmd>copen<cr>]]},
-    {'n', '<C-c>', [[<cmd>cclose<cr>]]},
-    {'n', '*', [[:execute 'vimgrep '.expand('<cword>').' '.expand('%') | :copen | :cc<cr>]]}
+    {'n', '<C-c>', [[<cmd>lclonse | cclose<cr>]]},
+    {'n', '<M-p>', [[<cmd>lprev<cr>]]},
+    {'n', '<M-n>', [[<cmd>lnext<cr>]]},
+    {'n', '<M-q>', [[<cmd>lopen<cr>]]},
+    {'n', '*', [[:execute 'lvimgrep '.expand('<cword>').' '.expand('%') | :lopen | :llist<cr>]]}
 }
 
 m.keys{ -- misc
