@@ -123,7 +123,7 @@ require('packer').startup(function(use)
     use {'kabbamine/zeavim.vim'}
     use {'theprimeagen/harpoon'}
     use {'tversteeg/registers.nvim'}
-    use {'folke/persistence.nvim'}
+    use {'olimorris/persisted.nvim'}
 
     -- theme
     use {'nvim-lualine/lualine.nvim', requires = {{'kyazdani42/nvim-web-devicons'}}}
@@ -328,15 +328,16 @@ m.keys {
     {'o', 'au', function() require('treesitter-unit').select(true) end },
 }
 
-require('persistence').setup {
+require('persisted').setup {
     dir = vim.fn.expand(vim.fn.stdpath("data") .. "/sessions/"),
+    use_git_branch = true,
     options = { "buffers", "curdir", "tabpages", "winsize" },
 }
 
 m.keys {
-    {'n', '<leader>as', function() require('persistence').load() end },
-    {'n', '<leader>al', function() require('persistence').load({ last = true }) end },
-    {'n', '<leader>ad', function() require('persistence').stop() end },
+    {'n', '<leader>as', function() require('persisted').load() end },
+    {'n', '<leader>al', function() require('persisted').load({ last = true }) end },
+    {'n', '<leader>ad', function() require('persisted').stop() end },
 }
 
 -- lualine setup
