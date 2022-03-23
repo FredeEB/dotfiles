@@ -124,6 +124,7 @@ require('packer').startup(function(use)
     use {'theprimeagen/harpoon'}
     use {'tversteeg/registers.nvim'}
     use {'olimorris/persisted.nvim'}
+    use {'ggandor/leap.nvim'}
 
     -- theme
     use {'nvim-lualine/lualine.nvim', requires = {{'kyazdani42/nvim-web-devicons'}}}
@@ -145,6 +146,8 @@ require('tmux').setup {
         enable_default_keybindings = true,
     },
 }
+
+require('leap').set_default_keymaps()
 
 -- cmp
 local cmp = require('cmp')
