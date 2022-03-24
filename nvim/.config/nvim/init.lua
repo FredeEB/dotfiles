@@ -54,7 +54,7 @@ m.keys{ -- qfl
 
 m.keys{ -- misc
     {'n', '<leader>fd', [[<cmd>Explore<cr>]]},
-    {'n', '<leader>fe', [[<cmd>e ~/.config/nvim/init.lua<cr>]] },
+    {'n', '<leader>fe', [[<cmd>!tmux new-window -c ~ -n nvim-conf 'nvim ~/.config/nvim/init.lua'<cr><cmd>redraw!<cr>]] },
     {'n', 'n', [[nzzzv]]},
     {'n', 'N', [[Nzzzv]]},
     {'n', 'J', [[mzJ`z]]},
