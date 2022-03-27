@@ -258,8 +258,8 @@ m.keys{
 -- harpoon
 require('harpoon').setup()
 m.keys {
-    {'n', '<M-a>', function() require('harpoon.mark').add_file() end },
-    {'n', '<M-s>', function() require('harpoon.ui').toggle_quick_menu() end },
+    {'n', '<M-a>', require('harpoon.mark').add_file},
+    {'n', '<M-s>', require('harpoon.ui').toggle_quick_menu},
     {'n', '<M-j>', function() require('harpoon.ui').nav_file(1) end },
     {'n', '<M-k>', function() require('harpoon.ui').nav_file(2) end },
     {'n', '<M-l>', function() require('harpoon.ui').nav_file(3) end },
@@ -303,12 +303,12 @@ ts.load_extension('fzf')
 
 
 m.keys{ -- telescope
-    {'n', '<leader>ff', function() require('telescope.builtin').find_files() end },
-    {'n', '<leader>fg', function() require('telescope.builtin').live_grep() end },
-    {'n', '<leader>fr', function() require('telescope.builtin').grep_string() end },
-    {'n', '<leader>b', function() require('telescope.builtin').buffers() end },
-    {'n', '<leader>gb', function() require('telescope.builtin').git_branches() end },
-    {'n', '<leader>h', function() require('telescope.builtin').help_tags() end }
+    {'n', '<leader>ff', require('telescope.builtin').find_files},
+    {'n', '<leader>fg', require('telescope.builtin').live_grep},
+    {'n', '<leader>fr', require('telescope.builtin').grep_string},
+    {'n', '<leader>b', require('telescope.builtin').buffers},
+    {'n', '<leader>gb', require('telescope.builtin').git_branches},
+    {'n', '<leader>h', require('telescope.builtin').help_tags}
 }
 
 m.keys{ -- extensions
@@ -326,10 +326,8 @@ require('nvim-treesitter.configs').setup({
 })
 
 m.keys {
-    {'x', 'iu', function() require('treesitter-unit').select() end },
-    {'x', 'au', function() require('treesitter-unit').select(true) end },
-    {'o', 'iu', function() require('treesitter-unit').select() end },
-    {'o', 'au', function() require('treesitter-unit').select(true) end },
+    {{'x', 'o'}, 'iu', require('treesitter-unit').select },
+    {{'x', 'o'}, 'au', function () require('treesitter-unit').select(true) end },
 }
 
 require('persisted').setup {
@@ -339,9 +337,8 @@ require('persisted').setup {
 }
 
 m.keys {
-    {'n', '<leader>as', function() require('persisted').load() end },
-    {'n', '<leader>al', function() require('persisted').load({ last = true }) end },
-    {'n', '<leader>ad', function() require('persisted').stop() end },
+    {'n', '<leader>as', require('persisted').load},
+    {'n', '<leader>ad', require('persisted').stop},
 }
 
 -- lualine setup
