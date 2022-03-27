@@ -197,7 +197,7 @@ vim.lsp.handlers['textDocument/publishDiagnostics'] =
     })
 -- show diagnostics in floating window
 vim.o.updatetime = 250
-vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false, scope='line'})]]
+vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false, scope='cursor'})]]
 
 local function on_init(client)
     client.config.flags.debounce_text_change = 150
