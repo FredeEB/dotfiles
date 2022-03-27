@@ -54,7 +54,6 @@ m.keys{ -- qfl
 
 m.keys{ -- misc
     {'n', '<leader>fd', [[<cmd>Explore<cr>]]},
-    {'n', '<leader>fe', [[<cmd>!tmux new-window -c ~ -n nvim-conf 'nvim ~/.config/nvim/init.lua'<cr><cmd>redraw!<cr>]] },
     {'n', 'n', [[nzzzv]]},
     {'n', 'N', [[Nzzzv]]},
     {'n', 'J', [[mzJ`z]]},
@@ -68,14 +67,31 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 end
 
 vim.cmd('packadd packer.nvim')
--- autoload file when it changes
+
+-- autoload configfile when it changes
+vim.api.nvim_create_augroup('ConfigEditing')
 vim.api.nvim_create_autocmd('BufWritePost', {
-    command = 'PackerCompile',
-    pattern = vim.fn.stdpath('config') .. 'init.lua'
+    command = '<cmd>PackerCompile<cr>',
+    pattern = vim.fn.stdpath('config') .. 'init.lua',
+    group = 'ConfigEditing',
 })
+local function source_config() 
+    
+end
+local function open_config() 
+    vim.api.nvim_create_autocmd('WinEnter', {
+        callback = source_config
+    })
+    vim.api.nvim_command([[!tmux new-window -c ~ -n nvim-conf 'nvim ~/.config/nvim/init.lua'<cr>']])
+end
+
+m.key('n', '<leader>fe', [[<cmd>]])
 -- close vim if only the qfl is open
 vim.api.nvim_create_autocmd('WinEnter', {
     command = [[ if winnr('$') == 1 && &buftype == 'quickfix' | q | endif ]]
+})
+vim.api.nvim_create_autocmd('VimResized', {
+    command = 
 })
 
 require('packer').startup(function(use)
