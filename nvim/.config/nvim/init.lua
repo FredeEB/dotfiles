@@ -320,7 +320,10 @@ m.keys{ -- extensions
 require('nvim-treesitter.configs').setup({
     -- Don't do the following without internet
     ensure_installed = 'maintained',
-    highlight = { enable = true },
+    highlight = { 
+        enable = true,
+        additional_vim_regex_highlighting = false,
+    },
     indent = { enable = true },
     matchup = { enable = true },
 })
