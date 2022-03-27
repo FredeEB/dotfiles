@@ -163,11 +163,11 @@ cmp.setup {
         ['<CR>'] = cmp.mapping.confirm({ select = true }),
     },
     sources = {
-        { name = 'nvim_lsp', max_item_count = 10 },
-        { name = 'snippy', max_item_count = 5 },
-        { name = 'buffer', max_item_count = 5 },
-        { name = 'path', max_item_count = 5 },
-        { name = 'tmux', max_item_count = 5 }
+        { name = 'nvim_lsp', max_item_count = 20 },
+        { name = 'snippy', max_item_count = 10 },
+        { name = 'buffer', max_item_count = 10 },
+        { name = 'path', max_item_count = 10 },
+        { name = 'tmux', max_item_count = 10 }
     }
 }
 
