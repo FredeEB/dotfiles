@@ -21,9 +21,12 @@ fi
 if [[ -x "$(command -v fzf)" ]]; then
     source /usr/share/fzf/key-bindings.bash
     source /usr/share/fzf/completion.bash
+fi 
+
+if [[ -f $HOME/.local/fzf-tab-completion/bash/fzf-bash-completion.sh ]]; then
     source ${HOME}/.local/fzf-tab-completion/bash/fzf-bash-completion.sh
     bind -x '"\t": fzf_bash_completion'
-fi 
+fi
 
 bind Space:magic-space
 
