@@ -87,6 +87,7 @@ require('packer').startup(function(use)
     use { 'nvim-lua/plenary.nvim' }
 
     -- treesitter
+    use { 'mfussenegger/nvim-treehopper' }
     use { 'david-kunz/treesitter-unit' }
     use { 'nvim-treesitter/nvim-treesitter', run = require('nvim-treesitter.install').update }
 
@@ -350,6 +351,7 @@ require('nvim-treesitter.configs').setup({
 m.keys {
     { { 'x', 'o' }, 'iu', require('treesitter-unit').select },
     { { 'x', 'o' }, 'au', function() require('treesitter-unit').select(true) end },
+    { { 'v', 'o' }, 'm', require('tsht').nodes, { remap = false } },
 }
 
 require('persisted').setup {
