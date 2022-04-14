@@ -147,6 +147,23 @@ require('tmux').setup {
     },
 }
 
+-- terminal config
+m.keys {
+    { 't', '<C-h>', '<C-\\><C-N><C-w>h' },
+    { 't', '<C-j>', '<C-\\><C-N><C-w>j' },
+    { 't', '<C-k>', '<C-\\><C-N><C-w>k' },
+    { 't', '<C-l>', '<C-\\><C-N><C-w>l' },
+}
+
+-- start terminal in insert mode
+vim.api.nvim_create_autocmd('TermOpen', {
+    command = 'startinsert'
+})
+-- close terminal buffer after command finishes
+vim.api.nvim_create_autocmd('TermClose', {
+    command = 'bdelete'
+})
+
 require('leap').set_default_keymaps()
 
 -- cmp
