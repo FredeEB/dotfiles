@@ -155,19 +155,20 @@ cmp.setup {
     snippet = {
         expand = function(args) require('snippy').expand_snippet(args.body) end
     },
-    mapping = {
-        ['<C-d>'] = cmp.mapping.scroll_docs(-4),
-        ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    mapping = cmp.mapping.preset.insert(
+        {
+        ['<C-u>'] = cmp.mapping.scroll_docs(-4),
+        ['<C-d>'] = cmp.mapping.scroll_docs(4),
         ['<C-Space>'] = cmp.mapping.complete(),
         ['<C-e>'] = cmp.mapping.close(),
         ['<CR>'] = cmp.mapping.confirm({ select = true }),
-    },
+    }),
     sources = {
-        { name = 'nvim_lsp', max_item_count = 20 },
-        { name = 'snippy', max_item_count = 10 },
-        { name = 'buffer', max_item_count = 10 },
-        { name = 'path', max_item_count = 10 },
-        { name = 'tmux', max_item_count = 10 }
+        { name = 'nvim_lsp', max_item_count = 20, priority = 0 },
+        { name = 'snippy', max_item_count = 10, priority = 1 },
+        { name = 'buffer', max_item_count = 10, priority = 2 },
+        { name = 'path', max_item_count = 10, priority = 3 },
+        { name = 'tmux', max_item_count = 10, priority = 4 }
     }
 }
 
