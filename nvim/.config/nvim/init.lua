@@ -355,8 +355,8 @@ m.keys {
 require('persisted').setup {
     dir = vim.fn.expand(vim.fn.stdpath("data") .. "/sessions/"),
     use_git_branch = true,
-    options = { "buffers", "curdir", "tabpages", "winsize" },
 }
+vim.o.sessionoptions = "buffers,curdir,tabpages,winsize"
 
 m.keys {
     { 'n', '<leader>as', require('persisted').load },
