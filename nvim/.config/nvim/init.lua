@@ -89,7 +89,7 @@ require('packer').startup(function(use)
     -- treesitter
     use { 'mfussenegger/nvim-treehopper' }
     use { 'david-kunz/treesitter-unit' }
-    use { 'nvim-treesitter/nvim-treesitter', run = require('nvim-treesitter.install').update }
+    use { 'nvim-treesitter/nvim-treesitter' }
 
     -- telescope
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
