@@ -121,6 +121,7 @@ require('packer').startup(function(use)
     use { 'numtostr/comment.nvim' }
     use { 'mbbill/undotree' }
     use { 'aserowy/tmux.nvim' }
+    use { 'shivamashtikar/tmuxjump.vim' }
     use { 'kabbamine/zeavim.vim' }
     use { 'theprimeagen/harpoon' }
     use { 'tversteeg/registers.nvim' }
@@ -146,6 +147,10 @@ require('tmux').setup {
     navigation = {
         enable_default_keybindings = true,
     },
+}
+vim.g.tmuxjump_telescope = true
+m.keys {
+    { 'n', '<leader>;', '<cmd>TmuxJumpFile<cr>' }
 }
 
 -- terminal config
