@@ -231,7 +231,7 @@ end
 local client_capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
 -- clangd and lua are handled externally
-for _, lsp in ipairs { 'cmake', 'gopls', 'pylsp', 'rust_analyzer', 'tsserver', 'zls' } do
+for _, lsp in ipairs { 'cmake', 'dartls', 'gopls', 'pylsp', 'rust_analyzer', 'tsserver', 'zls' } do
     nvim_lsp[lsp].setup {
         capabilities = client_capabilities,
         on_init = on_init
