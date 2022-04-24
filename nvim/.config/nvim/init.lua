@@ -110,7 +110,6 @@ require('packer').startup(function(use)
 
     -- lsp
     use { 'neovim/nvim-lsp' }
-    use { 'ray-x/lsp_signature.nvim' }
 
     -- debugging
     use {'sakhnik/nvim-gdb', run = './install.sh' }
@@ -210,7 +209,6 @@ require('snippy').setup {
 
 -- lsp
 local nvim_lsp = require('lspconfig')
-require('lsp_signature').setup()
 
 -- disable virtual text
 vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics,
