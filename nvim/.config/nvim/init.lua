@@ -74,8 +74,11 @@ p.use { 'wbthomason/packer.nvim' }
 
 -- autoload file when it changes
 vim.api.nvim_create_autocmd('BufWritePost', {
-    command = 'PackerCompile',
-    pattern = vim.fn.stdpath('config') .. 'init.lua'
+    pattern = 'init.lua',
+    callback = function()
+        vim.cmd('source <afile>')
+        require('packer').compile()
+    end
 })
 -- close vim if only the qfl is open
 vim.api.nvim_create_autocmd('WinEnter', {
