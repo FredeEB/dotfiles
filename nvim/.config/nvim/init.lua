@@ -128,48 +128,45 @@ vim.api.nvim_create_autocmd('TermClose', {
 p.use { 'ggandor/leap.nvim' }
 require('leap').set_default_keymaps()
 
+-- snippets
+p.use { 'dawikur/algorithm-mnemonics.vim' }
+p.use { 'honza/vim-snippets' }
+p.use { 'l3mon4d3/luasnip' }
+
+require('luasnip.loaders.from_snipmate').lazy_load()
+local ls = require('luasnip')
+m.keys({
+    { { 'i', 's' }, "<C-j>", function () if ls.expand_or_jumpable() then ls.expand_or_jump() end end } ,
+    { { 'i', 's' }, "<C-k>", function () if ls.expand_or_jumpable(-1) then ls.expand_or_jump(-1) end end } ,
+    { { 'i', 's' }, "<C-l>", function () if ls.choice_active() then ls.change_choice(1) end end } },
+    { silent = true }
+)
+
 -- cmp
 p.use { 'hrsh7th/cmp-nvim-lsp' }
 p.use { 'hrsh7th/cmp-buffer' }
 p.use { 'hrsh7th/cmp-path' }
 p.use { 'hrsh7th/nvim-cmp' }
-p.use { 'dcampos/cmp-snippy' }
 
 local cmp = require('cmp')
+
 cmp.setup {
     snippet = {
-        expand = function(args) require('snippy').expand_snippet(args.body) end
+        expand = function(args) require('luasnip').lsp_expand(args.body) end
     },
     mapping = cmp.mapping.preset.insert(
         {
-            ['<C-u>'] = cmp.mapping.scroll_docs(-4),
-            ['<C-d>'] = cmp.mapping.scroll_docs(4),
-            ['<C-Space>'] = cmp.mapping.complete(),
-            ['<C-e>'] = cmp.mapping.close(),
-            ['<CR>'] = cmp.mapping.confirm({ select = true }),
-        }),
+        ['<C-u>'] = cmp.mapping.scroll_docs(-4),
+        ['<C-d>'] = cmp.mapping.scroll_docs(4),
+        ['<C-Space>'] = cmp.mapping.complete(),
+        ['<C-e>'] = cmp.mapping.close(),
+        ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    }),
     sources = {
         { name = 'nvim_lsp', max_item_count = 20, priority = 10 },
-        { name = 'snippy', max_item_count = 10, priority = 5 },
         { name = 'buffer', max_item_count = 10, priority = 3 },
         { name = 'path', max_item_count = 10, priority = 3 },
     }
-}
-
--- snippets
-p.use { 'dawikur/algorithm-mnemonics.vim' }
-p.use { 'dcampos/nvim-snippy' }
-p.use { 'honza/vim-snippets' }
-require('snippy').setup {
-    mappings = {
-        is = {
-            ['<C-j>'] = 'expand_or_advance',
-            ['<C-k>'] = 'previous',
-        },
-        nx = {
-            ['<leader>'] = 'cut_text',
-        },
-    },
 }
 
 -- lsp
