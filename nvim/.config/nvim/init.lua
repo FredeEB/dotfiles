@@ -70,7 +70,7 @@ end
 local p = require('packer')
 p.init()
 -- packagemanager, kept optional as it's bootstrapped in init.lua
-p.use { 'wbthomason/packer.nvim', opt = true }
+p.use { 'wbthomason/packer.nvim' }
 
 -- autoload file when it changes
 vim.api.nvim_create_autocmd('BufWritePost', {
