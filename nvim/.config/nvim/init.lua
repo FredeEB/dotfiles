@@ -61,13 +61,17 @@ m.keys { -- misc
 }
 
 -- bootstrap packer
-local install_path = vim.fn.stdpath('data') .. '/site/pack/packer/opt/packer.nvim'
+local packer_bootstrap = false
+local install_path = vim.fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
 if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-    vim.api.nvim_command('!git clone https://github.com/wbthomason/packer.nvim ' .. install_path)
-    vim.api.nvim_command('packadd packer.nvim')
+    packer_bootstrap = vim.fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
 end
 
-vim.cmd('packadd packer.nvim')
+local p = require('packer')
+p.init()
+-- packagemanager, kept optional as it's bootstrapped in init.lua
+p.use { 'wbthomason/packer.nvim', opt = true }
+
 -- autoload file when it changes
 vim.api.nvim_create_autocmd('BufWritePost', {
     command = 'PackerCompile',
@@ -78,64 +82,12 @@ vim.api.nvim_create_autocmd('WinEnter', {
     command = [[ if winnr('$') == 1 && &buftype == 'quickfix' | q | endif ]]
 })
 
-require('packer').startup(function(use)
-    -- packagemanager, kept optional as it's bootstrapped in init.lua
-    use { 'wbthomason/packer.nvim', opt = true }
+-- common libraries
+p.use { 'nvim-lua/popup.nvim' }
+p.use { 'nvim-lua/plenary.nvim' }
 
-    -- widely used shared plugins
-    use { 'nvim-lua/popup.nvim' }
-    use { 'nvim-lua/plenary.nvim' }
-
-    -- treesitter
-    use { 'mfussenegger/nvim-treehopper' }
-    use { 'david-kunz/treesitter-unit' }
-    use { 'nvim-treesitter/nvim-treesitter' }
-
-    -- telescope
-    use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
-    use { 'nvim-telescope/telescope.nvim' }
-
-    -- snippets
-    use { 'dawikur/algorithm-mnemonics.vim' }
-    use { 'dcampos/nvim-snippy' }
-    use { 'dcampos/cmp-snippy' }
-    use { 'honza/vim-snippets' }
-
-    -- cmp
-    use { 'hrsh7th/cmp-nvim-lsp' }
-    use { 'hrsh7th/cmp-buffer' }
-    use { 'hrsh7th/cmp-path' }
-    use { 'hrsh7th/nvim-cmp' }
-
-    -- lsp
-    use { 'neovim/nvim-lsp' }
-
-    -- debugging
-    use {'sakhnik/nvim-gdb', run = './install.sh' }
-
-    -- misc utilities
-    use { 'windwp/nvim-autopairs' }
-    use { 'tpope/vim-surround' }
-    use { 'numtostr/comment.nvim' }
-    use { 'mbbill/undotree' }
-    use { 'aserowy/tmux.nvim' }
-    use { 'shivamashtikar/tmuxjump.vim' }
-    use { 'kabbamine/zeavim.vim' }
-    use { 'theprimeagen/harpoon' }
-    use { 'tversteeg/registers.nvim' }
-    use { 'olimorris/persisted.nvim' }
-    use { 'ggandor/leap.nvim' }
-
-    -- theme
-    use { 'nvim-lualine/lualine.nvim', requires = { { 'kyazdani42/nvim-web-devicons' } } }
-    use { 'mofiqul/dracula.nvim' }
-
-    -- git
-    use { 'lewis6991/gitsigns.nvim' }
-    use { 'sindrets/diffview.nvim' }
-    use { 'theprimeagen/git-worktree.nvim' }
-end)
-
+-- tmux
+p.use { 'aserowy/tmux.nvim' }
 
 require('tmux').setup {
     copy_sync = {
@@ -146,6 +98,8 @@ require('tmux').setup {
         enable_default_keybindings = true,
     },
 }
+
+p.use { 'shivamashtikar/tmuxjump.vim' }
 vim.g.tmuxjump_telescope = true
 m.keys {
     { 'n', '<leader>;', '<cmd>TmuxJumpFile<cr>' }
@@ -168,9 +122,16 @@ vim.api.nvim_create_autocmd('TermClose', {
     command = 'bdelete'
 })
 
+p.use { 'ggandor/leap.nvim' }
 require('leap').set_default_keymaps()
 
 -- cmp
+p.use { 'hrsh7th/cmp-nvim-lsp' }
+p.use { 'hrsh7th/cmp-buffer' }
+p.use { 'hrsh7th/cmp-path' }
+p.use { 'hrsh7th/nvim-cmp' }
+p.use { 'dcampos/cmp-snippy' }
+
 local cmp = require('cmp')
 cmp.setup {
     snippet = {
@@ -193,6 +154,9 @@ cmp.setup {
 }
 
 -- snippets
+p.use { 'dawikur/algorithm-mnemonics.vim' }
+p.use { 'dcampos/nvim-snippy' }
+p.use { 'honza/vim-snippets' }
 require('snippy').setup {
     mappings = {
         is = {
@@ -206,6 +170,7 @@ require('snippy').setup {
 }
 
 -- lsp
+p.use { 'neovim/nvim-lsp' }
 local nvim_lsp = require('lspconfig')
 
 -- disable virtual text
@@ -277,6 +242,8 @@ m.keys {
 }
 
 -- harpoon
+p.use { 'theprimeagen/harpoon' }
+
 require('harpoon').setup()
 m.keys {
     { 'n', '<M-a>', require('harpoon.mark').add_file },
@@ -288,6 +255,9 @@ m.keys {
 }
 
 -- telescope extensions
+p.use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+p.use { 'nvim-telescope/telescope.nvim' }
+
 local ts = require('telescope')
 ts.setup {
     extensions = {
@@ -338,6 +308,11 @@ m.keys { -- extensions
 }
 
 -- treesitter
+p.use { 'mfussenegger/nvim-treehopper' }
+p.use { 'david-kunz/treesitter-unit' }
+p.use { 'nvim-treesitter/playground' }
+p.use { 'nvim-treesitter/nvim-treesitter' }
+
 require('nvim-treesitter.configs').setup({
     -- Don't do the following without internet
     ensure_installed = 'all',
@@ -355,6 +330,9 @@ m.keys {
     { { 'v', 'o' }, 'm', require('tsht').nodes, { remap = false } },
 }
 
+-- sessions
+p.use { 'olimorris/persisted.nvim' }
+
 require('persisted').setup {
     dir = vim.fn.expand(vim.fn.stdpath("data") .. "/sessions/"),
     use_git_branch = true,
@@ -365,6 +343,11 @@ m.keys {
     { 'n', '<leader>as', require('persisted').load },
     { 'n', '<leader>ad', require('persisted').stop },
 }
+
+-- theme
+p.use { 'kyazdani42/nvim-web-devicons' }
+p.use { 'nvim-lualine/lualine.nvim' }
+p.use { 'mofiqul/dracula.nvim' }
 
 -- lualine setup
 local function relative_file_name()
@@ -401,19 +384,26 @@ vim.g.dracula_show_end_of_buffer = true
 vim.cmd('colorscheme dracula')
 
 -- autopairs
+p.use { 'windwp/nvim-autopairs' }
 require('nvim-autopairs').setup {
     check_ts = true,
 }
 
 -- comments
+p.use { 'numtostr/comment.nvim' }
 require('Comment').setup {}
 
 -- undotree
+p.use { 'mbbill/undotree' }
 vim.g.undotree_WindowLayout = 2
 vim.g.undotree_SetFocusWhenToggle = true
 m.key('n', 'U', [[<cmd>UndotreeToggle<cr>]])
 
 -- git
+p.use { 'lewis6991/gitsigns.nvim' }
+p.use { 'sindrets/diffview.nvim' }
+p.use { 'theprimeagen/git-worktree.nvim' }
+
 require('gitsigns').setup({
     current_line_blame = false,
     current_line_blame_opts = {
@@ -438,3 +428,12 @@ m.keys_for_filetype {
     { 'DiffviewFiles', 'n', 'q', '<cmd>DiffviewClose<cr>' },
     { 'DiffviewFileHistory', 'n', 'q', '<cmd>DiffviewClose<cr>' },
 }
+
+--misc
+p.use { 'tpope/vim-surround' }
+p.use { 'kabbamine/zeavim.vim' }
+p.use { 'tversteeg/registers.nvim' }
+
+if packer_bootstrap == true then
+    p.sync()
+end
