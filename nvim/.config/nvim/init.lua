@@ -73,7 +73,9 @@ p.init()
 p.use { 'wbthomason/packer.nvim' }
 
 -- autoload file when it changes
+vim.api.nvim_create_augroup('Config', { clear = true })
 vim.api.nvim_create_autocmd('BufWritePost', {
+    group = 'Config',
     pattern = 'init.lua',
     callback = function()
         vim.cmd('source <afile>')
@@ -119,11 +121,13 @@ m.keys {
 
 -- start terminal in insert mode
 vim.api.nvim_create_autocmd('TermOpen', {
-    command = 'startinsert'
+    command = 'startinsert',
+    group = 'Config'
 })
 -- close terminal buffer after command finishes
 vim.api.nvim_create_autocmd('TermClose', {
-    command = 'bdelete'
+    command = 'bdelete',
+    group = 'Config'
 })
 
 p.use { 'ggandor/leap.nvim' }
@@ -183,7 +187,8 @@ vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp.diagn
 -- show diagnostics in floating window
 vim.o.updatetime = 250
 vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
-    callback = function() vim.diagnostic.open_float(nil, { focus = false, scope = 'cursor' }) end
+    callback = function() vim.diagnostic.open_float(nil, { focus = false, scope = 'cursor' }) end,
+    group = 'Config'
 })
 
 local function on_init(client)
