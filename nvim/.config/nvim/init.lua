@@ -316,7 +316,6 @@ p.use { 'nvim-treesitter/nvim-treesitter' }
 
 require('nvim-treesitter.configs').setup({
     -- Don't do the following without internet
-    ensure_installed = 'all',
     highlight = {
         enable = true,
         additional_vim_regex_highlighting = false,
