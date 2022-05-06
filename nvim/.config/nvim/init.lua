@@ -80,6 +80,7 @@ vim.api.nvim_create_autocmd('BufWritePost', {
         require('packer').compile()
     end
 })
+p.use{ 'https://gitlab.com/yorickpeterse/nvim-pqf', config = require('pqf').setup }
 -- close vim if only the qfl is open
 vim.api.nvim_create_autocmd('WinEnter', {
     command = [[ if winnr('$') == 1 && &buftype == 'quickfix' | q | endif ]]
