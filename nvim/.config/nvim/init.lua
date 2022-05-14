@@ -108,6 +108,7 @@ use { 'https://gitlab.com/yorickpeterse/nvim-pqf' }
 use { 'lewis6991/gitsigns.nvim' }
 use { 'sindrets/diffview.nvim' }
 use { 'theprimeagen/git-worktree.nvim' }
+use { 'timuntersberger/neogit' }
 -- misc
 use { 'olimorris/persisted.nvim' }
 use { 'rcarriga/nvim-notify' }
@@ -430,6 +431,15 @@ require('gitsigns').setup({
     }
 })
 
+require('neogit').setup {
+    use_magit_keybinds = true,
+    integrations = {
+        diffview = true
+    },
+    disable_builtin_notifications = true,
+    disable_commit_confirmation = true,
+}
+
 m.keys {
     { 'n', '<leader>gq', require('gitsigns').setqflist },
     { 'n', '<leader>gA', require('gitsigns').stage_buffer },
@@ -440,7 +450,8 @@ m.keys {
     { 'n', '<leader>gp', require('gitsigns').preview_hunk },
     { 'n', '<leader>gd', require('diffview').open },
     { 'n', '<leader>gm', require('gitsigns').blame_line },
-    { 'n', '<leader>gs', require('telescope.builtin').git_status }
+    { 'n', '<leader>gs', require('neogit').open },
+    { 'n', '<leader>gc', function () require('neogit').open { "commit" } end }
 }
 
 m.keys_for_filetype {
