@@ -10,6 +10,7 @@ vim.o.shiftwidth = 4
 vim.o.smartcase = true
 vim.o.tabstop = 4
 vim.o.wildmode = 'longest,list'
+vim.o.laststatus = 3
 vim.o.inccommand = 'nosplit'
 vim.o.termguicolors = true
 
