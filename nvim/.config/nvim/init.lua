@@ -110,6 +110,7 @@ use { 'sindrets/diffview.nvim' }
 use { 'theprimeagen/git-worktree.nvim' }
 -- misc
 use { 'olimorris/persisted.nvim' }
+use { 'rcarriga/nvim-notify' }
 use { 'windwp/nvim-autopairs' }
 use { 'numtostr/comment.nvim' }
 use { 'mbbill/undotree' }
@@ -138,6 +139,8 @@ vim.api.nvim_create_autocmd('BufWritePost', {
 vim.api.nvim_create_autocmd('WinEnter', {
     command = [[ if winnr('$') == 1 && &buftype == 'quickfix' | q | endif ]]
 })
+
+vim.notify = require('notify')
 
 -- tmux
 require('tmux').setup {
@@ -323,6 +326,7 @@ ts.setup {
 }
 ts.load_extension('git_worktree')
 ts.load_extension('fzf')
+ts.load_extension('notify')
 
 m.keys { -- telescope
     { 'n', '<leader>ff', require('telescope.builtin').find_files },
