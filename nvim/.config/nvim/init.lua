@@ -123,6 +123,7 @@ packer.startup(function(use)
     use { 'hrsh7th/cmp-nvim-lsp' }
     use { 'hrsh7th/cmp-buffer' }
     use { 'hrsh7th/cmp-path' }
+    use { 'saadparwaiz1/cmp_luasnip' }
     use { 'hrsh7th/nvim-cmp' }
     -- lsp
     use { 'neovim/nvim-lsp' }
@@ -222,16 +223,16 @@ cmp.setup {
     snippet = {
         expand = function(args) require('luasnip').lsp_expand(args.body) end
     },
-    mapping = cmp.mapping.preset.insert(
-        {
+    mapping = cmp.mapping.preset.insert {
         ['<C-u>'] = cmp.mapping.scroll_docs(-4),
         ['<C-d>'] = cmp.mapping.scroll_docs(4),
         ['<C-Space>'] = cmp.mapping.complete(),
         ['<C-e>'] = cmp.mapping.close(),
         ['<CR>'] = cmp.mapping.confirm({ select = true }),
-    }),
+    },
     sources = {
         { name = 'nvim_lsp', max_item_count = 20, priority = 10 },
+        { name = 'luasnip', max_item_count = 20, priority = 10 },
         { name = 'buffer', max_item_count = 10, priority = 3 },
         { name = 'path', max_item_count = 10, priority = 3 },
     }
