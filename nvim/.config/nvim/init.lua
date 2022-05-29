@@ -53,9 +53,45 @@ m.keys { -- qfl
     { 'n', '<leader>l', [[<cmd>lvim // % | lopen<cr>]] }
 }
 
+local function open_config()
+    local config_buf = vim.api.nvim_create_buf(true, true)
+    local config_path = vim.fn.stdpath('config') .. '/init.lua'
+    local function reload_config()
+        vim.cmd('source ' .. config_path)
+    end
+    local augrp = vim.api.nvim_create_augroup('ConfigEdit', { clear = true })
+    vim.api.nvim_create_autocmd('BufLeave', {
+        group = 'ConfigEdit',
+        buffer = config_buf,
+        callback = reload_config
+    })
+    vim.api.nvim_create_autocmd('BufDelete', {
+        group = 'ConfigEdit',
+        buffer = config_buf,
+        callback = function()
+            reload_config()
+            vim.api.nvim_del_augroup_by_id(augrp)
+        end
+    })
+
+    vim.api.nvim_set_current_buf(config_buf)
+    vim.cmd('e ' .. config_path)
+end
+
+-- autoload file when it changes
+vim.api.nvim_create_augroup('Config', { clear = true })
+vim.api.nvim_create_autocmd('BufWritePost', {
+    group = 'Config',
+    pattern = 'init.lua',
+    callback = function()
+        vim.cmd('source <afile>')
+        require('packer').compile()
+    end
+})
+
 m.keys { -- misc
     { 'n', '<leader>fd', [[<cmd>Explore<cr>]] },
-    { 'n', '<leader>fe', [[<cmd>!tmux new-window -c ~ -n nvim-conf 'nvim ~/.config/nvim/init.lua'<cr><cmd>redraw!<cr>]] },
+    { 'n', '<leader>fe', open_config },
     { 'n', 'n', [[nzzzv]] },
     { 'n', 'N', [[Nzzzv]] },
     { 'n', 'J', [[mzJ`z]] },
@@ -127,16 +163,6 @@ end
 
 end)
 
--- autoload file when it changes
-vim.api.nvim_create_augroup('Config', { clear = true })
-vim.api.nvim_create_autocmd('BufWritePost', {
-    group = 'Config',
-    pattern = 'init.lua',
-    callback = function()
-        vim.cmd('source <afile>')
-        require('packer').compile()
-    end
-})
 -- close vim if only the qfl is open
 vim.api.nvim_create_autocmd('WinEnter', {
     command = [[ if winnr('$') == 1 && &buftype == 'quickfix' | q | endif ]]
