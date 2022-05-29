@@ -33,7 +33,7 @@ m.keys { -- vblock moves
 }
 
 m.keys { -- closing files
-    { 'n', '<leader>q', [[<cmd>q<cr>]] },
+    { 'n', '<leader>q', [[<cmd>bdelete<cr>]] },
     { 'n', '<leader>Q', [[<cmd>q!<cr>]] },
 }
 
