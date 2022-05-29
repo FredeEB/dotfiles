@@ -340,7 +340,6 @@ ts.setup {
     defaults = {
         vimgrep_arguments = {
             'rg',
-            '--hidden',
             '--ignore',
             '--color=never',
             '--no-heading',
