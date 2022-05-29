@@ -305,7 +305,7 @@ m.keys {
     { 'n', '<leader>rn', vim.diagnostic.goto_next },
     { 'n', '<leader>rp', vim.diagnostic.goto_prev },
     { 'n', '<leader>rd', vim.diagnostic.setloclist },
-    { 'n', '<leader>rf', vim.lsp.buf.formatting },
+    { 'n', '<leader>rf', function() vim.lsp.buf.format { async = true } end },
     { 'v', '<leader>rf', vim.lsp.buf.range_formatting },
 }
 
