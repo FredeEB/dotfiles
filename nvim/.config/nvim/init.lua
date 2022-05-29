@@ -166,7 +166,7 @@ end)
 
 -- close vim if only the qfl is open
 vim.api.nvim_create_autocmd('WinEnter', {
-    command = [[ if winnr('$') == 1 && &buftype == 'quickfix' | q | endif ]]
+    command = [[if winnr('$') == 1 && &buftype == 'quickfix' | q | endif]]
 })
 
 vim.notify = require('notify')
@@ -243,10 +243,10 @@ local nvim_lsp = require('lspconfig')
 
 -- disable virtual text
 vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics,
-    {
-        update_in_insert = true,
-        virtual_text = false
-    })
+    { update_in_insert = true, virtual_text = false })
+
+vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
+    vim.lsp.handlers.signature_help, { border = "single" })
 -- show diagnostics in floating window
 vim.o.updatetime = 250
 vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
@@ -484,5 +484,3 @@ m.keys_for_filetype {
     { 'DiffviewFiles', 'n', 'q', '<cmd>DiffviewClose<cr>' },
     { 'DiffviewFileHistory', 'n', 'q', '<cmd>DiffviewClose<cr>' },
 }
-
---misc
