@@ -478,7 +478,6 @@ m.keys {
     { 'n', '<leader>gd', require('diffview').open },
     { 'n', '<leader>gm', require('gitsigns').blame_line },
     { 'n', '<leader>gs', require('neogit').open },
-    { 'n', '<leader>gc', function () require('neogit').open { "commit" } end }
 }
 
 m.keys_for_filetype {
