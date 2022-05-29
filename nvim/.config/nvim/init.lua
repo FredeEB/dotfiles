@@ -107,59 +107,59 @@ end
 local packer = require('packer')
 packer.startup(function(use)
 
-use { 'wbthomason/packer.nvim' }
+    use { 'wbthomason/packer.nvim' }
 
--- common
-use { 'nvim-lua/popup.nvim' }
-use { 'nvim-lua/plenary.nvim' }
--- tmux
-use { 'aserowy/tmux.nvim' }
-use { 'shivamashtikar/tmuxjump.vim' }
--- snippets
-use { 'dawikur/algorithm-mnemonics.vim' }
-use { 'honza/vim-snippets' }
-use { 'l3mon4d3/luasnip' }
--- cmp
-use { 'hrsh7th/cmp-nvim-lsp' }
-use { 'hrsh7th/cmp-buffer' }
-use { 'hrsh7th/cmp-path' }
-use { 'hrsh7th/nvim-cmp' }
--- lsp
-use { 'neovim/nvim-lsp' }
--- tools
-use { 'theprimeagen/harpoon' }
--- telescope
-use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
-use { 'nvim-telescope/telescope.nvim' }
--- treesitter
-use { 'mfussenegger/nvim-treehopper' }
-use { 'david-kunz/treesitter-unit' }
-use { 'nvim-treesitter/playground' }
-use { 'nvim-treesitter/nvim-treesitter' }
--- theme
-use { 'kyazdani42/nvim-web-devicons' }
-use { 'nvim-lualine/lualine.nvim' }
-use { 'mofiqul/dracula.nvim' }
-use { 'https://gitlab.com/yorickpeterse/nvim-pqf' }
--- git
-use { 'lewis6991/gitsigns.nvim' }
-use { 'sindrets/diffview.nvim' }
-use { 'theprimeagen/git-worktree.nvim' }
-use { 'timuntersberger/neogit' }
--- misc
-use { 'olimorris/persisted.nvim' }
-use { 'rcarriga/nvim-notify' }
-use { 'windwp/nvim-autopairs' }
-use { 'numtostr/comment.nvim' }
-use { 'mbbill/undotree' }
-use { 'tpope/vim-surround' }
-use { 'kabbamine/zeavim.vim' }
-use { 'tversteeg/registers.nvim' }
-use { 'ggandor/leap.nvim' }
+    -- common
+    use { 'nvim-lua/popup.nvim' }
+    use { 'nvim-lua/plenary.nvim' }
+    -- tmux
+    use { 'aserowy/tmux.nvim' }
+    use { 'shivamashtikar/tmuxjump.vim' }
+    -- snippets
+    use { 'dawikur/algorithm-mnemonics.vim' }
+    use { 'honza/vim-snippets' }
+    use { 'l3mon4d3/luasnip' }
+    -- cmp
+    use { 'hrsh7th/cmp-nvim-lsp' }
+    use { 'hrsh7th/cmp-buffer' }
+    use { 'hrsh7th/cmp-path' }
+    use { 'hrsh7th/nvim-cmp' }
+    -- lsp
+    use { 'neovim/nvim-lsp' }
+    -- tools
+    use { 'theprimeagen/harpoon' }
+    -- telescope
+    use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
+    use { 'nvim-telescope/telescope.nvim' }
+    -- treesitter
+    use { 'mfussenegger/nvim-treehopper' }
+    use { 'david-kunz/treesitter-unit' }
+    use { 'nvim-treesitter/playground' }
+    use { 'nvim-treesitter/nvim-treesitter' }
+    -- theme
+    use { 'kyazdani42/nvim-web-devicons' }
+    use { 'nvim-lualine/lualine.nvim' }
+    use { 'mofiqul/dracula.nvim' }
+    use { 'https://gitlab.com/yorickpeterse/nvim-pqf' }
+    -- git
+    use { 'lewis6991/gitsigns.nvim' }
+    use { 'sindrets/diffview.nvim' }
+    use { 'theprimeagen/git-worktree.nvim' }
+    use { 'timuntersberger/neogit' }
+    -- misc
+    use { 'olimorris/persisted.nvim' }
+    use { 'rcarriga/nvim-notify' }
+    use { 'windwp/nvim-autopairs' }
+    use { 'numtostr/comment.nvim' }
+    use { 'mbbill/undotree' }
+    use { 'tpope/vim-surround' }
+    use { 'kabbamine/zeavim.vim' }
+    use { 'tversteeg/registers.nvim' }
+    use { 'ggandor/leap.nvim' }
 
-if packer_bootstrap == true then
-    packer.sync()
-end
+    if packer_bootstrap == true then
+        packer.sync()
+    end
 
 end)
 
