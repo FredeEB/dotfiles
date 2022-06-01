@@ -6,8 +6,8 @@ highlight  = ${xrdb:color1}
 grey       = ${xrdb:color4}
 
 [bar/main]
-width = 100%
-height = 2%
+width = 100% 
+height = 30
 fixed-center = true
 
 monitor = ${env:MONITOR:}
