@@ -13,6 +13,7 @@ vim.o.wildmode = 'longest,list'
 vim.o.laststatus = 3
 vim.o.inccommand = 'nosplit'
 vim.o.termguicolors = true
+vim.o.fixeol = false
 
 local m = require('functions.keymap')
 
