@@ -138,6 +138,7 @@ packer.startup(function(use)
     use { 'nvim-telescope/telescope.nvim' }
     -- treesitter
     use { 'mfussenegger/nvim-treehopper' }
+    use { 'drybalka/tree-climber.nvim' }
     use { 'david-kunz/treesitter-unit' }
     use { 'nvim-treesitter/playground' }
     use { 'nvim-treesitter/nvim-treesitter' }
@@ -431,10 +432,15 @@ require('nvim-treesitter.configs').setup({
     matchup = { enable = true },
 })
 
+-- tree-climber/hopper
 m.keys {
     { { 'x', 'o' }, 'iu', require('treesitter-unit').select },
     { { 'x', 'o' }, 'au', function() require('treesitter-unit').select(true) end },
     { { 'v', 'o' }, 'm', require('tsht').nodes, { remap = false } },
+    { 'n', 'H', require('tree-climber').goto_parent },
+    { 'n', 'L', require('tree-climber').goto_child },
+    { 'n', 'J', require('tree-climber').swap_next },
+    { 'n', 'K', require('tree-climber').swap_prev }
 }
 
 -- sessions
