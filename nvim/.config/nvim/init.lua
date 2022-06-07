@@ -128,6 +128,9 @@ packer.startup(function(use)
     use { 'hrsh7th/nvim-cmp' }
     -- lsp
     use { 'neovim/nvim-lsp' }
+    -- dap
+    use { 'mfussenegger/nvim-dap' }
+    use { 'rcarriga/nvim-dap-ui' }
     -- tools
     use { 'theprimeagen/harpoon' }
     -- telescope
@@ -310,6 +313,50 @@ m.keys {
     { 'n', '<leader>rd', vim.diagnostic.setloclist },
     { 'n', '<leader>rf', function() vim.lsp.buf.format { async = true } end },
     { 'v', '<leader>rf', vim.lsp.buf.range_formatting },
+}
+
+-- dap
+local dap = require('dap')
+dap.adapters.lldb = {
+    type = 'executable',
+    command = '/usr/local/bin/lldb-vscode',
+    name = 'lldb'
+}
+
+dap.configurations.cpp = {
+    {
+        name = 'Launch',
+        type = 'lldb',
+        request = 'launch',
+        program = function()
+            return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+        end,
+        cwd = "${workspaceFolder}",
+        stopOneEntry = false,
+        args = function() 
+            local args = vim.fn.input('Args: ')
+            return vim.fn.split(args, ' ')
+        end ,
+    }
+}
+
+local dapui = require("dapui")
+dapui.setup()
+dap.listeners.after.event_initialized["dapui_config"] = function()
+  dapui.open()
+end
+dap.listeners.before.event_terminated["dapui_config"] = function()
+  dapui.close()
+end
+dap.listeners.before.event_exited["dapui_config"] = function()
+  dapui.close()
+end
+
+m.keys {
+    { 'n', '<leader>db', require('dap').toggle_breakpoint },
+    { 'n', '<leader>dd', require('dap').continue },
+    { 'n', '<leader>ss', require('dap').step_over },
+    { 'n', '<leader>si', require('dap').step_into },
 }
 
 -- harpoon
