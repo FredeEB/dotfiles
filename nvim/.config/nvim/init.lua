@@ -61,7 +61,7 @@ local function open_config()
         vim.cmd('source ' .. config_path)
     end
     local augrp = vim.api.nvim_create_augroup('ConfigEdit', { clear = true })
-    vim.api.nvim_create_autocmd('BufLeave', {
+    vim.api.nvim_create_autocmd('BufWritePost', {
         group = 'ConfigEdit',
         buffer = config_buf,
         callback = reload_config
