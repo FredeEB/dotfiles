@@ -361,7 +361,12 @@ m.keys {
 }
 
 -- harpoon
-require('harpoon').setup()
+require('harpoon').setup {
+    global_settings = {
+        enter_on_sendcmd = true,
+        tmux_autoclose_windows = true,
+    }
+}
 m.keys {
     { 'n', '<M-a>', require('harpoon.mark').add_file },
     { 'n', '<M-s>', require('harpoon.ui').toggle_quick_menu },
@@ -369,6 +374,9 @@ m.keys {
     { 'n', '<M-k>', function() require('harpoon.ui').nav_file(2) end },
     { 'n', '<M-l>', function() require('harpoon.ui').nav_file(3) end },
     { 'n', '<M-;>', function() require('harpoon.ui').nav_file(4) end },
+    { 'n', '<M-c>', require('harpoon.cmd-ui').toggle_quick_menu },
+    -- send to adjacent pane
+    { 'n', '<M-b>', function() require('harpoon.tmux').sendCommand('%1', 1) end },
 }
 
 -- telescope extensions
