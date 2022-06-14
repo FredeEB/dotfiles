@@ -447,8 +447,6 @@ m.keys {
     { { 'v', 'o' }, 'm', require('tsht').nodes, { remap = false } },
     { 'n', 'H', require('tree-climber').goto_parent },
     { 'n', 'L', require('tree-climber').goto_child },
-    { 'n', 'J', require('tree-climber').swap_next },
-    { 'n', 'K', require('tree-climber').swap_prev }
 }
 
 -- sessions
