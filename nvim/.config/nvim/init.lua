@@ -376,7 +376,7 @@ m.keys {
     { 'n', '<M-;>', function() require('harpoon.ui').nav_file(4) end },
     { 'n', '<M-c>', require('harpoon.cmd-ui').toggle_quick_menu },
     -- send to adjacent pane
-    { 'n', '<M-b>', function() require('harpoon.tmux').sendCommand('%1', 1) end },
+    { 'n', '<M-b>', function() require('harpoon.tmux').sendCommand('+', 1) end },
 }
 
 -- telescope extensions
