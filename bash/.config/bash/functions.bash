@@ -33,3 +33,13 @@ function gba() {
             --bind "enter:execute(git checkout {1})+accept" \
             --bind "ctrl-s:execute(gl {1})+accept" 
 }
+
+function gst() {
+    git stash list \
+        | fzf --no-sort --reverse --preview "git --no-pager stash show --color=always" \
+            --bind "ctrl-d:preview-page-down" \
+            --bind "ctrl-u:preview-page-up" \
+            --bind "ctrl-s:execute(git stash show {1})" \
+            --bind "ctrl-p:execute(git stash pop {1})+accept" \
+            --bind "ctrl-b:execute(git stash branch {1}^)+accept"
+}
