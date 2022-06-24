@@ -178,7 +178,13 @@ vim.api.nvim_create_autocmd('WinEnter', {
     command = [[if winnr('$') == 1 && &buftype == 'quickfix' | q | endif]]
 })
 
-vim.notify = require('notify')
+vim.notify = function(msg, level, opts)
+    if vim.env.SSH_TTY == not nil then
+        require('notify')(msg, level, opts)
+    else
+        io.popen('notify-send Neovim "' .. msg .. '"'):close()
+    end
+end
 
 -- tmux
 require('tmux').setup {
