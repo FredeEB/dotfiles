@@ -163,12 +163,15 @@ packer.startup(function(use)
     use { 'tversteeg/registers.nvim' }
     use { 'ggandor/leap.nvim' }
     use { 'glacambre/firenvim', run = function() vim.fn['firenvim#install'](0) end }
+    use { 'anuvyklack/hydra.nvim', requires = { 'anuvyklack/keymap-layer.nvim' } }
 
     if packer_bootstrap == true then
         packer.sync()
     end
 
 end)
+
+local hydra = require('hydra')
 
 -- close vim if only the qfl is open
 vim.api.nvim_create_autocmd('WinEnter', {
@@ -353,12 +356,26 @@ dap.listeners.before.event_exited["dapui_config"] = function()
   dapui.close()
 end
 
-m.keys {
-    { 'n', '<leader>db', require('dap').toggle_breakpoint },
-    { 'n', '<leader>dd', require('dap').continue },
-    { 'n', '<leader>ss', require('dap').step_over },
-    { 'n', '<leader>si', require('dap').step_into },
-}
+hydra({
+    name = 'Dap Debug',
+    config = {
+        foreign_keys = 'run',
+        exit = false,
+        invoke_on_body = true,
+    },
+    mode = { 'n', 'x' },
+    body = '<leader>d',
+    heads = {
+        { 'c', require('dap').continues, { desc = 'continue' } },
+        { 'b', require('dap').toggle_breakpoint, { desc = 'toggle breakpoint' } },
+        { 's', require('dap').step_over, { desc = 'step over' } },
+        { 'i', require('dap').step_into, { desc = 'step into' } },
+        { 'q', function()
+            require('dap').close()
+            require('dapui').close()
+        end, { desc = 'stop' } },
+    }
+})
 
 -- harpoon
 require('harpoon').setup {
