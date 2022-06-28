@@ -139,7 +139,7 @@ packer.startup(function(use)
     use { 'neovim/nvim-lsp' }
     -- dap
     use { 'mfussenegger/nvim-dap' }
-    use { 'rcarriga/nvim-dap-ui' }
+    use { 'rcarriga/nvim-dap-ui', config = function() require('dapui').setup() end }
     -- tools
     use { 'theprimeagen/harpoon' }
     -- telescope
@@ -155,7 +155,7 @@ packer.startup(function(use)
     use { 'kyazdani42/nvim-web-devicons' }
     use { 'nvim-lualine/lualine.nvim' }
     use { 'mofiqul/dracula.nvim' }
-    use { 'https://gitlab.com/yorickpeterse/nvim-pqf', config = require('pqf').setup }
+    use { 'https://gitlab.com/yorickpeterse/nvim-pqf', config = function() require('pqf').setup() end }
     -- git
     use { 'lewis6991/gitsigns.nvim' }
     use { 'sindrets/diffview.nvim' }
@@ -165,7 +165,7 @@ packer.startup(function(use)
     use { 'olimorris/persisted.nvim' }
     use { 'rcarriga/nvim-notify' }
     use { 'windwp/nvim-autopairs' }
-    use { 'numtostr/comment.nvim' }
+    use { 'numtostr/comment.nvim', config = function() require('Comment').setup() end }
     use { 'mbbill/undotree' }
     use { 'tpope/vim-surround' }
     use { 'kabbamine/zeavim.vim' }
@@ -532,9 +532,6 @@ require('nvim-autopairs').setup {
 
 --leap
 require('leap').set_default_keymaps()
-
--- comments
-require('Comment').setup {}
 
 -- undotree
 vim.g.undotree_WindowLayout = 2
