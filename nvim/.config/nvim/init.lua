@@ -497,16 +497,16 @@ require('lualine').setup({
         lualine_b = {},
         lualine_c = { relative_file_name },
         lualine_x = { 'filetype' },
-        lualine_y = { 'progress' },
-        lualine_z = { 'location' }
+        lualine_y = { 'branch' },
+        lualine_z = { 'location' },
     },
     interactive_sections = {
         lualine_a = {},
         lualine_b = {},
-        lualine_c = { 'filename' },
-        lualine_x = { 'location' },
-        lualine_y = {},
-        lualine_z = {}
+        lualine_c = {},
+        lualine_x = { 'filename' },
+        lualine_y = { 'branch' },
+        lualine_z = { 'location' },
     },
     tabline = {},
     extensions = {}
