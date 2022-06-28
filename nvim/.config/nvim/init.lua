@@ -146,7 +146,7 @@ packer.startup(function(use)
     use { 'kyazdani42/nvim-web-devicons' }
     use { 'nvim-lualine/lualine.nvim' }
     use { 'mofiqul/dracula.nvim' }
-    use { 'https://gitlab.com/yorickpeterse/nvim-pqf' }
+    use { 'https://gitlab.com/yorickpeterse/nvim-pqf', config = require('pqf').setup }
     -- git
     use { 'lewis6991/gitsigns.nvim' }
     use { 'sindrets/diffview.nvim' }
