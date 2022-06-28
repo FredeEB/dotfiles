@@ -77,10 +77,19 @@ local function open_config()
 
     vim.api.nvim_set_current_buf(config_buf)
     vim.cmd('e ' .. config_path)
+    vim.cmd('lcd %:h')
 end
 
 -- autoload file when it changes
 vim.api.nvim_create_augroup('Config', { clear = true })
+--[[ vim.api.nvim_create_autocmd('BufWritePre', {
+    group = 'Config',
+    pattern = {'*.cpp', '*.hpp', '*.c', '*.h'},
+    callback = function()
+        vim.lsp.buf.format { async = true }
+    end
+})
+]]
 vim.api.nvim_create_autocmd('BufWritePost', {
     group = 'Config',
     pattern = 'init.lua',
