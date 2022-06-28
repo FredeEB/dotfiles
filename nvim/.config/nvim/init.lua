@@ -163,14 +163,11 @@ packer.startup(function(use)
     use { 'timuntersberger/neogit' }
     -- misc
     use { 'olimorris/persisted.nvim' }
-    use { 'rcarriga/nvim-notify' }
     use { 'windwp/nvim-autopairs' }
     use { 'numtostr/comment.nvim', config = function() require('Comment').setup() end }
     use { 'mbbill/undotree' }
-    use { 'tpope/vim-surround' }
     use { 'kabbamine/zeavim.vim' }
     use { 'tversteeg/registers.nvim' }
-    use { 'ggandor/leap.nvim' }
     use { 'anuvyklack/hydra.nvim', requires = { 'anuvyklack/keymap-layer.nvim' } }
 
     if packer_bootstrap == true then
@@ -442,7 +439,6 @@ ts.setup {
 }
 ts.load_extension('git_worktree')
 ts.load_extension('fzf')
-ts.load_extension('notify')
 
 m.keys { -- telescope
     { 'n', '<leader>ff', require('telescope.builtin').find_files },
@@ -529,9 +525,6 @@ vim.cmd('colorscheme dracula')
 require('nvim-autopairs').setup {
     check_ts = true,
 }
-
---leap
-require('leap').set_default_keymaps()
 
 -- undotree
 vim.g.undotree_WindowLayout = 2
