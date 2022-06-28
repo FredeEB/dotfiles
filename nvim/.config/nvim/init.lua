@@ -169,6 +169,7 @@ packer.startup(function(use)
     use { 'kabbamine/zeavim.vim' }
     use { 'tversteeg/registers.nvim' }
     use { 'anuvyklack/hydra.nvim', requires = { 'anuvyklack/keymap-layer.nvim' } }
+    use { 'lewis6991/spellsitter.nvim', config = function() require('spellsitter').setup() end }
 
     if packer_bootstrap == true then
         packer.sync()
