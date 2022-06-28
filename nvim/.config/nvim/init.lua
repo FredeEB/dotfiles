@@ -564,7 +564,7 @@ m.keys {
     { 'n', '<leader>gu', require('gitsigns').undo_stage_hunk },
     { 'n', '<leader>gp', require('gitsigns').preview_hunk },
     { 'n', '<leader>gd', require('diffview').open },
-    { 'n', '<leader>gm', require('gitsigns').blame_line },
+    { 'n', '<leader>gm', function() require('gitsigns').blame_line{ full = true } end },
     { 'n', '<leader>gs', require('neogit').open },
 }
 
