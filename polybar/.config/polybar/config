@@ -7,7 +7,7 @@ grey       = ${xrdb:color4}
 
 [bar/main]
 width = 100% 
-height = 30
+height = 24
 fixed-center = true
 
 monitor = ${env:MONITOR:}
