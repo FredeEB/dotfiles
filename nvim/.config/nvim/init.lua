@@ -225,8 +225,8 @@ vim.api.nvim_create_autocmd('TermClose', {
 require('luasnip.loaders.from_snipmate').lazy_load()
 local ls = require('luasnip')
 m.keys({
-    { { 'i', 's' }, "<C-j>", function () if ls.expand_or_jumpable() then ls.expand_or_jump() end end } ,
-    { { 'i', 's' }, "<C-k>", function () if ls.expand_or_jumpable(-1) then ls.expand_or_jump(-1) end end } ,
+    { { 'i', 's' }, "<C-j>", function () if ls.expand_or_jumpable() then ls.expand_or_jump() end end },
+    { { 'i', 's' }, "<C-k>", function () if ls.expand_or_jumpable(-1) then ls.expand_or_jump(-1) end end },
     { { 'i', 's' }, "<C-l>", function () if ls.choice_active() then ls.change_choice(1) end end } },
     { silent = true }
 )
@@ -310,11 +310,11 @@ nvim_lsp.sumneko_lua.setup {
     on_init = on_init
 }
 
+
 m.keys {
     { 'n', 'gd', vim.lsp.buf.definition },
-    { 'n', '<leader>ri', vim.lsp.buf.implementation },
     { 'n', '<leader>rs', vim.lsp.buf.signature_help },
-    { 'n', '<leader>rr', vim.lsp.buf.references },
+    { 'n', '<leader>rr', [[<cmd>Telescope lsp_references<cr>]] },
     { 'n', '<leader>ro', vim.lsp.buf.rename },
     { 'n', '<leader>rh', vim.lsp.buf.hover },
     { 'n', '<leader>re', vim.lsp.buf.code_action },
@@ -343,10 +343,10 @@ dap.configurations.cpp = {
         end,
         cwd = "${workspaceFolder}",
         stopOneEntry = false,
-        args = function() 
+        args = function()
             local args = vim.fn.input('Args: ')
             return vim.fn.split(args, ' ')
-        end ,
+        end,
     }
 }
 
