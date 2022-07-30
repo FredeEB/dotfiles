@@ -162,7 +162,6 @@ packer.startup(function(use)
     use { 'kabbamine/zeavim.vim' }
     use { 'tversteeg/registers.nvim' }
     use { 'ggandor/leap.nvim' }
-    use { 'glacambre/firenvim', run = function() vim.fn['firenvim#install'](0) end }
     use { 'anuvyklack/hydra.nvim', requires = { 'anuvyklack/keymap-layer.nvim' } }
 
     if packer_bootstrap == true then
