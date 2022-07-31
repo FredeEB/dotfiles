@@ -1,0 +1,110 @@
+# Fredeeb i3config
+#
+# Please see https://i3wm.org/docs/userguide.html for a complete reference!
+
+font Iosevka Nerd Font 12
+
+set $up k
+set $down j
+set $left h
+set $right l
+set $mod Mod4
+set $browser "firefox"
+set $term "alacritty"
+
+# use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# kill focused window
+bindsym $mod+Shift+q kill
+
+# lock
+bindsym $mod+Shift+p exec betterlockscreen -l
+
+bindsym $mod+Return exec $term
+bindsym $mod+r exec rofi -show run
+bindsym $mod+q exec $editor
+bindsym $mod+b exec $browser
+# There also is the (new) i3-dmenu-desktop which only displays applications
+# shipping a .desktop file. It is a wrapper around dmenu, so you need that
+# installed.
+# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5% #increase sound volume
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl -- set-sink-volume 0 -5% #decrease sound volume
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
+
+# Sreen brightness controls
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
+bindsym XF86MonBrightnessDown exec xbacklight -dec 9 # decrease screen brightness
+
+# change focus
+bindsym $mod+$left focus left
+bindsym $mod+$down focus down
+bindsym $mod+$up focus up
+bindsym $mod+$right focus right
+
+# move focused window
+bindsym $mod+Shift+$left move left
+bindsym $mod+Shift+$down move down
+bindsym $mod+Shift+$up move up
+bindsym $mod+Shift+$right move right
+
+bindsym $mod+c split toggle
+# enter fullscreen mode for the focused container
+bindsym $mod+g fullscreen toggle
+
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# move the currently focused window to the scratchpad
+bindsym $mod+Shift+minus move scratchpad
+
+# Show the next scratchpad window or hide the focused scratchpad window.
+# If there are multiple scratchpad windows, this command cycles through them.
+bindsym $mod+minus scratchpad show
+
+# switch to workspace
+bindsym $mod+a workspace 1
+bindsym $mod+s workspace 2
+bindsym $mod+d workspace 3
+bindsym $mod+f workspace 4
+
+# move focused container to workspace
+bindsym $mod+Shift+a move container to workspace 1
+bindsym $mod+Shift+s move container to workspace 2
+bindsym $mod+Shift+d move container to workspace 3
+bindsym $mod+Shift+f move container to workspace 4
+
+# reload the configuration file
+bindsym $mod+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'logout?' -b 'Yes, exit i3' 'i3-msg exit'"
+
+# resize window from normal mode
+bindsym $mod+y     resize shrink width 10 px or 10 ppt
+bindsym $mod+u     resize grow height 10 px or 10 ppt
+bindsym $mod+i     resize shrink height 10 px or 10 ppt
+bindsym $mod+o     resize grow width 10 px or 10 ppt
+
+exec_always feh --bg-center ~/desktop.*
+# Start i3bar to display a workspace bar (plus the system information i3status
+# finds out, if available)
+
+#colors			border	bg	text	ind	child_bdr
+client.focused		#555500 #1c1e1f #fafafa	#338f5f	#2a2e2f
+client.unfocused	#1c1e1f #1c1e1f #aaaaaa #338f5f #1c1e1f
+new_window 1pixel
+new_float 1pixel
+
+#startprograms
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+exec_always --no-startup-id picom
+exec_always --no-startup-id xset r rate 200 50
+exec_always --no-startup-id setxkbmap us -option caps:escape
