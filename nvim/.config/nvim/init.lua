@@ -1,4 +1,3 @@
-
 -- general settings
 vim.o.completeopt = 'menuone,noinsert,noselect'
 vim.o.expandtab = true
@@ -14,6 +13,7 @@ vim.o.laststatus = 3
 vim.o.inccommand = 'nosplit'
 vim.o.termguicolors = true
 vim.o.fixeol = false
+vim.o.signcolumn = 'yes:1'
 
 local m = require('functions.keymap')
 
