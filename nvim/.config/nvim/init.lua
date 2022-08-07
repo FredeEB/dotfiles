@@ -170,6 +170,8 @@ packer.startup(function(use)
     use { 'tversteeg/registers.nvim' }
     use { 'anuvyklack/hydra.nvim', requires = { 'anuvyklack/keymap-layer.nvim' } }
     use { 'lewis6991/spellsitter.nvim', config = function() require('spellsitter').setup() end }
+    use { 'kylechui/nvim-surround', config = function() require('nvim-surround').setup() end }
+    use { 'xiyaowong/nvim-cursorword' }
 
     if packer_bootstrap == true then
         packer.sync()
