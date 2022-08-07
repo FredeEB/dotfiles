@@ -164,7 +164,7 @@ packer.startup(function(use)
     -- misc
     use { 'olimorris/persisted.nvim' }
     use { 'windwp/nvim-autopairs' }
-    use { 'numtostr/comment.nvim', config = function() require('Comment').setup() end }
+    use { 'terrortylor/nvim-comment', config = function() require('nvim_comment').setup() end }
     use { 'mbbill/undotree' }
     use { 'kabbamine/zeavim.vim' }
     use { 'tversteeg/registers.nvim' }
