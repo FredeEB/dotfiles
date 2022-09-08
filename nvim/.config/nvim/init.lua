@@ -14,6 +14,7 @@ vim.o.inccommand = 'nosplit'
 vim.o.termguicolors = true
 vim.o.fixeol = false
 vim.o.signcolumn = 'yes:1'
+vim.o.mousemodel = 'extend'
 
 local m = require('functions.keymap')
 
