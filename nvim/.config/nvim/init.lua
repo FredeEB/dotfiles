@@ -163,6 +163,7 @@ packer.startup(function(use)
     use { 'theprimeagen/git-worktree.nvim' }
     use { 'timuntersberger/neogit' }
     -- misc
+    use { 'ojroques/nvim-osc52', config = function() require('osc52').setup() end }
     use { 'olimorris/persisted.nvim' }
     use { 'windwp/nvim-autopairs' }
     use { 'terrortylor/nvim-comment', config = function() require('nvim_comment').setup() end }
@@ -193,8 +194,25 @@ vim.notify = function(msg, level, opts)
     else
         io.popen('notify-send Neovim "' .. msg .. '"'):close()
     end
+-- osc52
+local function copy(lines, _)
+  require('osc52').copy(table.concat(lines, '\n'))
 end
 
+local function paste()
+  return {vim.fn.split(vim.fn.getreg(''), '\n'), vim.fn.getregtype('')}
+end
+
+vim.g.clipboard = {
+  name = 'osc52',
+  copy = {['+'] = copy, ['*'] = copy},
+  paste = {['+'] = paste, ['*'] = paste},
+}
+
+-- Now the '+' register will copy to system clipboard using OSC52
+vim.keymap.set('n', '<leader>c', require('osc52').copy_operator, {expr = true})
+vim.keymap.set('n', '<leader>cc', '<leader>c_', {remap = true})
+vim.keymap.set('x', '<leader>c', require('osc52').copy_visual)
 -- tmux
 require('tmux').setup {
     copy_sync = {
