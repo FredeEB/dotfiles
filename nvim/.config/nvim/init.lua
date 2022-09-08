@@ -163,6 +163,7 @@ packer.startup(function(use)
     use { 'theprimeagen/git-worktree.nvim' }
     use { 'timuntersberger/neogit' }
     -- misc
+    use { 'williamboman/mason.nvim', config = function() require('mason').setup() end }
     use { 'ojroques/nvim-osc52', config = function() require('osc52').setup() end }
     use { 'olimorris/persisted.nvim' }
     use { 'windwp/nvim-autopairs' }
