@@ -548,6 +548,9 @@ require('lualine').setup({
 vim.g.dracula_lualine_bg_color = '#44475a'
 vim.g.dracula_show_end_of_buffer = true
 vim.cmd('colorscheme dracula')
+vim.api.nvim_set_hl(0, 'CursorWord', { bg = "#383A46", bold = true })
+vim.g.cursorword_min_width = 1
+vim.g.cursorword_disable_filetypes = {"NeogitStatus"}
 
 -- autopairs
 require('nvim-autopairs').setup {
