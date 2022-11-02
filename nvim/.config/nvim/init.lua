@@ -424,7 +424,8 @@ m.keys {
     { 'n', '<M-S-b>', function() run_command(true) end },
 }
 
--- telescope extensions
+-- telescope
+local ignore_paths = { '.git', '.clangd', 'node_modules', 'target', 'dist'}
 local ts = require('telescope')
 ts.setup {
     extensions = {
@@ -438,7 +439,10 @@ ts.setup {
     pickers = {
         find_files = {
             hidden = true,
-            file_ignore_patterns = { '.git', '.clangd', 'node_modules' }
+            file_ignore_patterns = ignore_paths
+        },
+        live_grep = {
+            file_ignore_patterns = ignore_paths
         }
     },
     defaults = {
@@ -455,6 +459,7 @@ ts.setup {
         },
     }
 }
+-- telescope extensions
 ts.load_extension('git_worktree')
 ts.load_extension('fzf')
 
