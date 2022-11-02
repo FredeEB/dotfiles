@@ -354,12 +354,6 @@ m.keys {
 
 -- dap
 local dap = require('dap')
-dap.adapters.lldb = {
-    type = 'executable',
-    command = '/usr/local/bin/lldb-vscode',
-    name = 'lldb'
-}
-
 dap.configurations.cpp = {
     {
         name = 'Launch',
