@@ -218,10 +218,6 @@ vim.keymap.set('n', '<leader>cc', '<leader>c_', { remap = true })
 vim.keymap.set('x', '<leader>c', require('osc52').copy_visual)
 -- tmux
 require('tmux').setup {
-    copy_sync = {
-        enable = true,
-        redirect_to_clipboard = true,
-    },
     navigation = {
         enable_default_keybindings = true,
     },
