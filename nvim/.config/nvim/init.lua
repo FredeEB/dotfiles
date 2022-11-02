@@ -15,6 +15,7 @@ vim.o.termguicolors = true
 vim.o.fixeol = false
 vim.o.signcolumn = 'yes:1'
 vim.o.mousemodel = 'extend'
+vim.o.guifont = 'Iosevka Nerd Font:h10'
 
 local m = require('functions.keymap')
 
