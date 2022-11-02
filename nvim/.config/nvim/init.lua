@@ -190,11 +190,12 @@ vim.api.nvim_create_autocmd('WinEnter', {
 })
 
 vim.notify = function(msg, level, opts)
-    if vim.env.SSH_TTY == not nil then
-        require('notify')(msg, level, opts)
-    else
+    if vim.env.SSH_TTY == nil and vim.fn.executable('notify-send') == 1 then
         io.popen('notify-send Neovim "' .. msg .. '"'):close()
+    else
+        require('notify')(msg, level, opts)
     end
+end
 -- osc52
 local function copy(lines, _)
   require('osc52').copy(table.concat(lines, '\n'))
