@@ -390,10 +390,7 @@ hydra({
         { 'b', require('dap').toggle_breakpoint, { desc = 'toggle breakpoint' } },
         { 's', require('dap').step_over, { desc = 'step over' } },
         { 'i', require('dap').step_into, { desc = 'step into' } },
-        { 'q', function()
-            require('dap').close()
-            require('dapui').close()
-        end, { desc = 'stop' } },
+        { 'q', require('dap').close, { desc = 'stop' } },
     }
 })
 
