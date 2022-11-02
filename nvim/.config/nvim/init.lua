@@ -199,22 +199,22 @@ vim.notify = function(msg, level, opts)
 end
 -- osc52
 local function copy(lines, _)
-  require('osc52').copy(table.concat(lines, '\n'))
+    require('osc52').copy(table.concat(lines, '\n'))
 end
 
 local function paste()
-  return {vim.fn.split(vim.fn.getreg(''), '\n'), vim.fn.getregtype('')}
+    return { vim.fn.split(vim.fn.getreg(''), '\n'), vim.fn.getregtype('') }
 end
 
 vim.g.clipboard = {
-  name = 'osc52',
-  copy = {['+'] = copy, ['*'] = copy},
-  paste = {['+'] = paste, ['*'] = paste},
+    name = 'osc52',
+    copy = { ['+'] = copy, ['*'] = copy },
+    paste = { ['+'] = paste, ['*'] = paste },
 }
 
 -- Now the '+' register will copy to system clipboard using OSC52
-vim.keymap.set('n', '<leader>c', require('osc52').copy_operator, {expr = true})
-vim.keymap.set('n', '<leader>cc', '<leader>c_', {remap = true})
+vim.keymap.set('n', '<leader>c', require('osc52').copy_operator, { expr = true })
+vim.keymap.set('n', '<leader>cc', '<leader>c_', { remap = true })
 vim.keymap.set('x', '<leader>c', require('osc52').copy_visual)
 -- tmux
 require('tmux').setup {
@@ -255,9 +255,10 @@ vim.api.nvim_create_autocmd('TermClose', {
 require('luasnip.loaders.from_snipmate').lazy_load()
 local ls = require('luasnip')
 m.keys({
-    { { 'i', 's' }, "<C-j>", function () if ls.expand_or_jumpable() then ls.expand_or_jump() end end },
-    { { 'i', 's' }, "<C-k>", function () if ls.expand_or_jumpable(-1) then ls.expand_or_jump(-1) end end },
-    { { 'i', 's' }, "<C-l>", function () if ls.choice_active() then ls.change_choice(1) end end } },
+    { { 'i', 's' }, "<C-j>", function() if ls.expand_or_jumpable() then ls.expand_or_jump() end end },
+    { { 'i', 's' }, "<C-k>", function() if ls.expand_or_jumpable(-1) then ls.expand_or_jump(-1) end end },
+    { { 'i', 's' }, "<C-l>", function() if ls.choice_active() then ls.change_choice(1) end end }
+},
     { silent = true }
 )
 
@@ -420,7 +421,7 @@ local function run_command(clear)
     if clear == true then
         hp.sendCommand('+', 'clear')
     end
-    hp.sendCommand('+', 1) 
+    hp.sendCommand('+', 1)
 end
 
 m.keys {
@@ -590,7 +591,7 @@ m.keys {
     { 'n', '<leader>gu', require('gitsigns').undo_stage_hunk },
     { 'n', '<leader>gp', require('gitsigns').preview_hunk },
     { 'n', '<leader>gd', require('diffview').open },
-    { 'n', '<leader>gm', function() require('gitsigns').blame_line{ full = true } end },
+    { 'n', '<leader>gm', function() require('gitsigns').blame_line { full = true } end },
     { 'n', '<leader>gs', require('neogit').open },
 }
 
