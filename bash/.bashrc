@@ -2,7 +2,7 @@ export XDG_CONFIG=$HOME/.config
 source $XDG_CONFIG/bash/aliases.bash
 source $XDG_CONFIG/bash/functions.bash
 
-set -o vi
+set -o emacs
 
 if [[ -x "$(command -v keychain)" ]]; then
     eval "$(keychain --eval --quiet id_rsa)"
@@ -29,6 +29,8 @@ if [[ -f $HOME/.local/fzf-tab-completion/bash/fzf-bash-completion.sh ]]; then
 fi
 
 bind Space:magic-space
+
+export PATH=$HOME/.cargo/bin:$PATH
 
 #history file
 export HISTSIZE=10000
