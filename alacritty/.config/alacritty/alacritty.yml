@@ -188,11 +188,9 @@ live_config_reload: true
 #   - (Linux) user login shell
 #   - (Windows) powershell
 shell:
-  program: /bin/sh
+  program: nvim
   args:
-    - -c
-    - -l
-    - "tmux attach || tmux"
+    - +te
 
 # Startup directory
 #
