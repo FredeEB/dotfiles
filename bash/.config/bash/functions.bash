@@ -1,3 +1,11 @@
+function v() {
+    if [ -z "$NVIM" ]; then
+        nvim $1
+    else
+        nvim --server $NVIM --remote-send "<cmd>cd $PWD | e ${1:-.}<cr>"
+    fi
+}; export -f v
+
 function newcpprepo() {
     NAME=$1; shift
     gh repo create --template fredeeb/cpptemplate $NAME
