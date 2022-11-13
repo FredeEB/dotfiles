@@ -151,7 +151,6 @@ m.keys {
     { 't', '<C-k>', '<C-\\><C-N><C-w>k' },
     { 't', '<C-l>', '<C-\\><C-N><C-w>l' },
     { 't', '<esc>', '<C-\\><C-n>' },
-    { 't', '<leader>fd', '<C-\\><C-N><leader>fd' },
 }
 
 vim.api.nvim_create_augroup('Terminal', { clear = true })
