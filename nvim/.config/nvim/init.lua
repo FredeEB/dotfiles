@@ -53,6 +53,7 @@ packer.startup(function(use)
     use { 'theprimeagen/git-worktree.nvim' }
     use { 'timuntersberger/neogit' }
     -- misc
+    use { 'yutkat/confirm-quit.nvim' }
     use { 'rcarriga/nvim-notify' }
     use { 'williamboman/mason.nvim', config = function() require('mason').setup() end }
     use { 'ojroques/nvim-osc52', config = function() require('osc52').setup() end }
