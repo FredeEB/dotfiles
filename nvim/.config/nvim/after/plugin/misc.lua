@@ -36,7 +36,7 @@ m.keys { -- vblock moves
 }
 
 m.keys { -- closing files
-    { 'n', '<leader>q', [[<cmd>bdelete<cr>]] },
+    { 'n', '<leader>q', [[<cmd>bw<cr>]] },
     { 'n', '<leader>Q', [[<cmd>q!<cr>]] },
 }
 
@@ -99,6 +99,8 @@ m.keys { -- misc
     { 'n', 'n', [[nzzzv]] },
     { 'n', 'N', [[Nzzzv]] },
     { 'n', 'J', [[mzJ`z]] },
+    { 'n', '<leader>j', [[<cmd>vsplit term:///bin/bash<cr>]] },
+    { 'n', '<leader>k', [[<cmd>split term:///bin/bash<cr>]] },
 }
 
 
@@ -148,17 +150,25 @@ m.keys {
     { 't', '<C-j>', '<C-\\><C-N><C-w>j' },
     { 't', '<C-k>', '<C-\\><C-N><C-w>k' },
     { 't', '<C-l>', '<C-\\><C-N><C-w>l' },
+    { 't', '<esc>', '<C-\\><C-n>' },
+    { 't', '<leader>fd', '<C-\\><C-N><leader>fd' },
 }
 
+vim.api.nvim_create_augroup('Terminal', { clear = true })
 -- start terminal in insert mode
 vim.api.nvim_create_autocmd('TermOpen', {
+    command = 'setlocal nonumber norelativenumber | startinsert',
+    group = 'Terminal'
+})
+vim.api.nvim_create_autocmd('BufEnter', {
     command = 'startinsert',
-    group = 'Config'
+    pattern = { 'term://*' },
+    group = 'Terminal'
 })
 -- close terminal buffer after command finishes
 vim.api.nvim_create_autocmd('TermClose', {
-    command = 'bdelete',
-    group = 'Config'
+    command = 'bw',
+    group = 'Terminal'
 })
 
 -- treesitter
