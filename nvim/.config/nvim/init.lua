@@ -7,7 +7,7 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
 end
 
 local packer = require('packer')
-packer.startup(function(use)
+return packer.startup(function(use)
 
     use { 'wbthomason/packer.nvim' }
 
@@ -65,8 +65,8 @@ packer.startup(function(use)
     use { 'lewis6991/spellsitter.nvim', config = function() require('spellsitter').setup() end }
     use { 'kylechui/nvim-surround', config = function() require('nvim-surround').setup() end }
     use { 'xiyaowong/nvim-cursorword' }
+    if packer_bootstrap == true then
+        packer.sync()
+    end
 end)
 
-if packer_bootstrap == true then
-    packer.sync()
-end
