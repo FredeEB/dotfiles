@@ -14,8 +14,6 @@ packer.startup(function(use)
     -- common
     use { 'nvim-lua/popup.nvim' }
     use { 'nvim-lua/plenary.nvim' }
-    -- tmux
-    use { 'aserowy/tmux.nvim' }
     -- snippets
     use { 'dawikur/algorithm-mnemonics.vim' }
     use { 'honza/vim-snippets' }

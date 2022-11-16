@@ -35,14 +35,16 @@ m.keys { -- vblock moves
     { 'v', 'J', [[:m '>+1<cr>gv=gv]] },
 }
 
+m.keys {
+    { 'n', '<C-h>', '<C-w>h' },
+    { 'n', '<C-j>', '<C-w>j' },
+    { 'n', '<C-k>', '<C-w>k' },
+    { 'n', '<C-l>', '<C-w>l' },
+}
+
 m.keys { -- closing files
     { 'n', '<leader>q', [[<cmd>bw<cr>]] },
     { 'n', '<leader>Q', [[<cmd>q!<cr>]] },
-}
-
-m.keys { -- tmux
-    { 'n', '<leader>t', [[<cmd>!tmux split-window -h -c %:p:h<cr><cmd>redraw!<cr>]] },
-    { 'n', '<leader>gr', [[<cmd>!tmux split-window -h -c `git rev-parse --show-toplevel`<cr><cmd>redraw!<cr>]] }
 }
 
 m.keys { -- qfl
@@ -136,13 +138,6 @@ vim.g.clipboard = {
 vim.keymap.set('n', '<leader>c', require('osc52').copy_operator, { expr = true })
 vim.keymap.set('n', '<leader>cc', '<leader>c_', { remap = true })
 vim.keymap.set('x', '<leader>c', require('osc52').copy_visual)
-
--- tmux
-require('tmux').setup {
-    navigation = {
-        enable_default_keybindings = true,
-    },
-}
 
 -- terminal config
 m.keys {
