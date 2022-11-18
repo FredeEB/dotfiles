@@ -18,10 +18,15 @@
 *.color7:     #BFBFBF
 *.color15:    #E6E6E6
 
-st.font: Iosevka:pixelsize=16
+URxvt.font: xft:Iosevka:style=Regular:pixelsize=16
+URxvt.boldFont: xft:Iosevka:style=Bold:pixelsize=16
+URxvt.italicFont: xft:Iosevka:style=Italic:pixelsize=16
+URxvt.boldItalicFont: xft:Iosevka:style=Bold Italic:pixelsize=16
+URxvt.letterspacing: -1
+URxvt.perl-ext-common: 52-osc
 
 ! ROFI Color theme
 rofi.theme: ~/.config/rofi/rofi.conf
 
-rofi.terminal: alacritty
+rofi.terminal: urxvt
 rofi.run-command: zsh -c "{cmd}"
