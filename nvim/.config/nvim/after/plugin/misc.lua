@@ -137,6 +137,8 @@ vim.keymap.set('n', '<leader>cc', '<leader>c_', { remap = true })
 vim.keymap.set('x', '<leader>c', require('osc52').copy_visual)
 
 -- terminal config
+vim.o.scrollback = 100000
+
 m.keys {
     { 't', '<C-h>', '<C-\\><C-N><C-w>h' },
     { 't', '<C-j>', '<C-\\><C-N><C-w>j' },
