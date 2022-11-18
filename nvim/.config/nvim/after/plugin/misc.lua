@@ -19,9 +19,6 @@ vim.o.mousemodel = 'extend'
 
 local m = require('functions.keymap')
 
-m.key('n', '<Space>', '', {})
-vim.g.mapleader = ' '
-
 m.keys { -- undo tags
     { 'i', ',', [[<C-g>u,]] },
     { 'i', '.', [[<C-g>u.]] },

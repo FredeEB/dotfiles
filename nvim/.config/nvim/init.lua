@@ -6,6 +6,10 @@ if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
     packer_bootstrap = true
 end
 
+local m = require('functions.keymap')
+m.key('n', '<Space>', '', {})
+vim.g.mapleader = ' '
+
 local packer = require('packer')
 return packer.startup(function(use)
 
