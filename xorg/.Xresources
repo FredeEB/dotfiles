@@ -24,6 +24,7 @@ URxvt.italicFont: xft:Iosevka:style=Italic:pixelsize=16
 URxvt.boldItalicFont: xft:Iosevka:style=Bold Italic:pixelsize=16
 URxvt.letterspacing: -1
 URxvt.perl-ext-common: 52-osc
+URxvt.scrollBar: false
 
 ! ROFI Color theme
 rofi.theme: ~/.config/rofi/rofi.conf
