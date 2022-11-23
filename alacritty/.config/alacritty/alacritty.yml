@@ -63,13 +63,13 @@ scrolling:
 font:
   normal:
     family: Iosevka
-    style: regular
+    style: light
   bold:
     family: Iosevka
     style: bold
   italic:
     family: Iosevka
-    style: Light Italic
+    style: light italic
   size: 9
   offset:
     x: 0
