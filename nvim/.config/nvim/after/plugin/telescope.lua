@@ -44,7 +44,7 @@ m.keys { -- telescope
     { 'n', '<leader>fr', require('telescope.builtin').grep_string },
     { 'n', '<leader>b', require('telescope.builtin').buffers },
     { 'n', '<leader>gb', require('telescope.builtin').git_branches },
-    { 'n', '<leader>h', require('telescope.builtin').help_tags }
+    { 'n', '<leader>h', require('telescope.builtin').help_tags },
 }
 
 m.keys { -- extensions
