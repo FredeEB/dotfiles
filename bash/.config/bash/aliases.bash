@@ -1,5 +1,5 @@
 #files
-alias v="nvim"
+alias v="nvimw"
 alias al="ls -lah"
 alias cd..="cd .."
 alias cp="cp -i"
