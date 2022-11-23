@@ -1,16 +1,3 @@
-function v() {
-    if [ -z "$NVIM" ]; then
-        nvim $1
-    else
-        # save the bufnumber
-        # TERMTOKILL="$(nvim --server $NVIM --remote-expr "bufnr()" 2>&1)"
-        nvim --server $NVIM --remote-send "<cmd>cd $PWD | e ${1:-.}<cr>"
-        # kill the bufnumber
-        # TODO: This is broken
-        # nvim --server $NVIM --remote-send "<cmd>${TERMTOKILL}bd!<cr>"
-    fi
-}; export -f v
-
 function newcpprepo() {
     NAME=$1; shift
     gh repo create --template fredeeb/cpptemplate $NAME
