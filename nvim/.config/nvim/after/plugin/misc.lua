@@ -78,7 +78,6 @@ local function open_config()
 
     vim.api.nvim_set_current_buf(config_buf)
     vim.cmd('e ' .. config_path)
-    vim.cmd('lcd %:h')
 end
 
 -- autoload file when it changes
@@ -152,11 +151,6 @@ vim.api.nvim_create_augroup('Terminal', { clear = true })
 -- start terminal in insert mode
 vim.api.nvim_create_autocmd('TermOpen', {
     command = 'setlocal nonumber norelativenumber | startinsert',
-    group = 'Terminal'
-})
-vim.api.nvim_create_autocmd('BufEnter', {
-    command = 'startinsert',
-    pattern = { 'term://*' },
     group = 'Terminal'
 })
 -- close terminal buffer after command finishes
