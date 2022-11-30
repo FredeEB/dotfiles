@@ -84,7 +84,7 @@ nvim_lsp.sumneko_lua.setup {
 m.keys {
     { 'n', 'gd', vim.lsp.buf.definition },
     { 'n', '<leader>rs', vim.lsp.buf.signature_help },
-    { 'n', '<leader>rr', [[<cmd>Telescope lsp_references<cr>]] },
+    { 'n', '<leader>rr', vim.lsp.buf.references },
     { 'n', '<leader>ro', vim.lsp.buf.rename },
     { 'n', '<leader>rh', vim.lsp.buf.hover },
     { 'n', '<leader>re', vim.lsp.buf.code_action },
