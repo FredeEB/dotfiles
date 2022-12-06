@@ -8,6 +8,8 @@
 	autoStash = true
 [pull]
 	rebase = true
+[push]
+	autoSetupRemote = true
 [alias]
     sync = "! f() { git pull --rebase ${1} ${2}; git submodule update; };f"
 [commit]
