@@ -23,8 +23,14 @@ URxvt.boldFont: xft:Iosevka:style=Bold:pixelsize=14
 URxvt.italicFont: xft:Iosevka:style=Italic:pixelsize=14
 URxvt.boldItalicFont: xft:Iosevka:style=Bold Italic:pixelsize=14
 URxvt.letterspacing: -1
-URxvt.perl-ext-common: default,52-osc,clipboard
+URxvt.perl-ext-common: default,52-osc,clipboard,-confirm-paste
 URxvt.scrollBar: false
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+URxvt.keysym.Control-Meta-c: builtin-string:
+URxvt.keysym.Control-Meta-v: builtin-string:
 
 ! ROFI Color theme
 rofi.theme: ~/.config/rofi/rofi.conf
