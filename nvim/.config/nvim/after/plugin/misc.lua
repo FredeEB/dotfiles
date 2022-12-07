@@ -32,7 +32,7 @@ m.keys { -- vblock moves
     { 'v', 'J', [[:m '>+1<cr>gv=gv]] },
 }
 
-m.keys {
+m.keys { -- window actions
     { 'n', '<C-h>', '<C-w>h' },
     { 'n', '<C-j>', '<C-w>j' },
     { 'n', '<C-k>', '<C-w>k' },
@@ -45,15 +45,19 @@ m.keys { -- closing files
 }
 
 m.keys { -- qfl
-    { 'n', '<C-p>', [[<cmd>cprev<cr>]] },
-    { 'n', '<C-n>', [[<cmd>cnext<cr>]] },
+    { 'n', '<C-p>', [[<cmd>cprev<cr>zz]] },
+    { 'n', '<C-n>', [[<cmd>cnext<cr>zz]] },
     { 'n', '<C-q>', [[<cmd>copen<cr>]] },
     { 'n', '<C-c>', [[<cmd>lclose | cclose<cr>]] },
-    { 'n', '<M-p>', [[<cmd>lprev<cr>]] },
-    { 'n', '<M-n>', [[<cmd>lnext<cr>]] },
+    { 'n', '<M-p>', [[<cmd>lprev<cr>zz]] },
+    { 'n', '<M-n>', [[<cmd>lnext<cr>zz]] },
     { 'n', '<M-q>', [[<cmd>lopen<cr>]] },
     { 'n', '<leader>l', [[<cmd>lvim // % | lopen<cr>]] }
 }
+
+for _, cmd in ipairs { '<C-d>', '<C-u>', '<C-i>', '<C-o>', 'n', 'N', 'J', '*' } do
+    m.key('n', cmd, cmd .. 'zz', { noremap = true })
+end
 
 local function open_config()
     local config_buf = vim.api.nvim_create_buf(true, true)
@@ -94,9 +98,6 @@ vim.api.nvim_create_autocmd('BufWritePost', {
 m.keys { -- misc
     { 'n', '<leader>fd', [[<cmd>Explore<cr>]] },
     { 'n', '<leader>fe', open_config },
-    { 'n', 'n', [[nzzzv]] },
-    { 'n', 'N', [[Nzzzv]] },
-    { 'n', 'J', [[mzJ`z]] },
     { 'n', '<leader><leader>', [[<cmd>e term:///bin/bash<cr>]] },
     { 'n', '<leader>j', [[<cmd>vsplit term:///bin/bash<cr>]] },
     { 'n', '<leader>k', [[<cmd>split term:///bin/bash<cr>]] },

@@ -90,7 +90,7 @@ m.keys {
     { 'n', '<leader>re', vim.lsp.buf.code_action },
     { 'n', '<leader>rn', vim.diagnostic.goto_next },
     { 'n', '<leader>rp', vim.diagnostic.goto_prev },
-    { 'n', '<leader>rd', vim.diagnostic.setloclist },
+    { 'n', '<leader>rd', vim.diagnostic.setqflist },
     { 'n', '<leader>rf', function() vim.lsp.buf.format { async = true } end },
     { 'v', '<leader>rf', vim.lsp.buf.range_formatting },
 }
