@@ -14,8 +14,15 @@ function map.keys(maps, options)
 end
 
 -- map keys for filetypes
+vim.api.nvim_create_augroup('KeybindsForMode', { clear = true })
 function map.key_for_filetype(filetype, mode, mapping, cmd)
-    vim.cmd("autocmd FileType " .. filetype .. " " .. mode .. "map <buffer> " .. mapping .. " " .. cmd)
+    vim.api.nvim_create_autocmd('FileType', {
+        group = 'KeybindsForMode',
+        pattern = filetype,
+        callback = function()
+            map.key(mode, mapping, cmd)
+        end
+    })
 end
 -- map many keys at once for filetype
 function map.keys_for_filetype(maps)
