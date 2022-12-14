@@ -32,7 +32,7 @@ return packer.startup(function(use)
     use { 'neovim/nvim-lsp' }
     -- dap
     use { 'mfussenegger/nvim-dap' }
-    use { 'rcarriga/nvim-dap-ui', config = function() require('dapui').setup() end }
+    use { 'rcarriga/nvim-dap-ui' }
     -- tools
     use { 'theprimeagen/harpoon' }
     -- telescope
