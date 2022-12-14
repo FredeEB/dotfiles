@@ -109,13 +109,7 @@ vim.api.nvim_create_autocmd('WinEnter', {
     command = [[if winnr('$') == 1 && &buftype == 'quickfix' | q | endif]]
 })
 
-vim.notify = function(msg, level, opts)
-    if vim.env.SSH_TTY == nil and vim.fn.executable('notify-send') == 1 then
-        io.popen('notify-send Neovim "' .. msg .. '"'):close()
-    else
-        require('notify')(msg, level, opts)
-    end
-end
+vim.notify = require('notify')
 
 -- osc52
 local function copy(lines, _)
