@@ -18,6 +18,7 @@
 *.color7:     #BFBFBF
 *.color15:    #E6E6E6
 
+URxvt.cursorColor: #ffffff
 URxvt.font: xft:Iosevka:style=Regular:pixelsize=14
 URxvt.boldFont: xft:Iosevka:style=Bold:pixelsize=14
 URxvt.italicFont: xft:Iosevka:style=Italic:pixelsize=14
