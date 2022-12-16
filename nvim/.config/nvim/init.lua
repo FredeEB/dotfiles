@@ -50,8 +50,7 @@ return packer.startup(function(use)
     use { 'mofiqul/dracula.nvim' }
     use { 'https://gitlab.com/yorickpeterse/nvim-pqf', config = function() require('pqf').setup() end }
     -- git
-    use { 'lewis6991/gitsigns.nvim' }
-    use { 'sindrets/diffview.nvim' }
+    use { 'tanvirtin/vgit.nvim' }
     use { 'theprimeagen/git-worktree.nvim' }
     use { 'timuntersberger/neogit' }
     -- misc
