@@ -166,13 +166,7 @@ require('nvim-treesitter.configs').setup({
 })
 
 -- tree-climber/hopper
-m.keys {
-    { { 'x', 'o' }, 'iu', require('treesitter-unit').select },
-    { { 'x', 'o' }, 'au', function() require('treesitter-unit').select(true) end },
-    { { 'v', 'o' }, 'm', require('tsht').nodes, { remap = false } },
-    { 'n', 'H', require('tree-climber').goto_parent },
-    { 'n', 'L', require('tree-climber').goto_child },
-}
+m.key({ 'v', 'o' }, 'm', require('tsht').nodes, { remap = false })
 
 -- sessions
 require('persisted').setup {

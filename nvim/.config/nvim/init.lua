@@ -40,8 +40,6 @@ return packer.startup(function(use)
     use { 'nvim-telescope/telescope.nvim' }
     -- treesitter
     use { 'mfussenegger/nvim-treehopper' }
-    use { 'drybalka/tree-climber.nvim' }
-    use { 'david-kunz/treesitter-unit' }
     use { 'nvim-treesitter/playground' }
     use { 'nvim-treesitter/nvim-treesitter' }
     -- theme
