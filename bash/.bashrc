@@ -30,7 +30,7 @@ fi
 
 bind Space:magic-space
 
-export PATH=$HOME/.cargo/bin:$PATH
+export PATH=$HOME/.local/bin/:$HOME/.cargo/bin:$PATH
 
 #history file
 export HISTSIZE=10000
