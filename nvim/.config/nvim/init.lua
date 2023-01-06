@@ -60,7 +60,7 @@ return packer.startup(function(use)
     use { 'terrortylor/nvim-comment', config = function() require('nvim_comment').setup() end }
     use { 'mbbill/undotree' }
     use { 'kabbamine/zeavim.vim' }
-    use { 'tversteeg/registers.nvim' }
+    use { 'tversteeg/registers.nvim', config = function() require('registers').setup() end }
     use { 'anuvyklack/hydra.nvim', requires = { 'anuvyklack/keymap-layer.nvim' } }
     use { 'lewis6991/spellsitter.nvim', config = function() require('spellsitter').setup() end }
     use { 'xiyaowong/nvim-cursorword' }
