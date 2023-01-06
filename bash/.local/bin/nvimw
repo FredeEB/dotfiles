@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 if [ -z "$NVIM" ]; then
-    nvim $1
+    nvim $@
 else
     nvim --server $NVIM --remote-send "<cmd>cd $PWD | e ${1:-.}<cr>"
 fi
