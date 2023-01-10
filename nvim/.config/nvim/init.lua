@@ -38,6 +38,7 @@ return packer.startup(function(use)
     -- telescope
     use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
     use { 'nvim-telescope/telescope.nvim' }
+    use { 'debugloop/telescope-undo.nvim' }
     -- treesitter
     use { 'mfussenegger/nvim-treehopper' }
     use { 'nvim-treesitter/playground' }

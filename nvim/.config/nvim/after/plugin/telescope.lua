@@ -9,6 +9,9 @@ ts.setup {
             override_generic_sorter = false,
             override_file_sorter = true,
             case_mode = 'smart_case',
+        },
+        undo = {
+            use_delta = false,
         }
     },
     pickers = {
@@ -18,6 +21,13 @@ ts.setup {
         },
         live_grep = {
             file_ignore_patterns = ignore_paths
+        }
+    },
+    mappings = {
+        i = {
+            ["<cr>"] = require("telescope-undo.actions").yank_additions,
+            ["<S-cr>"] = require("telescope-undo.actions").yank_deletions,
+            ["<C-cr>"] = require("telescope-undo.actions").restore,
         }
     },
     defaults = {
@@ -50,6 +60,7 @@ m.keys { -- telescope
 m.keys { -- extensions
     { 'n', '<leader>gw', require('telescope').extensions.git_worktree.git_worktrees },
     { 'n', '<leader>gtc', require('telescope').extensions.git_worktree.create_git_worktree },
+    { 'n', 'U', require('telescope').extensions.undo.undo },
 }
 
 
