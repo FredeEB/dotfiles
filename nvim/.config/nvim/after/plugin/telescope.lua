@@ -1,6 +1,6 @@
 local m = require('functions.keymap')
 -- telescope
-local ignore_paths = { '.git', '.clangd', 'node_modules', 'target', 'dist'}
+local ignore_paths = { '.git', '.clangd', 'node_modules', 'target', 'dist' }
 local ts = require('telescope')
 ts.setup {
     extensions = {
@@ -44,9 +44,6 @@ ts.setup {
         },
     }
 }
--- telescope extensions
-ts.load_extension('git_worktree')
-ts.load_extension('fzf')
 
 m.keys { -- telescope
     { 'n', '<leader>ff', require('telescope.builtin').find_files },
@@ -62,5 +59,3 @@ m.keys { -- extensions
     { 'n', '<leader>gtc', require('telescope').extensions.git_worktree.create_git_worktree },
     { 'n', 'U', require('telescope').extensions.undo.undo },
 }
-
-
