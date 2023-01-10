@@ -184,11 +184,6 @@ require('nvim-autopairs').setup {
     check_ts = true,
 }
 
--- undotree
-vim.g.undotree_WindowLayout = 2
-vim.g.undotree_SetFocusWhenToggle = true
-m.key('n', 'U', '<cmd>UndotreeToggle<cr>')
-
 require('neogit').setup {
     use_magit_keybinds = true,
     kind = 'split',

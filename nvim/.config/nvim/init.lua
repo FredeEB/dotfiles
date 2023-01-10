@@ -58,7 +58,6 @@ return packer.startup(function(use)
     use { 'olimorris/persisted.nvim' }
     use { 'windwp/nvim-autopairs' }
     use { 'terrortylor/nvim-comment', config = function() require('nvim_comment').setup() end }
-    use { 'mbbill/undotree' }
     use { 'kabbamine/zeavim.vim' }
     use { 'tversteeg/registers.nvim', config = function() require('registers').setup() end }
     use { 'anuvyklack/hydra.nvim', requires = { 'anuvyklack/keymap-layer.nvim' } }
