@@ -187,6 +187,7 @@ require('nvim-autopairs').setup {
 require('neogit').setup {
     use_magit_keybinds = true,
     kind = 'split',
+    auto_show_console = false,
     disable_builtin_notifications = true,
     disable_commit_confirmation = true,
 }
