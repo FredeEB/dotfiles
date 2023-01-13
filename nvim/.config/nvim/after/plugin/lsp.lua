@@ -80,18 +80,16 @@ nvim_lsp.sumneko_lua.setup {
     on_init = on_init
 }
 
-
 m.keys {
     { 'n', 'gd', vim.lsp.buf.definition },
     { 'n', '<leader>rs', vim.lsp.buf.signature_help },
     { 'n', '<leader>rr', vim.lsp.buf.references },
     { 'n', '<leader>ro', vim.lsp.buf.rename },
-    { 'n', '<leader>rh', vim.lsp.buf.hover },
+    { 'n', '<leader>rh', vim.lsp.buf.hover, { buffer = 0, noremap = true, silent = true }},
     { 'n', '<leader>re', vim.lsp.buf.code_action },
     { 'n', '<leader>rn', vim.diagnostic.goto_next },
     { 'n', '<leader>rp', vim.diagnostic.goto_prev },
     { 'n', '<leader>rd', vim.diagnostic.setqflist },
-    { 'n', '<leader>rf', function() vim.lsp.buf.format { async = true } end },
-    { 'v', '<leader>rf', vim.lsp.buf.range_formatting },
+    { {'n', 'v'}, '<leader>rf', function() vim.lsp.buf.format { async = true } end },
 }
 
