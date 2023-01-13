@@ -55,7 +55,7 @@ m.keys { -- qfl
     { 'n', '<leader>l', [[<cmd>lvim // % | lopen<cr>]] }
 }
 
-for _, cmd in ipairs { '<C-d>', '<C-u>', '<C-i>', '<C-o>', 'n', 'N', '*' } do
+for _, cmd in ipairs { '<C-d>', '<C-u>', '<C-i>', '<C-o>', 'n', 'N', '*', '%' } do
     m.key('n', cmd, cmd .. 'zz', { noremap = true })
 end
 
