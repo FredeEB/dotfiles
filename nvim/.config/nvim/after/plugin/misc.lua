@@ -39,6 +39,10 @@ m.keys { -- window actions
     { 'n', '<C-l>', '<C-w>l' },
 }
 
+m.keys {
+    {'v', 'p', '"_dP'}
+}
+
 m.keys { -- closing files
     { 'n', '<leader>q', [[<cmd>bw<cr>]] },
     { 'n', '<leader>Q', [[<cmd>q!<cr>]] },
