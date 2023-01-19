@@ -30,6 +30,8 @@ m.keys { -- undo tags
 m.keys { -- vblock moves
     { 'v', 'K', [[:m '<-2<cr>gv=gv]] },
     { 'v', 'J', [[:m '>+1<cr>gv=gv]] },
+    { 'v', '<', [[<gv]] },
+    { 'v', '>', [[>gv]] },
 }
 
 m.keys { -- window actions
