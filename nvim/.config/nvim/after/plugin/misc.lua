@@ -90,17 +90,6 @@ local function open_config()
     vim.cmd('e ' .. config_path)
 end
 
--- autoload file when it changes
-vim.api.nvim_create_augroup('Config', { clear = true })
-vim.api.nvim_create_autocmd('BufWritePost', {
-    group = 'Config',
-    pattern = 'init.lua',
-    callback = function()
-        vim.cmd('source <afile>')
-        require('packer').compile()
-    end
-})
-
 m.keys { -- misc
     { 'n', '<leader>fd', [[<cmd>Explore<cr>]] },
     { 'n', '<leader>fe', open_config },

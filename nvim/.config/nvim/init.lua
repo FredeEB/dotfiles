@@ -1,71 +1,63 @@
--- bootstrap packer
-local packer_bootstrap = false
-local install_path = vim.fn.stdpath('data') .. '/site/pack/packer/start/packer.nvim'
-if vim.fn.empty(vim.fn.glob(install_path)) > 0 then
-    vim.fn.system({ 'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path })
-    packer_bootstrap = true
+-- bootstrap lazy.nvim
+local lazy_path = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
+if vim.fn.empty(vim.fn.glob(lazy_path)) > 0 then
+    vim.fn.system({ 'git', 'clone', '--filter=blob:none', 'https://github.com/folke/lazy.nvim', '--branch=stable', lazy_path })
 end
+vim.opt.rtp:prepend(lazy_path)
 
 local m = require('functions.keymap')
 m.key('n', '<Space>', '', {})
 vim.g.mapleader = ' '
 
-local packer = require('packer')
-return packer.startup(function(use)
-
-    use { 'wbthomason/packer.nvim' }
-
+require('lazy').setup {
     -- common
-    use { 'nvim-lua/popup.nvim' }
-    use { 'nvim-lua/plenary.nvim' }
+    { 'nvim-lua/popup.nvim' },
+    { 'nvim-lua/plenary.nvim' },
     -- snippets
-    use { 'dawikur/algorithm-mnemonics.vim' }
-    use { 'honza/vim-snippets' }
-    use { 'l3mon4d3/luasnip' }
+    { 'dawikur/algorithm-mnemonics.vim' },
+    { 'honza/vim-snippets' },
+    { 'l3mon4d3/luasnip' },
     -- cmp
-    use { 'hrsh7th/cmp-nvim-lsp' }
-    use { 'hrsh7th/cmp-buffer' }
-    use { 'hrsh7th/cmp-path' }
-    use { 'saadparwaiz1/cmp_luasnip' }
-    use { 'hrsh7th/nvim-cmp' }
+    { 'hrsh7th/cmp-nvim-lsp' },
+    { 'hrsh7th/cmp-buffer' },
+    { 'hrsh7th/cmp-path' },
+    { 'saadparwaiz1/cmp_luasnip' },
+    { 'hrsh7th/nvim-cmp' },
     -- lsp
-    use { 'neovim/nvim-lsp' }
+    { 'neovim/nvim-lsp' },
     -- dap
-    use { 'mfussenegger/nvim-dap' }
-    use { 'rcarriga/nvim-dap-ui' }
+    { 'mfussenegger/nvim-dap' },
+    { 'rcarriga/nvim-dap-ui' },
+    { 'jay-babu/mason-nvim-dap.nvim' },
     -- tools
-    use { 'theprimeagen/harpoon' }
+    { 'theprimeagen/harpoon' },
     -- telescope
-    use { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' }
-    use { 'nvim-telescope/telescope.nvim' }
-    use { 'debugloop/telescope-undo.nvim' }
+    { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
+    { 'nvim-telescope/telescope.nvim' },
+    { 'debugloop/telescope-undo.nvim' },
     -- treesitter
-    use { 'mfussenegger/nvim-treehopper' }
-    use { 'nvim-treesitter/playground' }
-    use { 'nvim-treesitter/nvim-treesitter' }
+    { 'mfussenegger/nvim-treehopper' },
+    { 'nvim-treesitter/playground' },
+    { 'nvim-treesitter/nvim-treesitter' },
     -- theme
-    use { 'kyazdani42/nvim-web-devicons' }
-    use { 'nvim-lualine/lualine.nvim' }
-    use { 'mofiqul/dracula.nvim' }
-    use { 'https://gitlab.com/yorickpeterse/nvim-pqf', config = function() require('pqf').setup() end }
+    { 'kyazdani42/nvim-web-devicons' },
+    { 'nvim-lualine/lualine.nvim' },
+    { 'mofiqul/dracula.nvim' },
+    { 'https://gitlab.com/yorickpeterse/nvim-pqf', config = function() require('pqf').setup() end },
     -- git
-    use { 'tanvirtin/vgit.nvim' }
-    use { 'theprimeagen/git-worktree.nvim' }
-    use { 'timuntersberger/neogit' }
+    { 'tanvirtin/vgit.nvim' },
+    { 'theprimeagen/git-worktree.nvim' },
+    { 'timuntersberger/neogit' },
     -- misc
-    use { 'rcarriga/nvim-notify' }
-    use { 'williamboman/mason.nvim', config = function() require('mason').setup() end }
-    use { 'ojroques/nvim-osc52', config = function() require('osc52').setup() end }
-    use { 'olimorris/persisted.nvim' }
-    use { 'windwp/nvim-autopairs' }
-    use { 'terrortylor/nvim-comment', config = function() require('nvim_comment').setup() end }
-    use { 'kabbamine/zeavim.vim' }
-    use { 'tversteeg/registers.nvim', config = function() require('registers').setup() end }
-    use { 'anuvyklack/hydra.nvim', requires = { 'anuvyklack/keymap-layer.nvim' } }
-    use { 'lewis6991/spellsitter.nvim', config = function() require('spellsitter').setup() end }
-    use { 'xiyaowong/nvim-cursorword' }
-    if packer_bootstrap == true then
-        packer.sync()
-    end
-end)
-
+    { 'rcarriga/nvim-notify' },
+    { 'williamboman/mason.nvim' },
+    { 'ojroques/nvim-osc52' },
+    { 'olimorris/persisted.nvim' },
+    { 'windwp/nvim-autopairs' },
+    { 'terrortylor/nvim-comment', config = function() require('nvim_comment').setup() end },
+    { 'kabbamine/zeavim.vim' },
+    { 'tversteeg/registers.nvim', config = function() require('pqf').setup() end },
+    { 'anuvyklack/hydra.nvim', requires = { 'anuvyklack/keymap-layer.nvim' } },
+    { 'lewis6991/spellsitter.nvim' },
+    { 'xiyaowong/nvim-cursorword' },
+}
