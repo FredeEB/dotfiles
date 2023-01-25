@@ -61,10 +61,6 @@ m.keys { -- qfl
     { 'n', '<leader>l', [[<cmd>lvim // % | lopen<cr>]] }
 }
 
-for _, cmd in ipairs { '<C-d>', '<C-u>', '<C-i>', '<C-o>', 'n', 'N', '*', '%' } do
-    m.key('n', cmd, cmd .. 'zz', { noremap = true })
-end
-
 local function open_config()
     local config_buf = vim.api.nvim_create_buf(true, true)
     local config_path = vim.fn.stdpath('config') .. '/init.lua'
@@ -99,6 +95,9 @@ m.keys { -- misc
     { 'n', 'gf', 'gF' },
 }
 
+for _, cmd in ipairs { '<C-d>', '<C-u>', '<C-i>', '<C-o>', 'n', 'N', '*', '%' } do
+    m.key('n', cmd, cmd .. 'zz', { noremap = true })
+end
 
 -- close vim if only the qfl is open
 vim.api.nvim_create_autocmd('WinEnter', {
