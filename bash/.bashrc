@@ -4,6 +4,10 @@ source $XDG_CONFIG/bash/functions.bash
 
 set -o emacs
 
+if [[ -f /etc/bash_completion ]]; then
+    source /etc/bash_completion
+fi
+
 if [[ -x "$(command -v keychain)" ]]; then
     eval "$(keychain --eval --quiet id_rsa)"
 fi
