@@ -27,7 +27,7 @@ require('lazy').setup {
     { 'neovim/nvim-lsp' },
     -- dap
     { 'mfussenegger/nvim-dap' },
-    { 'rcarriga/nvim-dap-ui' },
+    { 'rcarriga/nvim-dap-ui', config = function() require('dapui').setup() end },
     { 'jay-babu/mason-nvim-dap.nvim' },
     -- tools
     { 'theprimeagen/harpoon' },
@@ -50,7 +50,7 @@ require('lazy').setup {
     { 'timuntersberger/neogit' },
     -- misc
     { 'rcarriga/nvim-notify' },
-    { 'williamboman/mason.nvim' },
+    { 'williamboman/mason.nvim', config = function() require('mason').setup() end },
     { 'ojroques/nvim-osc52' },
     { 'olimorris/persisted.nvim' },
     { 'windwp/nvim-autopairs' },
