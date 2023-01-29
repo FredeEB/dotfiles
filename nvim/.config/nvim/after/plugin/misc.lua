@@ -62,32 +62,11 @@ m.keys { -- qfl
 }
 
 local function open_config()
-    local config_buf = vim.api.nvim_create_buf(true, true)
     local config_path = vim.fn.stdpath('config') .. '/init.lua'
-    local function reload_config()
-        vim.cmd('source ' .. config_path)
-    end
-    local augrp = vim.api.nvim_create_augroup('ConfigEdit', { clear = true })
-    vim.api.nvim_create_autocmd('BufWritePost', {
-        group = 'ConfigEdit',
-        buffer = config_buf,
-        callback = reload_config
-    })
-    vim.api.nvim_create_autocmd('BufDelete', {
-        group = 'ConfigEdit',
-        buffer = config_buf,
-        callback = function()
-            reload_config()
-            vim.api.nvim_del_augroup_by_id(augrp)
-        end
-    })
-
-    vim.api.nvim_set_current_buf(config_buf)
     vim.cmd('e ' .. config_path)
 end
 
 m.keys { -- misc
-    { 'n', '<leader>fd', [[<cmd>Explore<cr>]] },
     { 'n', '<leader>fe', open_config },
     { 'n', '<leader><leader>', [[<cmd>e term:///bin/bash<cr>]] },
     { 'n', '<leader>j', [[<cmd>vsplit term:///bin/bash<cr>]] },
