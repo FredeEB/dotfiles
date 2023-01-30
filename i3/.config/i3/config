@@ -23,6 +23,7 @@ bindsym $mod+Shift+p exec betterlockscreen -l
 
 bindsym $mod+Return exec $term
 bindsym $mod+r exec rofi -show run
+bindsym $mod+w exec rofi -show windowcd
 bindsym $mod+q exec $editor
 bindsym $mod+b exec $browser
 # There also is the (new) i3-dmenu-desktop which only displays applications
