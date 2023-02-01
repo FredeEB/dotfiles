@@ -21,6 +21,15 @@ ts.setup {
         },
         live_grep = {
             file_ignore_patterns = ignore_paths
+        },
+        buffers = {
+            show_all_buffers = true,
+            sort_mru = true,
+            mappings = {
+                n = {
+                    ["d"] = "delete_buffer"
+                }
+            }
         }
     },
     mappings = {
