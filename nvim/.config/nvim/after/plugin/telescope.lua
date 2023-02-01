@@ -12,6 +12,13 @@ ts.setup {
         },
         undo = {
             use_delta = false,
+            mappings = {
+                i = {
+                    ["<cr>"] = require("telescope-undo.actions").yank_additions,
+                    ["<S-cr>"] = require("telescope-undo.actions").yank_deletions,
+                    ["<C-cr>"] = require("telescope-undo.actions").restore,
+                }
+            }
         }
     },
     pickers = {
@@ -30,13 +37,6 @@ ts.setup {
                     ["d"] = "delete_buffer"
                 }
             }
-        }
-    },
-    mappings = {
-        i = {
-            ["<cr>"] = require("telescope-undo.actions").yank_additions,
-            ["<S-cr>"] = require("telescope-undo.actions").yank_deletions,
-            ["<C-cr>"] = require("telescope-undo.actions").restore,
         }
     },
     defaults = {
