@@ -27,11 +27,6 @@ if [[ -x "$(command -v fzf)" ]]; then
     source /usr/share/fzf/completion.bash
 fi 
 
-if [[ -f $HOME/.local/fzf-tab-completion/bash/fzf-bash-completion.sh ]]; then
-    source ${HOME}/.local/fzf-tab-completion/bash/fzf-bash-completion.sh
-    bind -x '"\t": fzf_bash_completion'
-fi
-
 bind Space:magic-space
 
 export PATH=$HOME/.local/bin/:$HOME/.cargo/bin:$PATH
