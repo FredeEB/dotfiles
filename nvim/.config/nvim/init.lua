@@ -48,6 +48,7 @@ require('lazy').setup {
     { 'tanvirtin/vgit.nvim' },
     { 'theprimeagen/git-worktree.nvim' },
     { 'timuntersberger/neogit' },
+    { 'sindrets/diffview.nvim' },
     -- misc
     { 'rcarriga/nvim-notify' },
     { 'williamboman/mason.nvim', config = function() require('mason').setup() end },
