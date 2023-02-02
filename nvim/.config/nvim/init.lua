@@ -55,7 +55,7 @@ require('lazy').setup {
     { 'ojroques/nvim-osc52' },
     { 'olimorris/persisted.nvim' },
     { 'windwp/nvim-autopairs' },
-    { 'terrortylor/nvim-comment', config = function() require('nvim_comment').setup() end },
+    { 'numToStr/Comment.nvim' },
     { 'kabbamine/zeavim.vim' },
     { 'tversteeg/registers.nvim', config = function() require('pqf').setup() end },
     { 'anuvyklack/hydra.nvim', requires = { 'anuvyklack/keymap-layer.nvim' } },

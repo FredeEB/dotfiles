@@ -157,3 +157,8 @@ m.keys {
 require('nvim-autopairs').setup {
     check_ts = true,
 }
+
+require('Comment').setup()
+local ft = require('Comment.ft')
+ft.cpp = {'// %s', '// %s'}
+ft.c = {'// %s', '// %s'}
