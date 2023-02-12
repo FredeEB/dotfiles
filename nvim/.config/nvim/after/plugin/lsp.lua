@@ -53,6 +53,18 @@ for _, lsp in ipairs { 'neocmake', 'dartls', 'gopls', 'pyright', 'rust_analyzer'
     }
 end
 
+nvim_lsp.lua_ls.setup {
+    capabilities = client_capabilities,
+    on_init = on_init,
+    settings = {
+        Lua = {
+            diagnostic = {
+                globals = { 'vim' }
+            }
+        }
+    }
+}
+
 -- clangd
 nvim_lsp.clangd.setup {
     cmd = {
@@ -61,20 +73,6 @@ nvim_lsp.clangd.setup {
         '--all-scopes-completion',
         '--background-index',
         '--clang-tidy',
-    },
-    capabilities = client_capabilities,
-    on_init = on_init
-}
-
--- lua lsp, because it's its own special snowflake
-nvim_lsp.sumneko_lua.setup {
-    cmd = { 'lua-language-server' },
-    settings = {
-        Lua = {
-            diagnostics = {
-                globals = { 'vim' } -- Ignore missing vim global which is injected
-            }
-        }
     },
     capabilities = client_capabilities,
     on_init = on_init
