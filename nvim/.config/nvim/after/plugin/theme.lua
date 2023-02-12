@@ -5,7 +5,7 @@ end
 
 require('lualine').setup({
     options = {
-        theme = 'dracula',
+        theme = 'auto',
         icons_enabled = true,
     },
     sections = {
@@ -28,8 +28,6 @@ require('lualine').setup({
     extensions = {}
 })
 
-vim.g.dracula_lualine_bg_color = '#44475a'
-vim.g.dracula_show_end_of_buffer = true
 vim.cmd('colorscheme dracula')
 vim.api.nvim_set_hl(0, 'CursorWord', { bg = "#383A46", bold = true })
 vim.g.cursorword_min_width = 1
