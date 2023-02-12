@@ -162,3 +162,7 @@ require('Comment').setup()
 local ft = require('Comment.ft')
 ft.cpp = {'// %s', '// %s'}
 ft.c = {'// %s', '// %s'}
+
+m.keys {
+    {'n', '<M-b>', function() require('functions.asyncmake').make() end }
+}
