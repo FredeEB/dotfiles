@@ -25,13 +25,16 @@ font-1 = "Iosevka Nerd Font:size=11;1"
 font-2 = "Iosevka Nerd Font:size=11;1"
 font-3 = "Iosevka Nerd Font:size=11;1"
 
-modules-left = ewmh
+modules-left = ewmh title
 modules-center = date
 modules-right = wlan memory cpu battery
 
 tray-position = right
 tray-padding = 2
 tray-maxsize = 24
+
+[module/title]
+type = internal/xwindow
 
 [module/ewmh]
 type = internal/xworkspaces
