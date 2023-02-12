@@ -58,7 +58,7 @@ require('lazy').setup {
     { 'numToStr/Comment.nvim' },
     { 'kabbamine/zeavim.vim' },
     { 'tversteeg/registers.nvim', config = function() require('pqf').setup() end },
-    { 'anuvyklack/hydra.nvim', requires = { 'anuvyklack/keymap-layer.nvim' } },
+    { 'anuvyklack/hydra.nvim', dependencies = { 'anuvyklack/keymap-layer.nvim' } },
     { 'lewis6991/spellsitter.nvim' },
     { 'xiyaowong/nvim-cursorword' },
 }
