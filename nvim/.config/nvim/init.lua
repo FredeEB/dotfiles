@@ -45,7 +45,8 @@ require('lazy').setup {
     { 'mofiqul/dracula.nvim' },
     { 'https://gitlab.com/yorickpeterse/nvim-pqf', config = function() require('pqf').setup() end },
     -- git
-    { 'tanvirtin/vgit.nvim' },
+    { 'lewis6991/gitsigns.nvim' },
+    { 'sindrets/diffview.nvim' },
     { 'theprimeagen/git-worktree.nvim' },
     { 'timuntersberger/neogit' },
     { 'sindrets/diffview.nvim' },

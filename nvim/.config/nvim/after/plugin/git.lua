@@ -11,23 +11,24 @@ require('neogit').setup {
     }
 }
 
-local vgit = require('vgit')
-vgit.setup()
+require('gitsigns').setup({
+    current_line_blame = true,
+    current_line_blame_opts = {
+        delay = 500,
+    }
+})
 
 local diffview = require('diffview')
 diffview.setup()
 
 m.keys {
-    { 'n', '<leader>gq', vgit.project_hunks_preview },
-    { 'n', '<leader>ga', vgit.buffer_hunk_stage },
-    { 'n', '<leader>gA', vgit.buffer_stage },
-    { 'n', '<leader>gu', vgit.buffer_unstage },
-    { 'n', '<leader>gr', vgit.buffer_hunk_reset },
-    { 'n', '<leader>gR', vgit.buffer_reset },
-    { { 'n', 'v' }, '<leader>ga', vgit.buffer_hunk_stage },
-    { { 'n', 'v' }, '<leader>gr', vgit.buffer_hunk_reset },
-    { 'n', '<leader>gp', vgit.buffer_hunk_preview },
-    { 'n', '<leader>gm', vgit.buffer_blame_preview },
-    { 'n', '<leader>gM', vgit.buffer_gutter_blame_preview },
+    { 'n', '<leader>gq', require('gitsigns').setqflist },
+    { 'n', '<leader>gA', require('gitsigns').stage_buffer },
+    { 'n', '<leader>gR', require('gitsigns').reset_buffer },
+    { { 'n', 'v' }, '<leader>ga', require('gitsigns').stage_hunk },
+    { { 'n', 'v' }, '<leader>gr', require('gitsigns').reset_hunk },
+    { 'n', '<leader>gu', require('gitsigns').undo_stage_hunk },
+    { 'n', '<leader>gp', require('gitsigns').preview_hunk },
+    { 'n', '<leader>gm', function() require('gitsigns').blame_line { full = true } end },
     { 'n', '<leader>gs', require('neogit').open },
 }
