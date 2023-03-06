@@ -27,17 +27,16 @@ local nvim_lsp = require('lspconfig')
 
 -- disable virtual text
 vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics,
-    { update_in_insert = true, virtual_text = false })
+    {
+        update_in_insert = true,
+        virtual_text = false,
+        virtual_lines = {
+            only_current_line = true,
+        },
+    })
 
 vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
     vim.lsp.handlers.signature_help, { border = "single" })
--- show diagnostics in floating window
-vim.o.updatetime = 250
-vim.api.nvim_create_augroup('LspConfig', {clear = true})
-vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
-    callback = function() vim.diagnostic.open_float(nil, { focus = false, scope = 'cursor' }) end,
-    group = 'LspConfig'
-})
 
 local function on_init(client)
     client.config.flags.debounce_text_change = 150
@@ -83,11 +82,10 @@ m.keys {
     { 'n', '<leader>rs', vim.lsp.buf.signature_help },
     { 'n', '<leader>rr', vim.lsp.buf.references },
     { 'n', '<leader>ro', vim.lsp.buf.rename },
-    { 'n', '<leader>rh', vim.lsp.buf.hover, { buffer = 0, noremap = true, silent = true }},
+    { 'n', '<leader>rh', vim.lsp.buf.hover, { buffer = 0, noremap = true, silent = true } },
     { 'n', '<leader>re', vim.lsp.buf.code_action },
     { 'n', '<leader>rn', vim.diagnostic.goto_next },
     { 'n', '<leader>rp', vim.diagnostic.goto_prev },
-    { 'n', '<leader>rd', vim.diagnostic.setqflist },
-    { {'n', 'v'}, '<leader>rf', function() vim.lsp.buf.format { async = true } end },
+    { 'n', 'L', require('lsp_lines').toggle },
+    { { 'n', 'v' }, '<leader>rf', function() vim.lsp.buf.format { async = true } end },
 }
-
