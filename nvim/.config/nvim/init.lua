@@ -34,6 +34,7 @@ require('lazy').setup {
     { 'theprimeagen/harpoon' },
     -- telescope
     { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
+    { 'aaronhallaert/ts-advanced-git-search.nvim' },
     { 'nvim-telescope/telescope.nvim' },
     { 'debugloop/telescope-undo.nvim' },
     -- treesitter

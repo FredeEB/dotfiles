@@ -54,6 +54,10 @@ ts.setup {
     }
 }
 
+ts.load_extension('advanced_git_search')
+ts.load_extension('git_worktree')
+ts.load_extension('undo')
+
 m.keys { -- telescope
     { 'n', '<leader>ff', require('telescope.builtin').find_files },
     { 'n', '<leader>fg', require('telescope.builtin').live_grep },
@@ -66,5 +70,10 @@ m.keys { -- telescope
 m.keys { -- extensions
     { 'n', '<leader>gw', require('telescope').extensions.git_worktree.git_worktrees },
     { 'n', '<leader>gtc', require('telescope').extensions.git_worktree.create_git_worktree },
+    { 'n', '<leader>ghb', require('telescope').extensions.advanced_git_search.diff_branch_file },
+    { 'n', '<leader>ghl', require('telescope').extensions.advanced_git_search.diff_commit_line },
+    { 'n', '<leader>ghf', require('telescope').extensions.advanced_git_search.diff_commit_file },
+    { 'n', '<leader>ghs', require('telescope').extensions.advanced_git_search.search_log_content },
+    { 'n', '<leader>ghr', require('telescope').extensions.advanced_git_search.checkout_reflog },
     { 'n', 'U', require('telescope').extensions.undo.undo },
 }
