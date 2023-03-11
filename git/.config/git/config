@@ -1,3 +1,5 @@
+[commit]
+    verbose = true
 [diff]
     tool = nvim
 [difftool]
