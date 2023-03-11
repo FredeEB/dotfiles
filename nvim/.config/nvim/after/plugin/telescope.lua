@@ -49,7 +49,8 @@ ts.setup {
             '--line-number',
             '--column',
             '--trim',
-            '--smart-case'
+            '--smart-case',
+            '--hidden',
         },
     }
 }
