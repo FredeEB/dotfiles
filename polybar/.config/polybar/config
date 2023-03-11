@@ -27,11 +27,16 @@ font-3 = "Iosevka Nerd Font:size=11;1"
 
 modules-left = ewmh title
 modules-center = date
-modules-right = wlan memory cpu battery
+modules-right = wlan memory cpu battery pulseaudio
 
 tray-position = right
 tray-padding = 2
 tray-maxsize = 24
+
+[module/pulseaudio]
+type = internal/pulseaudio
+use-ui-max = true
+click-right = pavucontrol
 
 [module/title]
 type = internal/xwindow
