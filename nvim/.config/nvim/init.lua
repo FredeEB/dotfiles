@@ -25,7 +25,6 @@ require('lazy').setup {
     { 'hrsh7th/nvim-cmp' },
     -- lsp
     { 'neovim/nvim-lsp' },
-    { 'https://git.sr.ht/~whynothugo/lsp_lines.nvim', config = function() require('lsp_lines').setup() end },
     -- dap
     { 'mfussenegger/nvim-dap' },
     { 'rcarriga/nvim-dap-ui', config = function() require('dapui').setup() end },
