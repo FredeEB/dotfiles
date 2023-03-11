@@ -140,7 +140,8 @@ require('nvim-treesitter.configs').setup({
 })
 
 -- tree-climber/hopper
-m.key({ 'v', 'o' }, 'm', require('tsht').nodes, { remap = false })
+m.key('o', 'm', require('tsht').nodes, { remap = false })
+m.key('x', 'm', require('tsht').nodes, { remap = true })
 
 -- sessions
 require('persisted').setup {
