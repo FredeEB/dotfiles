@@ -15,7 +15,7 @@ require('lazy').setup {
     { 'nvim-lua/plenary.nvim' },
     -- snippets
     { 'dawikur/algorithm-mnemonics.vim' },
-    { 'honza/vim-snippets' },
+    { 'rafamadriz/friendly-snippets' },
     { 'l3mon4d3/luasnip' },
     -- cmp
     { 'hrsh7th/cmp-nvim-lsp' },
