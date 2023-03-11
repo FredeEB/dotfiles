@@ -1,7 +1,14 @@
 local m = require('functions.keymap')
 -- telescope
-local ignore_paths = { '.git', '.clangd', 'node_modules', 'target', 'dist' }
 local ts = require('telescope')
+
+ts.load_extension('advanced_git_search')
+ts.load_extension('git_worktree')
+ts.load_extension('undo')
+
+-- paths patterns to ignore in pickers
+local ignore_paths = { '.git', '.clangd', 'node_modules', 'target', 'dist' }
+
 ts.setup {
     extensions = {
         fzf = {
@@ -54,10 +61,6 @@ ts.setup {
         },
     }
 }
-
-ts.load_extension('advanced_git_search')
-ts.load_extension('git_worktree')
-ts.load_extension('undo')
 
 m.keys { -- telescope
     { 'n', '<leader>ff', require('telescope.builtin').find_files },
