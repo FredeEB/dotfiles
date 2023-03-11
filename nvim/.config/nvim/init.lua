@@ -41,8 +41,7 @@ require('lazy').setup {
     { 'nvim-treesitter/playground' },
     { 'nvim-treesitter/nvim-treesitter' },
     -- theme
-    { 'kyazdani42/nvim-web-devicons' },
-    { 'nvim-lualine/lualine.nvim' },
+    { 'nvim-lualine/lualine.nvim', dependencies = { 'kyazdani42/nvim-web-devicons' } },
     { 'mofiqul/dracula.nvim' },
     { 'https://gitlab.com/yorickpeterse/nvim-pqf', config = true },
     -- git
