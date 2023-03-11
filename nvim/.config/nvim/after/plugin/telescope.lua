@@ -5,6 +5,7 @@ local ts = require('telescope')
 ts.load_extension('advanced_git_search')
 ts.load_extension('git_worktree')
 ts.load_extension('undo')
+ts.load_extension('persisted')
 
 -- paths patterns to ignore in pickers
 local ignore_paths = { '.git', '.clangd', 'node_modules', 'target', 'dist' }
