@@ -11,7 +11,6 @@ vim.g.mapleader = ' '
 
 require('lazy').setup {
     -- common
-    { 'nvim-lua/popup.nvim' },
     { 'nvim-lua/plenary.nvim' },
     -- snippets
     { 'dawikur/algorithm-mnemonics.vim' },
