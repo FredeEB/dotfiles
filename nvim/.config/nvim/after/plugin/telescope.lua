@@ -21,9 +21,11 @@ ts.setup {
             use_delta = false,
             mappings = {
                 i = {
-                    ["<cr>"] = require("telescope-undo.actions").yank_additions,
-                    ["<S-cr>"] = require("telescope-undo.actions").yank_deletions,
-                    ["<C-cr>"] = require("telescope-undo.actions").restore,
+                    ["<cr>"] = require("telescope-undo.actions").restore,
+                },
+                n = {
+                    ["y"] = require("telescope-undo.actions").yank_additions,
+                    ["Y"] = require("telescope-undo.actions").yank_deletions,
                 }
             }
         }
