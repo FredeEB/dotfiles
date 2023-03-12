@@ -87,7 +87,7 @@ element-icon {
     text-color:       inherit;
 }
 window {
-    font: "Iosevka Nerd Font 20";
+    font: "Iosevka 20";
     padding: 10px;
     border: 0px;
 }
@@ -119,7 +119,7 @@ case-indicator {
 }
 entry {
     padding:    10px ;
-    font:       "Iosevka Nerd Font 30";
+    font:       "Iosevka 30";
     spacing:    0;
     text-color: var(normal-foreground);
 }
