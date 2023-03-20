@@ -157,10 +157,6 @@ m.keys {
     { 'n', '<leader>as', require('persisted').load },
     { 'n', '<leader>ad', require('persisted').stop },
 }
--- autopairs
-require('nvim-autopairs').setup {
-    check_ts = true,
-}
 
 require('Comment').setup()
 local ft = require('Comment.ft')

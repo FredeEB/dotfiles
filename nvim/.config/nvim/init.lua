@@ -56,7 +56,7 @@ require('lazy').setup {
     { 'williamboman/mason.nvim', config = true },
     { 'ojroques/nvim-osc52' },
     { 'olimorris/persisted.nvim' },
-    { 'windwp/nvim-autopairs' },
+    { 'altermo/ultimate-autopair.nvim', config = true },
     { 'numToStr/Comment.nvim', config = true },
     { 'kabbamine/zeavim.vim' },
     { 'tversteeg/registers.nvim', config = true },
