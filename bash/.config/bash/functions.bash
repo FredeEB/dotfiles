@@ -18,6 +18,20 @@ function gl() {
             --bind "ctrl-s:execute(git show {1})+accept"
 }; export -f gl
 
+function gw() {
+    DIR=($1); shift
+    if [[ ! -z $DIR ]]; then
+        PREFIX=$(git rev-parse --show-toplevel)
+        DIR=$(echo $PWD | sed -e 's/$PREFIX//')
+    fi
+
+    TARGET=$(git worktree list \
+        | grep -v "\[0\]" \
+        | fzf -m --reverse --preview "git show" \
+        | cut -f 1 -d ' ')/$DIR
+    cd $TARGET
+}
+
 function gbr() {
     git --no-pager branch \
         | fzf --reverse --preview="git --no-pager log --oneline --color=always --graph {-1}" \
