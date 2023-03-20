@@ -41,7 +41,7 @@ require('lazy').setup {
     { 'nvim-treesitter/nvim-treesitter' },
     { 'wansmer/treesj', config = true },
     -- theme
-    { 'nvim-lualine/lualine.nvim', dependencies = { 'kyazdani42/nvim-web-devicons' } },
+    { 'nvim-lualine/lualine.nvim' },
     { 'mofiqul/dracula.nvim' },
     { 'https://gitlab.com/yorickpeterse/nvim-pqf', config = true },
     -- git
