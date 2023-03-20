@@ -143,6 +143,9 @@ require('nvim-treesitter.configs').setup({
 m.key('o', 'm', require('tsht').nodes, { remap = false })
 m.key('x', 'm', require('tsht').nodes, { remap = true })
 
+-- treesj
+m.key('n', '<leader>,', require('treesj').toggle)
+
 -- sessions
 require('persisted').setup {
     dir = vim.fn.expand(vim.fn.stdpath("data") .. "/sessions/"),

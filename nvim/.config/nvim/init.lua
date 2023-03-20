@@ -39,6 +39,7 @@ require('lazy').setup {
     { 'mfussenegger/nvim-treehopper' },
     { 'nvim-treesitter/playground' },
     { 'nvim-treesitter/nvim-treesitter' },
+    { 'wansmer/treesj', config = true },
     -- theme
     { 'nvim-lualine/lualine.nvim', dependencies = { 'kyazdani42/nvim-web-devicons' } },
     { 'mofiqul/dracula.nvim' },
