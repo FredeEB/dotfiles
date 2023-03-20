@@ -23,7 +23,7 @@ window:
   #  x: 0
   #  y: 0
 
-  opacity: 0.9
+  opacity: 1
 
   # Spread additional padding evenly around the terminal content.
   dynamic_padding: false
@@ -69,8 +69,8 @@ font:
     style: bold
   italic:
     family: Iosevka
-    style: light italic
-  size: 8.5
+    style: Regular italic
+  size: 10
   offset:
     x: 0
     y: -2
