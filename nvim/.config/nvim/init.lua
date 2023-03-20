@@ -26,7 +26,7 @@ require('lazy').setup {
     { 'neovim/nvim-lsp' },
     -- dap
     { 'mfussenegger/nvim-dap' },
-    { 'rcarriga/nvim-dap-ui', config = function() require('dapui').setup() end },
+    { 'rcarriga/nvim-dap-ui', config = true },
     { 'jay-babu/mason-nvim-dap.nvim' },
     -- tools
     { 'theprimeagen/harpoon' },
