@@ -25,14 +25,18 @@ cmp.setup {
 -- lsp
 local nvim_lsp = require('lspconfig')
 
--- disable virtual text
-vim.lsp.handlers['textDocument/publishDiagnostics'] = vim.lsp.with(vim.lsp.diagnostic.on_publish_diagnostics,
-    { update_in_insert = true, virtual_text = false })
-
-vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
-    vim.lsp.handlers.signature_help, { border = "single" })
--- show diagnostics in floating window
-vim.o.updatetime = 250
+vim.diagnostic.config({
+    underline = true,
+    signs = true,
+    virtual_text = false,
+    float = {
+        show_header = true,
+        source = 'always',
+        border = 'rounded',
+        focusable = false,
+    },
+    update_on_insert = true,
+})
 vim.api.nvim_create_augroup('LspConfig', {clear = true})
 vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
     callback = function() vim.diagnostic.open_float({ focus = false, scope = 'cursor' }) end,
