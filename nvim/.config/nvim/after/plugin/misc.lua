@@ -124,7 +124,7 @@ vim.api.nvim_create_autocmd('TermOpen', {
 })
 -- close terminal buffer after command finishes
 vim.api.nvim_create_autocmd('TermClose', {
-    command = 'bw',
+    command = 'bd',
     group = 'Terminal'
 })
 
