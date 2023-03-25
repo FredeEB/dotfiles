@@ -2,5 +2,12 @@
 if [ -z "$NVIM" ]; then
     nvim $@
 else
-    nvim --server $NVIM --remote-send "<cmd>cd $PWD | e ${1:-.}<cr>"
+    nvim --server $NVIM --remote-send "<cmd>cd $PWD<cr>"
+    if [ $# -eq 0 ]; then
+        nvim --server $NVIM --remote-send "<cmd>e ${file:-.}<cr>"
+    else
+        for file in $@; do
+            nvim --server $NVIM --remote-send "<cmd>e ${file}<cr>"
+        done
+    fi
 fi
