@@ -1,5 +1,6 @@
 [commit]
     verbose = true
+    gpgSign = true
 [diff]
     tool = nvim
 [difftool]
