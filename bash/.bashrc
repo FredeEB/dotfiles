@@ -8,10 +8,6 @@ if [[ -f /etc/bash_completion ]]; then
     source /etc/bash_completion
 fi
 
-if [[ -x "$(command -v keychain)" ]]; then
-    eval "$(keychain --eval --quiet id_rsa)"
-fi
-
 if [[ -x "$(command -v nvim)" ]]; then
     export EDITOR=nvim
     export VISUAL=$EDITOR
@@ -30,6 +26,10 @@ fi
 bind Space:magic-space
 
 export PATH=$HOME/.local/bin/:$HOME/.cargo/bin:$PATH
+
+export GPG_TTY="$(tty)"
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent
 
 #history file
 export HISTSIZE=10000
