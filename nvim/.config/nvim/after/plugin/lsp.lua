@@ -35,7 +35,7 @@ vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
 vim.o.updatetime = 250
 vim.api.nvim_create_augroup('LspConfig', {clear = true})
 vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
-    callback = function() vim.diagnostic.open_float(nil, { focus = false, scope = 'cursor' }) end,
+    callback = function() vim.diagnostic.open_float({ focus = false, scope = 'cursor' }) end,
     group = 'LspConfig'
 })
 
