@@ -158,6 +158,13 @@ m.keys {
     { 'n', '<leader>ad', require('persisted').stop },
 }
 
+m.keys {
+    { { "n", "o", "x" }, "w", function() require("spider").motion("w") end },
+    { { "n", "o", "x" }, "e", function() require("spider").motion("e") end },
+    { { "n", "o", "x" }, "b", function() require("spider").motion("b") end },
+    { { "n", "o", "x" }, "ge", function() require("spider").motion("ge") end },
+}
+
 require('Comment').setup()
 local ft = require('Comment.ft')
 ft.cpp = {'// %s', '// %s'}
