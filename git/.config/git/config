@@ -8,14 +8,14 @@
 [difftool "nvim"]
     cmd = nvim -d "$LOCAL" "$REMOTE"
 [rebase]
-	autoStash = true
-	autoSquash = true
+    autoStash = true
+    autoSquash = true
 [pull]
-	rebase = true
+    rebase = true
 [push]
-	autoSetupRemote = true
+    autoSetupRemote = true
 [alias]
     sync = "! f() { git pull --rebase ${1} ${2}; git submodule update; };f"
 [user]
-	name = Frede Braendstrup
+    name = Frede Braendstrup
     signingKey = EEDBC8E8FC8CF68D
