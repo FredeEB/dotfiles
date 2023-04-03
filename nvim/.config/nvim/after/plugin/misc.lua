@@ -41,6 +41,13 @@ m.keys { -- window actions
     { 'n', '<C-l>', '<C-w>l' },
 }
 
+m.keys_for_filetype ({
+    { 'netrw', 'n', '<C-h>', '<C-w>h' },
+    { 'netrw', 'n', '<C-j>', '<C-w>j' },
+    { 'netrw', 'n', '<C-k>', '<C-w>k' },
+    { 'netrw', 'n', '<C-l>', '<C-w>l' }},
+    { noremap = false, buffer = 0, })
+
 m.keys {
     {'v', 'p', '"_dP'}
 }
