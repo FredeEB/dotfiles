@@ -25,6 +25,7 @@ function map.key_for_filetype(filetype, mode, mapping, cmd)
     })
 end
 -- map many keys at once for filetype
+-- format is {{ filetype, mode, mapping, cmd }, ...}
 function map.keys_for_filetype(maps)
     for v = 1, #maps do
         map.key_for_filetype(maps[v][1], maps[v][2], maps[v][3], maps[v][4])
