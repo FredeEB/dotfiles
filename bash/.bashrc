@@ -27,9 +27,11 @@ bind Space:magic-space
 
 export PATH=$HOME/.local/bin/:$HOME/.cargo/bin:$PATH
 
-export GPG_TTY="$(tty)"
-export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
-gpgconf --launch gpg-agent
+if [[ -z "$SSH_TTY" ]]; then
+    export GPG_TTY="$(tty)"
+    export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+    gpgconf --launch gpg-agent
+fi
 
 #history file
 export HISTSIZE=10000
