@@ -52,6 +52,7 @@ require('lazy').setup {
     { 'timuntersberger/neogit' },
     { 'sindrets/diffview.nvim' },
     -- misc
+    { 'chomosuke/term-edit.nvim' },
     { 'rcarriga/nvim-notify' },
     { 'williamboman/mason.nvim', config = true },
     { 'ojroques/nvim-osc52' },

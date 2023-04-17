@@ -135,6 +135,10 @@ vim.api.nvim_create_autocmd('TermClose', {
     group = 'Terminal'
 })
 
+require('term-edit').setup {
+    prompt_end = "❯ ",
+}
+
 -- treesitter
 require('nvim-treesitter.configs').setup({
     -- Don't do the following without internet
