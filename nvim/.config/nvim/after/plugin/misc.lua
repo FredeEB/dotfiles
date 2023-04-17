@@ -139,24 +139,6 @@ require('term-edit').setup {
     prompt_end = "❯ ",
 }
 
--- treesitter
-require('nvim-treesitter.configs').setup({
-    -- Don't do the following without internet
-    highlight = {
-        enable = true,
-        additional_vim_regex_highlighting = false,
-    },
-    indent = { enable = true },
-    matchup = { enable = true },
-})
-
--- tree-climber/hopper
-m.key('o', 'm', require('tsht').nodes, { remap = false })
-m.key('x', 'm', require('tsht').nodes, { remap = true })
-
--- treesj
-m.key('n', '<leader>,', require('treesj').toggle)
-
 -- sessions
 require('persisted').setup {
     dir = vim.fn.expand(vim.fn.stdpath("data") .. "/sessions/"),
