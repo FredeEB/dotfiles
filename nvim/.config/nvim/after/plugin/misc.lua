@@ -112,18 +112,6 @@ vim.keymap.set('n', '<leader>c', require('osc52').copy_operator, { expr = true }
 vim.keymap.set('n', '<leader>cc', '<leader>c_', { remap = true })
 vim.keymap.set('x', '<leader>c', require('osc52').copy_visual)
 
--- sessions
-require('persisted').setup {
-    dir = vim.fn.expand(vim.fn.stdpath("data") .. "/sessions/"),
-    use_git_branch = true,
-}
-vim.o.sessionoptions = "buffers,curdir,tabpages,winsize"
-
-m.keys {
-    { 'n', '<leader>as', require('persisted').load },
-    { 'n', '<leader>ad', require('persisted').stop },
-}
-
 require('Comment').setup()
 local ft = require('Comment.ft')
 ft.cpp = {'// %s', '// %s'}
