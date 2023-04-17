@@ -32,44 +32,26 @@ vim.diagnostic.config({
     float = {
         show_header = true,
         source = 'always',
-        border = 'rounded',
+        border = 'none',
         focusable = false,
     },
     update_on_insert = true,
 })
-vim.api.nvim_create_augroup('LspConfig', {clear = true})
-vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
-    callback = function() vim.diagnostic.open_float({ focus = false, scope = 'cursor' }) end,
-    group = 'LspConfig'
-})
 
-local function on_init(client)
-    client.config.flags.debounce_text_change = 150
-end
-
-local client_capabilities = require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
-
--- clangd and lua are handled externally
-for _, lsp in ipairs { 'neocmake', 'dartls', 'gopls', 'pyright', 'rust_analyzer', 'tsserver', 'zls' } do
-    nvim_lsp[lsp].setup {
-        capabilities = client_capabilities,
-        on_init = on_init
-    }
-end
-
-nvim_lsp.lua_ls.setup {
-    capabilities = client_capabilities,
-    on_init = on_init,
-    settings = {
-        Lua = {
-            diagnostic = {
-                globals = { 'vim' }
-            }
+local lsps = { 'bashls', 'neocmake', 'lua_ls', 'gopls', 'pyright', 'rust_analyzer', 'tsserver', 'zls' }
+require('mason-lspconfig').setup {
+    ensure_installed = lsps,
+}
+local client_capabilities = require('cmp_nvim_lsp').default_capabilities()
+require('mason-lspconfig').setup_handlers {
+    function(server)
+        nvim_lsp[server].setup {
+            capabilities = client_capabilities
         }
-    }
+    end
 }
 
--- clangd
+-- clangd is not installed with mason, so config is here
 nvim_lsp.clangd.setup {
     cmd = {
         'clangd',
@@ -78,8 +60,7 @@ nvim_lsp.clangd.setup {
         '--background-index',
         '--clang-tidy',
     },
-    capabilities = client_capabilities,
-    on_init = on_init
+    capabilities = client_capabilities
 }
 
 m.keys {

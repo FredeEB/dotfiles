@@ -55,6 +55,7 @@ require('lazy').setup {
     { 'chomosuke/term-edit.nvim' },
     { 'rcarriga/nvim-notify' },
     { 'williamboman/mason.nvim', config = true },
+    { 'williamboman/mason-lspconfig.nvim', config = true },
     { 'ojroques/nvim-osc52' },
     { 'olimorris/persisted.nvim' },
     { 'altermo/ultimate-autopair.nvim', config = true },
