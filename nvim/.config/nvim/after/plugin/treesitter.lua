@@ -1,7 +1,6 @@
 local m = require('functions.keymap')
 
 require('nvim-treesitter.configs').setup({
-    -- Don't do the following without internet
     highlight = {
         enable = true,
         additional_vim_regex_highlighting = false,
