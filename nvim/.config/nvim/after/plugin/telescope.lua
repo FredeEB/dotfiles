@@ -69,12 +69,18 @@ local function open_config()
         cwd = vim.fn.stdpath('config')
     }
 end 
+local function search_config()
+    require('telescope.builtin').live_grep {
+        cwd = vim.fn.stdpath('config')
+    }
+end 
 
 m.keys { -- telescope
     { 'n', '<leader>ff', require('telescope.builtin').find_files },
     { 'n', '<leader>fg', require('telescope.builtin').live_grep },
     { 'n', '<leader>fr', require('telescope.builtin').grep_string },
     { 'n', '<leader>fe', open_config },
+    { 'n', '<leader>fw', search_config },
     { 'n', '<leader>b', require('telescope.builtin').buffers },
     { 'n', '<leader>gb', require('telescope.builtin').git_branches },
     { 'n', '<leader>h', require('telescope.builtin').help_tags },
