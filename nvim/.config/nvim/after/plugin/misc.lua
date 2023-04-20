@@ -68,13 +68,7 @@ m.keys { -- qfl
     { 'n', '<leader>l', [[<cmd>lvim // % | lopen<cr>]] }
 }
 
-local function open_config()
-    local config_path = vim.fn.stdpath('config') .. '/init.lua'
-    vim.cmd('e ' .. config_path)
-end
-
 m.keys { -- misc
-    { 'n', '<leader>fe', open_config },
     { 'n', '<leader><leader>', [[<cmd>e term:///bin/bash<cr>]] },
     { 'n', '<leader>j', [[<cmd>vsplit term:///bin/bash<cr>]] },
     { 'n', '<leader>k', [[<cmd>split term:///bin/bash<cr>]] },
