@@ -53,7 +53,7 @@ m.keys {
 }
 
 m.keys { -- closing files
-    { 'n', '<leader>q', [[<cmd>bw<cr>]] },
+    { 'n', '<leader>q', [[<cmd>bd<cr>]] },
     { 'n', '<leader>Q', [[<cmd>q!<cr>]] },
 }
 
