@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+if [ -z $@ ]; then 
+    exit 1
+fi
+if [ -z "$NVIM" ]; then
+    man $@
+else
+    nvim --server $NVIM --remote-send "<cmd>e man://$@<cr>"
+fi
