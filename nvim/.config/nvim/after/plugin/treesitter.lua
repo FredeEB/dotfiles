@@ -1,6 +1,9 @@
 local m = require('functions.keymap')
 
 require('nvim-treesitter.configs').setup({
+    ensure_installed = {
+        'bash', 'c', 'cpp', 'go', 'rust',
+    },
     highlight = {
         enable = true,
         additional_vim_regex_highlighting = false,
