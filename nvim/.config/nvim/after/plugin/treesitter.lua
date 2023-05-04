@@ -2,7 +2,20 @@ local m = require('functions.keymap')
 
 require('nvim-treesitter.configs').setup({
     ensure_installed = {
-        'bash', 'c', 'cpp', 'go', 'rust',
+        'bash',
+        'c',
+        'cmake',
+        'cpp',
+        'diff',
+        'dockerfile',
+        'go',
+        'lua',
+        'proto',
+        'python',
+        'rst',
+        'rust',
+        'toml',
+        'yaml',
     },
     highlight = {
         enable = true,
