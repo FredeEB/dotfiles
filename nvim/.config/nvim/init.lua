@@ -43,6 +43,7 @@ require('lazy').setup {
     -- theme
     { 'nvim-lualine/lualine.nvim' },
     { 'folke/tokyonight.nvim' },
+    { 'folke/todo-comments.nvim', config = true },
     { 'mofiqul/dracula.nvim' },
     { 'https://gitlab.com/yorickpeterse/nvim-pqf', config = true },
     -- git
