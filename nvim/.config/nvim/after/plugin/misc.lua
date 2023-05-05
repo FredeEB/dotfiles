@@ -69,9 +69,6 @@ m.keys { -- qfl
 }
 
 m.keys { -- misc
-    { 'n', '<leader><leader>', [[<cmd>e term:///bin/bash<cr>]] },
-    { 'n', '<leader>j', [[<cmd>vsplit term:///bin/bash<cr>]] },
-    { 'n', '<leader>k', [[<cmd>split term:///bin/bash<cr>]] },
     { 'n', 'gf', 'gF' },
 }
 
