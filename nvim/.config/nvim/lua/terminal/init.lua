@@ -32,7 +32,7 @@ end
 local get_shell_command = function(opts)
     local vim_cmd = 'split'
     if opts.replace then
-        vim_cmd 'e'
+        vim_cmd = 'e'
     elseif opts.vertical then
         vim_cmd = 'vsplit'
     end
