@@ -7,10 +7,8 @@ ts.load_extension('git_worktree')
 ts.load_extension('undo')
 ts.load_extension('persisted')
 
--- paths patterns to ignore in pickers
-local ignore_paths = { '.git', '.clangd', 'node_modules', 'target', 'dist' }
-
 ts.setup {
+    file_ignore_patterns = { 'node_modules' },
     extensions = {
         fzf = {
             fuzzy = true,
@@ -33,11 +31,7 @@ ts.setup {
     },
     pickers = {
         find_files = {
-            hidden = true,
-            file_ignore_patterns = ignore_paths
-        },
-        live_grep = {
-            file_ignore_patterns = ignore_paths
+            hidden = false,
         },
         buffers = {
             show_all_buffers = true,
@@ -68,12 +62,12 @@ local function open_config()
     require('telescope.builtin').find_files {
         cwd = vim.fn.stdpath('config')
     }
-end 
+end
 local function search_config()
     require('telescope.builtin').live_grep {
         cwd = vim.fn.stdpath('config')
     }
-end 
+end
 
 m.keys { -- telescope
     { 'n', '<leader>ff', require('telescope.builtin').find_files },
@@ -83,7 +77,10 @@ m.keys { -- telescope
     { 'n', '<leader>fw', search_config },
     { 'n', '<leader>b', require('telescope.builtin').buffers },
     { 'n', '<leader>gb', require('telescope.builtin').git_branches },
+    { 'n', '<leader>gl', require('telescope.builtin').git_commits },
+    { 'n', '<leader>gf', require('telescope.builtin').git_branches },
     { 'n', '<leader>h', require('telescope.builtin').help_tags },
+    { 'n', '<leader>p', require('telescope.builtin').registers },
 }
 
 m.keys { -- extensions
