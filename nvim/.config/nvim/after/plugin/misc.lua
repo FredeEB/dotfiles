@@ -16,6 +16,7 @@ vim.o.fixeol = false
 vim.o.signcolumn = 'yes:1'
 vim.o.guifont = 'Iosevka Nerd Font:h10'
 vim.o.mousemodel = 'extend'
+vim.g.netrw_keepdir = 0 
 
 local m = require('functions.keymap')
 
