@@ -58,6 +58,7 @@ require('lazy').setup {
     { 'williamboman/mason.nvim', config = true },
     { 'williamboman/mason-lspconfig.nvim', config = true },
     { 'ojroques/nvim-osc52' },
+    { 'fredeeb/alias.nvim' },
     { 'olimorris/persisted.nvim' },
     { 'windwp/nvim-autopairs', config = true },
     { 'numToStr/Comment.nvim', config = true },
