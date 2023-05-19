@@ -62,13 +62,13 @@ scrolling:
 
 font:
   normal:
-    family: Iosevka
+    family: Iosevka Nerd Font
     style: Regular
   bold:
-    family: Iosevka
+    family: Iosevka Nerd Font
     style: bold
   italic:
-    family: Iosevka
+    family: Iosevka Nerd Font
     style: Regular italic
   size: 10
   offset:

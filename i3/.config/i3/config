@@ -2,7 +2,7 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-font Iosevka 12
+font Iosevka Nerd Font 12
 
 set $up k
 set $down j

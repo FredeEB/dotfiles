@@ -14,7 +14,7 @@ vim.o.inccommand = 'nosplit'
 vim.o.termguicolors = true
 vim.o.fixeol = false
 vim.o.signcolumn = 'yes:1'
-vim.o.guifont = 'Iosevka:h10'
+vim.o.guifont = 'Iosevka Nerd Font:h10'
 vim.o.mousemodel = 'extend'
 
 local m = require('functions.keymap')

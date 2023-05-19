@@ -19,10 +19,10 @@
 *.color15:    #E6E6E6
 
 URxvt.cursorColor: #ffffff
-URxvt.font: xft:Iosevka:style=Regular:pixelsize=13
-URxvt.boldFont: xft:Iosevka:style=Bold:pixelsize=13
-URxvt.italicFont: xft:Iosevka:style=Italic:pixelsize=13
-URxvt.boldItalicFont: xft:Iosevka:style=Bold Italic:pixelsize=13
+URxvt.font: xft:Iosevka Nerd Font:style=Regular:pixelsize=13
+URxvt.boldFont: xft:Iosevka Nerd Font:style=Bold:pixelsize=13
+URxvt.italicFont: xft:Iosevka Nerd Font:style=Italic:pixelsize=13
+URxvt.boldItalicFont: xft:Iosevka Nerd Font:style=Bold Italic:pixelsize=13
 URxvt.letterspacing: -1
 URxvt.perl-ext-common: default,52-osc,clipboard,-confirm-paste
 URxvt.scrollBar: false
