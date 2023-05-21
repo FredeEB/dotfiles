@@ -13,8 +13,6 @@
     rebase = true
 [push]
     autoSetupRemote = true
-[alias]
-    sync = "! f() { git pull --rebase ${1} ${2}; git submodule update; };f"
 [user]
     name = Frede Braendstrup
     signingKey = EEDBC8E8FC8CF68D
