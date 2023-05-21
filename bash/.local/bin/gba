@@ -1,0 +1,7 @@
+#!/bin/bash
+git --no-pager reflog\
+    | fzf --no-sort --reverse --preview="git --no-pager show --ext-diff {1}" \
+        --bind "ctrl-d:preview-page-down" \
+        --bind "ctrl-u:preview-page-up" \
+        --bind "enter:execute(git checkout {1})+accept" \
+        --bind "ctrl-s:execute(gl {1})+accept" 

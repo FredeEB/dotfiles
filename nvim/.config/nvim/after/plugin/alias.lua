@@ -3,6 +3,7 @@ require('alias-nvim').setup {
     gs = 'Neogit',
     gd = 'DiffviewOpen',
     gw = 'Telescope git_worktree',
+    gbr = 'Telescope git_branches',
     v = 'e $1',
     man = 'e man://$1',
 }

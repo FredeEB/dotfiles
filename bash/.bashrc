@@ -1,6 +1,5 @@
 export XDG_CONFIG=$HOME/.config
 source $XDG_CONFIG/bash/aliases.bash
-source $XDG_CONFIG/bash/functions.bash
 
 set -o emacs
 
@@ -25,7 +24,7 @@ fi
 
 bind Space:magic-space
 
-export PATH=$HOME/.local/bin/:$HOME/.cargo/bin:$PATH
+export PATH=$PATH:$HOME/.local/bin/:$HOME/.cargo/bin
 
 if [[ -z "$SSH_TTY" ]]; then
     export GPG_TTY="$(tty)"

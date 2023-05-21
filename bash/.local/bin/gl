@@ -1,0 +1,10 @@
+#!/bin/bash
+COMMITISH=($@); shift
+git --no-pager log --oneline ${COMMITISH[@]} \
+    | fzf -m --no-sort --reverse --preview "git --no-pager show --ext-diff {1}" \
+        --bind "ctrl-d:preview-page-down" \
+        --bind "ctrl-u:preview-page-up" \
+        --bind "ctrl-o:execute(git checkout {1})+accept" \
+        --bind "ctrl-r:execute(git rebase -i {1}^)+accept" \
+        --bind "ctrl-a:execute-multi(git cherry-pick {1})+accept" \
+        --bind "ctrl-s:execute(git show {1})+accept"
