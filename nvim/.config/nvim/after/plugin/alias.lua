@@ -5,5 +5,5 @@ require('alias-nvim').setup {
     gw = 'Telescope git_worktree',
     gbr = 'Telescope git_branches',
     v = 'e $1',
-    man = 'e man://$1',
+    m = 'e man://$1',
 }
