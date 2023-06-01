@@ -76,7 +76,7 @@ bindsym $mod+f workspace 4
 bindsym $mod+z workspace 5
 bindsym $mod+x workspace 6
 bindsym $mod+c workspace 7
-bindsym $mod+v workspace 7
+bindsym $mod+v workspace 8
 
 # move focused container to workspace
 bindsym $mod+Shift+a move container to workspace 1
