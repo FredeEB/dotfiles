@@ -31,6 +31,7 @@ require('lazy').setup {
     { 'jay-babu/mason-nvim-dap.nvim' },
     -- tools
     { 'theprimeagen/harpoon' },
+    { 'lmburns/lf.nvim', dependencies = { 'akinsho/toggleterm.nvim' } },
     -- telescope
     { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
     { 'aaronhallaert/ts-advanced-git-search.nvim' },
