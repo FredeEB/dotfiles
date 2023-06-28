@@ -60,6 +60,7 @@ nvim_lsp.clangd.setup {
         '--all-scopes-completion',
         '--background-index',
         '--clang-tidy',
+        '--query-driver=/opt/**/*',
     },
     capabilities = client_capabilities
 }
