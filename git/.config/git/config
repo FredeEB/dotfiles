@@ -7,7 +7,6 @@
 [difftool "nvim"]
     cmd = nvim -d "$LOCAL" "$REMOTE"
 [rebase]
-    autoStash = true
     autoSquash = true
 [pull]
     rebase = true
