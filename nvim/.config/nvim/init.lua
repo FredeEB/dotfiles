@@ -52,7 +52,7 @@ require('lazy').setup {
     { 'lewis6991/gitsigns.nvim' },
     { 'sindrets/diffview.nvim' },
     { 'theprimeagen/git-worktree.nvim' },
-    { 'timuntersberger/neogit' },
+    { 'neogitorg/neogit' },
     { 'sindrets/diffview.nvim' },
     -- misc
     { 'chomosuke/term-edit.nvim' },
