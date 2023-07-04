@@ -69,27 +69,28 @@ local function search_config()
     }
 end
 
+local tsb = require('telescope.builtin')
 m.keys { -- telescope
-    { 'n', '<leader>ff', require('telescope.builtin').find_files },
-    { 'n', '<leader>fg', require('telescope.builtin').live_grep },
-    { 'n', '<leader>fr', require('telescope.builtin').grep_string },
+    { 'n', '<leader>gl', tsb.git_commits },
+    { 'n', '<leader>gf', tsb.git_bcommits },
+    { 'n', '<leader>ff', tsb.find_files },
+    { 'n', '<leader>fg', tsb.live_grep },
+    { 'n', '<leader>fr', tsb.grep_string },
     { 'n', '<leader>fe', open_config },
     { 'n', '<leader>fw', search_config },
-    { 'n', '<leader>b', require('telescope.builtin').buffers },
-    { 'n', '<leader>gb', require('telescope.builtin').git_branches },
-    { 'n', '<leader>gl', require('telescope.builtin').git_commits },
-    { 'n', '<leader>gf', require('telescope.builtin').git_branches },
-    { 'n', '<leader>h', require('telescope.builtin').help_tags },
-    { 'n', '<leader>p', require('telescope.builtin').registers },
+    { 'n', '<leader>p', tsb.registers },
+    { 'n', '<leader>b', tsb.buffers },
+    { 'n', '<leader>gb', tsb.git_branches },
+    { 'n', '<leader>h', tsb.help_tags },
 }
 
 m.keys { -- extensions
-    { 'n', '<leader>gw', require('telescope').extensions.git_worktree.git_worktrees },
-    { 'n', '<leader>gtc', require('telescope').extensions.git_worktree.create_git_worktree },
-    { 'n', '<leader>ghb', require('telescope').extensions.advanced_git_search.diff_branch_file },
-    { 'n', '<leader>ghl', require('telescope').extensions.advanced_git_search.diff_commit_line },
-    { 'n', '<leader>ghf', require('telescope').extensions.advanced_git_search.diff_commit_file },
-    { 'n', '<leader>ghs', require('telescope').extensions.advanced_git_search.search_log_content },
-    { 'n', '<leader>ghr', require('telescope').extensions.advanced_git_search.checkout_reflog },
-    { 'n', 'U', require('telescope').extensions.undo.undo },
+    { 'n', '<leader>gw', ts.extensions.git_worktree.git_worktrees },
+    { 'n', '<leader>gtc', ts.extensions.git_worktree.create_git_worktree },
+    { 'n', '<leader>ghb', ts.extensions.advanced_git_search.diff_branch_file },
+    { 'n', '<leader>ghl', ts.extensions.advanced_git_search.diff_commit_line },
+    { 'n', '<leader>ghf', ts.extensions.advanced_git_search.diff_commit_file },
+    { 'n', '<leader>ghs', ts.extensions.advanced_git_search.search_log_content },
+    { 'n', '<leader>ghr', ts.extensions.advanced_git_search.checkout_reflog },
+    { 'n', 'U', ts.extensions.undo.undo },
 }
