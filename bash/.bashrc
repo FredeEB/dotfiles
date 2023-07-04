@@ -32,6 +32,10 @@ if [[ -z "$SSH_TTY" ]]; then
     gpgconf --launch gpg-agent
 fi
 
+if [[ -f $HOME/.config/bash/company.sh ]]; then
+    source $HOME/.config/bash/company.sh
+fi
+
 #history file
 export HISTSIZE=10000
 export HISTCONTROL=ignoreboth:erasedups
