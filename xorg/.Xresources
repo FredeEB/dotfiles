@@ -18,20 +18,21 @@
 *.color7:     #BFBFBF
 *.color15:    #E6E6E6
 
-URxvt.cursorColor: #ffffff
-URxvt.font: xft:Iosevka Nerd Font:style=Regular:pixelsize=13
-URxvt.boldFont: xft:Iosevka Nerd Font:style=Bold:pixelsize=13
-URxvt.italicFont: xft:Iosevka Nerd Font:style=Italic:pixelsize=13
-URxvt.boldItalicFont: xft:Iosevka Nerd Font:style=Bold Italic:pixelsize=13
-URxvt.letterspacing: -1
-URxvt.perl-ext-common: default,52-osc,clipboard,-confirm-paste
-URxvt.scrollBar: false
-URxvt.iso14755: false
-URxvt.iso14755_52: false
-URxvt.keysym.Shift-Control-V: eval:paste_clipboard
-URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
-URxvt.keysym.Control-Meta-c: builtin-string:
-URxvt.keysym.Control-Meta-v: builtin-string:
+
+*.cursorColor: #ffffff
+*.font: xft:Iosevka Nerd Font:style=Regular:pixelsize=13
+*.boldFont: xft:Iosevka Nerd Font:style=Bold:pixelsize=13
+*.italicFont: xft:Iosevka Nerd Font:style=Italic:pixelsize=13
+*.boldItalicFont: xft:Iosevka Nerd Font:style=Bold Italic:pixelsize=13
+*.letterspacing: -1
+*.perl-ext-common: default,52-osc,clipboard,-confirm-paste
+*.scrollBar: false
+*.iso14755: false
+*.iso14755_52: false
+*.keysym.Shift-Control-V: eval:paste_clipboard
+*.keysym.Shift-Control-C: eval:selection_to_clipboard
+*.keysym.Control-Meta-c: builtin-string:
+*.keysym.Control-Meta-v: builtin-string:
 
 ! ROFI Color theme
 rofi.theme: ~/.config/rofi/rofi.conf

@@ -1,9 +1,6 @@
 *foreground: #aaa
 *background: #1b182c
 
-
-
-URxvt.font:		xft:Fira Code:size=12
 URxvt.cursorColor:	#770077
 URxvt.colorUL:		#66ccff
 
