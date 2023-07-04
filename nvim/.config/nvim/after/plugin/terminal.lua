@@ -18,14 +18,23 @@ m.keys {
 }
 
 vim.api.nvim_create_augroup('Terminal', { clear = true })
--- start terminal in insert mode
-vim.api.nvim_create_autocmd('TermOpen', {
-    command = 'setlocal nonumber norelativenumber | startinsert',
-    group = 'Terminal'
-})
 -- close terminal buffer after command finishes
-vim.api.nvim_create_autocmd('TermClose', {
-    command = 'bd',
+vim.api.nvim_create_autocmd('TermOpen', {
+    callback = function()
+
+        local id = vim.api.nvim_create_augroup('TerminalLocal', { clear = true })
+        vim.api.nvim_create_autocmd('TermClose', {
+            command = 'bd',
+            group = 'TerminalLocal'
+        })
+        m.key('n', '<leader>q', function()
+            vim.api.nvim_clear_autocmds { group = id }
+            vim.cmd('bd!')
+        end)
+
+        vim.cmd('setl nonumber norelativenumber')
+        vim.cmd('startinsert')
+    end,
     group = 'Terminal'
 })
 
