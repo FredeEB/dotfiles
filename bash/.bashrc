@@ -12,8 +12,8 @@ if [[ -x "$(command -v nvim)" ]]; then
     export VISUAL=$EDITOR
 fi
 
-if [[ -x "$(command -v firefox)" ]]; then
-    export BROWSER=firefox
+if [[ -x "$(command -v brave)" ]]; then
+    export BROWSER=brave
 fi
 
 #requires fzf
