@@ -1,5 +1,5 @@
 export XDG_CONFIG=$HOME/.config
-source $XDG_CONFIG/bash/aliases.bash
+source "$XDG_CONFIG/bash/aliases.bash"
 
 set -o emacs
 
@@ -33,7 +33,7 @@ if [[ -z "$SSH_TTY" ]]; then
 fi
 
 if [[ -f $HOME/.config/bash/company.sh ]]; then
-    source $HOME/.config/bash/company.sh
+    source "$HOME/.config/bash/company.sh"
 fi
 
 #history file
@@ -44,4 +44,4 @@ shopt -s histappend
 PROMT_COMMAND="$PROMT_COMMAND; history -a"
 
 # generated with https://bashrcgenerator.com/
-export PS1="\n\[\033[36m\]\t \[$(tput sgr0)\]\[\033[35m\]\u\[$(tput sgr0)\]@\[$(tput sgr0)\]\[\033[32m\]\h\[$(tput sgr0)\] \w\[$(tput sgr0)\] \[$(tput sgr0)\]\[\033[34m\]\$(git branch --show-current 2> /dev/null | sed -e 's/.*/ \0/') \[$(tput sgr0)\]\n\[\033[34m\]❯\[$(tput sgr0)\] "
+export PS1="\[\033[36m\]\t \[$(tput sgr0)\]\[\033[35m\]\u\[$(tput sgr0)\]@\[$(tput sgr0)\]\[\033[32m\]\h\[$(tput sgr0)\] \w\[$(tput sgr0)\] \[$(tput sgr0)\]\[\033[34m\]\$(git branch --show-current 2> /dev/null | sed -e 's/.*/ \0/') \[$(tput sgr0)\]\n\[\033[34m\]❯\[$(tput sgr0)\] "
