@@ -12,6 +12,8 @@ vim.g.mapleader = ' '
 require('lazy').setup {
     -- common
     { 'nvim-lua/plenary.nvim' },
+    -- tmux
+    { 'aserowy/tmux.nvim' },
     -- snippets
     { 'dawikur/algorithm-mnemonics.vim' },
     { 'rafamadriz/friendly-snippets' },
