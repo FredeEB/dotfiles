@@ -34,11 +34,8 @@ require('lazy').setup {
     -- tools
     { 'theprimeagen/harpoon' },
     { 'lmburns/lf.nvim', dependencies = { 'akinsho/toggleterm.nvim' } },
-    -- telescope
-    { 'nvim-telescope/telescope-fzf-native.nvim', run = 'make' },
-    { 'aaronhallaert/ts-advanced-git-search.nvim' },
-    { 'nvim-telescope/telescope.nvim' },
-    { 'debugloop/telescope-undo.nvim' },
+    -- fzf
+    { 'ibhagwan/fzf-lua' },
     -- treesitter
     { 'mfussenegger/nvim-treehopper' },
     { 'nvim-treesitter/playground' },
