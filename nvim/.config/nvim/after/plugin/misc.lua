@@ -43,17 +43,6 @@ m.keys { -- vblock moves
     { 'v', '>', [[>gv]] },
 }
 
-m.keys { -- window actions
-    { 'n', '<M-h>', '<C-w><S-h>' },
-    { 'n', '<M-j>', '<C-w><S-j>' },
-    { 'n', '<M-k>', '<C-w><S-k>' },
-    { 'n', '<M-l>', '<C-w><S-l>' },
-    { 'n', '<C-h>', '<C-w>h' },
-    { 'n', '<C-j>', '<C-w>j' },
-    { 'n', '<C-k>', '<C-w>k' },
-    { 'n', '<C-l>', '<C-w>l' },
-}
-
 m.keys_for_filetype ({
     { 'netrw', 'n', '<C-h>', '<C-w>h' },
     { 'netrw', 'n', '<C-j>', '<C-w>j' },
