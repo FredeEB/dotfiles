@@ -33,7 +33,6 @@ require('lazy').setup {
     { 'jay-babu/mason-nvim-dap.nvim' },
     -- tools
     { 'theprimeagen/harpoon' },
-    { 'lmburns/lf.nvim', dependencies = { 'akinsho/toggleterm.nvim' } },
     -- fzf
     { 'ibhagwan/fzf-lua' },
     -- treesitter
