@@ -25,7 +25,7 @@ local open_terminal = function(opts)
     if opts.replace then
         vim.cmd('!tmux neww' .. args)
     else
-        local direction = opts.vertical and ' -v' or ' -h'
+        local direction = opts.vertical and ' -h' or ' -v'
         vim.cmd('!tmux split' .. direction .. args)
     end
     vim.cmd('redraw!')
