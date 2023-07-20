@@ -37,7 +37,3 @@ vim.api.nvim_create_autocmd('TermOpen', {
     end,
     group = 'Terminal'
 })
-
-require('term-edit').setup {
-    prompt_end = "❯ ",
-}

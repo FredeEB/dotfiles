@@ -53,7 +53,6 @@ require('lazy').setup {
     { 'neogitorg/neogit' },
     { 'sindrets/diffview.nvim' },
     -- misc
-    { 'chomosuke/term-edit.nvim' },
     { 'rcarriga/nvim-notify' },
     { 'williamboman/mason.nvim', config = true },
     { 'williamboman/mason-lspconfig.nvim', config = true },
