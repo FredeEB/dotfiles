@@ -13,7 +13,7 @@ require('lazy').setup {
     -- common
     { 'nvim-lua/plenary.nvim' },
     -- tmux
-    { 'aserowy/tmux.nvim' },
+    { 'aserowy/tmux.nvim', config = true },
     -- snippets
     { 'dawikur/algorithm-mnemonics.vim' },
     { 'rafamadriz/friendly-snippets' },
