@@ -64,5 +64,4 @@ require('lazy').setup {
     { 'tversteeg/registers.nvim', config = true },
     { 'anuvyklack/hydra.nvim', dependencies = { 'anuvyklack/keymap-layer.nvim' } },
     { 'lewis6991/spellsitter.nvim' },
-    { 'xiyaowong/nvim-cursorword' },
 }

@@ -30,6 +30,4 @@ require('lualine').setup({
 
 vim.cmd('colorscheme dracula')
 vim.api.nvim_set_hl(0, 'CursorWord', { bg = "#383A46", bold = true })
-vim.g.cursorword_min_width = 1
-vim.g.cursorword_disable_filetypes = {"NeogitStatus"}
 
