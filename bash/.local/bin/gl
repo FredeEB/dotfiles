@@ -1,7 +1,7 @@
 #!/bin/bash
 COMMITISH=($@); shift
-git --no-pager log --oneline ${COMMITISH[@]} \
-    | fzf -m --no-sort --reverse --preview "git --no-pager show --ext-diff {1}" \
+git --no-pager log --oneline "${COMMITISH[@]}" \
+    | fzf -m --no-sort --reverse --preview "nvim -R $(git --no-pager show --ext-diff {1})" \
         --bind "ctrl-d:preview-page-down" \
         --bind "ctrl-u:preview-page-up" \
         --bind "ctrl-o:execute(git checkout {1})+accept" \
