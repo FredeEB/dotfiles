@@ -23,11 +23,6 @@ vim.o.jumpoptions = 'stack'
 
 local m = require('functions.keymap')
 
-if os.getenv('TMUX') then
-    vim.cmd('!tmux setenv -g NVIM ' .. vim.v.servername)
-    vim.cmd('redraw!')
-end
-
 m.keys { -- undo tags
     { 'i', ',', [[<C-g>u,]] },
     { 'i', '.', [[<C-g>u.]] },

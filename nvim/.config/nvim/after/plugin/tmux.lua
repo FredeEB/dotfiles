@@ -1,7 +1,15 @@
 local m = require('functions.keymap')
+local term = require('terminal')
 
-m.keys { -- tmux
-    { 'n', '<leader>t', [[<cmd>!tmux split-window -h -c %:p:h<cr><cmd>redraw!<cr>]] },
-    { 'n', '<leader>gr', [[<cmd>!tmux split-window -h -c `git rev-parse --show-toplevel`<cr><cmd>redraw!<cr>]] }
+if os.getenv('TMUX') then
+    vim.cmd('!tmux setenv -g NVIM ' .. vim.v.servername)
+    vim.cmd('redraw!')
+end
+
+m.keys {
+    -- Open new terminals
+    { 'n', '<leader><leader>', function() term.open_terminal { replace = true } end },
+    { 'n', '<leader>j',        function() term.open_terminal { vertical = true } end },
+    { 'n', '<leader>k',        term.open_terminal },
 }
 
