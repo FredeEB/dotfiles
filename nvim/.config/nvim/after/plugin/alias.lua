@@ -1,9 +1,12 @@
 require('alias-nvim').setup {
-    gl = 'FzfLua git_commits cwd=$PWD',
-    gs = 'Neogit',
-    gd = 'DiffviewOpen',
-    gw = 'FzfLua git_worktree',
-    gbr = 'FzfLua git_branches',
-    v = 'e $1',
-    m = 'Man $1',
+    commands = {
+        v = 'cd $PWD | e ${1:-.}',
+        m = 'Man $1',
+    },
+    functions = {
+        gs = function (cwd) require('neogit').open { cwd = cwd } end,
+        gd = function (cwd) require('diffview').open { cwd = cwd } end,
+        gl = function () require('fzf-lua').git_commits() end,
+        gb = function () require('fzf-lua').git_branches() end,
+    }
 }
