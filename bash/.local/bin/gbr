@@ -1,6 +1,6 @@
 #!/bin/bash
 git --no-pager branch \
-    | fzf --reverse --preview="git --no-pager log --oneline --color=always --graph {-1}" \
+    | fzf-tmux -p --reverse --preview="git --no-pager log --oneline --color=always --graph {-1}" \
         --bind "ctrl-d:preview-page-down" \
         --bind "ctrl-u:preview-page-up" \
         --bind "enter:execute(git checkout {-1})+accept" \
