@@ -1,3 +1,4 @@
+export DOTFILES_HOME=$(git -C $(dirname $(readlink -f ${BASH_SOURCE[0]})) rev-parse --show-toplevel)
 export XDG_CONFIG=$HOME/.config
 source "$XDG_CONFIG/bash/aliases.bash"
 
