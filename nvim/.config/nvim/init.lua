@@ -62,6 +62,5 @@ require('lazy').setup {
     { 'numToStr/Comment.nvim', config = true },
     { 'kabbamine/zeavim.vim' },
     { 'tversteeg/registers.nvim', config = true },
-    { 'anuvyklack/hydra.nvim', dependencies = { 'anuvyklack/keymap-layer.nvim' } },
     { 'lewis6991/spellsitter.nvim' },
 }

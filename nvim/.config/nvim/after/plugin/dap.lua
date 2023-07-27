@@ -1,4 +1,4 @@
-local hydra = require('hydra')
+local m = require('functions.keymap')
 -- dap
 local dap = require('dap')
 
@@ -49,20 +49,15 @@ dap.listeners.before.event_exited["dapui_config"] = function()
   dapui.close()
 end
 
-hydra({
-    name = 'Dap Debug',
-    config = {
-        foreign_keys = 'run',
-        exit = false,
-        invoke_on_body = true,
-    },
-    mode = { 'n', 'x' },
-    body = '<leader>d',
-    heads = {
-        { 'c', require('dap').continue, { desc = 'continue' } },
-        { 'b', require('dap').toggle_breakpoint, { desc = 'toggle breakpoint' } },
-        { 's', require('dap').step_over, { desc = 'step over' } },
-        { 'i', require('dap').step_into, { desc = 'step into' } },
-        { 'q', require('dap').close, { desc = 'stop' } },
-    }
-})
+local widgets = require('dap.ui.widgets')
+m.keys {
+    { 'n', '<leader>dd', dap.continue },
+    { 'n', '<leader>db', dap.toggle_breakpoint },
+    { 'n', '<leader>du', function () widgets.centered_float(widgets.scopes).open() end },
+    { 'n', '<leader>ds', widgets.hover },
+    { 'n', '<leader>dn', function() dap.step_over() end },
+    { 'n', '<leader>di', dap.step_into },
+    { 'n', '<leader>do', dap.step_out },
+    { 'n', '<leader>dx', dap.terminate },
+    { 'n', '<leader>dr', dap.repl.open },
+}
