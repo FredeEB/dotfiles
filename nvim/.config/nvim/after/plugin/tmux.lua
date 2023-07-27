@@ -12,4 +12,3 @@ m.keys {
     { 'n', '<leader>j',        function() term.open_terminal { vertical = true } end },
     { 'n', '<leader>k',        term.open_terminal },
 }
-
