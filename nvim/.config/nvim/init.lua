@@ -29,7 +29,7 @@ require('lazy').setup {
     { 'neovim/nvim-lsp' },
     -- dap
     { 'mfussenegger/nvim-dap' },
-    { 'rcarriga/nvim-dap-ui', config = true },
+    { 'thehamsta/nvim-dap-virtual-text', config = true },
     { 'jay-babu/mason-nvim-dap.nvim' },
     -- tools
     { 'theprimeagen/harpoon' },
