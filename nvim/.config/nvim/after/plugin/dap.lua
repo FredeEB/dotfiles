@@ -25,6 +25,17 @@ dap.adapters.cppdbg = {
 }
 dap.configurations.cpp = {
     {
+        name = 'Debug program',
+        type = 'cppdbg',
+        request = 'launch',
+        MIMode = 'gdb',
+        miDebuggerPath = 'gdb',
+        cwd = '${workspaceFolder}',
+        program = function()
+            return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+        end,
+    },
+    {
         name = 'Attach to gdbserver',
         type = 'cppdbg',
         request = 'launch',
@@ -36,17 +47,6 @@ dap.configurations.cpp = {
             return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
         end,
     },
-    {
-        name = 'Debug program',
-        type = 'cppdbg',
-        request = 'launch',
-        MIMode = 'gdb',
-        miDebuggerPath = 'gdb',
-        cwd = '${workspaceFolder}',
-        program = function()
-            return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
-        end,
-    }
 }
 
 require('mason-nvim-dap').setup {
