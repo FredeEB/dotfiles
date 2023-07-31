@@ -17,7 +17,7 @@ m.keys { -- telescope
     { 'n', '<leader>gf', fzf.git_bcommits },
     { 'n', '<leader>ff', fzf.files },
     { 'n', '<leader>fg', fzf.live_grep },
-    { 'n', '<leader>fr', fzf.grep_cWORD },
+    { 'n', '<leader>fr', fzf.grep_cword },
     { 'n', '<leader>fe', open_config },
     { 'n', '<leader>fw', search_config },
     { 'n', '<leader>p', fzf.registers },
