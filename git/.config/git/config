@@ -15,3 +15,7 @@
 [user]
     name = Frede Braendstrup
     signingKey = EEDBC8E8FC8CF68D
+[core]
+	pager = nvim -R
+[color]
+	pager = no
