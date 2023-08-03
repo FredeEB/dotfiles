@@ -3,19 +3,19 @@ local m = require('functions.keymap')
 local dap = require('dap')
 
 dap.adapters.cmake = {
-  type = "pipe",
-  pipe = "${pipe}",
-  executable = {
-    command = "cmake",
-    args = {"--debugger", "--debugger-pipe", "${pipe}"}
-  }
+    type = 'pipe',
+    pipe = '${pipe}',
+    executable = {
+        command = 'cmake',
+        args = { '--debugger', '--debugger-pipe', '${pipe}' }
+    }
 }
 dap.configurations.cmake = {
-  {
-    name = "Build",
-    type = "cmake",
-    request = "launch",
-  }
+    {
+        name = 'Build',
+        type = 'cmake',
+        request = 'launch',
+    }
 }
 
 dap.adapters.cppdbg = {
