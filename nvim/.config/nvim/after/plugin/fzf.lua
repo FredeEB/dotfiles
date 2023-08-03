@@ -1,6 +1,10 @@
 local m = require('functions.keymap')
 local fzf = require('fzf-lua')
-fzf.setup({'fzf-tmux'})
+fzf.setup {
+    'default',
+    fzf_bin = "fzf-tmux"
+}
+
 local function open_config()
     fzf.files {
         cwd = vim.fn.stdpath('config')
