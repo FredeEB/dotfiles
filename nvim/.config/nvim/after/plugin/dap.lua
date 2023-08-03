@@ -2,6 +2,14 @@ local m = require('functions.keymap')
 -- dap
 local dap = require('dap')
 
+local function query_executable()
+    return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+end
+
+local function query_target()
+    return vim.fn.input('Target <IP:PORT>: ')
+end
+
 dap.adapters.bash = {
     type = 'executable',
     command = 'bash-debug-adapter',
@@ -33,6 +41,14 @@ dap.configurations.cmake = {
     }
 }
 
+dap.adapters.codelldb = {
+    type = 'server',
+    port = "${port}",
+    executable = {
+        command = 'codelldb',
+        args = {'--port', "${port}"},
+    },
+}
 dap.adapters.cppdbg = {
     id = 'cppdbg',
     type = 'executable',
@@ -46,23 +62,19 @@ dap.configurations.cpp = {
         MIMode = 'gdb',
         miDebuggerPath = 'gdb',
         cwd = '${workspaceFolder}',
-        program = function()
-            return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
-        end,
-    },
-    {
+        program = query_executable
+    }, {
         name = 'Attach to gdbserver',
         type = 'cppdbg',
         request = 'launch',
         MIMode = 'gdb',
-        miDebuggerServerAddress = 'localhost:5555',
+        miDebuggerServerAddress = query_target,
         miDebuggerPath = 'gdb',
         cwd = '${workspaceFolder}',
-        program = function()
-            return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
-        end,
+        program = query_executable
     },
 }
+dap.configurations.c = dap.configurations.cpp
 
 require('mason-nvim-dap').setup {
     ensure_installed = { "cppdbg" },
