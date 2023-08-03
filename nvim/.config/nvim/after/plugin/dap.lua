@@ -57,10 +57,11 @@ require('mason-nvim-dap').setup {
 local widgets = require('dap.ui.widgets')
 m.keys {
     { 'n', '<leader>dd', dap.continue },
+    { 'n', '<leader>dl', dap.run_last },
     { 'n', '<leader>db', dap.toggle_breakpoint },
     { 'n', '<leader>du', function () widgets.centered_float(widgets.scopes).open() end },
     { 'n', '<leader>ds', widgets.hover },
-    { 'n', '<leader>dn', function() dap.step_over() end },
+    { 'n', '<leader>dn', dap.step_over },
     { 'n', '<leader>di', dap.step_into },
     { 'n', '<leader>do', dap.step_out },
     { 'n', '<leader>dx', dap.terminate },
