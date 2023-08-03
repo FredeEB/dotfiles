@@ -2,8 +2,7 @@ local m = require('functions.keymap')
 local term = require('terminal')
 
 if os.getenv('TMUX') then
-    vim.cmd('!tmux setenv -g NVIM ' .. vim.v.servername)
-    vim.cmd('redraw!')
+    vim.cmd('silent !tmux setenv -g NVIM ' .. vim.v.servername)
 end
 
 m.keys {

@@ -21,14 +21,13 @@ end
 local open_terminal = function(opts)
     opts = get_opts(opts)
     local args = opts.keep_dir and " -c %:p:h" or ""
-    vim.cmd('!export NVIM=$NVIM')
+    vim.cmd('silent !export NVIM=$NVIM')
     if opts.replace then
-        vim.cmd('!tmux neww' .. args)
+        vim.cmd('silent !tmux neww' .. args)
     else
         local direction = opts.vertical and ' -h' or ' -v'
-        vim.cmd('!tmux split' .. direction .. args)
+        vim.cmd('silent !tmux split' .. direction .. args)
     end
-    vim.cmd('redraw!')
 end
 
 return {
