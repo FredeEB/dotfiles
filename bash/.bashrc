@@ -21,6 +21,7 @@ fi
 if [[ -d /usr/share/fzf ]]; then
     source /usr/share/fzf/key-bindings.bash
     source /usr/share/fzf/completion.bash
+    export FZF_DEFAULT_OPTS="--bind 'ctrl-d:preview-page-down,ctrl-u:preview-page-up' --height 90%"
 fi 
 
 bind Space:magic-space
