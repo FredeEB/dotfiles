@@ -2,6 +2,21 @@ local m = require('functions.keymap')
 -- dap
 local dap = require('dap')
 
+dap.adapters.bash = {
+    type = 'executable',
+    command = 'bash-debug-adapter',
+}
+
+dap.configurations.sh = {
+    {
+        name = 'Run',
+        type = 'bash',
+        request = 'launch',
+        program = "${file}",
+        cwd = "${fileDirname}",
+    }
+}
+
 dap.adapters.cmake = {
     type = 'pipe',
     pipe = '${pipe}',
