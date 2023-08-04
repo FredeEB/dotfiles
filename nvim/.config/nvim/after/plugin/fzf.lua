@@ -2,7 +2,20 @@ local m = require('functions.keymap')
 local fzf = require('fzf-lua')
 fzf.setup {
     'default',
-    fzf_bin = "fzf-tmux"
+    fzf_bin = "fzf-tmux",
+    keymap = {
+        fzf = {}
+    },
+    winopts = {
+        preview = {
+            default = 'bat'
+        }
+    },
+    previewers = {
+        bat = {
+            theme = 'Dracula'
+        }
+    }
 }
 
 local function open_config()
