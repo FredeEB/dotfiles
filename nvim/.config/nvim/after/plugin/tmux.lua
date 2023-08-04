@@ -1,9 +1,21 @@
 local m = require('functions.keymap')
 local term = require('terminal')
 
-if os.getenv('TMUX') then
-    vim.cmd('silent !tmux setenv -g NVIM ' .. vim.v.servername)
-end
+vim.api.nvim_create_augroup('TmuxManip', { clear = true })
+vim.api.nvim_create_autocmd('VimEnter', {
+    callback = function ()
+        if os.getenv('TMUX') and not os.getenv('NVIM') then
+            vim.fn.system([[tmux setenv NVIM ]] .. vim.v.servername)
+        end
+    end
+})
+vim.api.nvim_create_autocmd('VimLeave', {
+    callback = function ()
+        if os.getenv('NVIM') == vim.v.servername then
+            vim.fn.system([[tmux setenv -u NVIM]])
+        end
+    end
+})
 
 m.keys {
     -- Open new terminals
