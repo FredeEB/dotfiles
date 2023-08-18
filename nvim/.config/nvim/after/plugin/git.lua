@@ -32,3 +32,7 @@ m.keys {
     { 'n', '<leader>gm', function() require('gitsigns').blame_line { full = true } end },
     { 'n', '<leader>gs', require('neogit').open },
 }
+
+m.keys_for_filetype{
+    {'DiffViewFile', 'n', 'q', '<cmd>tabclose<cr>'},
+}
