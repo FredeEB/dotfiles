@@ -20,6 +20,7 @@ vim.g.netrw_keepdir = 0
 vim.o.cmdheight = 0
 vim.g.foldenable = false
 vim.o.jumpoptions = 'stack'
+vim.o.scrollback = 100000
 
 local m = require('functions.keymap')
 
@@ -67,6 +68,14 @@ m.keys { -- qfl
 
 m.keys { -- misc
     { 'n', 'gf', 'gF' },
+}
+
+m.keys {
+    { 't', '<C-h>', '<C-\\><C-N><C-w>h' },
+    { 't', '<C-j>', '<C-\\><C-N><C-w>j' },
+    { 't', '<C-k>', '<C-\\><C-N><C-w>k' },
+    { 't', '<C-l>', '<C-\\><C-N><C-w>l' },
+    { 't', '<esc>', '<C-\\><C-n>' },
 }
 
 for _, cmd in ipairs { '<C-d>', '<C-u>', '<C-i>', '<C-o>', 'n', 'N', '*', '%' } do
