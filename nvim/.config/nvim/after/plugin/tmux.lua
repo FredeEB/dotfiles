@@ -4,7 +4,8 @@ local term = require('terminal')
 vim.api.nvim_create_augroup('TmuxManip', { clear = true })
 vim.api.nvim_create_autocmd('VimEnter', {
     callback = function ()
-        if os.getenv('TMUX') and not os.getenv('NVIM') then
+        local nvim_sock = os.getenv('NVIM')
+        if os.getenv('TMUX') and nvim_sock ~= nil and not os.rename(nvim_sock, nvim_sock) then
             vim.fn.system([[tmux setenv NVIM ]] .. vim.v.servername)
         end
     end
