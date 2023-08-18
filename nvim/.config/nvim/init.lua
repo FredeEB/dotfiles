@@ -30,6 +30,7 @@ require('lazy').setup {
     -- dap
     { 'mfussenegger/nvim-dap' },
     { 'thehamsta/nvim-dap-virtual-text', config = true },
+    { 'rcarriga/nvim-dap-ui', config = true },
     { 'jay-babu/mason-nvim-dap.nvim' },
     -- tools
     { 'theprimeagen/harpoon' },

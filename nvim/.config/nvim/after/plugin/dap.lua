@@ -81,6 +81,17 @@ require('mason-nvim-dap').setup {
     automatic_setup = true,
 }
 
+local dapui = require("dapui")
+dap.listeners.after.event_initialized["dapui_config"] = function()
+  dapui.open()
+end
+dap.listeners.before.event_terminated["dapui_config"] = function()
+  dapui.close()
+end
+dap.listeners.before.event_exited["dapui_config"] = function()
+  dapui.close()
+end
+
 local widgets = require('dap.ui.widgets')
 m.keys {
     { 'n', '<leader>dd', dap.continue },
@@ -93,4 +104,8 @@ m.keys {
     { 'n', '<leader>do', dap.step_out },
     { 'n', '<leader>dx', dap.terminate },
     { 'n', '<leader>dr', dap.repl.open },
+}
+
+m.keys_for_filetype {
+    {'dap-float', 'n', 'q', '<cmd>q<cr>'}
 }
