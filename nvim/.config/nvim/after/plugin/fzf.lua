@@ -35,6 +35,7 @@ m.keys { -- telescope
     { 'n', '<leader>ff', fzf.files },
     { 'n', '<leader>fg', fzf.live_grep },
     { 'n', '<leader>fr', fzf.grep_cword },
+    { 'v', '<leader>fr', fzf.grep_visual },
     { 'n', '<leader>fe', open_config },
     { 'n', '<leader>fw', search_config },
     { 'n', '<leader>p', fzf.registers },
