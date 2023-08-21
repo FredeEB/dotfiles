@@ -43,21 +43,6 @@ cmp.setup {
 }
 
 -- lsp
-local nvim_lsp = require('lspconfig')
-
-vim.diagnostic.config({
-    underline = true,
-    signs = true,
-    virtual_text = false,
-    float = {
-        show_header = true,
-        source = 'always',
-        border = 'none',
-        focusable = false,
-    },
-    update_on_insert = true,
-})
-
 local lsps = {
     'bashls',
     'docker_compose_language_service',
@@ -73,6 +58,7 @@ local lsps = {
 require('mason-lspconfig').setup {
     ensure_installed = lsps,
 }
+local nvim_lsp = require('lspconfig')
 local client_capabilities = require('cmp_nvim_lsp').default_capabilities()
 require('mason-lspconfig').setup_handlers {
     function(server)
