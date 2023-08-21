@@ -58,7 +58,18 @@ vim.diagnostic.config({
     update_on_insert = true,
 })
 
-local lsps = { 'bashls', 'neocmake', 'dockerls', 'docker_compose_language_service', 'lua_ls', 'gopls', 'pyright', 'rust_analyzer', 'tsserver', 'zls' }
+local lsps = {
+    'bashls',
+    'docker_compose_language_service',
+    'dockerls',
+    'gopls',
+    'lua_ls',
+    'neocmake',
+    'pyright',
+    'rust_analyzer',
+    'tsserver',
+    'zls',
+}
 require('mason-lspconfig').setup {
     ensure_installed = lsps,
 }
