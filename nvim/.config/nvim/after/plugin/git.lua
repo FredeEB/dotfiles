@@ -30,7 +30,7 @@ m.keys {
     { 'n', '<leader>gu', require('gitsigns').undo_stage_hunk },
     { 'n', '<leader>gp', require('gitsigns').preview_hunk },
     { 'n', '<leader>gm', function() require('gitsigns').blame_line { full = true } end },
-    { 'n', '<leader>gs', require('neogit').open },
+    { 'n', '<leader>gs', function() require('neogit').open { cwd = vim.fn.expand('%:h:p') } end },
 }
 
 m.keys_for_filetype{
