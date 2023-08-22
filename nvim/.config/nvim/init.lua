@@ -35,7 +35,6 @@ require('lazy').setup {
     { 'jay-babu/mason-nvim-dap.nvim' },
     -- tools
     { 'theprimeagen/harpoon' },
-    { 'glacambre/firenvim' },
     -- fzf
     { 'ibhagwan/fzf-lua' },
     -- treesitter
