@@ -29,7 +29,7 @@ local function search_config()
     }
 end
 
-m.keys { -- telescope
+m.keys {
     { 'n', '<leader>gl', fzf.git_commits },
     { 'n', '<leader>gf', fzf.git_bcommits },
     { 'n', '<leader>ff', fzf.files },
@@ -40,6 +40,7 @@ m.keys { -- telescope
     { 'n', '<leader>fw', search_config },
     { 'n', '<leader>p', fzf.registers },
     { 'n', '<leader>b', fzf.buffers },
+    { 'n', '<leader>l', fzf.lines },
     { 'n', '<leader>gb', fzf.git_branches },
     { 'n', '<leader>h', fzf.help_tags },
 }
