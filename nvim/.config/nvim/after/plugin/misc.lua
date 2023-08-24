@@ -59,11 +59,7 @@ m.keys { -- qfl
     { 'n', '<C-p>', [[<cmd>cprev<cr>zz]] },
     { 'n', '<C-n>', [[<cmd>cnext<cr>zz]] },
     { 'n', '<C-q>', [[<cmd>copen<cr>]] },
-    { 'n', '<C-c>', [[<cmd>lclose | cclose<cr>]] },
-    { 'n', '<M-p>', [[<cmd>lprev<cr>zz]] },
-    { 'n', '<M-n>', [[<cmd>lnext<cr>zz]] },
-    { 'n', '<M-q>', [[<cmd>lopen<cr>]] },
-    { 'n', '<leader>l', [[<cmd>lvim // % | lopen<cr>]] }
+    { 'n', '<C-c>', [[<cmd>cclose<cr>]] },
 }
 
 m.keys { -- misc
