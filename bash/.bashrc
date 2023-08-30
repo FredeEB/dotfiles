@@ -18,10 +18,12 @@ if [[ -x "$(command -v brave)" ]]; then
 fi
 
 #requires fzf
+export FZF_DEFAULT_COMMAND="rg --files --hidden"
+export FZF_DEFAULT_OPTS="--preview 'cat' --bind 'ctrl-d:preview-page-down,ctrl-u:preview-page-up'"
+
 if [[ -d /usr/share/fzf ]]; then
     source /usr/share/fzf/key-bindings.bash
     source /usr/share/fzf/completion.bash
-    export FZF_DEFAULT_OPTS="--bind 'ctrl-d:preview-page-down,ctrl-u:preview-page-up'"
 fi 
 
 bind Space:magic-space
