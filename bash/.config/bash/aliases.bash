@@ -23,6 +23,7 @@ alias dcu="docker-compose up"
 alias dcd="docker-compose up -d"
 alias dck="docker-compose down"
 alias dr="docker restart"
+alias lzd='docker run --rm -it -v /var/run/docker.sock:/var/run/docker.sock lazyteam/lazydocker'
 
 #perf
 alias perf-rep="perf report -g 'graph,0.5,caller'"
