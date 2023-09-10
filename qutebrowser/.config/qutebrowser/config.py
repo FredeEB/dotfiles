@@ -35,4 +35,4 @@ c.url.start_pages = 'https://github.com'
 
 # Background color of the statusbar.
 # Type: QssColor
-c.colors.statusbar.normal.bg = '#282A36'
+c.colors.statusbar.normal.bg = '#24283b'

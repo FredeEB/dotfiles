@@ -28,6 +28,6 @@ require('lualine').setup({
     extensions = {}
 })
 
-vim.cmd('colorscheme dracula')
+vim.cmd('colorscheme tokyonight')
 vim.api.nvim_set_hl(0, 'CursorWord', { bg = "#383A46", bold = true })
 

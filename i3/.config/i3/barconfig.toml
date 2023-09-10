@@ -3,8 +3,8 @@ icons = "awesome"
 [theme]
 name = "slick"
 [theme.overrides]
-idle_bg = "#2a2b2e"
-idle_fg = "#aaaaaa"
+idle_bg = "#24283b"
+idle_fg = "#c0caf5"
 
 [[block]]
 block = "music"
