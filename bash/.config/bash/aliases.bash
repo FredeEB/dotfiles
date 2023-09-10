@@ -14,7 +14,7 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
-alias ls="exa"
+alias ls="eza"
 
 #docker
 alias dps="docker ps -a"
