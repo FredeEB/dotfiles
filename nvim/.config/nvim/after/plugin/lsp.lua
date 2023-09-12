@@ -42,13 +42,6 @@ cmp.setup {
     }
 }
 
-cmp.setup.cmdline('/', {
-    mapping = cmp.mapping.preset.cmdline(),
-    sources = {
-        { name = 'buffer' }
-    }
-})
-
 -- lsp
 local lsps = {
     'bashls',
@@ -95,6 +88,8 @@ m.keys {
     { 'n', '<leader>ro', vim.lsp.buf.rename },
     { 'n', '<leader>rh', vim.lsp.buf.hover, { buffer = 0, noremap = true, silent = true }},
     { 'n', '<leader>re', vim.lsp.buf.code_action },
+    { 'n', '<leader>rn', vim.diagnostic.goto_next },
+    { 'n', '<leader>rp', vim.diagnostic.goto_prev },
     { 'n', '<leader>rd', vim.diagnostic.setqflist },
     { {'n', 'v'}, '<leader>rf', function() vim.lsp.buf.format { async = true } end },
 }
