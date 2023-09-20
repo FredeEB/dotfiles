@@ -1,20 +1,17 @@
 #files
-alias al="ls -lah"
 alias cd..="cd .."
 alias cp="cp -i"
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias grep='grep --color=auto'
 alias la="ls -lah"
-alias lr="ls -lahR | sed -e '/^total.*$/d' -e '/.*\\.$/d'"
-alias ls='ls --color=auto'
+alias ls='ls --color=auto -oFC'
 alias mv="mv -i"
 alias rf="rm -rf"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias .....="cd ../../../.."
-alias ls="eza"
 
 #docker
 alias dps="docker ps -a"
