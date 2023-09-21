@@ -49,10 +49,9 @@ require('lazy').setup {
     { 'https://gitlab.com/yorickpeterse/nvim-pqf', config = true },
     -- git
     { 'lewis6991/gitsigns.nvim' },
-    { 'sindrets/diffview.nvim' },
+    { 'sindrets/diffview.nvim', opts = { use_icons = false } },
     { 'theprimeagen/git-worktree.nvim' },
     { 'neogitorg/neogit' },
-    { 'sindrets/diffview.nvim' },
     -- misc
     { 'rcarriga/nvim-notify' },
     { 'williamboman/mason.nvim', config = true },

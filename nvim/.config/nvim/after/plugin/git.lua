@@ -18,9 +18,6 @@ require('gitsigns').setup({
     }
 })
 
-local diffview = require('diffview')
-diffview.setup()
-
 m.keys {
     { 'n', '<leader>gq', require('gitsigns').setqflist },
     { 'n', '<leader>gA', require('gitsigns').stage_buffer },
