@@ -31,5 +31,5 @@ m.keys {
 }
 
 m.keys_for_filetype{
-    {'DiffViewFile', 'n', 'q', '<cmd>tabclose<cr>'},
+    {'DiffViewFile', 'n', 'q', '<cmd>DiffviewClose<cr>'},
 }
