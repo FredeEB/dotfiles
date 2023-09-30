@@ -2,7 +2,7 @@ export DOTFILES_HOME=$(git -C $(dirname $(readlink -f ${BASH_SOURCE[0]})) rev-pa
 export XDG_CONFIG=$HOME/.config
 source "$XDG_CONFIG/bash/aliases.bash"
 
-if [[ -x "$(command -v stow)" ]]; then
+if [[ -x "$(which stow)" ]]; then
     cd $DOTFILES_HOME > /dev/null
     stow -S * -t $HOME
     cd - > /dev/null
@@ -14,12 +14,12 @@ if [[ -f /etc/bash_completion ]]; then
     source /etc/bash_completion
 fi
 
-if [[ -x "$(command -v nvim)" ]]; then
+if [[ -x "$(which nvim)" ]]; then
     export EDITOR=nvim
     export VISUAL=$EDITOR
 fi
 
-if [[ -x "$(command -v brave)" ]]; then
+if [[ -x "$(which brave)" ]]; then
     export BROWSER=brave
 fi
 
@@ -30,6 +30,7 @@ export FZF_DEFAULT_OPTS="--preview 'cat' --bind 'ctrl-d:preview-page-down,ctrl-u
 if [[ -d /usr/share/fzf ]]; then
     source /usr/share/fzf/key-bindings.bash
     source /usr/share/fzf/completion.bash
+    complete -F _fzf_path_completion -o default -o bashdefault v
 fi 
 
 bind Space:magic-space
