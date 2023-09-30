@@ -28,8 +28,6 @@ fi
 
 bind Space:magic-space
 
-export PATH=$PATH:$HOME/.local/bin/:$HOME/.cargo/bin
-
 if [[ -z "$SSH_TTY" ]]; then
     export GPG_TTY="$(tty)"
     export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
