@@ -2,6 +2,12 @@ export DOTFILES_HOME=$(git -C $(dirname $(readlink -f ${BASH_SOURCE[0]})) rev-pa
 export XDG_CONFIG=$HOME/.config
 source "$XDG_CONFIG/bash/aliases.bash"
 
+if [[ -x "$(command -v stow)" ]]; then
+    cd $DOTFILES_HOME > /dev/null
+    stow -S * -t $HOME
+    cd - > /dev/null
+fi
+
 set -o emacs
 
 if [[ -f /etc/bash_completion ]]; then
