@@ -8,25 +8,31 @@ require('harpoon').setup {
     }
 }
 
-local function run_command(clear)
+local function run_command(clear, index)
     clear = clear or false
     local hp = require('harpoon.tmux')
     if clear == true then
         hp.sendCommand('+', 'clear')
     end
-    hp.sendCommand('+', 1)
+    hp.sendCommand('+', index)
 end
 
 m.keys {
-    { 'n', '<M-a>', require('harpoon.mark').add_file },
-    { 'n', '<M-s>', require('harpoon.ui').toggle_quick_menu },
+    { 'n', '<M-m>', require('harpoon.mark').add_file },
+    { 'n', '<M-u>', require('harpoon.ui').toggle_quick_menu },
     { 'n', '<M-j>', function() require('harpoon.ui').nav_file(1) end },
     { 'n', '<M-k>', function() require('harpoon.ui').nav_file(2) end },
     { 'n', '<M-l>', function() require('harpoon.ui').nav_file(3) end },
     { 'n', '<M-;>', function() require('harpoon.ui').nav_file(4) end },
+
     { 'n', '<M-c>', require('harpoon.cmd-ui').toggle_quick_menu },
-    -- send to adjacent pane
-    { 'n', '<M-b>', run_command },
-    { 'n', '<M-S-b>', function() run_command(true) end },
+    { 'n', '<M-a>', function() run_command(true, 1) end },
+    { 'n', '<M-s>', function() run_command(true, 2) end },
+    { 'n', '<M-d>', function() run_command(true, 3) end },
+    { 'n', '<M-f>', function() run_command(true, 4) end },
+    { 'n', '<M-S-a>', function() run_command(true, 1) end },
+    { 'n', '<M-S-s>', function() run_command(true, 2) end },
+    { 'n', '<M-S-d>', function() run_command(true, 3) end },
+    { 'n', '<M-S-f>', function() run_command(true, 4) end },
 }
 
