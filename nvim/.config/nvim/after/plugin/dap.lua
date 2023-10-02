@@ -10,6 +10,11 @@ local function query_target()
     return vim.fn.input('Target <IP:PORT>: ')
 end
 
+require('dap.ext.vscode').type_to_filetypes = {
+    cppdbg = { "c", "cpp" },
+    codelldb = { "c", "cpp" },
+}
+
 dap.adapters.bash = {
     type = 'executable',
     command = 'bash-debug-adapter',
@@ -54,27 +59,6 @@ dap.adapters.cppdbg = {
     type = 'executable',
     command = 'OpenDebugAD7',
 }
-dap.configurations.cpp = {
-    {
-        name = 'Debug program',
-        type = 'codelldb',
-        request = 'launch',
-        MIMode = 'gdb',
-        miDebuggerPath = 'gdb',
-        cwd = '${workspaceFolder}',
-        program = query_executable
-    }, {
-        name = 'Attach to gdbserver',
-        type = 'cppdbg',
-        request = 'launch',
-        MIMode = 'gdb',
-        miDebuggerServerAddress = query_target,
-        miDebuggerPath = 'gdb',
-        cwd = '${workspaceFolder}',
-        program = query_executable
-    },
-}
-dap.configurations.c = dap.configurations.cpp
 
 require('mason-nvim-dap').setup {
     ensure_installed = { "cppdbg" },
