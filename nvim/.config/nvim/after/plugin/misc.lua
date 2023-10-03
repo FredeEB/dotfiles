@@ -16,7 +16,6 @@ vim.o.fixeol = false
 vim.o.signcolumn = 'yes:1'
 vim.o.guifont = 'Iosevka Nerd Font:h10'
 vim.o.mousemodel = 'extend'
-vim.g.netrw_keepdir = 0
 vim.o.cmdheight = 0
 vim.g.foldenable = false
 vim.o.jumpoptions = 'stack'
