@@ -40,7 +40,7 @@ require('lazy').setup {
     -- treesitter
     { 'mfussenegger/nvim-treehopper' },
     { 'nvim-treesitter/playground' },
-    { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
+    { 'nvim-treesitter/nvim-treesitter', run = ":TSUpdate" },
     { 'wansmer/treesj', config = true },
     -- theme
     { 'nvim-lualine/lualine.nvim' },
