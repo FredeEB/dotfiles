@@ -3,7 +3,7 @@
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(find ~/git -maxdepth 3 -type d -name .git | sed -e 's/\.git//' | fzf-tmux -p)
+    selected=$(find ~/git -maxdepth 3 -type d -name .git | sed -e 's/\.git//' | fzf-tmux -p --no-preview)
 fi
 
 if [[ -z $selected ]]; then
