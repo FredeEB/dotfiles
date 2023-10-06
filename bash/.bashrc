@@ -19,8 +19,8 @@ if [[ -x "$(which nvim)" ]]; then
     export VISUAL=$EDITOR
 fi
 
-if [[ -x "$(which brave)" ]]; then
-    export BROWSER=brave
+if [[ -x "$(which firefox)" ]]; then
+    export BROWSER=firefox
 fi
 
 #requires fzf
