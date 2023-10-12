@@ -14,6 +14,10 @@ if [[ -f /etc/bash_completion ]]; then
     source /etc/bash_completion
 fi
 
+if [[ -x "$(which alacritty)" ]]; then
+    export TERMINAL=alacritty
+fi
+
 if [[ -x "$(which nvim)" ]]; then
     export EDITOR=nvim
     export VISUAL=$EDITOR
