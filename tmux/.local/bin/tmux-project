@@ -4,8 +4,8 @@ search_dir=~/git/
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(find $search_dir -maxdepth 3 -type d -name .git \
-        | sed -e 's/\.git//' \
+    selected=$(find ~/git -maxdepth 3 -type d -regextype grep -regex ".*/.\(git\|hg\|repo\)" \
+        | xargs dirname \
         | fzf-tmux -p --no-preview --bind "ctrl-n:beginning-of-line+put($search_dir)+print-query")
 fi
 
