@@ -188,7 +188,7 @@ live_config_reload: true
 #   - (Linux) user login shell
 #   - (Windows) powershell
 shell:
-  program: /bin/sh
+  program: /bin/bash
   args:
     - -c
     - -l
