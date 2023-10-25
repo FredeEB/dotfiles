@@ -36,6 +36,7 @@ require('lazy').setup {
     { 'jay-babu/mason-nvim-dap.nvim' },
     -- tools
     { 'theprimeagen/harpoon' },
+    { 'fredeeb/tardis.nvim', config = true, dir = os.getenv('HOME') .. '/git/tardis.nvim' },
     -- fzf
     { 'ibhagwan/fzf-lua' },
     -- treesitter
