@@ -187,6 +187,12 @@ live_config_reload: true
 #   - (macOS) /bin/bash --login
 #   - (Linux) user login shell
 #   - (Windows) powershell
+shell:
+  program: /bin/sh
+  args:
+    - -c
+    - -l
+    - "tmux attach || tmux"
 
 # Startup directory
 #
