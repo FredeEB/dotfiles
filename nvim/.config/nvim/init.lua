@@ -12,6 +12,7 @@ vim.g.mapleader = ' '
 require('lazy').setup {
     -- common
     { 'nvim-lua/plenary.nvim' },
+    { 'folke/neodev.nvim', config = true },
     -- tmux
     { 'aserowy/tmux.nvim', config = true },
     -- snippets
