@@ -23,14 +23,6 @@ vim.o.scrollback = 100000
 
 local m = require('functions.keymap')
 
-m.keys { -- undo tags
-    { 'i', ',', [[<C-g>u,]] },
-    { 'i', '.', [[<C-g>u.]] },
-    { 'i', '!', [[<C-g>u!]] },
-    { 'i', '?', [[<C-g>u?]] },
-    { 'i', ';', [[<C-g>u;]] },
-}
-
 m.keys { -- vblock moves
     { 'v', 'K', [[:m '<-2<cr>gv=gv]] },
     { 'v', 'J', [[:m '>+1<cr>gv=gv]] },
