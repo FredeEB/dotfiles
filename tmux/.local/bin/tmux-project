@@ -1,13 +1,21 @@
 #!/bin/bash
+search_dir=~/git/
 
 if [[ $# -eq 1 ]]; then
     selected=$1
 else
-    selected=$(find ~/git -maxdepth 3 -type d -name .git | sed -e 's/\.git//' | fzf-tmux -p --no-preview)
+    selected=$(find $search_dir -maxdepth 3 -type d -name .git \
+        | sed -e 's/\.git//' \
+        | fzf-tmux -p --no-preview --bind "ctrl-n:beginning-of-line+put($search_dir)+print-query")
 fi
 
 if [[ -z $selected ]]; then
     exit 0
+fi
+
+if [[ ! -d $selected ]]; then
+    mkdir -p $selected
+    git -C $selected init
 fi
 
 selected_name=$(basename "$selected" | tr . _)
