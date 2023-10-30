@@ -6,7 +6,7 @@ end
 vim.opt.rtp:prepend(lazy_path)
 
 local m = require('functions.keymap')
-m.key('n', '<Space>', '', {})
+m.key('n', '<Space>', '')
 vim.g.mapleader = ' '
 
 require('lazy').setup {
