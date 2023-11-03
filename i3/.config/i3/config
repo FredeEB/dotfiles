@@ -111,6 +111,7 @@ new_window 1pixel
 new_float 1pixel
 
 #startprograms
+exec_always --no-startup-id $HOME/.config/i3/startup.sh
 exec_always --no-startup-id $HOME/.screenlayout/default.sh
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id xset r rate 200 50
