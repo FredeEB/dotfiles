@@ -50,7 +50,7 @@ local lsps = {
     'gopls',
     'lua_ls',
     'neocmake',
-    'jedi_language_server',
+    'pyright',
     'rust_analyzer',
     'tsserver',
     'zls',
