@@ -10,11 +10,11 @@ function M.tmux_running()
 end
 
 function M.tmux_command()
-    local arg = ''
+    local command = {'tmux'}
     if M.tmux_running() then
-        arg = 'a'
+        table.insert(command, 'a')
     end
-    return {'tmux', arg}
+    return command
 end
 
 return M
