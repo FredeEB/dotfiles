@@ -41,6 +41,7 @@ require('lazy').setup {
     { 'ibhagwan/fzf-lua' },
     -- treesitter
     { 'mfussenegger/nvim-treehopper' },
+    { 'nvim-treesitter/nvim-treesitter-context', config = true },
     { 'nvim-treesitter/playground' },
     { 'nvim-treesitter/nvim-treesitter', run = ":TSUpdate" },
     { 'wansmer/treesj', config = true },
