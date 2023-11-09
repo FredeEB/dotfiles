@@ -4,7 +4,9 @@ fzf.setup {
     'default',
     fzf_bin = "fzf-tmux",
     keymap = {
-        fzf = {}
+        fzf = {
+            ["ctrl-q"] = "select-all+accept",
+        }
     },
     winopts = {
         preview = {
