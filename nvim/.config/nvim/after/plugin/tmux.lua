@@ -21,7 +21,6 @@ vim.api.nvim_create_autocmd('VimLeave', { callback = unset_nvim_env_var})
 
 m.keys {
     -- Open new terminals
-    { 'n', '<leader><leader>', function() term.open_terminal { replace = true } end },
     { 'n', '<leader>j',        function() term.open_terminal { vertical = true } end },
     { 'n', '<leader>k',        term.open_terminal },
 }

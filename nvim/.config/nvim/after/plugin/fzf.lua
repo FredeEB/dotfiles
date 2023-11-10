@@ -32,6 +32,7 @@ local function search_config()
 end
 
 m.keys {
+    { 'n', '<leader><leader>', fzf.resume },
     { 'n', '<leader>gl', fzf.git_commits },
     { 'n', '<leader>gf', fzf.git_bcommits },
     { 'n', '<leader>ff', fzf.files },
@@ -40,7 +41,7 @@ m.keys {
     { 'v', '<leader>fr', fzf.grep_visual },
     { 'n', '<leader>fe', open_config },
     { 'n', '<leader>fw', search_config },
-    { 'n', '<leader>p', fzf.registers },
+    { 'n', '<leader>;', fzf.commands },
     { 'n', '<leader>b', fzf.buffers },
     { 'n', '<leader>l', fzf.lines },
     { 'n', '<leader>gb', fzf.git_branches },
