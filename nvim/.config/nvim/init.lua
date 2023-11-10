@@ -16,8 +16,6 @@ require('lazy').setup {
     -- tmux
     { 'aserowy/tmux.nvim', config = true },
     -- snippets
-    { 'dawikur/algorithm-mnemonics.vim' },
-    { 'rafamadriz/friendly-snippets' },
     { 'l3mon4d3/luasnip' },
     -- cmp
     { 'hrsh7th/cmp-nvim-lsp' },
@@ -33,17 +31,19 @@ require('lazy').setup {
     { 'mfussenegger/nvim-dap' },
     { 'thehamsta/nvim-dap-virtual-text', config = true },
     { 'rcarriga/nvim-dap-ui', config = true },
-    { 'jay-babu/mason-nvim-dap.nvim' },
+    { 'williamboman/mason.nvim', config = true },
+    { 'williamboman/mason-lspconfig.nvim', config = true },
     -- tools
     { 'theprimeagen/harpoon' },
     { 'fredeeb/tardis.nvim', config = true, dir = os.getenv('HOME') .. '/git/tardis.nvim' },
+    { 'fredeeb/alias.nvim' },
     -- fzf
     { 'ibhagwan/fzf-lua' },
     -- treesitter
     { 'mfussenegger/nvim-treehopper' },
     { 'nvim-treesitter/nvim-treesitter-context', config = true },
     { 'nvim-treesitter/playground' },
-    { 'nvim-treesitter/nvim-treesitter', run = ":TSUpdate" },
+    { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' },
     { 'wansmer/treesj', config = true },
     -- theme
     { 'nvim-lualine/lualine.nvim' },
@@ -52,18 +52,13 @@ require('lazy').setup {
     -- git
     { 'lewis6991/gitsigns.nvim' },
     { 'sindrets/diffview.nvim', opts = { use_icons = false } },
-    { 'theprimeagen/git-worktree.nvim' },
     { 'neogitorg/neogit' },
     -- misc
     { 'rcarriga/nvim-notify' },
-    { 'williamboman/mason.nvim', config = true },
-    { 'williamboman/mason-lspconfig.nvim', config = true },
     { 'ojroques/nvim-osc52' },
-    { 'fredeeb/alias.nvim' },
     { 'olimorris/persisted.nvim' },
     { 'windwp/nvim-autopairs', config = true },
     { 'numToStr/Comment.nvim', config = true },
     { 'kabbamine/zeavim.vim' },
     { 'tversteeg/registers.nvim', config = true },
-    { 'lewis6991/spellsitter.nvim' },
 }

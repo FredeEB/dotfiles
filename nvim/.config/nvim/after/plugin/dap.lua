@@ -60,11 +60,6 @@ dap.adapters.cppdbg = {
     command = 'OpenDebugAD7',
 }
 
-require('mason-nvim-dap').setup {
-    ensure_installed = { "cppdbg" },
-    automatic_setup = true,
-}
-
 local dapui = require("dapui")
 dap.listeners.after.event_initialized["dapui_config"] = dapui.open
 dap.listeners.before.event_terminated["dapui_config"] = dapui.close
