@@ -34,6 +34,7 @@ require('lazy').setup {
     { 'williamboman/mason.nvim', config = true },
     { 'williamboman/mason-lspconfig.nvim', config = true },
     -- tools
+    { 'stevearc/oil.nvim', config = true },
     { 'theprimeagen/harpoon' },
     { 'fredeeb/tardis.nvim', config = true, dir = os.getenv('HOME') .. '/git/tardis.nvim' },
     { 'fredeeb/alias.nvim' },
