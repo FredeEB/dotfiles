@@ -144,6 +144,8 @@ local globalkeys = gears.table.join(
         { description = 'open a terminal', group = 'launcher' }),
     awful.key({ modkey, }, 'b', function() awful.spawn(browser) end,
         { description = 'open a terminal', group = 'launcher' }),
+    awful.key({ modkey, 'Shift' }, 'e', awesome.quit,
+        { description = 'quick awesome', group = 'awesome' }),
     awful.key({ modkey, 'Control' }, 'r', awesome.restart,
         { description = 'reload awesome', group = 'awesome' }),
     awful.key({ modkey, }, 'l', function() awful.screen.focus_bydirection('right') end,
