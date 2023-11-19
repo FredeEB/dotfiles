@@ -8,7 +8,7 @@ if [[ -x "$(which stow)" ]]; then
     cd - > /dev/null
 fi
 
-set -o emacs
+set -o vi
 
 if [[ -f /etc/bash_completion ]]; then
     source /etc/bash_completion
