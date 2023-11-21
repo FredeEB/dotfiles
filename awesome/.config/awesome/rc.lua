@@ -286,12 +286,8 @@ clientbuttons = gears.table.join(
     end)
 )
 
--- Set keys
 root.keys(globalkeys)
--- }}}
 
--- {{{ Rules
--- Rules to apply to new clients (through the 'manage' signal).
 awful.rules.rules = {
     -- All clients will match this rule.
     {
