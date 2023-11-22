@@ -357,3 +357,6 @@ end)
 
 client.connect_signal('focus', function(c) c.border_color = beautiful.border_focus end)
 client.connect_signal('unfocus', function(c) c.border_color = beautiful.border_normal end)
+
+awful.spawn('xset r rate 200 50')
+awful.spawn('setxkbmap us -option caps:escape')
