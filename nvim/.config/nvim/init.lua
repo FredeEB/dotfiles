@@ -56,7 +56,6 @@ require('lazy').setup {
     { 'neogitorg/neogit' },
     -- misc
     { 'rcarriga/nvim-notify' },
-    { 'ojroques/nvim-osc52' },
     { 'olimorris/persisted.nvim' },
     { 'windwp/nvim-autopairs', config = true },
     { 'numToStr/Comment.nvim', config = true },
