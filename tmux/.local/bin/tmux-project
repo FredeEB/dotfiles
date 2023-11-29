@@ -6,7 +6,7 @@ if [[ $# -eq 1 ]]; then
 else
     selected=$(find ~/git -maxdepth 3 -type d -regextype grep -regex ".*/.\(git\|hg\|repo\)" \
         | xargs dirname \
-        | fzf-tmux -p --no-preview --bind "ctrl-n:beginning-of-line+put($search_dir)+print-query")
+        | fzf-tmux -p --no-preview --bind "ctrl-g:beginning-of-line+put($search_dir)+print-query")
 fi
 
 if [[ -z $selected ]]; then
