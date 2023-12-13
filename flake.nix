@@ -33,9 +33,7 @@
       bun = home-manager.lib.homeManagerConfiguration {
 	inherit pkgs;
 	modules = [ ./users/bun.nix ];
-	extraSpecialArgs = {
-	  inherit inputs;
-	};
+	extraSpecialArgs = { inherit inputs; };
       };
     };
   };

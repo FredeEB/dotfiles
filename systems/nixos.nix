@@ -1,5 +1,5 @@
-{ config, pkgs, home-manager, ... }:
-{
+{ config, pkgs, home-manager, ... }: {
+
   imports = [
     home-manager.nixosModules.default
   ];
