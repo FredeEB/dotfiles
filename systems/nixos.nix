@@ -4,6 +4,12 @@
     home-manager.nixosModules.default
   ];
 
+  users.users.bun = {
+    isNormalUser = true;
+    home = "/home/bun";
+    extraGroups = [ "wheel" "docker" ];
+  };
+
   fonts.packages = with pkgs; [
     noto-fonts
     noto-fonts-emoji
