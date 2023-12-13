@@ -57,6 +57,11 @@
     enableSSHSupport = true;
   };
 
+  environment.systemPackages = with pkgs; [
+    dunst
+    libnotify
+  ];
+
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
