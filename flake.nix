@@ -8,9 +8,13 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    dotfiles = {
+      url = "github:fredeeb/dotfiles";
+      flake = false;
+    };
   };
 
-  outputs = inputs@{ nixpkgs, nixos-hardware, home-manager, ... }:
+  outputs = inputs@{ nixpkgs, dotfiles, nixos-hardware, home-manager, ... }:
   let
     system = "x86_64-linux";
     pkgs = import nixpkgs { inherit system; };
