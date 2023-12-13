@@ -4,6 +4,12 @@
     home-manager.nixosModules.default
   ];
 
+  fonts.packages = with pkgs; [
+    noto-fonts
+    noto-fonts-emoji
+    (nerdfonts.override { fonts = [ "Iosevka" ]; })
+  ];
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
