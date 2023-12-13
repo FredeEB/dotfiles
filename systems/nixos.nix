@@ -27,8 +27,16 @@
   # Configure keymap in X11
   services.xserver = {
     enable = true;
-    layout = "us";
-    xkbVariant = "";
+
+    autoRepeatDelay = 200;
+    autoRepeatInterval = 50;
+
+    # Keyboard
+    xkb = {
+      layout = "us";
+      options = "caps:escape";
+    };
+
     displayManager.lightdm.enable = true;
     windowManager.awesome.enable = true;
   };
