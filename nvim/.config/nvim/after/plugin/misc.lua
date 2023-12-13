@@ -76,19 +76,6 @@ vim.api.nvim_create_autocmd('WinEnter', {
 
 vim.notify = require('notify')
 
--- osc52
-vim.g.clipboard = {
-    name = 'OSC 52',
-    copy = {
-        ['+'] = require('vim.ui.clipboard.osc52').copy('+'),
-        ['*'] = require('vim.ui.clipboard.osc52').copy('*'),
-    },
-    paste = {
-        ['+'] = require('vim.ui.clipboard.osc52').paste('+'),
-        ['*'] = require('vim.ui.clipboard.osc52').paste('*'),
-    },
-}
-
 m.keys {
     { 'n', '<leader>t', require('tardis-nvim').tardis }
 }
