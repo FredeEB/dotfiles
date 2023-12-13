@@ -9,8 +9,9 @@
 
     sessionVariables = {
       BROWSER = "firefox";
-      TERMINAL = "wezterm";
       EDITOR = "nvim";
+      SHELL = "bash";
+      TERMINAL = "wezterm";
     };
 
     packages = with pkgs; [
