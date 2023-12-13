@@ -2,7 +2,7 @@ export DOTFILES_HOME=$(git -C $(dirname $(readlink -f ${BASH_SOURCE[0]})) rev-pa
 export XDG_CONFIG=$HOME/.config
 source "$XDG_CONFIG/bash/aliases.bash"
 
-if [[ -x "$(which stow)" ]]; then
+if [[ -x "$(command -v stow)" ]]; then
     cd $DOTFILES_HOME > /dev/null
     stow -S * -t $HOME
     cd - > /dev/null
@@ -12,16 +12,16 @@ if [[ -f /etc/bash_completion ]]; then
     source /etc/bash_completion
 fi
 
-if [[ -x "$(which alacritty)" ]]; then
+if [[ -x "$(command -v alacritty)" ]]; then
     export TERMINAL=alacritty
 fi
 
-if [[ -x "$(which nvim)" ]]; then
+if [[ -x "$(command -v nvim)" ]]; then
     export EDITOR=nvim
     export VISUAL=$EDITOR
 fi
 
-if [[ -x "$(which firefox)" ]]; then
+if [[ -x "$(command -v firefox)" ]]; then
     export BROWSER=firefox
 fi
 
