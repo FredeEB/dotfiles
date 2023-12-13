@@ -1,15 +1,12 @@
-args@{ self, config, lib, inputs, pkgs, ... }:
-  let 
-    username = "bun";
-  in
-{
+{ self, config, lib, inputs, pkgs, ... }: {
   home.stateVersion = "23.11";
 
   programs.home-manager.enable = true;
 
   home = {
-    username = username;
-    homeDirectory = "/home/${username}";
+    username = "bun";
+    homeDirectory = "/home/bun";
+
     sessionVariables = {
       BROWSER = "firefox";
       TERMINAL = "wezterm";
