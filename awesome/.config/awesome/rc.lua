@@ -142,6 +142,8 @@ local globalkeys = gears.table.join(
     -- Standard program
     awful.key({ modkey, }, 'Return', function() awful.spawn(terminal) end,
         { description = 'open a terminal', group = 'launcher' }),
+    awful.key({ modkey, 'Shift' }, 'Return', function() awful.spawn({terminal, '-e', shell}) end,
+        { description = 'open a terminal running shell', group = 'launcher' }),
     awful.key({ modkey, }, 'b', function() awful.spawn(browser) end,
         { description = 'open a terminal', group = 'launcher' }),
     awful.key({ modkey, 'Shift' }, 'e', awesome.quit,
@@ -175,6 +177,8 @@ local globalkeys = gears.table.join(
 
     -- Menubar
     awful.key({ modkey }, 'r', function() awful.spawn({'rofi', '-show', 'run'}) end,
+        { description = 'run a program', group = 'awesome' }),
+    awful.key({ modkey }, 'w', function() awful.spawn({'rofi', '-show', 'run'}) end,
         { description = 'run a program', group = 'awesome' })
 )
 
