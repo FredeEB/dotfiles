@@ -11,6 +11,7 @@ beautiful.init(gears.filesystem.get_themes_dir() .. 'default/theme.lua')
 
 local modkey = 'Mod4'
 local terminal = os.getenv('TERMINAL') or 'wezterm'
+local shell = os.getenv('SHELL') or 'bash'
 local browser = os.getenv('BROWSER') or 'firefox'
 
 awful.layout.layouts = {
