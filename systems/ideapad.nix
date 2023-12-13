@@ -12,6 +12,8 @@
   boot.kernelModules = [ "kvm-amd" ];
   boot.extraModulePackages = [ ];
 
+  networking.hostName = "ideapad";
+
   fileSystems = { 
     "/" = { 
       device = "/dev/disk/by-label/nixos";

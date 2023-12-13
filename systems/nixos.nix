@@ -20,8 +20,6 @@
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
 
-  networking.hostName = "nixos";
-
   # Enable networking
   # networking.networkmanager.enable = true;
   networking.wireless.iwd.enable = true;
