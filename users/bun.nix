@@ -2,6 +2,7 @@
   home.stateVersion = "23.11";
 
   programs.home-manager.enable = true;
+  nixpkgs.config.allowUnfree = true;
 
   home = {
     username = "bun";
@@ -16,16 +17,41 @@
 
     packages = with pkgs; [
       firefox
-      neovim
-      tmux
+      gimp
+      stow
       wezterm
+      zathura
+      zeal
   
-      nix
-      git
-      virt-manager
-      steam
-    ];
+      cmake
+      doxygen
+      gcc
+      ninja
 
+      go
+      rustup
+
+      tree-sitter
+
+      steam
+
+      ansible
+      fzf
+      neovim
+      nix
+      ripgrep
+      rofi
+      stow
+      tmux
+      unzip
+      wget
+
+      nodejs
+
+      virt-manager
+
+      tailscale
+    ];
   };
 
   xdg = {
