@@ -1,4 +1,4 @@
-{ self, config, lib, inputs, pkgs, ... }: {
+{ pkgs, ... }: {
   home.stateVersion = "23.11";
 
   programs.home-manager.enable = true;
