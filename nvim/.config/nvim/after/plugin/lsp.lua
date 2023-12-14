@@ -52,8 +52,6 @@ local lsps = {
     'neocmake',
     'pyright',
     'rust_analyzer',
-    'tsserver',
-    'zls',
 }
 require('mason-lspconfig').setup {
     ensure_installed = lsps,
