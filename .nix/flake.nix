@@ -12,28 +12,33 @@
       url = "github:fredeeb/dotfiles";
       flake = false;
     };
+    themes = {
+      url = "github:rgbcube/themenix";
+      flake = true;
+    };
   };
 
-  outputs = inputs@{ nixpkgs, dotfiles, nixos-hardware, home-manager, ... }:
+  outputs = inputs@{ nixpkgs, dotfiles, themes, nixos-hardware, home-manager, ... }:
   let
     system = "x86_64-linux";
     pkgs = import nixpkgs { inherit system; };
   in {
+    theme = themes.tokyo-night-dark;
     nixosConfigurations = {
       ideapad = nixpkgs.lib.nixosSystem {
         inherit system;
-	modules = [ 
-	  ./systems/nixos.nix
-	  ./systems/ideapad.nix
-	];
+        modules = [ 
+          ./systems/nixos.nix
+          ./systems/ideapad.nix
+        ];
         specialArgs = inputs;
       };
     };
     homeConfigurations = {
       bun = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-	    modules = [ ./users/bun.nix ];
-	    extraSpecialArgs = { inherit inputs; };
+        modules = [ ./users/bun.nix ];
+        extraSpecialArgs = { inherit inputs; };
       };
     };
   };
