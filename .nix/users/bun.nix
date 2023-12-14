@@ -19,6 +19,7 @@
       firefox
       gimp
       stow
+      synergy
       wezterm
       zathura
       zeal
