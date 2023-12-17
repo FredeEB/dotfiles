@@ -26,7 +26,6 @@ require('lazy').setup {
     { 'hrsh7th/nvim-cmp' },
     -- lsp
     { 'neovim/nvim-lsp' },
-    { 'dgagn/diagflow.nvim', config = true },
     -- dap
     { 'mfussenegger/nvim-dap' },
     { 'thehamsta/nvim-dap-virtual-text', config = true },
