@@ -8,6 +8,8 @@
   boot.extraModulePackages = [ ];
 
   networking.hostName = "ideapad";
+  hardware.bluetooth.enable = true;
+  services.blueman.enable = true;
 
   fileSystems = { 
     "/" = { 

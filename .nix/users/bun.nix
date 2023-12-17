@@ -34,6 +34,7 @@
 
       tree-sitter
 
+      discord
       steam
 
       ansible
