@@ -28,7 +28,3 @@ require('nvim-treesitter.configs').setup({
 -- tree-climber/hopper
 m.key('o', 'm', require('tsht').nodes, { remap = false })
 m.key('x', 'm', require('tsht').nodes, { remap = true })
-
--- treesj
-m.key('n', '<leader>,', require('treesj').toggle)
-
