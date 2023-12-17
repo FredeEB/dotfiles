@@ -52,8 +52,6 @@
       nodejs
 
       virt-manager
-
-      tailscale
     ];
   };
 
