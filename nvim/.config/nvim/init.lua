@@ -44,8 +44,8 @@ require('lazy').setup {
     { 'mfussenegger/nvim-treehopper' },
     { 'nvim-treesitter/nvim-treesitter-context', config = true },
     { 'nvim-treesitter/playground' },
-    { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' },
     { 'wansmer/treesj', config = true },
+    { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
     -- theme
     { 'nvim-lualine/lualine.nvim' },
     { 'folke/tokyonight.nvim' },
