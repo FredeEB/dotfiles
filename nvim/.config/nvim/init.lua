@@ -56,7 +56,7 @@ require('lazy').setup {
     { 'rcarriga/nvim-notify' },
     { 'olimorris/persisted.nvim' },
     { 'windwp/nvim-autopairs', config = true },
-    { 'numToStr/Comment.nvim', config = true },
     { 'kabbamine/zeavim.vim' },
+    { 'numtostr/comment.nvim', config = true },
     { 'tversteeg/registers.nvim', config = true },
 }

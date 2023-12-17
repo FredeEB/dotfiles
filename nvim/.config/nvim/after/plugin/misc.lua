@@ -39,7 +39,7 @@ m.keys_for_filetype {
 }
 
 m.keys {
-    {'v', 'p', '"_dP'}
+    { 'v', 'p', '"_dP' }
 }
 
 m.keys { -- closing files
@@ -83,5 +83,5 @@ m.keys {
 
 require('Comment').setup()
 local ft = require('Comment.ft')
-ft.cpp = {'// %s', '// %s'}
-ft.c = {'// %s', '// %s'}
+ft.cpp = { '// %s', '// %s' }
+ft.c = { '// %s', '// %s' }
