@@ -60,6 +60,18 @@ dap.adapters.cppdbg = {
     command = 'OpenDebugAD7',
 }
 
+dap.adapters.nlua = function(callback, config)
+    callback({ type = 'server', host = config.host or "127.0.0.1", port = config.port or 8086 })
+end
+
+dap.configurations.lua = {
+    {
+        type = 'nlua',
+        request = 'attach',
+        name = "Attach to running Neovim instance",
+    }
+}
+
 local dapui = require("dapui")
 dap.listeners.after.event_initialized["dapui_config"] = dapui.open
 dap.listeners.before.event_terminated["dapui_config"] = dapui.close
