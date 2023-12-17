@@ -20,6 +20,7 @@ vim.o.cmdheight = 0
 vim.g.foldenable = false
 vim.o.jumpoptions = 'stack'
 vim.o.scrollback = 100000
+vim.o.foldenable = false
 
 local m = require('functions.keymap')
 
