@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 search_dir=~/git/
 
 if [[ $# -eq 1 ]]; then
