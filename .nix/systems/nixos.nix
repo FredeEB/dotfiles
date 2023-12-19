@@ -41,7 +41,7 @@
       options = "caps:escape";
     };
 
-    displayManager.lightdm.enable = true;
+    displayManager.sddm.enable = true;
     windowManager.awesome.enable = true;
   };
 
