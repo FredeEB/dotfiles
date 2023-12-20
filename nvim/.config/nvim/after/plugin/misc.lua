@@ -85,3 +85,14 @@ require('Comment').setup()
 local ft = require('Comment.ft')
 ft.cpp = { '// %s', '// %s' }
 ft.c = { '// %s', '// %s' }
+
+local group = vim.api.nvim_create_augroup("BunConfig", { clear = true})
+vim.api.nvim_create_autocmd("BufWritePre", {
+    group = group,
+    callback = function(args)
+        local path = string.gsub(args.file, '(.*/)(.*)', '%1')
+        if not vim.loop.fs_stat(path) then
+            vim.fn.system({"mkdir", "-p", path})
+        end
+    end
+})
