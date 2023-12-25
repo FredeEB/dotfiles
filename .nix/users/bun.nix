@@ -1,7 +1,7 @@
-{ pkgs, ... }: {
-  home.stateVersion = "23.11";
+{ pkgs, home-manager, ... }: {
 
   programs.home-manager.enable = true;
+
   nixpkgs.config.allowUnfree = true;
 
   home = {
@@ -23,12 +23,11 @@
       wezterm
       zathura
       zeal
-  
+    
       cmake
       doxygen
       gcc
       ninja
-
       go
       rustup
 
@@ -59,5 +58,9 @@
     enable = true;
     userDirs.enable = true;
     userDirs.createDirectories = true;
+    
+    configFile."awesome/rc.lua".source = ../../awesome/.config/awesome/rc.lua;
   };
+
+  home.stateVersion = "23.11";
 }

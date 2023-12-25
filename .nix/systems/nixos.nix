@@ -1,13 +1,18 @@
-{ config, pkgs, home-manager, ... }: {
+{ pkgs, inputs, ... }: {
 
   imports = [
-    home-manager.nixosModules.default
+    inputs.home-manager.nixosModules.default
   ];
 
   users.users.bun = {
     isNormalUser = true;
-    home = "/home/bun";
     extraGroups = [ "wheel" "docker" ];
+  };
+  home-manager = {
+      extraSpecialArgs = { inherit inputs; };
+      users = {
+        "bun" = import ../users/bun.nix;
+      };
   };
 
   fonts.packages = with pkgs; [
@@ -64,9 +69,13 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
+  services.pipewire = {
+    enable = true;
+    pulse.enable = true;
+    alsa.enable = true;
+  };
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
 
   system.stateVersion = "23.11";
-
 }
