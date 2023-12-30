@@ -1,5 +1,8 @@
-{ pkgs, home-manager, ... }: {
+{ pkgs, inputs, ... }: {
 
+  imports = [
+    inputs.nix-colors.homeManagerModules.default
+  ];
   programs.home-manager.enable = true;
 
   nixpkgs.config.allowUnfree = true;
