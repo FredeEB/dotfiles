@@ -1,4 +1,4 @@
-{ config, nixpkgs, ... }: {
+{ ... }: {
   programs.light.enable = true;
   services.actkbd = {
     enable = true;

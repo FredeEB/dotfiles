@@ -64,6 +64,8 @@
   environment.systemPackages = with pkgs; [
     dunst
     libnotify
+    git
+    gnumake
   ];
 
   # Enable the OpenSSH daemon.
