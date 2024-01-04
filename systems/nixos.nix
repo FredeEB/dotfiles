@@ -47,6 +47,7 @@
     };
 
     displayManager.sddm.enable = true;
+    displayManager.sddm.theme = "chili";
     windowManager.awesome.enable = true;
   };
 
@@ -66,6 +67,7 @@
     libnotify
     git
     gnumake
+    sddm-chili-theme
   ];
 
   # Enable the OpenSSH daemon.
