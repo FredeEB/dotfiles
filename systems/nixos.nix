@@ -72,6 +72,11 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+  services.redshift.enable = true;
+  location = {
+    longitude = 10.2;
+    latitude = 56.1;
+  };
 
   services.pipewire = {
     enable = true;
