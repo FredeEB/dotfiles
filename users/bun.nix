@@ -70,7 +70,6 @@
       ripgrep
       rofi
       stow
-      tmux
       unzip
       wget
 
@@ -84,7 +83,6 @@
       ".config/dunst".source = mkSymlink ../dunst/.config/dunst;
       ".config/nvim".source = mkSymlink ../nvim/.config/nvim;
       ".config/rofi".source = mkSymlink ../rofi/.config/rofi;
-      ".config/tmux".source = mkSymlink ../tmux/.config/tmux;
       ".config/wezterm".source = mkSymlink ../wezterm/.config/wezterm;
     };
   };
@@ -138,6 +136,31 @@
         commit.verbose = true;
         pull.rebase = true;
       };
+    };
+    tmux = {
+      enable = true;
+      extraConfig = ''
+        set -g set-clipboard on
+        set -sg escape-time 0
+        set -g mouse
+        set -sa terminal-overrides ',xterm-256color:RGB'
+        set -g default-terminal 'tmux-256color'
+        set -g focus-events on
+        set -g history-limit 20000
+        set -g status-position bottom
+        set -g status-left-length 100
+        set -wg mode-keys vi
+
+        bind-key C-p run-shell ${inputs.tmux-project.packages."x86_64-linux".default}/bin/tmux-project
+        bind-key C-l run-shell gl
+
+        bind-key j split-pane -h -c "#{pane_current_path}"
+        bind-key k split-pane -v -c "#{pane_current_path}"
+      '';
+      plugins = with import ../modules/tmux.nix { inherit pkgs; }; [
+        tokyo-night-tmux
+        nvim-movement
+      ];
     };
   };
 
