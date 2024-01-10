@@ -63,11 +63,15 @@
   };
 
   environment.systemPackages = with pkgs; [
+    arandr
+    dconf
     dunst
     libnotify
     git
     gnumake
+    htop
     sddm-chili-theme
+    pavucontrol 
   ];
 
   # Enable the OpenSSH daemon.
