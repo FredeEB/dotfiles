@@ -9,7 +9,7 @@ local m = require('functions.keymap')
 m.key('n', '<Space>', '')
 vim.g.mapleader = ' '
 
-require('lazy').setup {
+require('lazy').setup({
     -- common
     { 'nvim-lua/plenary.nvim' },
     { 'folke/neodev.nvim', config = true },
@@ -59,4 +59,4 @@ require('lazy').setup {
     { 'kabbamine/zeavim.vim' },
     { 'numtostr/comment.nvim', config = true },
     { 'tversteeg/registers.nvim', config = true },
-}
+}, { lockfile = vim.fn.stdpath("data") .. "/lazy-lock.json" })
