@@ -59,6 +59,7 @@
       tree-sitter
 
       discord
+      spotify
       steam
       synergy
 
