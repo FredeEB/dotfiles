@@ -19,8 +19,7 @@ awful.layout.layouts = {
     awful.layout.suit.floating,
 }
 
--- {{{ Wibar
--- Create a textclock widget
+gears.wallpaper.set("#000000")
 local textclock = wibox.widget.textclock()
 
 -- Create a wibox for each screen and add it
