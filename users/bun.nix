@@ -89,7 +89,7 @@
   programs = {
     atuin = {
       enable = true;
-      enableBashIntegration = true;
+      enableBashIntegration = false;
     };
     bash = {
       enable = true;
