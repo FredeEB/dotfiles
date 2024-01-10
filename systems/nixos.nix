@@ -51,7 +51,10 @@
     windowManager.awesome.enable = true;
   };
 
-  virtualisation.docker.enable = true;
+  virtualisation = {
+    docker.enable = true;
+    libvirtd.enable = true;
+  };
   services.tailscale.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
