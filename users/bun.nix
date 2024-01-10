@@ -4,6 +4,24 @@
   ];
   colorScheme = inputs.nix-colors.colorSchemes.tokyo-night-light;
 
+  gtk = {
+    enable = true;
+    cursorTheme = {
+        package = pkgs.bibata-cursors;
+        name = "Bibata-Modern-Ice";
+    };
+    theme = {
+        package = pkgs.adw-gtk3;
+        name = "adw-gtk3";
+    };
+  };
+
+  qt.platformTheme = "gtk";
+  qt.style = {
+    name = "adwaita-dark";
+    package = pkgs.adwaita-qt;
+  };
+
   programs.home-manager.enable = true;
 
   nixpkgs.config.allowUnfree = true;
