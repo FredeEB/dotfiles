@@ -6,7 +6,7 @@
 
   users.users.bun = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "docker" ];
+    extraGroups = [ "wheel" "dialout" "docker" "video" "uucp" ];
   };
   home-manager = {
       extraSpecialArgs = { inherit inputs; };
