@@ -10,9 +10,10 @@
     nix-colors.url = "github:misterio77/nix-colors";
     tmux-project.url = "./modules/tmux-project";
     flake-utils.url = "github:numtide/flake-utils";
+    nixgl.url = "github:nix-community/nixgl";
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, flake-utils, ... }: {
+  outputs = inputs@{ nixpkgs, home-manager, flake-utils, nixgl, ... }: {
     nixosConfigurations = {
       yoga = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
@@ -31,7 +32,10 @@
     };
     homeConfigurations = let 
       system = "x86_64-linux";
-      pkgs = nixpkgs.legacyPackages.${system}; 
+      pkgs = import nixpkgs {
+        inherit system;
+        overlays = [ nixgl.overlay ];
+      }; 
     in {
       bun = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
