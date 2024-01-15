@@ -29,8 +29,12 @@
         ];
       };
     };
-    homeConfigurations = {
-      bun = home-manager.lib.homeConfiguration {
+    homeConfigurations = let 
+      system = "x86_64-linux";
+      pkgs = nixpkgs.legacyPackages.${system}; 
+    in {
+      bun = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
         extraSpecialArgs = { inherit inputs; };
         modules = [
           ./users/bun.nix
