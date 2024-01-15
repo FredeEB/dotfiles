@@ -91,6 +91,7 @@ vim.api.nvim_create_autocmd("BufWritePre", {
     group = group,
     callback = function(args)
         local path = string.gsub(args.file, '(.*/)(.*)', '%1')
+        if path == args.file then return end
         if not vim.loop.fs_stat(path) then
             vim.fn.system({"mkdir", "-p", path})
         end
