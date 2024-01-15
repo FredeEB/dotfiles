@@ -67,7 +67,7 @@ m.keys {
 }
 
 for _, cmd in ipairs { '<C-d>', '<C-u>', '<C-i>', '<C-o>', 'n', 'N', '*', '%' } do
-    m.key('n', cmd, cmd .. 'zz', { noremap = true })
+    m.key('n', cmd, cmd .. 'zz')
 end
 
 -- close vim if only the qfl is open
