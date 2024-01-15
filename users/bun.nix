@@ -26,6 +26,14 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  services.gpg-agent = {
+    enable = true;
+    enableBashIntegration = true;
+    enableSshSupport = true;
+    pinentryFlavor = "qt";
+    enableScDaemon = true;
+  };
+
   home = {
     username = "bun";
     homeDirectory = "/home/bun";
