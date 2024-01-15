@@ -5,6 +5,7 @@ in {
     tokyo-night-tmux = mkTmuxPlugin {
         name = "tokyo-night-tmux";
         pluginName = "tokyo-night-tmux";
+        rtpFilePath = "tokyo-night.tmux";
         src = pkgs.fetchFromGitHub {
             owner = "janoamaral";
             repo = "tokyo-night-tmux";
