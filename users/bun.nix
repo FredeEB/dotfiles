@@ -1,9 +1,4 @@
 { pkgs, config, inputs, ... }: {
-  imports = [
-    inputs.nix-colors.homeManagerModules.default
-  ];
-  colorScheme = inputs.nix-colors.colorSchemes.tokyo-night-light;
-
   gtk = {
     enable = true;
     cursorTheme = {
