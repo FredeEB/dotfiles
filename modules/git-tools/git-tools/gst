@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env sh
 git stash list \
     | fzf-tmux -p --no-sort --reverse --preview "git --no-pager stash show --color=always" \
         --bind "ctrl-s:execute(git stash show {1})" \

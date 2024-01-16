@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env sh
 git --no-pager branch \
     | fzf-tmux -p --reverse --preview="git --no-pager log --oneline --color=always --graph {-1}" \
         --bind "enter:become(git checkout {-1})" \

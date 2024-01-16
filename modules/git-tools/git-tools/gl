@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env sh
 COMMITISH=($@); shift
 git --no-pager log --oneline "${COMMITISH[@]}" \
     | fzf-tmux -p -m --no-sort --reverse --preview "git --no-pager show --ext-diff {1}" \

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env sh
 DIR=($1); shift
 if [[ ! -z $DIR ]]; then
     PREFIX=$(git rev-parse --show-toplevel)

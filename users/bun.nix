@@ -44,6 +44,7 @@
     packages = with pkgs; [
       # TODO: something more elegant than this would be nice
       inputs.tmux-project.packages."x86_64-linux".default
+      inputs.git-tools.packages."x86_64-linux".default
       firefox
       gimp
       stow
@@ -156,7 +157,7 @@
         set -wg mode-keys vi
 
         bind-key C-p run-shell ${inputs.tmux-project.packages."x86_64-linux".default}/bin/tmux-project
-        bind-key C-l run-shell gl
+        bind-key C-l run-shell ${inputs.git-tools.packages."x86_64-linux".default}/bin/gl
 
         bind-key j split-pane -h -c "#{pane_current_path}"
         bind-key k split-pane -v -c "#{pane_current_path}"
