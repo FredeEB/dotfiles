@@ -49,7 +49,7 @@ local lsps = {
     'dockerls',
     'gopls',
     'lua_ls',
-    'nil',
+    'nil_ls',
     'neocmake',
     'pyright',
     'rust_analyzer',
