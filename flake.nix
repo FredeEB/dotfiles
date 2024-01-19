@@ -15,6 +15,13 @@
 
   outputs = inputs@{ nixpkgs, home-manager, flake-utils, nixgl, ... }: {
     nixosConfigurations = {
+      dt = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
+        modules = [ 
+          ./systems/nixos.nix
+          ./systems/dt.nix
+        ];
+      };
       yoga = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
         modules = [ 
