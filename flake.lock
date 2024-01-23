@@ -77,11 +77,11 @@
       "locked": {
         "lastModified": 1,
         "narHash": "sha256-3qRUYvVKAxO3tAOZIvsaCVfMYIbGbE2GKQhISJfXUUs=",
-        "path": "/nix/store/l0q5m6h8lhvwvhdsad76ky1bvrlydxqj-source/modules/git-tools",
+        "path": "/nix/store/4z7l5c39hq1sxz4w0zdnnyk1hv56z4bv-source/modules/git-tools",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/l0q5m6h8lhvwvhdsad76ky1bvrlydxqj-source/modules/git-tools",
+        "path": "/nix/store/4z7l5c39hq1sxz4w0zdnnyk1hv56z4bv-source/modules/git-tools",
         "type": "path"
       }
     },
@@ -250,11 +250,11 @@
       "locked": {
         "lastModified": 1,
         "narHash": "sha256-m25CJryYY3uOYatTEN12367a+2+38O6DQO/KwPuRyPc=",
-        "path": "/nix/store/l0q5m6h8lhvwvhdsad76ky1bvrlydxqj-source/modules/tmux-project",
+        "path": "/nix/store/4z7l5c39hq1sxz4w0zdnnyk1hv56z4bv-source/modules/tmux-project",
         "type": "path"
       },
       "original": {
-        "path": "/nix/store/l0q5m6h8lhvwvhdsad76ky1bvrlydxqj-source/modules/tmux-project",
+        "path": "/nix/store/4z7l5c39hq1sxz4w0zdnnyk1hv56z4bv-source/modules/tmux-project",
         "type": "path"
       }
     }

@@ -83,12 +83,11 @@
       virt-manager
     ];
     file = let mkSymlink = config.lib.file.mkOutOfStoreSymlink; in {
-      ".config/awesome".source = mkSymlink ../awesome/.config/awesome;
-      ".config/bash".source = mkSymlink ../bash/.config/bash;
-      ".config/dunst".source = mkSymlink ../dunst/.config/dunst;
-      ".config/nvim".source = mkSymlink ../nvim/.config/nvim;
-      ".config/rofi".source = mkSymlink ../rofi/.config/rofi;
-      ".config/wezterm".source = mkSymlink ../wezterm/.config/wezterm;
+      ".config/awesome".source = mkSymlink ../configs/awesome;
+      ".config/dunst".source = mkSymlink ../configs/dunst;
+      ".config/nvim".source = mkSymlink ../configs/nvim;
+      ".config/rofi".source = mkSymlink ../configs/rofi;
+      ".config/wezterm".source = mkSymlink ../configs/wezterm;
     };
   };
   programs = {
