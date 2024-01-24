@@ -69,10 +69,13 @@
     arandr
     dconf
     dunst
+    feh
+    imagemagick
     libnotify
     git
     gnumake
     htop
+    mpv
     sddm-chili-theme
     pavucontrol 
   ];
