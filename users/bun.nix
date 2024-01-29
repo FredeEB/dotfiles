@@ -105,9 +105,9 @@
     };
     bash = {
       enable = true;
-      shellAliases = import ../bash/aliases.nix;
+      shellAliases = import ../configs/bash/aliases.nix;
       bashrcExtra = ''
-        source ${../bash/.bashrc}
+        source ${../configs/bash/.bashrc}
       ''; 
     };
     readline = {
