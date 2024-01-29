@@ -99,10 +99,6 @@
     };
   };
   programs = {
-    atuin = {
-      enable = true;
-      enableBashIntegration = false;
-    };
     bash = {
       enable = true;
       shellAliases = import ../configs/bash/aliases.nix;
