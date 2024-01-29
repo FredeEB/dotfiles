@@ -76,6 +76,7 @@
     gnumake
     htop
     mpv
+    usbutils
     sddm-chili-theme
     pavucontrol 
   ];
