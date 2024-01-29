@@ -67,6 +67,10 @@
       steam
       synergy
 
+      blender
+      freecad
+      kicad
+
       ansible
       bat
       fzf
