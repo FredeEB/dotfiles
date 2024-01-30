@@ -79,6 +79,7 @@
     usbutils
     sddm-chili-theme
     pavucontrol 
+    python311
   ];
 
   # Enable the OpenSSH daemon.
