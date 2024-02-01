@@ -2,6 +2,7 @@
 
   imports = [
     inputs.home-manager.nixosModules.default
+    ../modules/sway.nix
   ];
 
   users.users.bun = {

@@ -30,22 +30,24 @@ let
 in
 {
   environment.systemPackages = with pkgs; [
+    bemenu
+    configure-gtk
     dbus
     dbus-sway-environment
-    configure-gtk
-    wayland
-    xdg-utils
     glib
-    tokyo-night-gtk
     gnome3.adwaita-icon-theme  # default gnome cursors
-    swaylock
-    swayidle
     grim # screenshot functionality
-    slurp
-    wl-clipboard
-    bemenu
     mako
+    slurp
+    swaybg
+    swayidle
+    swaylock
+    tokyo-night-gtk
+    waybar
+    wayland
     wdisplays
+    wl-clipboard
+    xdg-utils
   ];
 
   services.dbus.enable = true;
