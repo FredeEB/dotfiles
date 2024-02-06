@@ -94,3 +94,4 @@ input type:keyboard {
 
 exec_always --no-startup-id waybar
 exec_always --no-startup-id swaybg -i ~/desktop.jpg
+exec_always --no-startup-id mako

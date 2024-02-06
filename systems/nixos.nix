@@ -76,6 +76,7 @@
     git
     gnumake
     htop
+    mako
     mpv
     usbutils
     sddm-chili-theme
