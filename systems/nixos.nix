@@ -27,7 +27,6 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Enable networking
-  # networking.networkmanager.enable = true;
   networking.wireless.iwd.enable = true;
   services.connman.enable = true;
   services.connman.wifi.backend = "iwd";
