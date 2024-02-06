@@ -53,6 +53,7 @@
       zathura
       zeal
     
+      clang-tools
       cmake
       doxygen
       gcc
