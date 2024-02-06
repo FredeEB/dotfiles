@@ -75,8 +75,6 @@ bindsym $mod+u     resize grow height 10 px or 10 ppt
 bindsym $mod+i     resize shrink height 10 px or 10 ppt
 bindsym $mod+o     resize grow width 10 px or 10 ppt
 
-exec_always feh --bg-center ~/desktop.*
-
 client.focused		#555500 #1c1e1f #fafafa	#338f5f	#2a2e2f
 client.unfocused	#1c1e1f #1c1e1f #aaaaaa #338f5f #1c1e1f
 default_border none
