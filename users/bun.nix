@@ -144,6 +144,7 @@
         };
         commit.verbose = true;
         pull.rebase = true;
+        push.default = "upstream";
       };
     };
     tmux = {
