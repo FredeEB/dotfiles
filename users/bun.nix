@@ -1,4 +1,8 @@
-{ pkgs, config, inputs, ... }: {
+{ pkgs, config, inputs, ... }:
+ let
+    tmux-project = pkgs.callPackage ../modules/tmux-project/default.nix {};
+    git-tools = pkgs.callPackage ../modules/git-tools/default.nix {};
+in {
   gtk = {
     enable = true;
     cursorTheme = {
@@ -42,9 +46,9 @@
     };
 
     packages = with pkgs; [
-      # TODO: something more elegant than this would be nice
-      inputs.tmux-project.packages."x86_64-linux".default
-      inputs.git-tools.packages."x86_64-linux".default
+      tmux-project
+      git-tools
+      
       firefox
       gimp
       stow
@@ -162,8 +166,8 @@
         set -g status-left-length 100
         set -wg mode-keys vi
 
-        bind-key C-p run-shell ${inputs.tmux-project.packages."x86_64-linux".default}/bin/tmux-project
-        bind-key C-l run-shell ${inputs.git-tools.packages."x86_64-linux".default}/bin/gl
+        bind-key C-p run-shell ${tmux-project}/bin/tmux-project
+        bind-key C-l run-shell ${git-tools}/bin/gl
 
         bind-key j split-pane -h -c "#{pane_current_path}"
         bind-key k split-pane -v -c "#{pane_current_path}"

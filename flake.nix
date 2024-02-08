@@ -7,8 +7,6 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    tmux-project.url = "./modules/tmux-project";
-    git-tools.url = "./modules/git-tools";
     flake-utils.url = "github:numtide/flake-utils";
     nixgl.url = "github:nix-community/nixgl";
   };
