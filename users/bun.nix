@@ -131,7 +131,7 @@ in {
         "--bind"
         "ctrl-d:preview-page-down,ctrl-u:preview-page-up"
       ];
-      defaultCommand = "${pkgs.ripgrep} --files --hidden";
+      defaultCommand = "${pkgs.ripgrep} --files";
       tmux.enableShellIntegration = true;
       tmux.shellIntegrationOptions = ["-p" "-w" "80%" "-h" "80%"];
     };
