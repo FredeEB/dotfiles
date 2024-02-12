@@ -29,6 +29,6 @@ jobs:
       - uses: nxtlvlsoftware/git-subtree-action@1.1
         with:
           repo: 'FredeEB/nvim'
-          path: 'nvim/.config/nvim'
+          path: 'configs/nvim'
           deploy_key: ${{ secrets.DOWNSTREAM_GITHUB_DEPLOY_KEY }}
           force: true
