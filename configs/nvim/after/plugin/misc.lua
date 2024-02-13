@@ -21,6 +21,7 @@ vim.g.foldenable = false
 vim.o.jumpoptions = 'stack'
 vim.o.scrollback = 100000
 vim.o.foldenable = false
+vim.o.undofile = true
 
 local m = require('functions.keymap')
 
