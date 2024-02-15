@@ -1,26 +1,8 @@
-{ pkgs, config, inputs, ... }:
+{ pkgs, config, ... }:
  let
     tmux-project = pkgs.callPackage ../modules/tmux-project/default.nix {};
     git-tools = pkgs.callPackage ../modules/git-tools/default.nix {};
 in {
-  gtk = {
-    enable = true;
-    cursorTheme = {
-        package = pkgs.bibata-cursors;
-        name = "Bibata-Modern-Ice";
-    };
-    theme = {
-        package = pkgs.adw-gtk3;
-        name = "adw-gtk3";
-    };
-  };
-
-  qt.platformTheme = "gtk";
-  qt.style = {
-    name = "adwaita-dark";
-    package = pkgs.adwaita-qt;
-  };
-
   programs.home-manager.enable = true;
 
   nixpkgs.config.allowUnfree = true;
@@ -36,6 +18,12 @@ in {
   home = {
     username = "bun";
     homeDirectory = "/home/bun";
+    pointerCursor = {
+      gtk.enable = true;
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Ice";
+      size = 22;
+    };
 
     sessionVariables = {
       BROWSER = "firefox";
