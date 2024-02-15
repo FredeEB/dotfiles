@@ -51,22 +51,46 @@ local lsps = {
     'lua_ls',
     'nil_ls',
     'neocmake',
-    'pyright',
+    'pylyzer',
     'rust_analyzer',
 }
-require('mason-lspconfig').setup {
-    ensure_installed = lsps,
-}
+
 local nvim_lsp = require('lspconfig')
 local client_capabilities = require('cmp_nvim_lsp').default_capabilities()
-require('mason-lspconfig').setup_handlers {
-    function(server)
-        nvim_lsp[server].setup {
-            capabilities = client_capabilities
-        }
-    end
-}
+for _, server in ipairs(lsps) do
+    require('lspconfig')[server].setup {
+        function(server)
+            nvim_lsp[server].setup {
+                capabilities = client_capabilities
+            }
+        end
+    }
+end
 
+nvim_lsp.lua_ls.setup {
+    cmd = {'lua-lsp'},
+    on_init = function(client)
+        local path = client.workspace_folders[1].name
+            if not vim.loop.fs_stat(path..'/.luarc.json') and not vim.loop.fs_stat(path..'/.luarc.jsonc') then
+                client.config.settings = vim.tbl_deep_extend('force', client.config.settings, {
+                    Lua = {
+                        runtime = {
+                            version = 'LuaJIT'
+                        },
+                        workspace = {
+                            checkThirdParty = false,
+                            library = {
+                                vim.env.VIMRUNTIME
+                            }
+                        }
+                    }
+                })
+
+                client.notify("workspace/didChangeConfiguration", { settings = client.config.settings })
+            end
+        return true
+    end,
+}
 -- clangd is not installed with mason, so config is here
 nvim_lsp.clangd.setup {
     cmd = {
@@ -80,16 +104,27 @@ nvim_lsp.clangd.setup {
     capabilities = client_capabilities
 }
 
-m.keys {
-    { 'n', 'gd', vim.lsp.buf.definition },
-    { 'n', '<leader>rs', vim.lsp.buf.signature_help },
-    { 'n', '<leader>rr', vim.lsp.buf.references },
-    { 'n', '<leader>ro', vim.lsp.buf.rename },
-    { 'n', '<leader>rh', vim.lsp.buf.hover, { buffer = 0, noremap = true, silent = true }},
-    { 'n', '<leader>re', vim.lsp.buf.code_action },
-    { 'n', '<leader>rn', vim.diagnostic.goto_next },
-    { 'n', '<leader>rp', vim.diagnostic.goto_prev },
-    { 'n', '<leader>rd', vim.diagnostic.setqflist },
-    { {'n', 'v'}, '<leader>rf', function() vim.lsp.buf.format { async = true } end },
-}
+vim.api.nvim_create_autocmd('LspAttach', {
+    group = vim.api.nvim_create_augroup('UserLspConfig', {}),
+    callback = function(ev)
+        vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
+
+        local opts = { buffer = ev.buf }
+        m.keys {
+            { 'n', 'gD', vim.lsp.buf.declaration },
+            { 'n', 'gd', vim.lsp.buf.definition },
+            { {'n', 'i'}, '<C-k>', vim.lsp.buf.signature_help },
+            { 'n', '<leader>rr', vim.lsp.buf.references },
+            { 'n', '<leader>ro', vim.lsp.buf.rename },
+            { {'n', 'i'}, '<leader>rh', vim.lsp.buf.hover, { buffer = 0, noremap = true, silent = true }},
+            { 'n', '<leader>re', vim.lsp.buf.code_action },
+            { 'n', '<leader>rn', vim.diagnostic.goto_next },
+            { 'n', '<leader>rp', vim.diagnostic.goto_prev },
+            { 'n', '<leader>rd', vim.diagnostic.setqflist },
+            { {'n', 'v'}, '<leader>rf', function() vim.lsp.buf.format { async = true } end },
+        }
+    end,
+})
+
+
 

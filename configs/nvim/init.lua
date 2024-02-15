@@ -30,8 +30,6 @@ require('lazy').setup({
     { 'mfussenegger/nvim-dap' },
     { 'thehamsta/nvim-dap-virtual-text', config = true },
     { 'rcarriga/nvim-dap-ui', config = true },
-    { 'williamboman/mason.nvim', config = true },
-    { 'williamboman/mason-lspconfig.nvim', config = true },
     { 'jbyuki/one-small-step-for-vimkind' },
     -- tools
     { 'stevearc/oil.nvim', config = true },

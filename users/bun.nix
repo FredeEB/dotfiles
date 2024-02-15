@@ -89,6 +89,16 @@ in {
 
       nodejs
 
+      nodePackages.bash-language-server
+      bashdb
+      docker-compose-language-service
+      hadolint
+      gopls
+      luajitPackages.lua-lsp
+      nil
+      neocmakelsp
+      pylyzer
+
       virt-manager
     ];
     file = let mkSymlink = config.lib.file.mkOutOfStoreSymlink; in {
