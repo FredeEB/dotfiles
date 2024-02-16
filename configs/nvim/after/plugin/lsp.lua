@@ -107,16 +107,13 @@ nvim_lsp.clangd.setup {
 vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('UserLspConfig', {}),
     callback = function(ev)
-        vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
-
-        local opts = { buffer = ev.buf }
         m.keys {
             { 'n', 'gD', vim.lsp.buf.declaration },
             { 'n', 'gd', vim.lsp.buf.definition },
-            { {'n', 'i'}, '<C-k>', vim.lsp.buf.signature_help },
+            { {'n', 'i'}, '<C-s>', vim.lsp.buf.signature_help },
+            { {'n', 'i'}, '<C-t>', vim.lsp.buf.hover, { buffer = 0, noremap = true, silent = true }},
             { 'n', '<leader>rr', vim.lsp.buf.references },
             { 'n', '<leader>ro', vim.lsp.buf.rename },
-            { {'n', 'i'}, '<leader>rh', vim.lsp.buf.hover, { buffer = 0, noremap = true, silent = true }},
             { 'n', '<leader>re', vim.lsp.buf.code_action },
             { 'n', '<leader>rn', vim.diagnostic.goto_next },
             { 'n', '<leader>rp', vim.diagnostic.goto_prev },
