@@ -78,6 +78,7 @@ in {
       nodejs
 
       nodePackages.bash-language-server
+      nodePackages.pyright
       bashdb
       docker-compose-language-service
       hadolint
@@ -85,7 +86,6 @@ in {
       luajitPackages.lua-lsp
       nil
       neocmakelsp
-      pylyzer
 
       virt-manager
     ];

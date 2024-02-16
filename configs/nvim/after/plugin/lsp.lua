@@ -51,7 +51,7 @@ local lsps = {
     'lua_ls',
     'nil_ls',
     'neocmake',
-    'pylyzer',
+    'pyright',
     'rust_analyzer',
 }
 
