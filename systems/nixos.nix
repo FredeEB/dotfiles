@@ -70,6 +70,7 @@
     dconf
     dunst
     feh
+    fq
     imagemagick
     libnotify
     git
