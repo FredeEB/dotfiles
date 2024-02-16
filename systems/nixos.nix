@@ -7,7 +7,7 @@
 
   users.users.bun = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "dialout" "docker" "video" "uucp" ];
+    extraGroups = [ "wheel" "dialout" "docker" "video" "wireshark" "uucp" ];
   };
   home-manager = {
       extraSpecialArgs = { inherit inputs; };
@@ -64,6 +64,7 @@
     enable = true;
     enableSSHSupport = true;
   };
+  programs.wireshark.enable = true;
 
   environment.systemPackages = with pkgs; [
     arandr
