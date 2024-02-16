@@ -78,6 +78,7 @@
     htop
     mako
     mpv
+    openssl
     usbutils
     sddm-chili-theme
     pavucontrol 
