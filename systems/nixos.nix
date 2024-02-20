@@ -77,7 +77,6 @@
     git
     gnumake
     htop
-    mako
     mpv
     openssl
     usbutils
