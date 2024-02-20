@@ -146,8 +146,11 @@ in {
           email = "frederikbraendstrup@gmail.com";
         };
         commit.verbose = true;
-        pull.rebase = true;
+        pull.ff = true;
+        pull.autoSquash = true;
+        pull.autoStash = true;
         push.default = "upstream";
+        rerere.enabled = true;
       };
     };
     tmux = {
