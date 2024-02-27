@@ -93,3 +93,6 @@ input type:keyboard {
 exec_always --no-startup-id waybar
 exec_always --no-startup-id swaybg -i ~/desktop.jpg
 exec_always --no-startup-id mako --default-timeout 4000
+
+exec dbus-sway-environment
+exec configure-gtk
