@@ -35,8 +35,8 @@ in
     dbus
     dbus-sway-environment
     glib
-    gnome3.adwaita-icon-theme  # default gnome cursors
-    grim # screenshot functionality
+    gnome3.adwaita-icon-theme 
+    grim
     mako
     slurp
     swaybg
