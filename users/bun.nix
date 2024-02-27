@@ -60,7 +60,6 @@ in {
       steam
       synergy
 
-      blender
       freecad
       kicad
 
