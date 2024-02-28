@@ -172,10 +172,12 @@ in {
         bind-key j split-pane -h -c "#{pane_current_path}"
         bind-key k split-pane -v -c "#{pane_current_path}"
       '';
-      plugins = with import ../modules/tmux.nix { inherit pkgs; }; [
+      plugins = (with import ../modules/tmux.nix { inherit pkgs; }; [
         tokyo-night-tmux
         nvim-movement
-      ];
+      ]) ++ (with pkgs.tmuxPlugins; [
+        continuum
+      ]);
     };
   };
 
