@@ -47,6 +47,7 @@ in
     wayland
     wdisplays
     wl-clipboard
+    wlsunset
     xdg-utils
   ];
 
