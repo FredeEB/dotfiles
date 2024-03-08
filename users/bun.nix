@@ -1,5 +1,5 @@
 { pkgs, config, ... }:
- let
+let
     tmux-project = pkgs.callPackage ../modules/tmux-project/default.nix {};
     git-tools = pkgs.callPackage ../modules/git-tools/default.nix {};
 in {
