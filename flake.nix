@@ -41,6 +41,7 @@
         specialArgs = { inherit inputs; };
         modules = [ 
           ./systems/base.nix
+          ./systems/server.nix
         ];
       };
     };
