@@ -1,16 +1,8 @@
 { pkgs, inputs, ... }: {
 
   imports = [
-    inputs.home-manager.nixosModules.default
     ../modules/sway.nix
   ];
-
-  home-manager = {
-      extraSpecialArgs = { inherit inputs; };
-      users = {
-        "bun" = import ../users/bun.nix;
-      };
-  };
 
   fonts.packages = with pkgs; [
     noto-fonts
