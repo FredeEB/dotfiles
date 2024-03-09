@@ -42,6 +42,7 @@
         modules = [ 
           ./systems/base.nix
           ./systems/server.nix
+          ./modules/ssh.nix
         ];
       };
     };
