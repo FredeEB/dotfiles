@@ -37,14 +37,6 @@ in {
       tmux-project
       git-tools
       
-      firefox
-      gimp
-      stow
-      synergy
-      wezterm
-      zathura
-      zeal
-    
       clang-tools
       cmake
       doxygen
@@ -54,14 +46,6 @@ in {
       rustup
 
       tree-sitter
-
-      discord
-      spotify
-      steam
-      synergy
-
-      freecad
-      kicad
 
       ansible
       bat
@@ -85,8 +69,6 @@ in {
       luajitPackages.lua-lsp
       nil
       neocmakelsp
-
-      virt-manager
     ];
     file = let mkSymlink = config.lib.file.mkOutOfStoreSymlink; in {
       ".config/awesome".source = mkSymlink ../configs/awesome;

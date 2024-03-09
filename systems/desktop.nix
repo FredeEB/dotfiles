@@ -52,6 +52,22 @@
     usbutils
     sddm-chili-theme
     pavucontrol 
+
+    firefox
+    gimp
+    synergy
+    wezterm
+    zathura
+    zeal
+
+    discord
+    spotify
+    steam
+    synergy
+
+    freecad
+    kicad
+    virt-manager
   ];
 
   services.redshift.enable = true;
