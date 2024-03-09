@@ -16,22 +16,31 @@
       dt = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
         modules = [ 
-          ./systems/nixos.nix
+          ./systems/base.nix
+          ./systems/desktop.nix
           ./systems/dt.nix
         ];
       };
       yoga = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
         modules = [ 
-          ./systems/nixos.nix
+          ./systems/base.nix
+          ./systems/desktop.nix
           ./systems/yoga.nix
         ];
       };
       ideapad = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
         modules = [ 
-          ./systems/nixos.nix
+          ./systems/base.nix
+          ./systems/desktop.nix
           ./systems/ideapad.nix
+        ];
+      };
+      server = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
+        modules = [ 
+          ./systems/base.nix
         ];
       };
     };

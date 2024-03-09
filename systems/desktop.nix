@@ -5,10 +5,6 @@
     ../modules/sway.nix
   ];
 
-  users.users.bun = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" "dialout" "docker" "video" "wireshark" "uucp" ];
-  };
   home-manager = {
       extraSpecialArgs = { inherit inputs; };
       users = {
@@ -22,17 +18,10 @@
     (nerdfonts.override { fonts = [ "Iosevka" ]; })
   ];
 
-  # Bootloader.
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
-
   # Enable networking
   networking.wireless.iwd.enable = true;
-  networking.firewall.enable = false;
   services.connman.enable = true;
   services.connman.wifi.backend = "iwd";
-  # Set your time zone.
-  time.timeZone = "Europe/Copenhagen";
 
   # Configure keymap in X11
   services.xserver = {
@@ -52,42 +41,19 @@
     windowManager.awesome.enable = true;
   };
 
-  virtualisation = {
-    docker.enable = true;
-    libvirtd.enable = true;
-  };
-  services.tailscale.enable = true;
-
-  # Some programs need SUID wrappers, can be configured further or are
-  # started in user sessions.
-  programs.mtr.enable = true;
-  programs.gnupg.agent = {
-    enable = true;
-    enableSSHSupport = true;
-  };
   programs.wireshark.enable = true;
-
   environment.systemPackages = with pkgs; [
     arandr
-    dconf
     dunst
     feh
-    fq
     imagemagick
     libnotify
-    git
-    gnumake
-    htop
     mpv
-    openssl
     usbutils
     sddm-chili-theme
     pavucontrol 
-    python311
   ];
 
-  # Enable the OpenSSH daemon.
-  services.openssh.enable = true;
   services.redshift.enable = true;
   location = {
     longitude = 10.2;
@@ -99,8 +65,4 @@
     pulse.enable = true;
     alsa.enable = true;
   };
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  nixpkgs.config.allowUnfree = true;
-
-  system.stateVersion = "23.11";
 }
