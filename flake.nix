@@ -7,11 +7,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    flake-utils.url = "github:numtide/flake-utils";
     nixgl.url = "github:nix-community/nixgl";
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, flake-utils, nixgl, ... }: {
+  outputs = inputs@{ nixpkgs, home-manager, nixgl, ... }: {
     nixosConfigurations = {
       dt = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
