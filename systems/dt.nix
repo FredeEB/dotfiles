@@ -1,5 +1,4 @@
-{ config, lib, modulesPath, ... }:
-{
+{ config, lib, modulesPath, ... }: {
   imports = [
     ../modules/default-system-layout.nix
     (modulesPath + "/installer/scan/not-detected.nix")
@@ -13,5 +12,6 @@
   networking.hostName = "dt";
   networking.useDHCP = lib.mkDefault true;
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
-  hardware.cpu.amd.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
+  hardware.cpu.amd.updateMicrocode =
+    lib.mkDefault config.hardware.enableRedistributableFirmware;
 }

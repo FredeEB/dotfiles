@@ -27,15 +27,14 @@ let
     '';
   };
 
-in
-{
+in {
   environment.systemPackages = with pkgs; [
     bemenu
     configure-gtk
     dbus
     dbus-sway-environment
     glib
-    gnome3.adwaita-icon-theme 
+    gnome3.adwaita-icon-theme
     grim
     mako
     slurp

@@ -1,14 +1,10 @@
 { pkgs, inputs, ... }: {
 
-  imports = [
-    inputs.home-manager.nixosModules.default
-  ];
+  imports = [ inputs.home-manager.nixosModules.default ];
 
   home-manager = {
-      extraSpecialArgs = { inherit inputs; };
-      users = {
-        "bun" = import ../users/bun.nix;
-      };
+    extraSpecialArgs = { inherit inputs; };
+    users = { "bun" = import ../users/bun.nix; };
   };
 
   users.users.bun = {

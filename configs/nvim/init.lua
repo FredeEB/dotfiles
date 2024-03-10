@@ -35,7 +35,7 @@ require('lazy').setup({
     { 'stevearc/oil.nvim', config = true },
     { 'theprimeagen/harpoon' },
     { 'fredeeb/alias.nvim' },
-    { 'fredeeb/tardis.nvim', config = true },
+    { 'fredeeb/tardis.nvim', config = true, dir = os.getenv('HOME') .. '/git/tardis-nvim'},
     -- fzf
     { 'ibhagwan/fzf-lua' },
     -- treesitter

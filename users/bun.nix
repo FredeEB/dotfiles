@@ -1,7 +1,7 @@
 { pkgs, config, ... }:
 let
-    tmux-project = pkgs.callPackage ../modules/tmux-project/default.nix {};
-    git-tools = pkgs.callPackage ../modules/git-tools/default.nix {};
+  tmux-project = pkgs.callPackage ../modules/tmux-project/default.nix { };
+  git-tools = pkgs.callPackage ../modules/git-tools/default.nix { };
 in {
   programs.home-manager.enable = true;
 
@@ -36,7 +36,7 @@ in {
     packages = with pkgs; [
       tmux-project
       git-tools
-      
+
       clang-tools
       cmake
       doxygen
@@ -70,7 +70,8 @@ in {
       nil
       neocmakelsp
     ];
-    file = let mkSymlink = config.lib.file.mkOutOfStoreSymlink; in {
+    file = let mkSymlink = config.lib.file.mkOutOfStoreSymlink;
+    in {
       ".config/awesome".source = mkSymlink ../configs/awesome;
       ".config/dunst".source = mkSymlink ../configs/dunst;
       ".config/nvim".source = mkSymlink ../configs/nvim;
@@ -89,7 +90,7 @@ in {
       shellAliases = import ../configs/bash/aliases.nix;
       bashrcExtra = ''
         source ${../configs/bash/.bashrc}
-      ''; 
+      '';
     };
     readline = {
       enable = true;
@@ -114,7 +115,7 @@ in {
       ];
       defaultCommand = "${pkgs.ripgrep} --files";
       tmux.enableShellIntegration = true;
-      tmux.shellIntegrationOptions = ["-p" "-w" "80%" "-h" "80%"];
+      tmux.shellIntegrationOptions = [ "-p" "-w" "80%" "-h" "80%" ];
     };
 
     git = {
@@ -157,9 +158,7 @@ in {
       plugins = (with import ../modules/tmux.nix { inherit pkgs; }; [
         tokyo-night-tmux
         nvim-movement
-      ]) ++ (with pkgs.tmuxPlugins; [
-        continuum
-      ]);
+      ]) ++ (with pkgs.tmuxPlugins; [ continuum ]);
     };
   };
 

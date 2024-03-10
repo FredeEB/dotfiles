@@ -1,8 +1,6 @@
-{ pkgs, inputs, ... }: {
+{ pkgs, ... }: {
 
-  imports = [
-    ../modules/sway.nix
-  ];
+  imports = [ ../modules/sway.nix ];
 
   fonts.packages = with pkgs; [
     noto-fonts
@@ -43,7 +41,7 @@
     mpv
     usbutils
     sddm-chili-theme
-    pavucontrol 
+    pavucontrol
 
     firefox
     gimp
