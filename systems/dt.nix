@@ -1,6 +1,7 @@
 { config, lib, modulesPath, ... }:
 {
-  imports = [ 
+  imports = [
+    ../modules/default-system-layout.nix
     (modulesPath + "/installer/scan/not-detected.nix")
   ];
 
@@ -8,20 +9,6 @@
   boot.initrd.kernelModules = [ ];
   boot.kernelModules = [ "kvm-amd" "wl" "b43" ];
   boot.extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
-
-  fileSystems."/" =
-    { device = "/dev/disk/by-label/nixos";
-      fsType = "ext4";
-    };
-
-  fileSystems."/boot" =
-    { device = "/dev/disk/by-label/BOOT";
-      fsType = "vfat";
-    };
-
-  swapDevices =
-    [ { device = "/dev/disk/by-label/swap"; }
-    ];
 
   networking.hostName = "dt";
   networking.useDHCP = lib.mkDefault true;
