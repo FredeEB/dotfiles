@@ -50,7 +50,6 @@ in {
       ansible
       bat
       fzf
-      neovim
       nix
       ripgrep
       rofi

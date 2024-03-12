@@ -43,6 +43,7 @@
     htop
     openssl
     python311
+    neovim
   ];
 
   # Enable the OpenSSH daemon.
