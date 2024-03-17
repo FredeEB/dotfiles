@@ -138,7 +138,7 @@ in {
           email = "frederikbraendstrup@gmail.com";
         };
         commit.verbose = true;
-        pull.ff = true;
+        pull.rebase = true;
         pull.autoSquash = true;
         pull.autoStash = true;
         push.default = "upstream";
