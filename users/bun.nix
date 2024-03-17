@@ -26,7 +26,7 @@ in {
     };
 
     sessionVariables = {
-      BROWSER = "firefox";
+      BROWSER = "brave";
       NIX_SHELL_PRESERVE_PROMPT = "1";
       EDITOR = "nvim";
       SHELL = "bash";

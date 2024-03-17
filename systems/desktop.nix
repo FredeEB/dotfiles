@@ -43,7 +43,7 @@
     sddm-chili-theme
     pavucontrol
 
-    firefox
+    brave
     gimp
     synergy
     wezterm
