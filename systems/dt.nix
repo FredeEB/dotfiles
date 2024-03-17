@@ -9,8 +9,11 @@
   boot.kernelModules = [ "kvm-amd" "wl" "b43" ];
   boot.extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
 
-  networking.hostName = "dt";
-  networking.useDHCP = lib.mkDefault true;
+  networking = {
+    interfaces.enp39s0.wakeOnLan.enable = true;
+    hostName = "dt";
+    useDHCP = lib.mkDefault true;
+  };
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode =
     lib.mkDefault config.hardware.enableRedistributableFirmware;
