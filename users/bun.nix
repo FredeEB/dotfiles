@@ -7,12 +7,23 @@ in {
 
   nixpkgs.config.allowUnfree = true;
 
-  services.gpg-agent = {
-    enable = true;
-    enableBashIntegration = true;
-    enableSshSupport = true;
-    pinentryFlavor = "qt";
-    enableScDaemon = true;
+  services = {
+    gpg-agent = {
+      enable = true;
+      enableBashIntegration = true;
+      enableSshSupport = true;
+      pinentryFlavor = "qt";
+      enableScDaemon = true;
+    };
+    mako = {
+      enable = true;
+      backgroundColor = "#24283b";
+      textColor = "#c0caf5";
+      borderRadius = 5;
+      borderSize = 0;
+      layer = "overlay";
+      defaultTimeout = 4000;
+    };
   };
 
   home = {
