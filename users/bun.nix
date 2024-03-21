@@ -12,7 +12,6 @@ in {
       enable = true;
       enableBashIntegration = true;
       enableSshSupport = true;
-      pinentryFlavor = "qt";
       enableScDaemon = true;
     };
     mako = {
@@ -99,7 +98,7 @@ in {
       enable = true;
       shellAliases = import ../configs/bash/aliases.nix;
       bashrcExtra = ''
-        source ${../configs/bash/.bashrc}
+        source ${../configs/bash/bashrc}
       '';
     };
     readline = {

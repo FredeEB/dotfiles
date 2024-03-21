@@ -79,7 +79,6 @@ client.focused		#555500 #1c1e1f #fafafa	#338f5f	#2a2e2f
 client.unfocused	#1c1e1f #1c1e1f #aaaaaa #338f5f #1c1e1f
 default_border none
 default_floating_border none
-font pango:monospace 0
 titlebar_padding 1
 titlebar_border_thickness 0
 
