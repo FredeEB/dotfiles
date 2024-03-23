@@ -29,6 +29,7 @@ require('lazy').setup({
     -- dap
     { 'mfussenegger/nvim-dap' },
     { 'thehamsta/nvim-dap-virtual-text', config = true },
+    { 'nvim-neotest/nvim-nio'},
     { 'rcarriga/nvim-dap-ui', config = true },
     { 'jbyuki/one-small-step-for-vimkind' },
     -- tools
