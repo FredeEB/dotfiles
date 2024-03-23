@@ -26,17 +26,6 @@ fzf.setup {
     }
 }
 
-local function open_config()
-    fzf.files {
-        cwd = vim.fn.stdpath('config')
-    }
-end
-local function search_config()
-    fzf.live_grep {
-        cwd = vim.fn.stdpath('config')
-    }
-end
-
 m.keys {
     { 'n', '<leader><leader>', fzf.resume },
     { 'n', '<leader>gl', fzf.git_commits },
@@ -45,8 +34,6 @@ m.keys {
     { 'n', '<leader>fg', fzf.live_grep },
     { 'n', '<leader>fr', fzf.grep_cword },
     { 'v', '<leader>fr', fzf.grep_visual },
-    { 'n', '<leader>fe', open_config },
-    { 'n', '<leader>fw', search_config },
     { 'n', '<leader>;', fzf.commands },
     { 'n', '<leader>b', fzf.buffers },
     { 'n', '<leader>l', fzf.lines },
