@@ -36,19 +36,6 @@
           modules = base ++ [ ./systems/server.nix ./modules/ssh.nix ];
         };
       };
-      homeConfigurations = let
-        system = "x86_64-linux";
-        pkgs = import nixpkgs {
-          inherit system;
-          overlays = [ nixgl.overlay ];
-        };
-      in {
-        bun = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          extraSpecialArgs = { inherit inputs; };
-          modules = [ ./users/bun.nix ];
-        };
-      };
 
       formatter."x86_64-linux" = nixpkgs.legacyPackages."x86_64-linux".nixfmt;
     };
