@@ -1,6 +1,6 @@
 { config, lib, modulesPath, ... }: {
-
   imports = [
+    ../common/desktop.nix
     ../modules/default-system-layout.nix
     (modulesPath + "/installer/scan/not-detected.nix")
   ];

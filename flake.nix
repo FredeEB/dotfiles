@@ -16,26 +16,19 @@
     let
       overlays = [ neovim-nightly-overlay.overlay ];
 
-      base = [ { nixpkgs.overlays = overlays; } ./systems/base.nix ];
+      base = [ { nixpkgs.overlays = overlays; } ./common/base.nix ];
+      createSystem = (system-file:
+        let name = nixpkgs.lib.strings.removeSuffix ".nix" system-file;
+        in {
+          inherit name;
+          value = nixpkgs.lib.nixosSystem {
+            specialArgs = { inherit inputs; };
+            modules = base ++ [ (./systems + "/${system-file}") ];
+          };
+        });
     in {
-      nixosConfigurations = {
-        dt = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; };
-          modules = base ++ [ ./systems/desktop.nix ./systems/dt.nix ];
-        };
-        yoga = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; };
-          modules = base ++ [ ./systems/desktop.nix ./systems/yoga.nix ];
-        };
-        ideapad = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; };
-          modules = base ++ [ ./systems/desktop.nix ./systems/ideapad.nix ];
-        };
-        server = nixpkgs.lib.nixosSystem {
-          specialArgs = { inherit inputs; };
-          modules = base ++ [ ./systems/server.nix ./modules/ssh.nix ];
-        };
-      };
+      nixosConfigurations = builtins.listToAttrs
+        (map createSystem (builtins.attrNames (builtins.readDir ./systems)));
 
       formatter."x86_64-linux" = nixpkgs.legacyPackages."x86_64-linux".nixfmt;
     };
