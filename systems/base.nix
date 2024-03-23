@@ -34,7 +34,7 @@
   programs.gnupg.agent = {
     enable = true;
     enableSSHSupport = true;
-    pinentryPackage = pkgs.pinentry-rofi;
+    pinentryPackage = pkgs.pinentry-qt;
   };
 
   environment.systemPackages = with pkgs; [
