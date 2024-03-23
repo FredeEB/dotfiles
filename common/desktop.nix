@@ -10,6 +10,7 @@
 
   # Enable networking
   networking.wireless.iwd.enable = true;
+  networking.firewall.enable = false;
   services.connman.enable = true;
   services.connman.wifi.backend = "iwd";
 

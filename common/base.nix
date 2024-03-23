@@ -17,7 +17,6 @@
   boot.loader.efi.canTouchEfiVariables = true;
 
   # Enable networking
-  networking.firewall.enable = false;
   networking.nameservers = [ "1.1.1.1" "1.0.0.1" ];
   # Set your time zone.
   time.timeZone = "Europe/Copenhagen";
