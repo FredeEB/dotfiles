@@ -1,8 +1,3 @@
--- lualine setup
-local function relative_file_name()
-    return vim.fn.expand('%')
-end
-
 require('lualine').setup({
     options = {
         theme = 'auto',
@@ -11,7 +6,7 @@ require('lualine').setup({
     sections = {
         lualine_a = { 'mode' },
         lualine_b = {},
-        lualine_c = { relative_file_name },
+        lualine_c = { 'filename' },
         lualine_x = { 'filetype' },
         lualine_y = { 'branch' },
         lualine_z = { 'location' },
