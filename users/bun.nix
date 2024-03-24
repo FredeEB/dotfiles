@@ -166,10 +166,10 @@ in {
         bind-key C-p run-shell ${tmux-project}/bin/tmux-project
         bind-key C-l run-shell ${git-tools}/bin/gl
 
-        bind-key -n M-j select-window -t 0
-        bind-key -n M-k select-window -t 1
-        bind-key -n M-l select-window -t 2
-        bind-key -n M-\; select-window -t 3
+        bind-key -n M-j  if-shell "tmux select-window -t :0" "" "new-window -t :0"
+        bind-key -n M-k  if-shell "tmux select-window -t :1" "" "new-window -t :1"
+        bind-key -n M-l  if-shell "tmux select-window -t :2" "" "new-window -t :2"
+        bind-key -n M-\; if-shell "tmux select-window -t :3" "" "new-window -t :3"
 
         bind-key j split-pane -h -c "#{pane_current_path}"
         bind-key k split-pane -v -c "#{pane_current_path}"
