@@ -88,7 +88,16 @@ in {
   programs = {
     atuin = {
       enable = true;
-      enableBashIntegration = false;
+      enableBashIntegration = true;
+      settings = {
+        style = "compact";
+        inline_height = 20;
+        enter_accept = false;
+        keymap_mode = "vim-insert";
+      };
+      flags = [
+        "--disable-up-arrow"
+      ];
     };
     bash = {
       enable = true;
@@ -111,7 +120,7 @@ in {
     };
     fzf = {
       enable = true;
-      enableBashIntegration = true;
+      enableBashIntegration = false;
       defaultOptions = [
         "--preview"
         "${pkgs.bat}/bin/bat"
