@@ -43,6 +43,7 @@ in {
       cmake
       doxygen
       gcc
+      gdb
       ninja
       go
       rustup
