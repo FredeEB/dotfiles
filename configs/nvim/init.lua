@@ -35,6 +35,7 @@ require('lazy').setup({
     -- tools
     { 'stevearc/oil.nvim', config = true },
     { 'theprimeagen/harpoon' },
+    { 'theprimeagen/refactoring.nvim' },
     { 'fredeeb/alias.nvim' },
     { 'fredeeb/tardis.nvim', config = true },
     -- fzf
