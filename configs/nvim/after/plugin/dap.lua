@@ -57,7 +57,10 @@ dap.adapters.codelldb = {
 dap.adapters.cppdbg = {
     id = 'cppdbg',
     type = 'executable',
-    command = 'OpenDebugAD7',
+    executable = {
+        command = 'gdb',
+        args = {'-i', 'dap'},
+    },
 }
 
 dap.adapters.nlua = function(callback, config)
