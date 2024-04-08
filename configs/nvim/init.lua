@@ -51,7 +51,7 @@ require('lazy').setup({
     -- git
     { 'lewis6991/gitsigns.nvim' },
     { 'sindrets/diffview.nvim', opts = { use_icons = false } },
-    { 'neogitorg/neogit' },
+    { 'neogitorg/neogit', branch = 'nightly' },
     -- misc
     { 'rcarriga/nvim-notify' },
     { 'olimorris/persisted.nvim' },
