@@ -74,12 +74,12 @@ in {
     ];
     file = let mkSymlink = config.lib.file.mkOutOfStoreSymlink;
     in {
-      ".config/awesome".source = mkSymlink ../configs/awesome;
-      ".config/dunst".source = mkSymlink ../configs/dunst;
-      ".config/nvim".source = mkSymlink ../configs/nvim;
-      ".config/rofi".source = mkSymlink ../configs/rofi;
-      ".config/sway".source = mkSymlink ../configs/sway;
-      ".config/wezterm".source = mkSymlink ../configs/wezterm;
+      ".config/awesome".source = mkSymlink "${config.home.homeDirectory}/git/dotfiles/configs/awesome";
+      ".config/dunst".source = mkSymlink "${config.home.homeDirectory}/git/dotfiles/configs/dunst";
+      ".config/nvim".source = mkSymlink "${config.home.homeDirectory}/git/dotfiles/configs/nvim";
+      ".config/rofi".source = mkSymlink "${config.home.homeDirectory}/git/dotfiles/configs/rofi";
+      ".config/sway".source = mkSymlink "${config.home.homeDirectory}/git/dotfiles/configs/sway";
+      ".config/wezterm".source = mkSymlink "${config.home.homeDirectory}/git/dotfiles/configs/wezterm";
 
       ".config/gdb/gdbinit".source = pkgs.writeText "gdbinit" ''
         set auto-load safe-path /
