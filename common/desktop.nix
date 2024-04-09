@@ -52,6 +52,7 @@
     zeal
 
     discord
+    element-desktop
     spotify
     steam
     synergy
