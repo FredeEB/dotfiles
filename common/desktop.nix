@@ -11,25 +11,45 @@
   # Enable networking
   networking.wireless.iwd.enable = true;
   networking.firewall.enable = false;
-  services.connman.enable = true;
-  services.connman.wifi.backend = "iwd";
+
+  location = {
+    longitude = 10.2;
+    latitude = 56.1;
+  };
 
   # Configure keymap in X11
-  services.xserver = {
-    enable = true;
+  services = {
+    connman = {
+      enable = true;
+      wifi.backend = "iwd";
+    };
+    redshift.enable = true;
 
-    autoRepeatDelay = 200;
-    autoRepeatInterval = 50;
-
-    # Keyboard
-    xkb = {
-      layout = "us";
-      options = "caps:escape";
+    pipewire = {
+      enable = true;
+      pulse.enable = true;
+      alsa.enable = true;
     };
 
-    displayManager.sddm.enable = true;
-    displayManager.sddm.theme = "chili";
-    windowManager.awesome.enable = true;
+    displayManager.sddm = {
+      enable = true;
+      theme = "chili";
+    };
+    
+    xserver = {
+      enable = true;
+    
+      autoRepeatDelay = 200;
+      autoRepeatInterval = 50;
+    
+      # Keyboard
+      xkb = {
+        layout = "us";
+        options = "caps:escape";
+      };
+    
+      windowManager.awesome.enable = true;
+    };
   };
 
   programs.wireshark.enable = true;
@@ -61,16 +81,4 @@
     kicad
     virt-manager
   ];
-
-  services.redshift.enable = true;
-  location = {
-    longitude = 10.2;
-    latitude = 56.1;
-  };
-
-  services.pipewire = {
-    enable = true;
-    pulse.enable = true;
-    alsa.enable = true;
-  };
 }
