@@ -69,7 +69,7 @@ in {
       hadolint
       gopls
       luajitPackages.lua-lsp
-      nil
+      nixd
       neocmakelsp
     ];
     file = let mkSymlink = config.lib.file.mkOutOfStoreSymlink;
