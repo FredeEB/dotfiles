@@ -36,6 +36,13 @@
     pinentryPackage = pkgs.pinentry-qt;
   };
 
+  services.udev = {
+    enable = true;
+    extraRules = ''
+    SUBSYSTEM=="usb", MODE="0660", GROUP="dialout"
+    '';
+  };
+
   environment.systemPackages = with pkgs; [
     dconf
     fq
