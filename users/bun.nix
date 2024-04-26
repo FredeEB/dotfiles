@@ -64,6 +64,7 @@ in {
 
       nodePackages.bash-language-server
       nodePackages.pyright
+      black
       bashdb
       docker-compose-language-service
       hadolint
