@@ -105,6 +105,7 @@ in {
       enable = true;
       shellAliases = import ../configs/bash/aliases.nix;
       bashrcExtra = ''
+        source ${pkgs.fzf}/share/fzf/completion.bash
         source ${../configs/bash/bashrc}
       '';
     };
