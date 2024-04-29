@@ -8,8 +8,8 @@ in {
     src = pkgs.fetchFromGitHub {
       owner = "janoamaral";
       repo = "tokyo-night-tmux";
-      rev = "e34d41e4918f6e30918e03f6b930f24b0dbefc68";
-      sha256 = "sha256-bosnV4IPFgLhKnf1QopzVk+RtRCDVUuILUMG4cTfStI=";
+      rev = "v1.5";
+      sha256 = "sha256-yho2irPSwdRkNNwU7HZzN5dvspjDHWl75NlpS3uwz8M=";
     };
   };
   nvim-movement = mkTmuxPlugin {
@@ -18,8 +18,8 @@ in {
     src = pkgs.fetchFromGitHub {
       owner = "aserowy";
       repo = "tmux.nvim";
-      rev = "ea67d59721eb7e12144ce2963452e869bfd60526";
-      sha256 = "sha256-/2flPlSrXDcNYS5HJjf8RbrgmysHmNVYYVv8z3TLFwg=";
+      rev = "53ea7eab504730e7e8397fd2ae0133053d56afc8";
+      sha256 = "sha256-P2gFopPFMYPl6Ggd40MzbVHQjdc6jLvW39u0gaN0i40=";
     };
   };
 }
