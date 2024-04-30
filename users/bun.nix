@@ -67,6 +67,7 @@ in {
       black
       bashdb
       docker-compose-language-service
+      terraform-ls
       hadolint
       gopls
       luajitPackages.lua-lsp

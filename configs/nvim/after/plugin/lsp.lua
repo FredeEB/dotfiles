@@ -51,6 +51,7 @@ local lsps = {
     'lua_ls',
     'nixd',
     'neocmake',
+    'terraformls',
     'pyright',
     'rust_analyzer',
 }
@@ -58,7 +59,8 @@ local lsps = {
 local nvim_lsp = require('lspconfig')
 local client_capabilities = require('cmp_nvim_lsp').default_capabilities()
 for _, server in ipairs(lsps) do
-    require('lspconfig')[server].setup {
+
+    nvim_lsp[server].setup {
         function(server)
             nvim_lsp[server].setup {
                 capabilities = client_capabilities
