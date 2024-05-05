@@ -35,7 +35,7 @@ dap.adapters.cmake = {
     pipe = '${pipe}',
     executable = {
         command = 'cmake',
-        args = { '--debugger', '--debugger-pipe', '${pipe}' }
+        args = { '--debugger', '--debugger-pipe', '${pipe}', 'build'}
     }
 }
 dap.configurations.cmake = {
