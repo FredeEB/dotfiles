@@ -64,6 +64,7 @@ in {
 
       nodePackages.bash-language-server
       nodePackages.pyright
+      nodePackages.typescript-language-server
       black
       bashdb
       docker-compose-language-service
