@@ -67,6 +67,7 @@ in {
       nodePackages.typescript-language-server
       black
       bashdb
+      dockerfile-language-server-nodejs
       docker-compose-language-service
       terraform-ls
       hadolint
