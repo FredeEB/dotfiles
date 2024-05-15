@@ -62,6 +62,7 @@ in {
 
       nodejs
 
+      bitbake-language-server
       nodePackages.bash-language-server
       nodePackages.pyright
       nodePackages.typescript-language-server
