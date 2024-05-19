@@ -62,6 +62,8 @@ in {
 
       nodejs
 
+      distrobox
+
       bitbake-language-server
       nodePackages.bash-language-server
       nodePackages.pyright
