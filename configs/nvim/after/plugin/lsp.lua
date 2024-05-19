@@ -45,6 +45,7 @@ cmp.setup {
 -- lsp
 local lsps = {
     'bashls',
+    'bitbake_language_server',
     'docker_compose_language_service',
     'dockerls',
     'gopls',
