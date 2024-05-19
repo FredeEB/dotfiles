@@ -40,7 +40,7 @@ in {
       git-tools
 
       clang-tools
-      cmake
+      cmakeCurses
       doxygen
       gcc
       gdb
