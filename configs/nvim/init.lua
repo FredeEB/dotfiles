@@ -1,7 +1,14 @@
 -- bootstrap lazy.nvim
 local lazy_path = vim.fn.stdpath('data') .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazy_path) then
-    vim.fn.system({ 'git', 'clone', '--filter=blob:none', 'https://github.com/folke/lazy.nvim', '--branch=stable', lazy_path })
+    vim.fn.system({
+        'git',
+        'clone',
+        '--filter=blob:none',
+        'https://github.com/folke/lazy.nvim',
+        '--branch=stable',
+        lazy_path,
+    })
 end
 vim.opt.rtp:prepend(lazy_path)
 
@@ -29,7 +36,7 @@ require('lazy').setup({
     -- dap
     { 'mfussenegger/nvim-dap' },
     { 'thehamsta/nvim-dap-virtual-text', config = true },
-    { 'nvim-neotest/nvim-nio'},
+    { 'nvim-neotest/nvim-nio' },
     { 'rcarriga/nvim-dap-ui', config = true },
     { 'jbyuki/one-small-step-for-vimkind' },
     -- tools
@@ -59,4 +66,4 @@ require('lazy').setup({
     { 'kabbamine/zeavim.vim' },
     { 'numtostr/comment.nvim', config = true },
     { 'tversteeg/registers.nvim', config = true },
-}, { lockfile = vim.fn.stdpath("data") .. "/lazy-lock.json" })
+}, { lockfile = vim.fn.stdpath('data') .. '/lazy-lock.json' })

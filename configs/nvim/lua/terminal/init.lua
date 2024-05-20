@@ -20,7 +20,7 @@ end
 
 local open_terminal = function(opts)
     opts = get_opts(opts)
-    local args = opts.keep_dir and " -c %:p:h" or ""
+    local args = opts.keep_dir and ' -c %:p:h' or ''
     vim.cmd('silent !export NVIM=$NVIM')
     if opts.replace then
         vim.cmd('silent !tmux neww' .. args)

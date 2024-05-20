@@ -19,8 +19,8 @@ function map.key_for_filetype(filetype, mode, mapping, cmd)
         group = 'KeybindsForMode',
         pattern = filetype,
         callback = function()
-            vim.keymap.set(mode, mapping, cmd, { buffer = 0, noremap = true})
-        end
+            vim.keymap.set(mode, mapping, cmd, { buffer = 0, noremap = true })
+        end,
     })
 end
 -- map many keys at once for filetype

@@ -1,32 +1,32 @@
-local m = require('functions.keymap')
 local fzf = require('fzf-lua')
-fzf.setup {
+local m = require('functions.keymap')
+fzf.setup({
     'default',
-    fzf_bin = "fzf-tmux",
+    fzf_bin = 'fzf-tmux',
     keymap = {
         fzf = {
-            ["ctrl-q"] = "select-all+accept",
-        }
+            ['ctrl-q'] = 'select-all+accept',
+        },
     },
     winopts = {
         preview = {
-            default = 'bat'
-        }
+            default = 'bat',
+        },
     },
     grep = {
-        rg_opts = "--column --line-number --no-heading --color=always --smart-case --max-columns=4096 -e",
+        rg_opts = '--column --line-number --no-heading --color=always --smart-case --max-columns=4096 -e',
     },
     files = {
-        rg_opts = "--color=never --files --follow",
+        rg_opts = '--color=never --files --follow',
     },
     previewers = {
         bat = {
-            theme = 'Dracula'
-        }
-    }
-}
+            theme = 'Dracula',
+        },
+    },
+})
 
-m.keys {
+m.keys({
     { 'n', '<leader><leader>', fzf.resume },
     { 'n', '<leader>gl', fzf.git_commits },
     { 'n', '<leader>gf', fzf.git_bcommits },
@@ -39,4 +39,4 @@ m.keys {
     { 'n', '<leader>l', fzf.lines },
     { 'n', '<leader>gb', fzf.git_branches },
     { 'n', '<leader>h', fzf.help_tags },
-}
+})

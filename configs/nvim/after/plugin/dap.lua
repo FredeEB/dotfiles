@@ -11,8 +11,8 @@ local function query_target()
 end
 
 require('dap.ext.vscode').type_to_filetypes = {
-    cppdbg = { "c", "cpp" },
-    codelldb = { "c", "cpp" },
+    cppdbg = { 'c', 'cpp' },
+    codelldb = { 'c', 'cpp' },
 }
 
 dap.adapters.bash = {
@@ -25,9 +25,9 @@ dap.configurations.sh = {
         name = 'Run',
         type = 'bash',
         request = 'launch',
-        program = "${file}",
-        cwd = "${fileDirname}",
-    }
+        program = '${file}',
+        cwd = '${fileDirname}',
+    },
 }
 
 dap.adapters.cmake = {
@@ -35,23 +35,23 @@ dap.adapters.cmake = {
     pipe = '${pipe}',
     executable = {
         command = 'cmake',
-        args = { '--debugger', '--debugger-pipe', '${pipe}', 'build'}
-    }
+        args = { '--debugger', '--debugger-pipe', '${pipe}', 'build' },
+    },
 }
 dap.configurations.cmake = {
     {
         name = 'Build',
         type = 'cmake',
         request = 'launch',
-    }
+    },
 }
 
 dap.adapters.codelldb = {
     type = 'server',
-    port = "${port}",
+    port = '${port}',
     executable = {
         command = 'codelldb',
-        args = {'--port', "${port}"},
+        args = { '--port', '${port}' },
     },
 }
 dap.adapters.cppdbg = {
@@ -59,20 +59,20 @@ dap.adapters.cppdbg = {
     type = 'executable',
     executable = {
         command = 'gdb',
-        args = {'-i', 'dap'},
+        args = { '-i', 'dap' },
     },
 }
 
 dap.adapters.nlua = function(callback, config)
-    callback({ type = 'server', host = config.host or "127.0.0.1", port = config.port or 8086 })
+    callback({ type = 'server', host = config.host or '127.0.0.1', port = config.port or 8086 })
 end
 
 dap.configurations.lua = {
     {
         type = 'nlua',
         request = 'attach',
-        name = "Attach to running Neovim instance",
-    }
+        name = 'Attach to running Neovim instance',
+    },
 }
 
 local dapui = require("dapui")
