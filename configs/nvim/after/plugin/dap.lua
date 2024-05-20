@@ -58,10 +58,8 @@ dap.adapters.codelldb = {
 dap.adapters.gdb = {
     id = 'gdb',
     type = 'executable',
-    executable = {
-        command = 'gdb',
-        args = { '-i', 'dap' },
-    },
+    command = 'gdb',
+    args = { '-i', 'dap' },
 }
 
 dap.adapters.nlua = function(callback, config)
