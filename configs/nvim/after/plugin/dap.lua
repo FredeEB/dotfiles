@@ -11,6 +11,7 @@ local function query_target()
 end
 
 require('dap.ext.vscode').type_to_filetypes = {
+    gdb = { 'c', 'cpp' },
     cppdbg = { 'c', 'cpp' },
     codelldb = { 'c', 'cpp' },
 }
@@ -54,8 +55,8 @@ dap.adapters.codelldb = {
         args = { '--port', '${port}' },
     },
 }
-dap.adapters.cppdbg = {
-    id = 'cppdbg',
+dap.adapters.gdb = {
+    id = 'gdb',
     type = 'executable',
     executable = {
         command = 'gdb',
