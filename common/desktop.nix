@@ -35,19 +35,19 @@
       enable = true;
       theme = "chili";
     };
-    
+
     xserver = {
       enable = true;
-    
+
       autoRepeatDelay = 200;
       autoRepeatInterval = 50;
-    
+
       # Keyboard
       xkb = {
         layout = "us";
         options = "caps:escape";
       };
-    
+
       windowManager.awesome.enable = true;
     };
   };

@@ -39,7 +39,7 @@
   services.udev = {
     enable = true;
     extraRules = ''
-    SUBSYSTEM=="usb", MODE="0660", GROUP="dialout"
+      SUBSYSTEM=="usb", MODE="0660", GROUP="dialout"
     '';
   };
 
@@ -56,10 +56,7 @@
 
   i18n = {
     defaultLocale = "en_US.UTF-8";
-    supportedLocales = [
-      "C.UTF-8/UTF-8"
-      "en_US.UTF-8/UTF-8"
-    ];
+    supportedLocales = [ "C.UTF-8/UTF-8" "en_US.UTF-8/UTF-8" ];
   };
 
   # Enable the OpenSSH daemon.
