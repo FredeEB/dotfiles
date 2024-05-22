@@ -66,7 +66,6 @@
 
     brave
     gimp
-    synergy
     wezterm
     zathura
     zeal
