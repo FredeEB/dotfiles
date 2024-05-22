@@ -53,8 +53,6 @@ require('lazy').setup({
     { 'nvim-treesitter/nvim-treesitter-context', config = true },
     { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
     -- theme
-    { 'nvim-lualine/lualine.nvim' },
-    { 'folke/tokyonight.nvim' },
     { 'https://gitlab.com/yorickpeterse/nvim-pqf', config = true },
     -- git
     { 'lewis6991/gitsigns.nvim' },
