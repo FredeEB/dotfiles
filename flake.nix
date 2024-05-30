@@ -11,12 +11,9 @@
     nixgl.url = "github:nix-community/nixgl";
   };
 
-  outputs =
-    inputs@{ nixpkgs, home-manager, nixgl, neovim-nightly-overlay, ... }:
+  outputs = inputs@{ nixpkgs, ... }:
     let
-      overlays = [ neovim-nightly-overlay.overlay ];
-
-      base = [ { nixpkgs.overlays = overlays; } ./common/base.nix ];
+      base = [ ./common/base.nix ];
       createSystem = (system-file:
         let name = nixpkgs.lib.strings.removeSuffix ".nix" system-file;
         in {
