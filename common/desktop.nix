@@ -1,12 +1,39 @@
-{ pkgs, ... }: {
+{ pkgs, inputs, ... }: {
 
-  imports = [ ../modules/sway.nix ];
+  imports = [ ../modules/sway.nix inputs.stylix.nixosModules.stylix ];
 
-  fonts.packages = with pkgs; [
-    noto-fonts
-    noto-fonts-emoji
-    (nerdfonts.override { fonts = [ "Iosevka" ]; })
-  ];
+  stylix = {
+    autoEnable = true;
+    image = ../assets/desktop.jpg;
+    polarity = "dark";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-night-dark.yaml";
+
+    cursor = {
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Ice";
+    };
+    fonts = {
+      serif = {
+        package = pkgs.dejavu_fonts;
+        name = "DejaVu Serif";
+      };
+
+      sansSerif = {
+        package = pkgs.dejavu_fonts;
+        name = "DejaVu Sans";
+      };
+
+      monospace = {
+        package = pkgs.nerdfonts.override { fonts = ["Iosevka"]; };
+        name = "Iosevka Nerd Font Mono";
+      };
+
+      emoji = {
+        package = pkgs.noto-fonts-emoji;
+        name = "Noto Color Emoji";
+      };
+    };
+  };
 
   # Enable networking
   networking.wireless.iwd.enable = true;

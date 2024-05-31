@@ -9,6 +9,7 @@
     };
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     nixgl.url = "github:nix-community/nixgl";
+    stylix.url = "github:danth/stylix";
   };
 
   outputs = inputs@{ nixpkgs, ... }:
