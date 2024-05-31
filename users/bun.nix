@@ -66,8 +66,10 @@ in {
     ];
     file = let mkSymlink = config.lib.file.mkOutOfStoreSymlink;
     in {
-      ".config/nvim".source = mkSymlink "${config.home.homeDirectory}/git/dotfiles/configs/nvim";
-      ".config/sway".source = mkSymlink "${config.home.homeDirectory}/git/dotfiles/configs/sway";
+      ".config/nvim".source =
+        mkSymlink "${config.home.homeDirectory}/git/dotfiles/configs/nvim";
+      ".config/sway".source =
+        mkSymlink "${config.home.homeDirectory}/git/dotfiles/configs/sway";
 
       ".config/gdb/gdbinit".source = pkgs.writeText "gdbinit" ''
         set auto-load safe-path /
@@ -84,9 +86,7 @@ in {
         enter_accept = false;
         keymap_mode = "vim-insert";
       };
-      flags = [
-        "--disable-up-arrow"
-      ];
+      flags = [ "--disable-up-arrow" ];
     };
     bash = {
       enable = true;
@@ -122,7 +122,6 @@ in {
       tmux.enableShellIntegration = true;
       tmux.shellIntegrationOptions = [ "-p" "-w" "80%" "-h" "80%" ];
     };
-
     git = {
       enable = true;
       difftastic.enable = true;
