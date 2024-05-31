@@ -7,15 +7,7 @@ in {
 
   nixpkgs.config.allowUnfree = true;
 
-  services.mako = {
-    enable = true;
-    backgroundColor = "#24283b";
-    textColor = "#c0caf5";
-    borderRadius = 5;
-    borderSize = 0;
-    layer = "overlay";
-    defaultTimeout = 4000;
-  };
+  services.mako.enable = true;
 
   home = {
     username = "bun";
