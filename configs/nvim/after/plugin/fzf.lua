@@ -19,11 +19,6 @@ fzf.setup({
     files = {
         rg_opts = '--color=never --files --follow',
     },
-    previewers = {
-        bat = {
-            theme = 'Dracula',
-        },
-    },
 })
 
 m.keys({
