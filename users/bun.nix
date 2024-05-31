@@ -66,8 +66,6 @@ in {
     ];
     file = let mkSymlink = config.lib.file.mkOutOfStoreSymlink;
     in {
-      ".config/awesome".source = mkSymlink "${config.home.homeDirectory}/git/dotfiles/configs/awesome";
-      ".config/dunst".source = mkSymlink "${config.home.homeDirectory}/git/dotfiles/configs/dunst";
       ".config/nvim".source = mkSymlink "${config.home.homeDirectory}/git/dotfiles/configs/nvim";
       ".config/sway".source = mkSymlink "${config.home.homeDirectory}/git/dotfiles/configs/sway";
 

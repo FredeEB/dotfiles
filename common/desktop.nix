@@ -74,15 +74,12 @@
         layout = "us";
         options = "caps:escape";
       };
-
-      windowManager.awesome.enable = true;
     };
   };
 
   programs.wireshark.enable = true;
   environment.systemPackages = with pkgs; [
     arandr
-    dunst
     feh
     imagemagick
     libnotify
