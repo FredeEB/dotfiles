@@ -157,8 +157,6 @@ in {
         set -g set-clipboard on
         set -sg escape-time 0
         set -g mouse
-        set -sa terminal-overrides ',xterm-256color:RGB'
-        set -g default-terminal 'tmux-256color'
         set -g focus-events on
         set -g history-limit 20000
         set -g status-position bottom
@@ -176,10 +174,9 @@ in {
         bind-key j split-pane -h -c "#{pane_current_path}"
         bind-key k split-pane -v -c "#{pane_current_path}"
       '';
-      plugins = (with import ../modules/tmux.nix { inherit pkgs; }; [
-        tokyo-night-tmux
-        nvim-movement
-      ]) ++ (with pkgs.tmuxPlugins; [ continuum ]);
+      plugins =
+        (with import ../modules/tmux.nix { inherit pkgs; }; [ nvim-movement ])
+        ++ (with pkgs.tmuxPlugins; [ continuum ]);
     };
     wezterm = {
       enable = true;
