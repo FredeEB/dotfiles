@@ -93,7 +93,6 @@
 
     brave
     gimp
-    wezterm
     zathura
     zeal
 
