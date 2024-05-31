@@ -20,12 +20,6 @@ in {
   home = {
     username = "bun";
     homeDirectory = "/home/bun";
-    pointerCursor = {
-      gtk.enable = true;
-      package = pkgs.bibata-cursors;
-      name = "Bibata-Modern-Ice";
-      size = 22;
-    };
 
     sessionVariables = {
       BROWSER = "brave";
