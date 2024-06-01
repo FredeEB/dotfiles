@@ -14,7 +14,10 @@
 
   outputs = inputs@{ nixpkgs, ... }:
     let
-      base = [ ./common/base.nix ];
+      base = [ 
+          ./common/base.nix 
+          "${inputs.nixpkgs}/nixos/modules/installer/cd-dvd/installation-cd-minimal.nix"
+      ];
       createSystem = (system-file:
         let name = nixpkgs.lib.strings.removeSuffix ".nix" system-file;
         in {
