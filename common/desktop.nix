@@ -47,10 +47,6 @@
 
   # Configure keymap in X11
   services = {
-    connman = {
-      enable = true;
-      wifi.backend = "iwd";
-    };
     redshift.enable = true;
 
     pipewire = {
