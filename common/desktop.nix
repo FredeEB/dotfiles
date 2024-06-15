@@ -3,6 +3,7 @@
   imports = [ ../modules/sway.nix inputs.stylix.nixosModules.stylix ];
 
   stylix = {
+    enable = true;
     autoEnable = true;
     image = ../assets/desktop.jpg;
     polarity = "dark";

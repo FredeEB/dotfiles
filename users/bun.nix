@@ -50,8 +50,8 @@ in {
       distrobox
 
       bitbake-language-server
-      nodePackages.bash-language-server
-      nodePackages.pyright
+      bash-language-server
+      pyright
       nodePackages.typescript-language-server
       black
       bashdb
