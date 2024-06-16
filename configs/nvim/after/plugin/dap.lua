@@ -2,14 +2,6 @@ local m = require('functions.keymap')
 -- dap
 local dap = require('dap')
 
-local function query_executable()
-    return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
-end
-
-local function query_target()
-    return vim.fn.input('Target <IP:PORT>: ')
-end
-
 require('dap.ext.vscode').type_to_filetypes = {
     gdb = { 'c', 'cpp' },
     cppdbg = { 'c', 'cpp' },
