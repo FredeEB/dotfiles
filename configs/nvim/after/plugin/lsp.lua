@@ -72,31 +72,6 @@ for _, server in ipairs(lsps) do
     })
 end
 
-nvim_lsp.lua_ls.setup({
-    cmd = { 'lua-lsp' },
-    on_init = function(client)
-        local path = client.workspace_folders[1].name
-        if not vim.loop.fs_stat(path .. '/.luarc.json') and not vim.loop.fs_stat(path .. '/.luarc.jsonc') then
-            client.config.settings = vim.tbl_deep_extend('force', client.config.settings, {
-                Lua = {
-                    runtime = {
-                        version = 'LuaJIT',
-                    },
-                    workspace = {
-                        checkThirdParty = false,
-                        library = {
-                            vim.env.VIMRUNTIME,
-                        },
-                    },
-                },
-            })
-
-            client.notify('workspace/didChangeConfiguration', { settings = client.config.settings })
-        end
-        return true
-    end,
-})
--- clangd is not installed with mason, so config is here
 nvim_lsp.clangd.setup({
     cmd = {
         'clangd',

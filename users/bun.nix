@@ -60,7 +60,7 @@ in {
       terraform-ls
       hadolint
       gopls
-      luajitPackages.lua-lsp
+      lua-language-server
       nixd
       neocmakelsp
     ];
