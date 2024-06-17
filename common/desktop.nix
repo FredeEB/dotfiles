@@ -7,7 +7,7 @@
     autoEnable = true;
     image = ../assets/desktop.jpg;
     polarity = "dark";
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-night-dark.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/kanagawa.yaml";
 
     cursor = {
       package = pkgs.bibata-cursors;
