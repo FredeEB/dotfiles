@@ -153,6 +153,8 @@ in {
         set -g history-limit 20000
         set -g status-position bottom
         set -g status-left-length 100
+        set -g default-terminal "tmux-256color"
+        set -ga terminal-overrides ",*256col*:Tc"
         set -wg mode-keys vi
 
         bind-key C-p run-shell ${tmux-project}/bin/tmux-project
