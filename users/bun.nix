@@ -41,7 +41,6 @@ in {
       fzf
       nix
       ripgrep
-      stow
       unzip
       wget
       vim
