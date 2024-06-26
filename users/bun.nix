@@ -140,6 +140,9 @@ in {
         rerere.enabled = true;
       };
     };
+    neovim = {
+      enable = true;
+    };
     tmux = {
       enable = true;
       extraConfig = ''
