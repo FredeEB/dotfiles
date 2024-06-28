@@ -64,12 +64,9 @@ in {
       nixd
       neocmakelsp
     ];
-    file = let mkSymlink = config.lib.file.mkOutOfStoreSymlink;
-    in {
-      ".config/nvim".source =
-        mkSymlink "${config.home.homeDirectory}/git/dotfiles/configs/nvim";
-      ".config/sway".source =
-        mkSymlink "${config.home.homeDirectory}/git/dotfiles/configs/sway";
+    file = {
+      ".config/nvim".source = ../configs/nvim;
+      ".config/sway".source = ../configs/sway;
 
       ".config/gdb/gdbinit".source = pkgs.writeText "gdbinit" ''
         set auto-load safe-path /
