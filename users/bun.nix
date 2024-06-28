@@ -16,7 +16,6 @@ in {
     sessionVariables = {
       BROWSER = "brave";
       NIX_SHELL_PRESERVE_PROMPT = "1";
-      EDITOR = "nvim";
       SHELL = "bash";
       TERMINAL = "wezterm";
     };
@@ -139,6 +138,8 @@ in {
     };
     neovim = {
       enable = true;
+      defaultEditor = true;
+      vimdiffAlias = true;
     };
     tmux = {
       enable = true;
