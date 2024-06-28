@@ -54,6 +54,7 @@ require('lazy').setup({
     { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
     -- theme
     { 'https://gitlab.com/yorickpeterse/nvim-pqf', config = true },
+    { 'rebelot/kanagawa.nvim', config = true },
     -- git
     { 'lewis6991/gitsigns.nvim' },
     { 'sindrets/diffview.nvim', opts = { use_icons = false } },
