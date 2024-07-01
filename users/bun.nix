@@ -153,6 +153,8 @@ in {
         set -g status-left-length 100
         set -g default-terminal "tmux-256color"
         set -ga terminal-overrides ",*256col*:Tc"
+        set -ga terminal-overrides '*:Ss=\E[%p1%d q:Se=\E[ q'
+        set-environment -g COLORTERM "truecolor"
         set -wg mode-keys vi
 
         bind-key C-p run-shell ${tmux-project}/bin/tmux-project
