@@ -25,7 +25,6 @@ in {
     swaybg
     swayidle
     swaylock
-    waybar
     wayland
     wdisplays
     wl-clipboard

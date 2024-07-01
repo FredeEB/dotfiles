@@ -170,6 +170,9 @@ in {
         (with import ../modules/tmux.nix { inherit pkgs; }; [ nvim-movement ])
         ++ (with pkgs.tmuxPlugins; [ continuum ]);
     };
+    waybar = {
+      enable = true;
+    };
     wezterm = {
       enable = true;
       extraConfig = ''
