@@ -62,6 +62,7 @@ in {
       lua-language-server
       nixd
       neocmakelsp
+      python3Packages.debugpy
     ];
     file = {
       ".config/nvim".source = ../configs/nvim;
