@@ -56,6 +56,7 @@ require('lazy').setup({
     { 'https://gitlab.com/yorickpeterse/nvim-pqf', config = true },
     { 'rebelot/kanagawa.nvim', config = true },
     -- git
+    { 'akinsho/git-conflict.nvim', config = true },
     { 'lewis6991/gitsigns.nvim' },
     { 'sindrets/diffview.nvim', opts = { use_icons = false } },
     { 'neogitorg/neogit' },
