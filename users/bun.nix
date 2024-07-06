@@ -14,6 +14,7 @@ in {
     homeDirectory = "/home/bun";
 
     sessionVariables = {
+      DESKTOP_WALLPAPER_PATH = ../assets/desktop.jpg;
       BROWSER = "brave";
       NIX_SHELL_PRESERVE_PROMPT = "1";
       SHELL = "bash";
