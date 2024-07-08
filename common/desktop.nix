@@ -75,6 +75,7 @@
   };
 
   programs.wireshark.enable = true;
+  programs.steam.enable = true;
   environment.systemPackages = with pkgs; [
     arandr
     feh
@@ -93,7 +94,6 @@
     discord
     element-desktop
     spotify
-    steam
     synergy
 
     freecad
