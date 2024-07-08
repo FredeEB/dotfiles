@@ -1,4 +1,4 @@
-{ config, lib, modulesPath, ... }: {
+{ pkgs, config, lib, modulesPath, ... }: {
   imports = [
     ../common/desktop.nix
     ../modules/default-system-layout.nix
@@ -6,10 +6,17 @@
   ];
 
   boot.initrd.availableKernelModules = [ "nvme" "xhci_pci" "usbhid" ];
-  boot.initrd.kernelModules = [ ];
-  boot.kernelModules = [ "kvm-amd" "wl" "b43" ];
+  boot.initrd.kernelModules = [ "amdgpu" ];
+  boot.kernelModules = [ "amdgpu" "kvm-amd" "wl" "b43" ];
   boot.extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
 
+  environment.variables = {
+    ROC_ENABLE_PRE_VEGA = "1";
+  };
+  hardware.opengl.extraPackages = with pkgs; [
+    amdvlk
+    rocmPackages.clr.icd
+  ];
   networking = {
     interfaces.enp39s0.wakeOnLan.enable = true;
     hostName = "dt";
