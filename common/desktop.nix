@@ -99,5 +99,7 @@
     freecad
     kicad
     virt-manager
+
+    ulauncher
   ];
 }

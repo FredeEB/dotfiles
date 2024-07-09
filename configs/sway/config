@@ -17,7 +17,7 @@ bindsym $mod+Shift+p exec betterlockscreen -l
 
 bindsym $mod+Return exec $term
 bindsym $mod+Shift+Return exec $term -e bash
-bindsym $mod+r exec fuzzel
+bindsym $mod+r exec ulauncher-toggle
 bindsym $mod+b exec $browser
 
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl -- set-sink-volume 0 +5% #increase sound volume
@@ -93,4 +93,5 @@ exec_always --no-startup-id mako --default-timeout 4000
 exec_always --no-startup-id wlsunset -L 10.2 -l 56.2 -t 3700 -T 5400
 
 exec dbus-sway-environment
+exec ulauncher
 exec configure-gtk

@@ -94,7 +94,6 @@ in {
         source ${../configs/bash/bashrc}
       '';
     };
-    fuzzel.enable = true;
     readline = {
       enable = true;
       extraConfig = ''
