@@ -45,7 +45,7 @@
     enableSSHSupport = true;
     pinentryPackage = pkgs.pinentry-qt;
   };
-
+  nix.package = pkgs.nixVersions.nix_2_22;
   services.udev = {
     enable = true;
     extraRules = ''
