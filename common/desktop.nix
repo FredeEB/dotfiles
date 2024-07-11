@@ -74,7 +74,6 @@
     };
   };
 
-  programs.wireshark.enable = true;
   programs.steam.enable = true;
   environment.systemPackages = with pkgs; [
     arandr
@@ -99,6 +98,8 @@
     freecad
     kicad
     virt-manager
+
+    wireshark
 
     ulauncher
   ];
