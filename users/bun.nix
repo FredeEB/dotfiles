@@ -134,6 +134,8 @@ in {
         pull.autoSquash = true;
         pull.autoStash = true;
         push.default = "upstream";
+        push.autoSetupRemote = true;
+        push.useForceIfIncludes = true;
         rerere.enabled = true;
       };
     };
