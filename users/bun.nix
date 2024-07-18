@@ -25,6 +25,7 @@ in {
       tmux-project
       git-tools
 
+      bitwarden-cli
       clang-tools
       cmakeCurses
       doxygen
