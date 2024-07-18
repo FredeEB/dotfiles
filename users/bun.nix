@@ -47,8 +47,6 @@ in {
 
       nodejs
 
-      distrobox
-
       bitbake-language-server
       bash-language-server
       pyright
