@@ -56,6 +56,7 @@
   environment.systemPackages = with pkgs; [
     dconf
     fq
+    jq
     git
     gnumake
     htop
