@@ -85,7 +85,7 @@
     sddm-chili-theme
     pavucontrol
 
-    brave
+    firefox
     gimp
     zathura
     zeal
