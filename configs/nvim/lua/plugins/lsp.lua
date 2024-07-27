@@ -4,6 +4,17 @@ local m = require('functions.keymap')
 local cmp = require('cmp')
 local luasnip = require('luasnip')
 
+-- AI stuff
+require("cmp_ai.config"):setup {
+    max_lines = 100,
+    provider = "Ollama",
+    provider_options = {
+        model = 'codellama:latest'
+    },
+    notify = true,
+    run_on_every_keystroke = false,
+}
+
 cmp.setup({
     snippet = {
         expand = function(args)
@@ -34,6 +45,15 @@ cmp.setup({
                 fallback()
             end
         end, { 'i', 's' }),
+        ['C-x'] = cmp.mapping(
+            cmp.mapping.complete {
+                config = {
+                    sources = cmp.config.sources{
+                        { name = 'cmp_ai' }
+                    }
+                }
+            }
+        )
     }),
     sources = {
         { name = 'nvim_lsp_signature_help' },
