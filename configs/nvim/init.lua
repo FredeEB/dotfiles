@@ -17,54 +17,37 @@ m.key('n', '<Space>', '')
 vim.g.mapleader = ' '
 
 require('lazy').setup({
-    -- common
-    { 'nvim-lua/plenary.nvim' },
-    { 'folke/lazydev.nvim', config = true },
-    -- tmux
-    { 'aserowy/tmux.nvim', config = true },
-    -- snippets
-    { 'l3mon4d3/luasnip' },
-    -- cmp
-    { 'hrsh7th/cmp-nvim-lsp' },
-    { 'hrsh7th/cmp-buffer' },
-    { 'hrsh7th/cmp-path' },
-    { 'hrsh7th/cmp-nvim-lsp-signature-help' },
-    { 'saadparwaiz1/cmp_luasnip' },
-    { 'hrsh7th/nvim-cmp' },
-    -- lsp
-    { 'neovim/nvim-lsp' },
-    -- dap
-    { 'mfussenegger/nvim-dap' },
-    { 'thehamsta/nvim-dap-virtual-text', config = true },
-    { 'nvim-neotest/nvim-nio' },
-    { 'rcarriga/nvim-dap-ui', config = true },
-    { 'jbyuki/one-small-step-for-vimkind' },
-    -- tools
-    { 'stevearc/oil.nvim', config = true },
-    { 'theprimeagen/harpoon', branch = 'harpoon2' },
-    { 'theprimeagen/refactoring.nvim' },
-    { 'nvimtools/hydra.nvim' },
-    { 'fredeeb/alias.nvim' },
-    { 'fredeeb/tardis.nvim', config = true },
-    -- fzf
-    { 'ibhagwan/fzf-lua' },
-    -- treesitter
-    { 'mfussenegger/nvim-treehopper' },
-    { 'nvim-treesitter/nvim-treesitter-context', config = true },
-    { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
-    -- theme
-    { 'https://gitlab.com/yorickpeterse/nvim-pqf', config = true },
-    { 'rebelot/kanagawa.nvim', config = true },
-    -- git
-    { 'akinsho/git-conflict.nvim', config = true },
-    { 'lewis6991/gitsigns.nvim' },
-    { 'sindrets/diffview.nvim', opts = { use_icons = false } },
-    { 'neogitorg/neogit' },
-    -- misc
-    { 'rcarriga/nvim-notify' },
-    { 'olimorris/persisted.nvim' },
-    { 'windwp/nvim-autopairs', config = true },
-    { 'kabbamine/zeavim.vim' },
-    { 'numtostr/comment.nvim', config = true },
-    { 'tversteeg/registers.nvim', config = true },
-}, { lockfile = vim.fn.stdpath('data') .. '/lazy-lock.json' })
+    spec = { import = 'plugins' },
+    lockfile = vim.fn.stdpath('data') .. '/lazy-lock.json',
+    dev = {
+        path = "~/git",
+        fallback = true,
+    },
+})
+
+    -- -- common
+    -- -- tmux
+    -- -- snippets
+   
+    
+    -- { 'stevearc/oil.nvim', config = true },
+    -- { 'theprimeagen/harpoon', branch = 'harpoon2' },
+    -- { 'theprimeagen/refactoring.nvim' },
+    -- { 'nvimtools/hydra.nvim' },
+    -- { 'fredeeb/alias.nvim' },
+    -- { 'fredeeb/tardis.nvim', config = true },
+    -- -- fzf
+    -- { 'ibhagwan/fzf-lua' },
+    -- -- treesitter
+    -- { 'mfussenegger/nvim-treehopper' },
+    -- { 'nvim-treesitter/nvim-treesitter-context', config = true },
+    -- { 'nvim-treesitter/nvim-treesitter', build = ':TSUpdate' },
+    -- -- theme
+    -- { 'https://gitlab.com/yorickpeterse/nvim-pqf', config = true },
+    -- { 'rebelot/kanagawa.nvim', config = true },
+    -- -- git
+    -- { 'akinsho/git-conflict.nvim', config = true },
+    -- { 'lewis6991/gitsigns.nvim' },
+    -- { 'sindrets/diffview.nvim', opts = { use_icons = false } },
+    -- { 'neogitorg/neogit' },
+    -- -- misc

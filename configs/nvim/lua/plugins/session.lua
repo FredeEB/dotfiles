@@ -10,3 +10,7 @@ m.keys({
     { 'n', '<leader>as', require('persisted').load },
     { 'n', '<leader>ad', require('persisted').stop },
 })
+
+return {
+    { 'olimorris/persisted.nvim' },
+}

@@ -128,3 +128,16 @@ vim.api.nvim_create_autocmd('LspAttach', {
         })
     end,
 })
+
+return {
+    { 'l3mon4d3/luasnip' },
+    { 'hrsh7th/cmp-nvim-lsp' },
+    { 'hrsh7th/cmp-buffer' },
+    { 'hrsh7th/cmp-path' },
+    { 'hrsh7th/cmp-nvim-lsp-signature-help' },
+    { 'saadparwaiz1/cmp_luasnip' },
+    { 'andersevenrud/cmp-tmux' },
+    { 'tzachar/cmp-ai' },
+    { 'hrsh7th/nvim-cmp' },
+    { 'neovim/nvim-lsp' },
+}

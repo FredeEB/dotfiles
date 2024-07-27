@@ -132,3 +132,11 @@ local dap_hydra = Hydra({
 m.keys_for_filetype({
     { 'dap-float', 'n', 'q', '<cmd>q<cr>' },
 })
+
+return {
+    { 'mfussenegger/nvim-dap' },
+    { 'thehamsta/nvim-dap-virtual-text', config = true },
+    { 'nvim-neotest/nvim-nio' },
+    { 'rcarriga/nvim-dap-ui', config = true },
+    { 'jbyuki/one-small-step-for-vimkind' },
+}

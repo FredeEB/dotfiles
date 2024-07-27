@@ -82,7 +82,6 @@ m.keys({
     { 'n', '<leader>t', require('tardis-nvim').tardis },
 })
 
-require('Comment').setup()
 local ft = require('Comment.ft')
 ft.cpp = { '// %s', '// %s' }
 ft.c = { '// %s', '// %s' }
@@ -95,10 +94,25 @@ vim.api.nvim_create_autocmd('BufWritePre', {
         if path == args.file then
             return
         end
-        if not vim.loop.fs_stat(path) then
+        if not vim.uv.fs_stat(path) then
             vim.fn.system({ 'mkdir', '-p', path })
         end
     end,
 })
 
 vim.cmd('colorscheme kanagawa')
+
+return {
+    { 'folke/lazydev.nvim', config = true },
+    { 'fredeeb/tardis.nvim', config = true },
+    { 'kabbamine/zeavim.vim' },
+    { 'numtostr/comment.nvim', config = true },
+    { 'nvim-lua/plenary.nvim' },
+    { 'nvimtools/hydra.nvim' },
+    { 'rcarriga/nvim-notify' },
+    { 'stevearc/oil.nvim', config = true },
+    { 'theprimeagen/harpoon', branch = 'harpoon2' },
+    { 'theprimeagen/refactoring.nvim' },
+    { 'tversteeg/registers.nvim', config = true },
+    { 'windwp/nvim-autopairs', config = true },
+}

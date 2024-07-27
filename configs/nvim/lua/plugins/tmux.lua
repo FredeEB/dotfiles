@@ -32,3 +32,7 @@ m.keys({
     },
     { 'n', '<leader>k', term.open_terminal },
 })
+
+return {
+    { 'aserowy/tmux.nvim', config = true },
+}
