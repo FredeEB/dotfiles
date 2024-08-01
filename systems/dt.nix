@@ -13,7 +13,7 @@
   environment.variables = {
     ROC_ENABLE_PRE_VEGA = "1";
   };
-  hardware.opengl.extraPackages = with pkgs; [
+  hardware.graphics.extraPackages = with pkgs; [
     amdvlk
     rocmPackages.clr.icd
   ];
