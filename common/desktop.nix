@@ -96,6 +96,9 @@
     synergy
 
     freecad
+    elmerfem
+    gmsh
+    calculix
     kicad
     virt-manager
 
