@@ -3,6 +3,7 @@ local m = require('functions.keymap')
 require('nvim-treesitter.configs').setup({
     ensure_installed = {
         'bash',
+        'bitbake',
         'c',
         'cmake',
         'cpp',
