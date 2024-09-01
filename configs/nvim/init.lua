@@ -29,6 +29,7 @@ require('lazy').setup({
     { 'hrsh7th/cmp-buffer' },
     { 'hrsh7th/cmp-path' },
     { 'hrsh7th/cmp-nvim-lsp-signature-help' },
+    { 'tzachar/cmp-ai' },
     { 'saadparwaiz1/cmp_luasnip' },
     { 'hrsh7th/nvim-cmp' },
     -- lsp

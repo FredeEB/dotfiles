@@ -34,6 +34,16 @@ cmp.setup({
                 fallback()
             end
         end, { 'i', 's' }),
+        ['<C-x>'] = cmp.mapping(
+            cmp.mapping.complete({
+                config = {
+                    sources = cmp.config.sources({
+                        { name = 'cmp_ai' },
+                    }),
+                },
+            }),
+            { 'i' }
+        ),
     }),
     sources = {
         { name = 'nvim_lsp_signature_help' },
@@ -82,6 +92,27 @@ nvim_lsp.clangd.setup({
         '--query-driver=/**/*',
     },
     capabilities = client_capabilities,
+})
+
+local cmp_ai = require('cmp_ai.config')
+
+cmp_ai:setup({
+    max_lines = 100,
+    provider = 'Ollama',
+    provider_options = {
+        model = 'eramax/nxcode-cq-7b-orpo:q6',
+        base_url = 'http://dt:11434/api/generate',
+        prompt = function(lines_before)
+            return lines_before
+        end,
+        suffix = function(lines_after)
+            return lines_after
+        end,
+    },
+    notify = true,
+    notify_callback = function(msg)
+        vim.notify(msg)
+    end,
 })
 
 vim.api.nvim_create_autocmd('LspAttach', {
