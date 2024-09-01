@@ -25,6 +25,9 @@
   services.ollama = {
     enable = true;
     acceleration = "rocm";
+    # Run the following command to get a non-comma separated list of 
+    # nix run nixpkgs#rocmPackages.rocminfo | grep gfx | cut -d "x" -f 2 | head -n 1
+    rocmOverrideGfx = "11.0.0";
   };
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode =
