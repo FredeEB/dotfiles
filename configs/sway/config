@@ -13,7 +13,7 @@ floating_modifier $mod
 
 bindsym $mod+Shift+q kill
 
-bindsym $mod+Shift+p exec betterlockscreen -l
+bindsym $mod+Shift+p exec swaylock -f -i $DESKTOP_WALLPAPER_PATH
 
 bindsym $mod+Return exec $term
 bindsym $mod+Shift+Return exec $term -e bash
