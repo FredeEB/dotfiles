@@ -4,7 +4,7 @@
   fgrep = "fgrep --color=auto";
   grep = "grep --color=auto";
   la = "ls -lah";
-  ls = "ls --color=auto -oFC";
+  ls = "ls --color=auto -FC";
   mv = "mv -i";
   rf = "rm -rf";
   dps = "docker ps -a";
