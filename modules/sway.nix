@@ -22,6 +22,7 @@ in {
     grim
     mako
     slurp
+    sway-audio-idle-inhibit
     swaybg
     swayidle
     swaylock

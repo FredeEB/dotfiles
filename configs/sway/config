@@ -96,3 +96,4 @@ exec_always --no-startup-id swayidle -w  timeout 300 'swaylock -f -i $DESKTOP_WA
 exec dbus-sway-environment
 exec ulauncher
 exec configure-gtk
+exec sway-audio-idle-inhibit
