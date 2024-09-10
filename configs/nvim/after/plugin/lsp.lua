@@ -100,7 +100,7 @@ cmp_ai:setup({
     max_lines = 100,
     provider = 'Ollama',
     provider_options = {
-        model = 'eramax/nxcode-cq-7b-orpo:q6',
+        model = 'codellama:13b-code',
         base_url = 'http://dt:11434/api/generate',
         prompt = function(lines_before)
             return lines_before
