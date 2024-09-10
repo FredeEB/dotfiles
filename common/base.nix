@@ -9,7 +9,7 @@
 
   users.users.bun = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "dialout" "docker" "video" "wireshark" "uucp" ];
+    extraGroups = [ "wheel" "dialout" "disk" "docker" "video" "wireshark" "uucp" ];
     openssh.authorizedKeys.keys = [
         "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQCz6kfQ3Rka+VXsSSKMG2iAqT36O50kgt2tuzVFQrlw3xrtzRePsS6z0IGu4JjiKfvY7VtOEmuHp1Mu7DR2R4yTs5myhjDF2A2HzM+yiM4lMXNOVFgsr/dDijgNY+kxzujr6mnMA8oACNHht0wuc/ILh0IpUR0x15TO/7szCoRfY4yS7Jp+7d7Xrrz6dFzIisTo81aRiCmAk5KIDO2R+40dPuG0Gl1Ie6T2UqD0FKuCItM22v6omy+B4VhvOya+oMKJ4mJDe2IiDzaIVTrNG0nuUvzUzpzmHFOcq3Q1YBg61fdO7Au10a7N93QLPPkF2dmQYID/vObmwWj8+/PZzhRYIpT7Bo4SwkvmZj11KdPYXxkv+qtfyAFODkUhsoMUfRgxPzqqe0v0CT1jyxSRvBR2xWEIPPGd9ZG1yXv9OmJaFHPyvlq8+mssRTuCYjGONgIa7diGOecnU0UInrGx1z2PsWLvbe+vBBO1HpFGAJmRa5AnCIaGfNFPYP7ophG29zf6LH7hbh2A4Dma2ZNCCL+RLBvc3KXTA8tPQ/EG7SdTWrWBG3c1ZAy+GJu/e0r61cJD9gppXyUGlfUCUqOoyzd9sAuDMFcGu33EM6HbQHwunA9Pi/l0QdbTm0GbsQRDfUNvsEW7VriowahqiBXnCjScdOqJMBh5PH8IX6D/cpUWOQ== cardno:19_936_941"
     ];
