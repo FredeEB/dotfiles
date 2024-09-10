@@ -67,6 +67,7 @@ in {
     file = {
       ".config/nvim".source = ../configs/nvim;
       ".config/sway".source = ../configs/sway;
+      ".ssh/rc".source = ../configs/ssh/rc;
 
       ".config/gdb/gdbinit".source = pkgs.writeText "gdbinit" ''
         set auto-load safe-path /
@@ -156,6 +157,7 @@ in {
         set -g default-terminal "tmux-256color"
         set -ga terminal-overrides ",*256col*:Tc"
         set -ga terminal-overrides '*:Ss=\E[%p1%d q:Se=\E[ q'
+        set-environment -g 'SSH_AUTH_SOCK' ~/.ssh/ssh_auth_sock
         set-environment -g COLORTERM "truecolor"
         set -wg mode-keys vi
 
