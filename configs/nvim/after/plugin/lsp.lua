@@ -65,7 +65,7 @@ local lsps = {
     'nixd',
     'neocmake',
     'terraformls',
-    'tsserver',
+    'ts_ls',
     'pyright',
     'rust_analyzer',
 }
