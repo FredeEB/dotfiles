@@ -1,4 +1,5 @@
 local m = require('functions.keymap')
+local ai = require('constants.ai')
 
 -- cmp
 local cmp = require('cmp')
@@ -100,7 +101,7 @@ cmp_ai:setup({
     max_lines = 100,
     provider = 'Ollama',
     provider_options = {
-        model = 'codellama:13b-code',
+        model = ai.code_model,
         base_url = 'http://dt:11434/api/generate',
         prompt = function(lines_before)
             return lines_before

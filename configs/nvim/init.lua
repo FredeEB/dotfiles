@@ -47,6 +47,7 @@ require('lazy').setup({
     { 'nvimtools/hydra.nvim' },
     { 'fredeeb/alias.nvim' },
     { 'fredeeb/tardis.nvim', config = true },
+    { 'robitx/gp.nvim', config = true },
     -- fzf
     { 'ibhagwan/fzf-lua' },
     -- treesitter
