@@ -89,6 +89,8 @@
     gimp
     zathura
     zeal
+    xfce.thunar
+    xfce.thunar-volman
 
     discord
     element-desktop
