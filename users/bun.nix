@@ -18,7 +18,7 @@ in {
       BROWSER = "firefox";
       NIX_SHELL_PRESERVE_PROMPT = "1";
       SHELL = "bash";
-      TERMINAL = "wezterm";
+      TERMINAL = "foot";
     };
 
     packages = with pkgs; [
@@ -105,6 +105,9 @@ in {
         set vi-ins-mode-string "I "
         set vi-cmd-mode-string "N "
       '';
+    };
+    foot = {
+      enable = true;
     };
     fzf = {
       enable = true;
