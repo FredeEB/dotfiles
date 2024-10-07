@@ -69,6 +69,7 @@ local lsps = {
     'ts_ls',
     'pyright',
     'rust_analyzer',
+    'zls',
 }
 
 local client_capabilities = require('cmp_nvim_lsp').default_capabilities()
