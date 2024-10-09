@@ -17,7 +17,6 @@ in {
       DESKTOP_WALLPAPER_PATH = ../assets/desktop.jpg;
       BROWSER = "firefox";
       NIX_SHELL_PRESERVE_PROMPT = "1";
-      SHELL = "bash";
       TERMINAL = "foot";
     };
 
