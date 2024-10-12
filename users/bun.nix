@@ -143,6 +143,10 @@ in {
       defaultEditor = true;
       vimdiffAlias = true;
     };
+    rofi = {
+      enable = true;
+      terminal = "${pkgs.${term}}/bin/${term}";
+    };
     tmux = {
       enable = true;
       extraConfig = ''
@@ -250,7 +254,6 @@ in {
             }'"'';
         }
         { command = "${dbus-sway-environment}"; }
-        { command = "${pkgs.ulauncher}/bin/ulauncher"; }
         {
           command =
             "${pkgs.sway-audio-idle-inhibit}/bin/sway-audio-idle-inhibit";
@@ -271,7 +274,8 @@ in {
 
         "${mod}+Return" = "exec ${pkgs.foot}/bin/foot";
         "${mod}+Shift+Return" = "exec $term -e bash";
-        "${mod}+r" = "exec ${pkgs.ulauncher}/bin/ulauncher-toggle";
+        "${mod}+r" = "exec ${pkgs.rofi}/bin/rofi -show run";
+        "${mod}+Shift+r" = "exec ${pkgs.rofi}/bin/rofi -show drun";
         "${mod}+b" = "exec ${pkgs.firefox}/bin/firefox";
 
         "${mod}+h" = "focus left";

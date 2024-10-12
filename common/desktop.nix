@@ -105,7 +105,5 @@
     virt-manager
 
     wireshark
-
-    ulauncher
   ];
 }
