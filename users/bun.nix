@@ -2,6 +2,9 @@
 let
   tmux-project = pkgs.callPackage ../modules/tmux-project/default.nix { };
   git-tools = pkgs.callPackage ../modules/git-tools/default.nix { };
+
+  term = "foot";
+  browser = "firefox";
 in {
   programs.home-manager.enable = true;
   nixpkgs.config.allowUnfree = true;
@@ -12,10 +15,9 @@ in {
     homeDirectory = "/home/bun";
 
     sessionVariables = {
-      DESKTOP_WALLPAPER_PATH = ../assets/desktop.jpg;
-      BROWSER = "firefox";
+      BROWSER = browser;
+      TERMINAL = term;
       NIX_SHELL_PRESERVE_PROMPT = "1";
-      TERMINAL = "foot";
     };
 
     packages = with pkgs; [
@@ -63,7 +65,6 @@ in {
     ];
     file = {
       ".config/nvim".source = ../configs/nvim;
-      ".config/sway".source = ../configs/sway;
       ".ssh/rc".source = ../configs/ssh/rc;
 
       ".config/gdb/gdbinit".source = pkgs.writeText "gdbinit" ''
@@ -207,5 +208,129 @@ in {
     };
   };
 
+  wayland.windowManager.sway = let
+    dbus-sway-environment = pkgs.writeTextFile {
+      name = "dbus-sway-environment";
+      destination = "/bin/dbus-sway-environment";
+      executable = true;
+
+      text = ''
+        dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
+        systemctl --user stop pipewire pipewire-media-session xdg-desktop-portal xdg-desktop-portal-wlr
+        systemctl --user start pipewire pipewire-media-session xdg-desktop-portal xdg-desktop-portal-wlr
+      '';
+    };
+    mod = "Mod4";
+  in {
+    enable = true;
+    config = {
+      modifier = mod;
+      terminal = term;
+      input = {
+        "type:keyboard" = {
+          repeat_delay = "200";
+          repeat_rate = "50";
+          xkb_options = "caps:escape";
+        };
+      };
+      startup = [
+        { command = "${pkgs.waybar}/bin/waybar"; }
+        { command = "${pkgs.swaybg}/bin/swaybg -i ${../assets/desktop.jpg}"; }
+        { command = "${pkgs.mako}/bin/mako --default-timeout 4000"; }
+        {
+          command =
+            "${pkgs.wlsunset}/bin/wlsunset -L 10.2 -l 56.2 -t 3200 -T 4500";
+        }
+        {
+          command = ''
+            ${pkgs.swayidle}/bin/swayidle -w  timeout 300 '${pkgs.swaylock}/bin/swaylock -f -i ${
+              ../assets/desktop.jpg
+            }'  timeout 600 'swaymsg "output * dpms off"'  resume 'swaymsg "output * dpms on"'  before-sleep '${pkgs.swaylock}/bin/swaylock -f -i ${
+              ../assets/desktop.jpg
+            }'"'';
+        }
+        { command = "${dbus-sway-environment}"; }
+        { command = "${pkgs.ulauncher}/bin/ulauncher"; }
+        {
+          command =
+            "${pkgs.sway-audio-idle-inhibit}/bin/sway-audio-idle-inhibit";
+        }
+        { command = "configure-gtk"; }
+      ];
+      fonts = {
+        names = [ "Iosevka Nerd Font" ];
+        style = "Bold Semi";
+        size = 10.0;
+      };
+      keybindings = {
+
+        "${mod}+Shift+q" = "kill";
+
+        "${mod}+Shift+p" =
+          "exec ${pkgs.swaylock}/bin/swaylock -f -i ${../assets/desktop.jpg}";
+
+        "${mod}+Return" = "exec ${pkgs.foot}/bin/foot";
+        "${mod}+Shift+Return" = "exec $term -e bash";
+        "${mod}+r" = "exec ${pkgs.ulauncher}/bin/ulauncher-toggle";
+        "${mod}+b" = "exec ${pkgs.firefox}/bin/firefox";
+
+        "${mod}+h" = "focus left";
+        "${mod}+j" = "focus down";
+        "${mod}+k" = "focus up";
+        "${mod}+l" = "focus right";
+
+        "${mod}+Shift+h" = "move left";
+        "${mod}+Shift+j" = "move down";
+        "${mod}+Shift+k" = "move up";
+        "${mod}+Shift+l" = "move right";
+
+        "${mod}+g" = "fullscreen toggle";
+
+        "${mod}+Shift+space" = "floating toggle";
+
+        "${mod}+space" = "focus mode_toggle";
+
+        "${mod}+Shift+minus" = "move scratchpad";
+
+        "${mod}+minus" = "scratchpad show";
+
+        "${mod}+a" = "workspace 1";
+        "${mod}+s" = "workspace 2";
+        "${mod}+d" = "workspace 3";
+        "${mod}+f" = "workspace 4";
+        "${mod}+z" = "workspace 5";
+        "${mod}+x" = "workspace 6";
+        "${mod}+c" = "workspace 7";
+        "${mod}+v" = "workspace 8";
+
+        "${mod}+Shift+a" = "move container to workspace 1";
+        "${mod}+Shift+s" = "move container to workspace 2";
+        "${mod}+Shift+d" = "move container to workspace 3";
+        "${mod}+Shift+f" = "move container to workspace 4";
+        "${mod}+Shift+z" = "move container to workspace 5";
+        "${mod}+Shift+x" = "move container to workspace 6";
+        "${mod}+Shift+c" = "move container to workspace 7";
+        "${mod}+Shift+v" = "move container to workspace 8";
+
+        "${mod}+Shift+e" = "exit";
+
+        "${mod}+y" = "resize shrink width 10 px or 10 ppt";
+        "${mod}+u" = "resize grow height 10 px or 10 ppt";
+        "${mod}+i" = "resize shrink height 10 px or 10 ppt";
+        "${mod}+o" = "resize grow width 10 px or 10 ppt";
+      };
+      window = {
+        border = 1;
+        titlebar = false;
+      };
+      floating = {
+        border = 1;
+        titlebar = false;
+      };
+      bars = [];
+    };
+
+    wrapperFeatures.gtk = true;
+  };
   home.stateVersion = "23.11";
 }
