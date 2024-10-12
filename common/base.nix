@@ -64,6 +64,7 @@
     htop
     openssl
     python311
+    sqlite
   ];
 
   i18n = {
