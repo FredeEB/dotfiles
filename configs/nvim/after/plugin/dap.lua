@@ -73,14 +73,8 @@ end
 dap.listeners.before.launch.dapui_config = function()
     dapui.open()
 end
-dap.listeners.before.event_terminated.dapui_config = function()
-    dapui.close()
-end
-dap.listeners.before.event_exited.dapui_config = function()
-    dapui.close()
-end
 
-local Hydra = require('hydra')
+local hydra = require('hydra')
 local widgets = require('dap.ui.widgets')
 
 local hint = [[
@@ -90,29 +84,35 @@ local hint = [[
 
  _c_: continue    _C_: run to cursor
 
- _q_: end session _Q_: close hydra
+ _q_: end session
 ]]
 
-local dap_hydra = Hydra({
+hydra({
     hint = hint,
     config = {
         color = 'pink',
         invoke_on_body = true,
         hint = {
-            position = 'bottom',
+            position = 'bottom-right',
         },
     },
     name = 'dap',
     mode = { 'n', 'x' },
     body = '<leader>d',
     heads = {
-        { 'n', dap.step_over, { silent = true } },
-        { 's', dap.step_into, { silent = true } },
-        { 'o', dap.step_out, { silent = true } },
-        { 'c', dap.continue, { silent = true } },
-        { 'C', dap.run_to_cursor, { silent = true } },
-        { 'q', dap.terminate, { silent = true } },
+        { 'n', dap.step_over,         { silent = true } },
+        { 's', dap.step_into,         { silent = true } },
+        { 'o', dap.step_out,          { silent = true } },
+        { 'c', dap.continue,          { silent = true } },
+        { 'C', dap.run_to_cursor,     { silent = true } },
+        { 'K', widgets.hover,         { silent = true } },
         { 'b', dap.toggle_breakpoint, { silent = true } },
+        { 'q', function()
+            dap.disconnect()
+            dap.terminate()
+            dap.close()
+            dapui.close()
+        end, { silent = true } },
         {
             'B',
             function()
@@ -124,8 +124,6 @@ local dap_hydra = Hydra({
             end,
             { silent = true },
         },
-        { 'K', widgets.hover, { silent = true } },
-        { 'Q', nil, { exit = true, nowait = true } },
     },
 })
 
