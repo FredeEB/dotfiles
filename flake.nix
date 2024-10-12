@@ -27,15 +27,15 @@
       nixosConfigurations = builtins.listToAttrs
         (map createSystem (builtins.attrNames (builtins.readDir ./systems)));
 
-      homeConfigurations = let 
-        pkgs = import nixpkgs { system = "x86_64-linux"; }; 
-      in {
-        bun = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          extraSpecialArgs = { inherit inputs; };
-          modules = [ ./users/bun.nix ];
+      homeConfigurations =
+        let pkgs = import nixpkgs { system = "x86_64-linux"; };
+        in {
+          bun = home-manager.lib.homeManagerConfiguration {
+            inherit pkgs;
+            extraSpecialArgs = { inherit inputs; };
+            modules = [ ./users/bun.nix ];
+          };
         };
-      };
 
       formatter."x86_64-linux" = nixpkgs.legacyPackages."x86_64-linux".nixfmt;
     };

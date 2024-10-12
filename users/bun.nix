@@ -4,9 +4,7 @@ let
   git-tools = pkgs.callPackage ../modules/git-tools/default.nix { };
 in {
   programs.home-manager.enable = true;
-
   nixpkgs.config.allowUnfree = true;
-
   services.mako.enable = true;
 
   home = {
@@ -105,9 +103,7 @@ in {
         set vi-cmd-mode-string "N "
       '';
     };
-    foot = {
-      enable = true;
-    };
+    foot = { enable = true; };
     fzf = {
       enable = true;
       enableBashIntegration = false;
@@ -173,9 +169,7 @@ in {
         (with import ../modules/tmux.nix { inherit pkgs; }; [ nvim-movement ])
         ++ (with pkgs.tmuxPlugins; [ continuum ]);
     };
-    waybar = {
-      enable = true;
-    };
+    waybar = { enable = true; };
     wezterm = {
       enable = true;
       extraConfig = ''

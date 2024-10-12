@@ -10,13 +10,8 @@
   boot.kernelModules = [ "amdgpu" "kvm-amd" "wl" "b43" ];
   boot.extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
 
-  environment.variables = {
-    ROC_ENABLE_PRE_VEGA = "1";
-  };
-  hardware.graphics.extraPackages = with pkgs; [
-    amdvlk
-    rocmPackages.clr.icd
-  ];
+  environment.variables = { ROC_ENABLE_PRE_VEGA = "1"; };
+  hardware.graphics.extraPackages = with pkgs; [ amdvlk rocmPackages.clr.icd ];
   networking = {
     interfaces.enp39s0.wakeOnLan.enable = true;
     hostName = "dt";
