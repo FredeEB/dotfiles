@@ -47,8 +47,6 @@
 
   # Configure keymap in X11
   services = {
-    redshift.enable = true;
-
     pipewire = {
       enable = true;
       pulse.enable = true;
@@ -56,21 +54,9 @@
     };
 
     displayManager.sddm = {
+      wayland.enable = true;
       enable = true;
       theme = "chili";
-    };
-
-    xserver = {
-      enable = true;
-
-      autoRepeatDelay = 200;
-      autoRepeatInterval = 50;
-
-      # Keyboard
-      xkb = {
-        layout = "us";
-        options = "caps:escape";
-      };
     };
   };
 
