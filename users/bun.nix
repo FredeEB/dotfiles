@@ -16,7 +16,6 @@ in {
 
     sessionVariables = {
       BROWSER = browser;
-      TERMINAL = term;
       NIX_SHELL_PRESERVE_PROMPT = "1";
     };
 
