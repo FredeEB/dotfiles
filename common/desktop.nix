@@ -71,7 +71,6 @@
     sddm-chili-theme
     pavucontrol
 
-    firefox
     gimp
     zathura
     zeal

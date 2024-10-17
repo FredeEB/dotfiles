@@ -103,6 +103,9 @@ in {
         set vi-cmd-mode-string "N "
       '';
     };
+    firefox = {
+      enable = true;
+    };
     foot = { enable = true; };
     fzf = {
       enable = true;
