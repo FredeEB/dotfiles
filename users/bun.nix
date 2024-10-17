@@ -291,6 +291,7 @@ in {
         "${mod}+Shift+l" = "move right";
 
         "${mod}+g" = "fullscreen toggle";
+        "${mod}+t" = "layout toggle split tabbed";
 
         "${mod}+Shift+space" = "floating toggle";
 
