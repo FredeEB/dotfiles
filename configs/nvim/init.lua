@@ -23,7 +23,7 @@ require('lazy').setup({
     -- tmux
     { 'aserowy/tmux.nvim', config = true },
     -- snippets
-    { 'l3mon4d3/luasnip' },
+    { 'l3mon4d3/luasnip', dependencies = {"rafamadriz/friendly-snippets"} },
     -- cmp
     { 'hrsh7th/cmp-nvim-lsp' },
     { 'hrsh7th/cmp-buffer' },
