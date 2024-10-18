@@ -103,9 +103,7 @@ in {
         set vi-cmd-mode-string "N "
       '';
     };
-    firefox = {
-      enable = true;
-    };
+    firefox = { enable = true; };
     foot = { enable = true; };
     fzf = {
       enable = true;
@@ -336,7 +334,7 @@ in {
         border = 1;
         titlebar = false;
       };
-      bars = [];
+      bars = [ ];
     };
 
     wrapperFeatures.gtk = true;
