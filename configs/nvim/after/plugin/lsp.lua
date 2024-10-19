@@ -67,7 +67,7 @@ local lsps = {
     'neocmake',
     'terraformls',
     'ts_ls',
-    'pyright',
+    'pylyzer',
     'rust_analyzer',
     'zls',
 }

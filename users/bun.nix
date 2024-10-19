@@ -48,7 +48,7 @@ in {
 
       bitbake-language-server
       bash-language-server
-      pyright
+      pylyzer
       nodePackages.typescript-language-server
       black
       bashdb
