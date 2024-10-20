@@ -61,6 +61,7 @@ in {
       nixd
       neocmakelsp
       python3Packages.debugpy
+      verible
     ];
     file = {
       ".config/nvim".source = ../configs/nvim;

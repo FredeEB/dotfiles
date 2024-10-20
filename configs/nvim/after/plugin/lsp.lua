@@ -69,6 +69,7 @@ local lsps = {
     'ts_ls',
     'pylyzer',
     'rust_analyzer',
+    'verible',
     'zls',
 }
 
