@@ -55,6 +55,8 @@
     '';
   };
 
+  services.nixseparatedebuginfod.enable = true;
+
   environment.systemPackages = with pkgs; [
     dconf
     fq
