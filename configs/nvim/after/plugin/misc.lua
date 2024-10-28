@@ -57,6 +57,7 @@ m.keys({ -- qfl
 
 m.keys({ -- misc
     { 'n', 'gf', 'gF' },
+    { 'n', '<leader>t', [[<cmd>Triptych<cr>]] }
 })
 
 m.keys({
