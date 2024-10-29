@@ -138,7 +138,6 @@ in {
         push.useForceIfIncludes = true;
         rerere.enabled = true;
         color.pager = false;
-        core.pager = "nvim -R";
       };
     };
     neovim = {
