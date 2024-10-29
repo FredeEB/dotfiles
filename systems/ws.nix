@@ -13,7 +13,7 @@
   environment.variables = { ROC_ENABLE_PRE_VEGA = "1"; };
   hardware.graphics.extraPackages = with pkgs; [ amdvlk rocmPackages.clr.icd ];
   networking = {
-    interfaces.enp39s0.wakeOnLan.enable = true;
+    interfaces.eno1.wakeOnLan.enable = true;
     hostName = "ws";
     useDHCP = lib.mkDefault true;
   };
