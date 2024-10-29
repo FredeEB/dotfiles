@@ -28,4 +28,10 @@
   nixpkgs.hostPlatform = lib.mkDefault "x86_64-linux";
   hardware.cpu.amd.updateMicrocode =
     lib.mkDefault config.hardware.enableRedistributableFirmware;
+
+  # compensate for high dpi
+  stylix.fonts.sizes = {
+    applications = 9;
+    terminal = 10;
+  };
 }
