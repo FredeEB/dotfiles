@@ -65,7 +65,7 @@
     gnumake
     htop
     openssl
-    python311
+    python3
     sqlite
   ];
 
