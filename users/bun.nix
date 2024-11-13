@@ -214,6 +214,29 @@ in {
     };
   };
 
+  services = {
+    swayidle = let 
+      lockcmd = "${pkgs.swaylock}/bin/swaylock -f -i ${ ../assets/desktop.jpg }";
+    in {
+      enable = true;
+      events = [
+        { event = "before-sleep"; command = lockcmd; }
+        { event = "lock"; command = lockcmd; }
+      ];
+      timeouts = [
+        {
+          timeout = 300;
+          command = lockcmd;
+        }
+        # Lock computer
+        {
+          timeout = 600;
+          command = "${pkgs.sway}/bin/swaymsg \"output * dpms off\"";
+          resumeCommand = "${pkgs.sway}/bin/swaymsg \"output * dpms on\"";
+        }
+      ];
+    };
+  };
   wayland.windowManager.sway = let
     dbus-sway-environment = pkgs.writeTextFile {
       name = "dbus-sway-environment";
@@ -243,23 +266,9 @@ in {
         { command = "${pkgs.waybar}/bin/waybar"; }
         { command = "${pkgs.swaybg}/bin/swaybg -i ${../assets/desktop.jpg}"; }
         { command = "${pkgs.mako}/bin/mako --default-timeout 4000"; }
-        {
-          command =
-            "${pkgs.wlsunset}/bin/wlsunset -L 10.2 -l 56.2 -t 3200 -T 4500";
-        }
-        {
-          command = ''
-            ${pkgs.swayidle}/bin/swayidle -w  timeout 300 '${pkgs.swaylock}/bin/swaylock -f -i ${
-              ../assets/desktop.jpg
-            }'  timeout 600 'swaymsg "output * dpms off"'  resume 'swaymsg "output * dpms on"'  before-sleep '${pkgs.swaylock}/bin/swaylock -f -i ${
-              ../assets/desktop.jpg
-            }'"'';
-        }
+        { command = "${pkgs.wlsunset}/bin/wlsunset -L 10.2 -l 56.2 -t 3200 -T 4500"; }
         { command = "${dbus-sway-environment}"; }
-        {
-          command =
-            "${pkgs.sway-audio-idle-inhibit}/bin/sway-audio-idle-inhibit";
-        }
+        { command = "${pkgs.sway-audio-idle-inhibit}/bin/sway-audio-idle-inhibit"; }
         { command = "configure-gtk"; }
       ];
       fonts = {
