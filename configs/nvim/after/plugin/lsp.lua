@@ -68,6 +68,7 @@ local lsps = {
     'terraformls',
     'ts_ls',
     'pylyzer',
+    'ruff',
     'rust_analyzer',
     'verible',
     'zls',

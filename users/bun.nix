@@ -60,6 +60,7 @@ in {
       lua-language-server
       nixd
       neocmakelsp
+      ruff
       python3Packages.debugpy
       verible
     ];
