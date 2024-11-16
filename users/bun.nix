@@ -32,6 +32,7 @@ in {
       ninja
       go
       rustup
+      uv
 
       tree-sitter
 
