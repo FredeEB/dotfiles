@@ -32,13 +32,6 @@ m.keys({ -- vblock moves
     { 'v', '>', [[>gv]] },
 })
 
-m.keys_for_filetype({
-    { 'netrw', 'n', '<C-h>', '<C-w>h' },
-    { 'netrw', 'n', '<C-j>', '<C-w>j' },
-    { 'netrw', 'n', '<C-k>', '<C-w>k' },
-    { 'netrw', 'n', '<C-l>', '<C-w>l' },
-})
-
 m.keys({
     { 'v', 'p', '"_dP' },
 })
@@ -57,7 +50,7 @@ m.keys({ -- qfl
 
 m.keys({ -- misc
     { 'n', 'gf', 'gF' },
-    { 'n', '<leader>t', [[<cmd>Triptych<cr>]] }
+    { 'n', '<leader>ft', [[<cmd>Triptych<cr>]] }
 })
 
 m.keys({
@@ -80,7 +73,7 @@ vim.api.nvim_create_autocmd('WinEnter', {
 vim.notify = require('notify')
 
 m.keys({
-    { 'n', '<leader>t', require('tardis-nvim').tardis },
+    { 'n', '<leader>gt', require('tardis-nvim').tardis },
 })
 
 require('Comment').setup()
@@ -103,3 +96,39 @@ vim.api.nvim_create_autocmd('BufWritePre', {
 })
 
 vim.cmd('colorscheme kanagawa')
+
+local neotest = require('neotest')
+neotest.setup {
+    adapters = {
+        require('neotest-python') {
+            args = { '--log-level', 'DEBUG' },
+            runner = 'pytest',
+            python = '.venv/bin/python',
+        },
+        require('neotest-ctest').setup {}
+    }
+}
+
+m.keys {
+    { 'n', '<leader>tt', function() neotest.run.run() end },
+    { 'n', '<leader>tf', function() neotest.run.run(vim.fn.expand('%')) end },
+    { 'n', '<leader>td', function() neotest.run.run({ strategy = "dap" }) end }
+}
+
+require('cmake-tools').setup {
+    cmake_regenerate_on_save = false,
+    cmake_build_directory = 'build',
+    cmake_dap_configuration = {
+        name = 'cpp',
+        type = 'gdb',
+        request = 'launch',
+        stopOnEntry = 'false',
+        runInTerminal = 'true',
+        console = 'integratedTerminal',
+    },
+}
+
+m.keys_for_filetype({
+    { 'cpp', 'n', '<leader>cc', function() require('cmake-tools').build({}) end },
+    { 'cpp', 'n', '<leader>ct', function() require('cmake-tools').build({target = 'tests'}) end },
+})

@@ -34,10 +34,15 @@ require('lazy').setup({
     { 'hrsh7th/nvim-cmp' },
     -- lsp
     { 'neovim/nvim-lsp' },
+    -- build tools
+    { 'nvim-neotest/nvim-nio' },
+    { 'nvim-neotest/neotest' },
+    { 'orjangj/neotest-ctest' },
+    { 'nvim-neotest/neotest-python' },
+    { 'civitasv/cmake-tools.nvim' },
     -- dap
     { 'mfussenegger/nvim-dap' },
     { 'thehamsta/nvim-dap-virtual-text', config = true },
-    { 'nvim-neotest/nvim-nio' },
     { 'rcarriga/nvim-dap-ui', config = true },
     { 'jbyuki/one-small-step-for-vimkind' },
     -- tools
