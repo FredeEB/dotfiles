@@ -4,8 +4,6 @@ local dap = require('dap')
 
 require('dap.ext.vscode').type_to_filetypes = {
     gdb = { 'c', 'cpp' },
-    cppdbg = { 'c', 'cpp' },
-    codelldb = { 'c', 'cpp' },
 }
 
 dap.adapters.bash = {
@@ -39,14 +37,6 @@ dap.configurations.cmake = {
     },
 }
 
-dap.adapters.codelldb = {
-    type = 'server',
-    port = '${port}',
-    executable = {
-        command = 'codelldb',
-        args = { '--port', '${port}' },
-    },
-}
 dap.adapters.gdb = {
     id = 'gdb',
     type = 'executable',
