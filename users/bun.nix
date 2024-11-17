@@ -1,7 +1,7 @@
 { pkgs, ... }:
 let
-  tmux-project = pkgs.callPackage ../modules/tmux-project/default.nix { };
   git-tools = pkgs.callPackage ../modules/git-tools/default.nix { };
+  tmux-project = pkgs.callPackage ../modules/tmux-project/default.nix { };
 
   term = "foot";
   browser = "firefox";
@@ -20,8 +20,8 @@ in {
     };
 
     packages = with pkgs; [
-      tmux-project
       git-tools
+      tmux-project
 
       bitwarden-cli
       clang-tools
