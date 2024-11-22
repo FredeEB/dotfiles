@@ -168,6 +168,16 @@ in {
         set-environment -g COLORTERM "truecolor"
         set -wg mode-keys vi
 
+        bind-key -n M-j  if-shell "tmux select-window -t :0" "" "new-window -t :0"
+        bind-key -n M-k  if-shell "tmux select-window -t :1" "" "new-window -t :1"
+        bind-key -n M-l  if-shell "tmux select-window -t :2" "" "new-window -t :2"
+        bind-key -n M-\; if-shell "tmux select-window -t :3" "" "new-window -t :3"
+
+        bind-key -n M-J  if-shell "tmux move-pane -t :0" "" "break-pane -t :0"
+        bind-key -n M-K  if-shell "tmux move-pane -t :1" "" "break-pane -t :1"
+        bind-key -n M-L  if-shell "tmux move-pane -t :2" "" "break-pane -t :2"
+        bind-key -n M-\: if-shell "tmux move-pane -t :3" "" "break-pane -t :3"
+
         bind-key C-p run-shell ${tmux-project}/bin/tmux-project
         bind-key C-l run-shell ${git-tools}/bin/gl
 
