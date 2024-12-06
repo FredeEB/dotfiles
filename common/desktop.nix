@@ -2,6 +2,8 @@
 
   imports = [ ../modules/sway.nix inputs.stylix.nixosModules.stylix ];
 
+  fonts.packages = [ pkgs.nerd-fonts.iosevka ];
+
   stylix = {
     enable = true;
     autoEnable = true;
@@ -25,7 +27,7 @@
       };
 
       monospace = {
-        package = pkgs.nerdfonts.override { fonts = [ "Iosevka" ]; };
+        package = pkgs.nerd-fonts.iosevka;
         name = "Iosevka Nerd Font Mono";
       };
 
