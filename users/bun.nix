@@ -89,6 +89,7 @@ in {
     bash = {
       enable = true;
       shellAliases = import ../configs/bash/aliases.nix;
+      historyControl = [ "ignoreboth" "erasedups" ];
       bashrcExtra = ''
         source ${pkgs.fzf}/share/fzf/completion.bash
         source ${../configs/bash/bashrc}
