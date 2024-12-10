@@ -107,7 +107,10 @@ in {
       '';
     };
     firefox = { enable = true; };
-    foot = { enable = true; };
+    foot = { 
+      enable = true;
+      settings.main.term = "xterm-256color";
+    };
     fzf = {
       enable = true;
       enableBashIntegration = false;
