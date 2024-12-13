@@ -41,7 +41,7 @@ dap.adapters.gdb = {
     id = 'gdb',
     type = 'executable',
     command = 'gdb',
-    args = { '-i', 'dap' },
+    args = { "--interpreter=dap", "--eval-command", "set print pretty on" }
 }
 
 dap.adapters.nlua = function(callback, config)
@@ -64,58 +64,23 @@ dap.listeners.before.launch.dapui_config = function()
     dapui.open()
 end
 
-local hydra = require('hydra')
 local widgets = require('dap.ui.widgets')
 
-local hint = [[
- _n_: step over   _b_: toggle breakpoint
- _s_: step into   _B_: toggle conditional breakpoint
- _o_: step out    _K_: hover
-
- _c_: continue    _C_: run to cursor
-
- _q_: end session
-]]
-
-hydra({
-    hint = hint,
-    config = {
-        color = 'pink',
-        invoke_on_body = true,
-        hint = {
-            position = 'bottom-right',
-        },
-    },
-    name = 'dap',
-    mode = { 'n', 'x' },
-    body = '<leader>d',
-    heads = {
-        { 'n', dap.step_over,         { silent = true } },
-        { 's', dap.step_into,         { silent = true } },
-        { 'o', dap.step_out,          { silent = true } },
-        { 'c', dap.continue,          { silent = true } },
-        { 'C', dap.run_to_cursor,     { silent = true } },
-        { 'K', widgets.hover,         { silent = true } },
-        { 'b', dap.toggle_breakpoint, { silent = true } },
-        { 'q', function()
-            dap.disconnect()
-            dap.terminate()
-            dap.close()
-            dapui.close()
-        end, { silent = true } },
-        {
-            'B',
-            function()
-                vim.ui.input({
-                    prompt = 'Condition: ',
-                }, function(input)
-                    dap.toggle_breakpoint(input)
-                end)
-            end,
-            { silent = true },
-        },
-    },
-})
+m.keys {
+    { 'n', '<F2>', dap.step_over },
+    { 'n', '<F3>', dap.step_into },
+    { 'n', '<F4>', dap.step_out },
+    { 'n', '<F5>', dap.continue },
+    { 'n', '<F6>', dap.run_to_cursor },
+    { 'n', '<leader>K', widgets.hover },
+    { 'n', '<F3>', dap.toggle_breakpoint },
+    { 'n', 'S-<F5>', function()
+        dap.disconnect()
+        dap.terminate()
+        dap.close()
+        dapui.close()
+    end }
+}
 
 m.keys_for_filetype({
     { 'dap-float', 'n', 'q', '<cmd>q<cr>' },
