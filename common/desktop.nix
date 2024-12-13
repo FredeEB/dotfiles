@@ -54,12 +54,6 @@
       pulse.enable = true;
       alsa.enable = true;
     };
-
-    displayManager.sddm = {
-      wayland.enable = true;
-      enable = true;
-      theme = "chili";
-    };
   };
 
   programs.steam.enable = true;
@@ -76,7 +70,6 @@
     gimp
     zathura
     zeal
-    xfce.thunar
     xfce.thunar-volman
 
     discord
