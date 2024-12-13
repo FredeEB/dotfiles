@@ -119,6 +119,8 @@ cmp_ai:setup({
     end,
 })
 
+vim.diagnostic.config({ virtual_text = false })
+
 vim.api.nvim_create_autocmd('LspAttach', {
     group = vim.api.nvim_create_augroup('UserLspConfig', {}),
     callback = function(ev)
