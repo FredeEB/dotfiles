@@ -11,6 +11,7 @@
     swayidle
     swaylock
     wayland
+    waypipe
     wdisplays
     wl-clipboard
     wlsunset
