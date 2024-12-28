@@ -93,6 +93,7 @@ nvim_lsp.clangd.setup({
         '--all-scopes-completion',
         '--background-index',
         '--clang-tidy',
+        '--compile-commands-dir=build',
         '--query-driver=/**/*',
     },
     capabilities = client_capabilities,
