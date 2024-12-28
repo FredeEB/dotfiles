@@ -47,6 +47,7 @@ require('lazy').setup({
     { 'jbyuki/one-small-step-for-vimkind' },
     -- tools
     { 'simonmclean/triptych.nvim', config = true },
+    { 't-troebst/perfanno.nvim', config = true },
     { 'stevearc/oil.nvim', config = true },
     { 'theprimeagen/harpoon', branch = 'harpoon2' },
     { 'theprimeagen/refactoring.nvim' },
