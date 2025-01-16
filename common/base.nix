@@ -3,7 +3,10 @@
   imports = [ inputs.home-manager.nixosModules.default ];
 
   home-manager = {
-    extraSpecialArgs = { inherit inputs; };
+    extraSpecialArgs = { 
+      inherit pkgs;
+      inherit (inputs) nixvim stylix;
+    };
     users = { "bun" = import ../users/bun.nix; };
   };
 

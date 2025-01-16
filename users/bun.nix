@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, nixvim, stylix, ... }:
 let
   git-tools = pkgs.callPackage ../modules/git-tools/default.nix { };
   tmux-project = pkgs.callPackage ../modules/tmux-project/default.nix { };
@@ -6,9 +6,55 @@ let
   term = "foot";
   browser = "firefox";
 in {
+  imports = [
+    nixvim.homeManagerModules.nixvim
+    stylix.homeManagerModules.stylix
+  ];
+
   programs.home-manager.enable = true;
   nixpkgs.config.allowUnfree = true;
   services.mako.enable = true;
+
+  programs.nixvim = import ../modules/nixvim { inherit pkgs; inherit nixvim;};
+
+  stylix = {
+    enable = true;
+    autoEnable = true;
+    image = ../assets/desktop.jpg;
+    polarity = "dark";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/kanagawa.yaml";
+
+    targets.nixvim = {
+        enable = true;
+        plugin = "base16-nvim";
+    };
+
+    cursor = {
+      package = pkgs.bibata-cursors;
+      name = "Bibata-Modern-Ice";
+    };
+    fonts = {
+      serif = {
+        package = pkgs.dejavu_fonts;
+        name = "DejaVu Serif";
+      };
+
+      sansSerif = {
+        package = pkgs.dejavu_fonts;
+        name = "DejaVu Sans";
+      };
+
+      monospace = {
+        package = pkgs.nerd-fonts.iosevka;
+        name = "Iosevka Nerd Font Mono";
+      };
+
+      emoji = {
+        package = pkgs.noto-fonts-emoji;
+        name = "Noto Color Emoji";
+      };
+    };
+  };
 
   home = {
     username = "bun";
@@ -49,7 +95,7 @@ in {
 
       bitbake-language-server
       bash-language-server
-      pylyzer
+      pyright
       nodePackages.typescript-language-server
       black
       bashdb
@@ -64,9 +110,49 @@ in {
       ruff
       python3Packages.debugpy
       verible
+
+      dconf
+      feh
+      imagemagick
+      mpv
+      usbutils
+      pavucontrol
+
+      gimp
+      zathura
+      zeal
+
+      discord
+      element-desktop
+      spotify
+
+      freecad
+      elmerfem
+      gmsh
+      calculix
+      kicad
+      virt-manager
+
+      wireshark
+
+      bemenu
+      dbus
+      glib
+      grim
+      mako
+      slurp
+      sway-audio-idle-inhibit
+      swaybg
+      swayidle
+      swaylock
+      wayland
+      waypipe
+      wdisplays
+      wl-clipboard
+      wlsunset
+      xdg-utils
     ];
     file = {
-      ".config/nvim".source = ../configs/nvim;
       ".ssh/rc".source = ../configs/ssh/rc;
 
       ".config/gdb/gdbinit".source = pkgs.writeText "gdbinit" ''
@@ -108,7 +194,7 @@ in {
       '';
     };
     firefox = { enable = true; };
-    foot = { 
+    foot = {
       enable = true;
       settings.main.term = "xterm-256color";
     };
@@ -145,11 +231,6 @@ in {
         rerere.enabled = true;
         color.pager = false;
       };
-    };
-    neovim = {
-      enable = true;
-      defaultEditor = true;
-      vimdiffAlias = true;
     };
     rofi = {
       enable = true;
@@ -231,13 +312,19 @@ in {
   };
 
   services = {
-    swayidle = let 
-      lockcmd = "${pkgs.swaylock}/bin/swaylock -f -i ${ ../assets/desktop.jpg }";
+    swayidle = let
+      lockcmd = "${pkgs.swaylock}/bin/swaylock -f -i ${../assets/desktop.jpg}";
     in {
       enable = true;
       events = [
-        { event = "before-sleep"; command = lockcmd; }
-        { event = "lock"; command = lockcmd; }
+        {
+          event = "before-sleep";
+          command = lockcmd;
+        }
+        {
+          event = "lock";
+          command = lockcmd;
+        }
       ];
       timeouts = [
         {
@@ -247,8 +334,8 @@ in {
         # Lock computer
         {
           timeout = 600;
-          command = "${pkgs.sway}/bin/swaymsg \"output * dpms off\"";
-          resumeCommand = "${pkgs.sway}/bin/swaymsg \"output * dpms on\"";
+          command = ''${pkgs.sway}/bin/swaymsg "output * dpms off"'';
+          resumeCommand = ''${pkgs.sway}/bin/swaymsg "output * dpms on"'';
         }
       ];
     };
@@ -282,10 +369,16 @@ in {
         { command = "${pkgs.waybar}/bin/waybar"; }
         { command = "${pkgs.swaybg}/bin/swaybg -i ${../assets/desktop.jpg}"; }
         { command = "${pkgs.mako}/bin/mako --default-timeout 4000"; }
-        { command = "${pkgs.wlsunset}/bin/wlsunset -L 10.2 -l 56.2 -t 3200 -T 4500"; }
+        {
+          command =
+            "${pkgs.wlsunset}/bin/wlsunset -L 10.2 -l 56.2 -t 3200 -T 4500";
+        }
         { command = "${dbus-sway-environment}"; }
-        { command = "${pkgs.sway-audio-idle-inhibit}/bin/sway-audio-idle-inhibit"; }
-        { command = "configure-gtk"; }
+        {
+          command =
+            "${pkgs.sway-audio-idle-inhibit}/bin/sway-audio-idle-inhibit";
+        }
+        # { command = "configure-gtk"; }
       ];
       fonts = {
         names = [ "Iosevka Nerd Font" ];
@@ -362,7 +455,7 @@ in {
       bars = [ ];
     };
 
-    wrapperFeatures.gtk = true;
+    # wrapperFeatures.gtk = true;
   };
   home.stateVersion = "23.11";
 }
