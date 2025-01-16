@@ -23,11 +23,6 @@
     enable = true;
     wlr.enable = true;
     extraPortals = with pkgs; [ xdg-desktop-portal-gtk ];
-  };
-
-  # enable sway window manager
-  programs.sway = {
-    enable = true;
-    wrapperFeatures.gtk = true;
+    config.common.default = "*";
   };
 }

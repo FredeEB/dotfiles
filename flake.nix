@@ -9,9 +9,10 @@
     };
     nixgl.url = "github:nix-community/nixgl";
     stylix.url = "github:danth/stylix";
+    nixvim.url = "github:nix-community/nixvim";
   };
 
-  outputs = inputs@{ nixpkgs, home-manager, ... }:
+  outputs = inputs@{ nixpkgs, home-manager, ... }: 
     let
       base = [ ./common/base.nix ];
       createSystem = (system-file:
@@ -27,12 +28,14 @@
       nixosConfigurations = builtins.listToAttrs
         (map createSystem (builtins.attrNames (builtins.readDir ./systems)));
 
-      homeConfigurations =
-        let pkgs = import nixpkgs { system = "x86_64-linux"; };
-        in {
+      homeConfigurations = let
+        pkgs = import nixpkgs { system = "x86_64-linux"; };
+      in  {
           bun = home-manager.lib.homeManagerConfiguration {
-            inherit pkgs;
-            extraSpecialArgs = { inherit inputs; };
+            extraSpecialArgs = { 
+              inherit pkgs;
+              inherit (inputs) nixvim stylix;
+            };
             modules = [ ./users/bun.nix ];
           };
         };
