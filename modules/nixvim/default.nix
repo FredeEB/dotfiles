@@ -97,6 +97,7 @@
     };
     git-conflict.enable = true;
     gitsigns.enable = true;
+    lualine.enable = true;
     neogit = {
       enable = true;
       settings = {
