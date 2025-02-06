@@ -122,7 +122,6 @@
       enable = true;
       servers = {
         bashls.enable = true;
-        bitbake_language_server.enable = true;
         clangd = {
           enable = true;
           cmd = [
@@ -196,9 +195,6 @@
     scrollback = 100000;
     undofile = true;
   };
-
-  viAlias = true;
-  vimAlias = true;
 
   keymaps = [
     # dap

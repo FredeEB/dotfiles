@@ -93,7 +93,6 @@ in {
 
       nodejs
 
-      bitbake-language-server
       bash-language-server
       pyright
       nodePackages.typescript-language-server
