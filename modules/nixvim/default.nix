@@ -36,7 +36,10 @@
       settings = {
         completion = {
           documentation.auto_show = true;
-          list.selection = "manual";
+          list.selection = {
+            preselect = false;
+            auto_insert = false;
+          };
         };
         keymap = {
           "<C-space>" = [ "show" "show_documentation" "hide_documentation" ];
