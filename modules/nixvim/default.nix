@@ -91,8 +91,6 @@
       settings = {
         fzf_bin = "fzf-tmux";
         winopts.preview.default = "bat";
-        grep.rg_opts = "--column --line-number --no-heading --color=always --smart-case --max-columns=4096 -e";
-        files.rg_opts = "--color=never --files --follow";
       };
     };
     git-conflict.enable = true;
