@@ -41,9 +41,4 @@
       LABEL="bmaptool_optimizations_end"
     '';
   };
-  # compensate for high dpi
-  stylix.fonts.sizes = {
-    applications = 9;
-    terminal = 10;
-  };
 }
