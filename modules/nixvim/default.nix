@@ -51,6 +51,12 @@
       enable = true;   
       settings = {
         completion = {
+          accept = {
+            auto_brackets = {
+              enabled = true;
+              semantic_token_resolution.enabled = true;
+            };
+          };
           documentation.auto_show = true;
           list.selection = {
             preselect.__raw = "function(ctx) return ctx.mode ~= 'cmdline' end";
