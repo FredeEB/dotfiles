@@ -53,7 +53,7 @@
         completion = {
           documentation.auto_show = true;
           list.selection = {
-            preselect = false;
+            preselect.__raw = "function(ctx) return ctx.mode ~= 'cmdline' end";
             auto_insert = false;
           };
         };
