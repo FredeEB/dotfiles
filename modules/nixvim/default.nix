@@ -271,5 +271,7 @@
     { mode = "n"; key = "<C-n>"; action =''<cmd>cnext<cr>zz''; }
     { mode = "n"; key = "<C-q>"; action = ''<cmd>copen<cr>''; }
     { mode = "n"; key = "<C-c>"; action = ''<cmd>cclose<cr>''; }
+
+    { mode = "n"; key = "<leader>as"; action.__raw = ''require('persisted').load''; }
   ];
 }
