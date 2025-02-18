@@ -3,8 +3,10 @@ let
   git-tools = pkgs.callPackage ../modules/git-tools/default.nix { };
   tmux-project = pkgs.callPackage ../modules/tmux-project/default.nix { };
 
-  term = "foot";
   browser = "firefox";
+  editor = "nvim";
+  pager = "nvim -R";
+  term = "foot";
 in {
   imports = [
     nixvim.homeManagerModules.nixvim
@@ -62,6 +64,8 @@ in {
 
     sessionVariables = {
       BROWSER = browser;
+      EDITOR = editor;
+      PAGER = pager;
       NIX_SHELL_PRESERVE_PROMPT = "1";
     };
 
